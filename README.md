@@ -13,17 +13,13 @@ Internet access enabled in Claude's settings (Skill 1 needs web search to resear
 
 
 Installing the Skills
-There are two .skill files:
-
-File
-What It Does
-agent-os-bootstrap.skill
-Researches your company and builds the full operating system — folder structure, strategy documents, agent specs, everything
-agent-os-workshop.skill
-Guides an individual executive through refining their strategy, agent spec, and first mission
-
-
-To install each skill:
+The skills are folders, not packaged files. You install them by pointing Claude at them directly.
+Step 1 — Download the repo
+Click the green Code button on this page → Download ZIP → unzip it somewhere permanent on your computer (not Downloads — you need it to stay there. It will be the location of your OS).
+Step 2 — Open Claude Desktop
+In the main menu, click Customize → Skills, then add each skill folder — agent-os-bootstrap and agent-os-workshop.
+Step 3 — Verify
+Start a new Cowork conversation and say "set up an agent operating system for [company]" — Claude should recognise and trigger the bootstrap skill.To install each skill:
 
 Open the Claude desktop app
 Go to Settings → Skills
