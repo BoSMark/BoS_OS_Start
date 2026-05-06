@@ -1,4 +1,7 @@
 # BoS_OS_Start
+
+An ai-operating-system-for-software-companies
+
 Download the bootstrap agent and workshops skills to start building your very own company OS
 
 Agent OS Toolkit — Installation & Usage Guide
