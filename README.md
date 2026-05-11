@@ -10,7 +10,7 @@ These skills help map your company operating system and then understand where ag
 
 This repo contains two skills that activate your company Agent OS:
 
-**Bootstrap** — models your company OS from public information in under an hour. It produces a first draft of your strategy layer, agent roles, and decision governance. Your folder structure becomes your system. The files become the memory.
+**Bootstrap** — models your company OS from public information in under an hour. It produces a first draft of your strategy layer, agent roles, and decision governance. Your folder structure becomes your system. The files become the memory. **NB Bootstrap** references the process of bootstrapping the system. It is **NOT** a reference to funding.
 
 **Workshop** — helps you refine what Bootstrap produced. As you work through it, the AI starts to understand your strategic goals, identify gaps, and surface opportunities and threats specific to your business.
 
