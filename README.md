@@ -1,3 +1,5 @@
+# BoS-OS-Start
+
 The BoS Agent OS helps you understand and manage your company operating system.
 
 Most companies add AI tools on top of an operating system nobody has written down. Strategy lives in the founder's head. Roles blur. Decisions don't stick. AI amplifies whatever's already there — clarity becomes velocity; muddle becomes noise.
@@ -39,14 +41,20 @@ Your folder structure is your system. The files are the memory.
 **Prerequisites:** Claude Pro subscription · Cowork mode enabled
 
 1. Open Claude in Cowork mode
-2. Go to Customize → Skills
-3. Install the **Bootstrap** skill from this repo
-4. Run it on your company — it will ask you questions and build your OS draft
-5. Install the **Workshop** skill when you're ready to go deeper
+2. **Before anything else: create a project and select a folder.** Go to Projects → New Project → select a folder on your computer. This is not optional. Without a project, nothing saves and you will need to start over.
+3. Go to Customize → Skills
+4. Install the **Bootstrap** skill from this repo
+5. Run it on your company — it will ask you questions and build your OS draft
+6. Install the **Workshop** skill when you're ready to go deeper
 
 Full installation instructions are in each skill folder.
 
-> **Important:** Bootstrap must be run inside a Cowork project with a folder selected. If you run it from a general Claude conversation, files won't save and you'll need to start again. If you're unsure whether you're in a project, check the top of the Cowork window — you should see your selected folder name.
+> **Project setup check — do this before you run Bootstrap:**
+> - Are you inside a Cowork project? (Check the top of the Cowork window — you should see a project name, not just "Claude")
+> - Have you selected a folder? (You should see your folder name below the project name)
+> - Is that folder inside a cloud-synced location (Dropbox, Google Drive, etc.)?
+>
+> If you can't answer yes to all three, stop and sort setup first. Running Bootstrap without a project is the most common reason people need to start over.
 
 **File storage:** Your OS files live in whatever folder you selected when setting up Cowork. For safety, put that folder inside Dropbox, Google Drive, or another cloud sync service — that way your files are backed up and accessible from any machine.
 
@@ -98,4 +106,4 @@ Subscribe for workshop announcements, guided cohorts, and peer community access.
 
 ---
 
-*Built by [Business of Software](https://businessofsoftware.org) — helping software founders build profitable, enduring companies since 2007.*
+*Built by Tim Barker and [Business of Software](https://businessofsoftware.org) — helping software founders build profitable, enduring companies since 2007.*
