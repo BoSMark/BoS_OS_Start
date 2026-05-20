@@ -1,3 +1,4 @@
+---
 name: agent-os-bootstrap
 description: |
   Bootstrap an AI agent operating system for any company from public information. Provide a company name and this skill researches it, creates the folder structure, populates strategy documents (RFCs) with company-specific content, creates agent specs mapped to leadership, and generates a CLAUDE.md. Use when someone wants to set up agents for their company, build an AI strategy framework, create agent specs, or bootstrap AI governance. Triggers: "set up agents for my company", "create an operating system for AI at [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "agent OS", "operating model", "folder structure for agents", "RFC structure", "bootstrap my company". MANDATORY TRIGGERS: agent operating system, bootstrap, company setup, agent framework, AI strategy, RFC, agent spec, operating model, folder structure.
