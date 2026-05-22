@@ -234,7 +234,7 @@ Agents use this to contextualize their work (e.g., "this RFC is due by end of Q2
 2. Review `01_STATE/session_review_log.md` to see decisions pending your approval
 3. Check `01_STATE/decisions.md` to audit recent decisions (are agents following governance?)
 4. Approve or request changes on decisions presented by agents
-5. Update `session_summary.md` at the end of the session (or day) to hand off to next session
+5. Review and approve Claude's draft update to `session_summary.md` at the end of each session — Claude drafts, you confirm.
 
 ### For Auditors
 1. Review `01_STATE/decisions.md` for a sample of decisions (e.g., last 20)

@@ -381,7 +381,7 @@ When starting a new session:
 6. **Identify which agents** are active (from `03_AGENTS/` and session summary)
 7. **Determine next priority** from session summary and open items
 8. **Work autonomously within agent boundaries** until a decision is needed
-9. **At session end:** Update session_summary.md and session_review_log.md
+9. **At session end:** Review and approve Claude's draft updates to `session_summary.md` and `session_review_log.md`
 
 ---
 
