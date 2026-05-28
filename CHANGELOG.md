@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the BoS Agent OS Toolkit are documented here.
+All notable changes to the BoS OS Agent Toolkit are documented here.
 
 ---
 
