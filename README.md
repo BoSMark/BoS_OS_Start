@@ -6,7 +6,7 @@ Most companies add AI tools on top of an operating system nobody has written dow
 
 These two skills fix the foundation first.
 
-**Current version: v2.0.1** — [What's new](CHANGELOG.md)
+**Current version: v2.0.2** — [What's new](CHANGELOG.md)
 
 ---
 
