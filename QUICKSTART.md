@@ -1,7 +1,3 @@
-# AI DRAFT — for Mark's review before publishing
-
----
-
 # BoS Agent OS — Quickstart
 
 Get from zero to your first Bootstrap session in under 10 minutes.
