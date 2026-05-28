@@ -4,6 +4,13 @@ All notable changes to the BoS Agent OS Toolkit are documented here.
 
 ---
 
+## v2.0.1 — 2026-05-26
+
+### Maintenance
+
+**Skill files re-synced with installed versions**
+`agent-os-workshop/SKILL.md` and `agent-os-bootstrap/SKILL.md` updated to match the versions distributed via the Cowork plugin. The workshop skill in particular had diverged significantly (24 lines vs 224 lines) — anyone who downloaded the repo directly would have received an incomplete workshop skill missing all phase instructions. Both skills now reflect the full, current implementation.
+
 ## v2.0 — May 2026
 
 ### What's new

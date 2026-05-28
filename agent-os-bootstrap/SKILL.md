@@ -73,6 +73,8 @@ Tell the user: "Based on my research, I'm treating [Company] as a [industry] com
 ### Step 3: Create the Folder Structure
 
 Create the canonical folder structure in the user's workspace:
+
+```
 [company-name]-agent-os/
 ├── 00_LOCAL_CONTEXT/
 ├── 01_STATE/
@@ -84,6 +86,7 @@ Create the canonical folder structure in the user's workspace:
 ├── 04_MISSIONS/
 ├── 05_ARTIFACTS/
 └── CLAUDE.md
+```
 
 **Initialise the state files:**
 

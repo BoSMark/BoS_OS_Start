@@ -120,7 +120,7 @@ Escalation Email: [Where urgent issues go]
 
 *For a Guardian agent (Compliance Monitor):*
 ```
-1. Read 02_STRATEGY/compliance_rfcs/ for current constraints
+1. Read 02_STRATEGY/compliance_strategy_docs/ for current constraints
 2. Check logs for the past 24 hours
 3. Compare against ruleset
 4. If violations found: escalate immediately
@@ -232,30 +232,32 @@ EXPLICIT NON-DECISIONS
 
 ---
 
-### Governing RFCs
+### Governing Strategy Documents
 
-**What:** Which RFCs constrain this agent's decisions?
+**What:** Which strategy documents constrain this agent's decisions?
+
+> **Note for original bootstrap users:** Your strategy documents may be named using RFC numbering (e.g., `RFC-102_Growth_and_Commercial_Logic.md`). This section applies equally — "strategy document" and "RFC" refer to the same thing.
 
 **Example:**
 
 ```
-- RFC: 02_STRATEGY/sales_qualification.md
+- Strategy document: 02_STRATEGY/sales_qualification.md
   Impact: Defines what makes a "qualified lead" (this agent scores against these criteria)
   Conflict: None identified
 
-- RFC: 02_STRATEGY/expense_policy_v3.md
+- Strategy document: 02_STRATEGY/expense_policy_v3.md
   Impact: Defines approval thresholds and categories
   Conflict: None identified
 
-- RFC: 02_STRATEGY/data_governance.md
+- Strategy document: 02_STRATEGY/data_governance.md
   Impact: Defines what customer data this agent can access
   Conflict: Expense agent needs employee names (covered by policy)
 ```
 
 **Guidance:**
-- Link to actual RFC files (or paste RFC names if not yet tracked)
-- Explain how each RFC impacts this agent's decisions
-- Flag conflicts early (if two RFCs pull in different directions, that's a spec problem)
+- Link to actual strategy document files (or paste file names if not yet tracked)
+- Explain how each document impacts this agent's decisions
+- Flag conflicts early (if two documents pull in different directions, that's a spec problem)
 
 ---
 
@@ -299,7 +301,7 @@ Escalation if missing: Fall back to template scoring; accuracy may be lower
 ```
 
 **Guidance:**
-- Include both operational inputs (data) and governance inputs (RFCs, playbooks)
+- Include both operational inputs (data) and governance inputs (strategy documents, playbooks)
 - For each input, define what "good" looks like
 - Plan for graceful degradation (what if an input is unavailable?)
 
@@ -492,7 +494,7 @@ When uncertain about a decision:
    → If yes and precedent is clear: follow precedent, document reasoning
    → If no or unclear: escalate
 
-2. Does this fall within my governing RFCs and constraints?
+2. Does this fall within my governing strategy documents and constraints?
    → If yes, clearly: decide autonomously
    → If no or fuzzy: escalate
 
@@ -537,7 +539,7 @@ Downstream agents (who I feed):
 Parallel agents (work in the same domain):
 - Marketing Campaign Agent: creates new lead sources
   Coordination: I read their campaign labels to segment scoring
-  Conflict: None (we both read same RFCs about qualification)
+  Conflict: None (we both read same strategy documents about qualification)
 ```
 
 **Guidance:**
@@ -699,7 +701,7 @@ Phase 4: Autonomous operation (ongoing)
 - [ ] At least 5 escalation triggers defined
 - [ ] Success metrics have baseline + target
 - [ ] Evaluation owner is named
-- [ ] Governing RFCs are linked (no orphaned agents)
+- [ ] Governing strategy documents are linked (no orphaned agents)
 - [ ] Decision boundary is specific enough that someone could code it
 - [ ] Startup protocol is deterministic (same steps every time)
 - [ ] Constraints are enforceable (system or human checks them)
