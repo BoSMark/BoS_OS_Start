@@ -1,9 +1,10 @@
 ---
 name: agent-os-workshop
 description: |
-  Guide an executive through refining their AI agent operating system — deepening strategy documents, building precise agent specs, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine RFCs, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my operating system, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
+  Guide an executive through refining their AI agent operating system — deepening strategy documents, building precise agent specs, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my operating system, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
-  author: Tim Barker
+  authors: Tim Barker & Mark Littlewood
+  version: 2.0
 ---
 
 # Agent OS: Executive Workshop
