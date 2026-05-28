@@ -4,6 +4,35 @@ All notable changes to the BoS Agent OS Toolkit are documented here.
 
 ---
 
+## v2.0.2 — 2026-05-28
+
+### Workshop skill — major update
+
+**OS version detection**
+The Workshop now checks which bootstrap version was used before doing anything else. If it finds the original bootstrap (RFC-numbered files, `portfolio_map.md`), it surfaces the differences explicitly and gives the user three options: keep existing names, rename now, or explain first. No changes are made without explicit user approval.
+
+**North Star anchoring throughout**
+The Workshop pulls personal goal and North Star metric from the bootstrap state files and uses them as anchors in every phase. Phase 1 frames all strategy document work against the North Star. Phase 3 starts mission definition from it: "what one task, done well, would move that number fastest?" If the bootstrap didn't capture these (older installs), Phase 0 asks them before proceeding.
+
+**Explicit-permission model formalised**
+Hard rule added: no silent changes. Every proposed file change is shown individually. The user approves each one. Silence is not approval. Applies to renames, cross-reference updates, and state file changes.
+
+**Terminology updated throughout**
+"RFC" replaced with "strategy document" throughout the skill. This makes the Workshop accessible to users who didn't run the original bootstrap and removes jargon that caused confusion in practice. Where original-bootstrap users still have RFC-named files, the Workshop references them by their actual names with clarification.
+
+**New reference files**
+- `references/strategy_doc_quality_checklist.md` — replaces `rfc_quality_checklist.md` (same content, updated terminology)
+- `references/upgrade_guide.md` — new file covering all upgrade scenarios with explicit guidance on what's safe, what requires care, and the backup-first requirement
+
+**Agent map reference updated**
+Workshop now reads `agent_map.md` as the primary agent portfolio reference (Bootstrap v2.1+). Detects and falls back to `portfolio_map.md` for original bootstrap users.
+
+### Upgrade path
+
+Download `agent-os-workshop.skill` from the [v2.0.2 release](https://github.com/BoSMark/BoS_OS_Start/releases/tag/v2.0.2) and reinstall via **Customize → Skills** in Cowork. Your existing OS is unaffected — the Workshop detects your setup and asks before changing anything.
+
+---
+
 ## v2.0.1 — 2026-05-26
 
 ### Maintenance
