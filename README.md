@@ -168,14 +168,15 @@ All BoSMark repos → [github.com/BoSMark](https://github.com/BoSMark)
 
 ---
 
-## Stay in the loop
+## Using this?
 
-Workshops, user groups, and community support:
+If you've set this up and it's working — or if you're stuck — we'd like to know.
 
-**[businessofsoftware.org/updates](https://www.businessofsoftware.org/updates)**
+**[Tell us you're using it →](https://www.businessofsoftware.org/using-bos-os)**
 
-Subscribe for workshop announcements, guided cohorts, and peer community access.
+We use this to improve the toolkit. People who register get early access to new skills and agents as they ship, and first notice of guided cohorts.
 
 ---
 
 *Built by Tim Barker and [Business of Software](https://businessofsoftware.org) — helping software founders build profitable, enduring companies since 2007.*
+
