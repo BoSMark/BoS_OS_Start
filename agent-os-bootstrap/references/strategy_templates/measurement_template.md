@@ -1,6 +1,7 @@
-# RFC-106: Measurement and Outcomes Framework
+# Measurement and Outcomes Framework
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 106
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -13,13 +14,13 @@ Example: "HubSpot measures success through: customer acquisition rate, net reven
 ## Governing Framework
 
 - **Metrics Philosophy:** [POPULATE: What do metrics drive? How are tradeoffs handled?]
-- **Primary KPIs:** [POPULATE: 5-8 key metrics that drive business decisions]
+- **Primary KPIs:** [POPULATE: 5–8 key metrics that drive business decisions]
 - **Reporting Cadence:** [POPULATE: Weekly, monthly, quarterly?]
 - **OKR Structure:** [POPULATE: If company uses OKRs, what is the cadence and structure?]
 
 ## Scope & Boundaries
 
-This RFC governs:
+This document governs:
 - What metrics are tracked and why
 - How metrics are calculated and verified
 - When and how metrics change
@@ -27,8 +28,8 @@ This RFC governs:
 - Reporting structure and audience
 
 Out of scope:
-- Operational KPI dashboards (see team-level RFCs)
-- Data infrastructure and engineering (see platform RFC)
+- Operational KPI dashboards (see team-level strategy documents)
+- Data infrastructure and engineering (see Platform Strategy)
 - Individual contributor performance metrics
 
 ## Primary KPIs by Function
@@ -64,7 +65,7 @@ Out of scope:
 **Cadence:** [POPULATE: Annual, quarterly, or both?]
 
 **Structure:**
-- Company-level OKRs: [POPULATE: 3-5 strategic objectives with key results]
+- Company-level OKRs: [POPULATE: 3–5 strategic objectives with key results]
 - Department/team-level OKRs: [POPULATE: How do they cascade?]
 - Individual alignment: [POPULATE: How do individuals connect to OKRs?]
 
@@ -116,9 +117,9 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-102:** Growth strategy (growth targets inform KPI structure)
-- **RFC-104:** Financial model (financial metrics are part of measurement)
-- **RFC-103:** Product strategy (product metrics track north star)
+- **Growth Strategy:** Growth targets inform KPI structure
+- **Financial Model:** Financial metrics are part of measurement
+- **Product Strategy:** Product metrics track north star
 
 ## Changelog
 

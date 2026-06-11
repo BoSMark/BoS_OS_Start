@@ -1,6 +1,70 @@
 # Changelog
 
-All notable changes to the BoS OS Agent Toolkit are documented here.
+All notable changes to the BoS OS Toolkit are documented here.
+
+---
+
+## v2.2 — 2026-06-11
+
+### Run layer — new
+
+The coordination layer for operating your BoS OS day to day. Three agents, one pipeline:
+
+**Mission Shaper** (`agent-os-run/agent-specs/mission-shaper.md`)
+Coaches a rough idea into a sharp, measurable Mission Brief — by making you do the thinking, not by doing it for you. Forces the outcome-vs-activity distinction, handles committed vs exploration, time-bound vs ongoing, and surfaces what needs guarding (risk and voice/messaging). Output: `MISSION-BRIEF.md`.
+
+**Agent Planner** (`agent-os-run/agent-specs/agent-planner.md`)
+Takes the Mission Brief and staffs the mission — casts the agent team the way you'd hire one, then specs each role to a runnable standard. Competency roles, not task-bots. Output: agent specs + prioritised `todo.md`.
+
+**Delivery Manager** (`agent-os-run/agent-specs/delivery-manager.md`)
+Drives each deliverable from high-level goal to running system. Two modes: build mode (decompose → discover → recommend gate → specify + tests → build → QA gate → operate) and operate mode (stand-up → pull → block → complete → wrap-up). Its job is to keep you at decision altitude and out of the weeds.
+
+**Mission state templates** (`agent-os-run/mission-templates/`)
+Five templates: `mission-brief.md`, `todo.md`, `in-progress.md`, `blocked.md`, `done.md`. Copy into any mission folder.
+
+**Mission Shaper — mission definition and coaching additions**
+The Mission Shaper now opens with a plain-language definition of what a mission is and why each element matters — outcome, measure, shape, approach, what needs guarding, gaps. A new "symptom-to-system" move is added to the interrogation phase: when someone describes a recurring problem, the Shaper asks whether they're fixing the symptom or the system that keeps producing it. The point of the BoS OS is to fix the system, not clear the queue.
+
+**Mission Planner retired**
+The earlier `mission-planner.md` (v1 combined agent) is superseded by Mission Shaper + Agent Planner. Not included in this release.
+
+**Terminology**
+All RFC references replaced with "strategy document" throughout the Run layer. Consistent with v2.1 Bootstrap and Workshop.
+
+**Author credits**
+All Run layer specs credit Tim Barker, Mark Littlewood and Business of Software.
+
+### Upgrade path
+
+Download `agent-os-run.skill` from the [v2.2 release](https://github.com/BoSMark/BoS_OS_Start/releases/tag/v2.2) and install via **Customize → Skills** in Cowork. Bootstrap and Workshop are unchanged — install Run alongside them when you're ready to operate missions.
+
+---
+
+## v2.1 — 2026-06-11
+
+### Bootstrap skill — v2.1
+
+**Terminology: RFC → strategy documents throughout**
+All references to "RFC" replaced with "strategy document" across Bootstrap, its reference files, and templates. The RFC numbering system is retired. Strategy documents use plain English names that reflect how each company actually talks about its work.
+
+**rfc_templates/ retired**
+The `rfc_templates/` folder has been removed and replaced by `strategy_templates/` — ten templates covering values, brand, growth, product, financial, governance, measurement, security, platform, and competitive positioning. Each template now includes an AI and Automation Footprint section to capture existing AI usage in the company's tech stack.
+
+**Bootstrap/Workshop distinction clarified**
+Bootstrap produces role stubs, not agent specs. This is now explicit in the SKILL.md, the agent spec template, and the references README. A role stub captures a person's name, title, functions, and strategy documents owned. Full agent specs — with decision boundaries, escalation triggers, and evaluation criteria — are Workshop territory.
+
+**Author credits updated**
+All reference files now credit Tim Barker, Mark Littlewood and Business of Software.
+
+**Easter eggs added**
+Human-readable sarcastic notes added to some agent-read reference files. Don't get your hopes up.
+
+### Workshop skill — reference files completed
+
+Three files missing from the previous push added: `evaluation_frameworks.md`, `ground_truth_examples.md`, `mission_template.md`. All workshop reference files now present and consistent.
+
+**Agent spec template clarified**
+Workshop `agent_spec_template.md` now has an explicit callout at the top: this is an AI agent specification, not a human role description.
 
 ---
 
@@ -74,7 +138,7 @@ Existing v1 deployments don't need to migrate — they continue working. Most us
 
 **Time estimate:** ~10–15 minutes for the bootstrap upgrade. ~30 minutes per agent if you re-run the Workshop in upgrade mode (adds memory domains, quality gates, and the new session-prompt boilerplate to each existing agent spec). The workshop upgrade is optional — your agents work without it, just with less of the v2 benefit.
 
-**What's preserved:** All your existing RFCs, agent specs, decisions, and customisations. The migration touches none of them.
+**What's preserved:** All your existing strategy documents, agent specs, decisions, and customisations. The migration touches none of them.
 
 **What you'll do manually:** Merge the CLAUDE.md additions — a small diff with three new sections. Worth doing; they're the load-bearing governance rules.
 

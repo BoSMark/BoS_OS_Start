@@ -1,4 +1,6 @@
-# Agent OS Folder Structure
+# BoS OS Folder Structure
+
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 
 ## Canonical Layout
 
@@ -9,7 +11,7 @@ agent-os/
 │   ├── session_summary.md
 │   ├── session_review_log.md
 │   └── decisions.md
-├── 02_STRATEGY/               # Strategic documents (RFC-driven)
+├── 02_STRATEGY/               # Strategy documents
 ├── 03_AGENTS/                 # Agent specifications and governance
 ├── 04_MISSIONS/               # Time-bound execution workstreams
 ├── 05_ARTIFACTS/              # Final deliverables and published assets
@@ -51,7 +53,7 @@ Handoff document for starting a new session. Includes:
 - **Last session outcome:** What was accomplished, what remains open
 - **Current state:** Active agents, running missions, next deadlines
 - **Open questions:** Decisions pending governance review
-- **Context:** Links to recent RFCs, key constraints, current watch list items
+- **Context:** Links to relevant strategy documents, key constraints, current watch list items
 - **Next steps:** What to work on first
 
 **Pattern:** Updated at the end of every session; consulted at the start of the next.
@@ -78,7 +80,7 @@ Template:
 - [Escalation open: ...]
 
 ## Context
-- **Governing RFCs:** [List relevant strategy docs]
+- **Governing strategy docs:** [List relevant strategy documents]
 - **Key constraints:** [Hard constraints to respect]
 - **Watch list:** [Items requiring monitoring]
 
@@ -132,7 +134,7 @@ Template:
 - **Decision:** [What was decided?]
 - **Stakeholders:** [Who approved?]
 - **Rationale:** [Why this choice?]
-- **Governing RFC:** [Which strategic doc guided this?]
+- **Governing strategy doc:** [Which strategy document guided this?]
 - **Outcome:** [If already executed, what happened?]
 - **Revisit in:** [If time-bound, when to reconsider?]
 
@@ -141,58 +143,58 @@ Template:
 
 ---
 
-### `02_STRATEGY/` — RFCs (Requests for Comments)
+### `02_STRATEGY/` — Strategy Documents
 
-**Purpose:** Durable strategic constraints that govern all agent work.
+**Purpose:** Durable strategic documents that govern all agent work and record the decisions that shape the business.
 
-An RFC is a written proposal for a strategic decision. It's reviewed, debated, and either accepted (becomes policy) or rejected. Once accepted, it stays in the repo and agents follow it.
+Each strategy document covers a distinct area of the business. They are living documents — reviewed, updated, and owned by a named person. Agents follow them; humans shape them.
 
-**RFC Numbering:** `RFC-1XX.md` (100-series reserved for strategy)
-- RFC-101: [First strategic decision]
-- RFC-102: [Second strategic decision]
-- etc.
+**Naming convention:** Use plain English names that reflect how the company actually talks about the topic.
 
-**Structure of an RFC:**
+Examples:
+- `Our_Values.md`
+- `How_We_Grow.md`
+- `How_We_Make_Decisions.md`
+- `Where_We_Win.md`
+- `How_We_Talk_to_the_Market.md`
+
+**Structure of a strategy document:**
 ```markdown
-# RFC-1XX: [Descriptive Title]
+# [Document Title]
 
 ## Status
-[DRAFT | ACCEPTED | REJECTED | SUPERSEDED]
+[DRAFT | ACTIVE | SUPERSEDED]
 
 ## Summary
-[1–2 sentence problem statement]
+[1-2 sentence description of what this document covers]
 
-## Motivation
-[Why does this matter? What problem does it solve?]
+## Owner
+[Name and role of the person responsible for this document]
 
-## Proposed Solution
-[What are we committing to?]
+## Core Principles
+[The key decisions and commitments this document captures]
 
-## Constraints & Trade-offs
-[What are we *not* doing? What's the cost?]
+## Constraints and Trade-offs
+[What we are not doing, and why]
 
 ## Governance
-[Who approves? What's the review process?]
+[Who approves changes? What is the review process?]
 
-## Implementation
-[How do agents follow this? What do they do differently?]
-
-## Success Criteria
-[How do we know this worked?]
+## How Agents Use This
+[What agents should do differently because of this document]
 
 ## Approval
 - Proposed by: [Name, date]
 - Approved by: [Names, date]
-- Reviewed by: [Peer names]
 ```
 
-**Key RFCs for all orgs:**
-- RFC-101: Decision Cascade Governance (decisions don't go into tracked files without approval)
-- RFC-102: Confidentiality (no confidential data in git; it goes to 00_LOCAL_CONTEXT/)
-- RFC-103: Agent Authority (which agents can make what decisions autonomously)
-- RFC-104: Audit & Logging (what gets recorded, who reviews it)
+**Core strategy documents for all organisations:**
+- Decision Cascade Governance (decisions don't go into tracked files without approval)
+- Confidentiality (no confidential data in git; it goes to 00_LOCAL_CONTEXT/)
+- Agent Authority (which agents can make what decisions autonomously)
+- Audit and Logging (what gets recorded, who reviews it)
 
-Industry-specific RFCs may live here too (e.g., RFC-201 for regulatory compliance, RFC-301 for vendor management).
+Additional strategy documents should be added to match the company's actual domains.
 
 ---
 
@@ -222,25 +224,41 @@ Industry-specific RFCs may live here too (e.g., RFC-201 for regulatory complianc
    - Example: Market Research Agent
    - Works on behalf of Guardians and Executors
 
-**Typical layout per agent:**
+**Two stages of content in 03_AGENTS/:**
+
+After Bootstrap, this folder contains role stubs — one file per person, capturing name, title, functions owned, and strategy documents owned. Role stubs describe the humans running the company. They are the starting point.
+
+After Workshop, role stubs become full agent specs — defining what an AI agent is authorised to do on that person's behalf, including decision boundary, escalation triggers, evaluation criteria, and hard constraints.
+
+Do not skip from nothing to full agent specs. Bootstrap first, then Workshop.
+
+**Typical layout after Bootstrap:**
 ```
 03_AGENTS/
-├── Compliance_Guardian_spec.md
-├── Revenue_Operations_Agent_spec.md
-├── Market_Research_Agent_spec.md
-├── Engineering_Quality_Guardian_spec.md
-└── README.md [index of all agents, their types, and dependencies]
+├── agent_map.md               (table mapping people to strategy docs)
+├── Sarah_Chen_CEO_stub.md     (role stub)
+├── Mark_Rodriguez_VP_stub.md  (role stub)
+└── ...
 ```
 
-**Key sections of an agent spec:**
-- Role & domain
-- Decision boundary (what it decides; what it doesn't)
-- Required inputs & data sources
-- Output format & interface
+**Typical layout after Workshop:**
+```
+03_AGENTS/
+├── agent_map.md
+├── Revenue_Operations_Agent_spec.md    (full spec)
+├── Compliance_Guardian_spec.md         (full spec)
+└── ...
+```
+
+**Key sections of a full agent spec** (Workshop phase):
+- Role and domain
+- Decision boundary (what it decides; what it does not)
+- Required inputs and data sources
+- Output format and interface
 - Escalation triggers
 - Constraints it must respect
 - Success metrics
-- Interfaces with other agents (who calls it, who it calls)
+- Interfaces with other agents
 
 ---
 
@@ -365,7 +383,7 @@ This is where work *exits* the agent system. Everything here is clean, reviewed,
 **Key governance rule in CLAUDE.md:**
 > No agent may write to tracked files (01–05) without explicit approval from a stakeholder. Draft to 00_LOCAL_CONTEXT first, present the decision to the human owner, wait for approval, then move to tracked files with a decision log entry.
 
-**Current Date placeholder:** Agents need to know the current date to contextualize work. This is updated at the start of each session and referenced by agents (especially in mission phasing and RFC review).
+**Current Date placeholder:** Agents need to know the current date to contextualise work. This is updated at the start of each session and referenced by agents, especially in mission phasing and strategy document reviews.
 
 ---
 
@@ -377,7 +395,7 @@ When starting a new session:
 2. **Read `01_STATE/session_summary.md`** to learn what's in progress
 3. **Scan `01_STATE/session_review_log.md`** for open items and blockers
 4. **Check `01_STATE/decisions.md`** for recent decisions (last 5–10)
-5. **Review relevant RFCs** from `02_STRATEGY/` (referenced in session summary)
+5. **Review relevant strategy documents** from `02_STRATEGY/` (referenced in session summary)
 6. **Identify which agents** are active (from `03_AGENTS/` and session summary)
 7. **Determine next priority** from session summary and open items
 8. **Work autonomously within agent boundaries** until a decision is needed
@@ -412,14 +430,11 @@ When starting a new session:
 
 ## Scaling the System
 
-As the agent OS grows, you may add more RFC series:
+As the BoS OS grows, add strategy documents to match new areas of the business. Start with the ones that govern your biggest current decisions, then expand as you identify gaps.
 
-- **RFC-1XX:** Core strategy (governance, confidentiality, decision-making)
-- **RFC-2XX:** Regulatory & compliance (industry-specific)
-- **RFC-3XX:** Operational (vendor management, tooling, escalation)
-- **RFC-4XX:** Product/domain-specific (how agents interact with your core business)
+Common areas to add over time: regulatory compliance, vendor management, product strategy, customer success.
 
-Similarly, `04_MISSIONS/` will grow. Completed missions can be archived to `05_ARTIFACTS/` as case studies.
+`04_MISSIONS/` will also grow. Completed missions can be archived to `05_ARTIFACTS/` as case studies.
 
 The structure remains stable; the content grows into it.
 
@@ -427,8 +442,8 @@ The structure remains stable; the content grows into it.
 
 ## References
 
-This structure is inspired by:
-- RFC processes used in engineering teams (RFC-style decision-making at scale)
+This structure draws on:
+- Decision-making frameworks from the BoS talk library (businessofsoftware.org/talks/)
 - RACI matrices and accountability frameworks (agent types, decision boundaries)
 - Agile mission planning (phased rollout, success criteria)
 - Change management best practices (session continuity, audit trails)

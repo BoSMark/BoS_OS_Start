@@ -1,6 +1,7 @@
-# RFC-107: Information Security, Data Governance, and Regulatory Framework
+# Information Security, Data Governance, and Regulatory Framework
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 107
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -8,7 +9,7 @@
 
 [POPULATE: Company's security posture, data classification approach, and regulatory environment. Source: security certifications, privacy policies, customer contracts, regulatory filings.]
 
-Example: "Stripe maintains SOC2 Type II, handles payment card data (PCI-DSS), and processes GDPR/CCPA-subject data. Their framework emphasizes: data minimization, encryption in transit/at rest, regular penetration testing, and incident response procedures."
+Example: "Stripe maintains SOC2 Type II, handles payment card data (PCI-DSS), and processes GDPR/CCPA-subject data. Their framework emphasises: data minimisation, encryption in transit/at rest, regular penetration testing, and incident response procedures."
 
 ## Governing Framework
 
@@ -18,7 +19,7 @@ Example: "Stripe maintains SOC2 Type II, handles payment card data (PCI-DSS), an
 
 ## Scope & Boundaries
 
-This RFC governs:
+This document governs:
 - Data classification and handling procedures
 - Access controls and identity management
 - Encryption and cryptographic standards
@@ -112,9 +113,9 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-105:** Governance framework (security governance structure)
-- **RFC-108:** Platform architecture (technical controls)
-- **RFC-109:** Competitive positioning (security as differentiator)
+- **Governance Framework:** Security governance structure
+- **Platform Strategy:** Technical controls
+- **Competitive Positioning:** Security as market differentiator
 
 ## Changelog
 

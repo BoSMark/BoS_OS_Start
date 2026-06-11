@@ -1,6 +1,7 @@
-# RFC-109: Competitive Landscape and Positioning
+# Competitive Landscape and Positioning
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 109
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -13,15 +14,15 @@ Example: "Notion competes in the productivity/workspace tools category. Direct c
 ## Governing Framework
 
 - **Market Category:** [POPULATE: How does the company describe its market? E.g., "Headless commerce", "Observability platform", "Collaborative design tool"]
-- **Primary Competitors:** [POPULATE: 2-3 direct competitors]
+- **Primary Competitors:** [POPULATE: 2–3 direct competitors]
 - **Adjacent Competitors:** [POPULATE: Companies competing for similar budget/use case but not direct replacements]
 - **Competitive Advantage(s):** [POPULATE: What does this company do better? Why do customers choose us?]
 
 ## Scope & Boundaries
 
-This RFC governs:
+This document governs:
 - Competitive positioning in marketing and sales
-- Feature prioritization relative to competitive threats
+- Feature prioritisation relative to competitive threats
 - Pricing relative to competitive set
 - Market segment focus and exit from unprofitable segments
 - Partnerships and ecosystem positioning
@@ -133,10 +134,10 @@ Example: "For enterprise engineering teams who need to observe distributed syste
 
 ## Cross-References
 
-- **RFC-101:** Brand positioning (how brand supports competitive positioning)
-- **RFC-102:** Growth strategy (competitive positioning informs GTM)
-- **RFC-103:** Product strategy (product differentiation drives competitive advantage)
-- **RFC-104:** Financial model (pricing supports competitive positioning)
+- **Brand and Messaging:** How brand supports competitive positioning
+- **Growth Strategy:** Competitive positioning informs go-to-market
+- **Product Strategy:** Product differentiation drives competitive advantage
+- **Financial Model:** Pricing supports competitive positioning
 
 ## Changelog
 

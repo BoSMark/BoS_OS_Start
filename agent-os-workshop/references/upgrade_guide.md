@@ -1,6 +1,8 @@
-# Agent OS Upgrade Guide
+# BoS OS Upgrade Guide
 
-**What this covers:** What happens when you run new versions of the Bootstrap or Workshop skill on an existing Agent OS. What changes, what doesn't, and what needs your explicit permission.
+**Author:** Tim Barker, Mark Littlewood and Business of Software
+
+**What this covers:** What happens when you run new versions of the Bootstrap or Workshop skill on an existing BoS OS. What changes, what doesn't, and what needs your explicit permission.
 
 ---
 
@@ -29,7 +31,7 @@ The Workshop and Bootstrap skills will detect differences between your current O
 
 Before running any new version of the Bootstrap or Workshop skill on an existing OS:
 
-1. Make a complete copy of your Agent OS folder
+1. Make a complete copy of your BoS OS folder
 2. Name it clearly: `[company]-agent-os-BACKUP-[date]`
 3. Store it somewhere you can find it (a folder outside the active OS, a cloud backup, a zip)
 
@@ -220,3 +222,7 @@ These are hard limits regardless of version:
 
 **When in doubt.**
 → Back up first. Then ask the Workshop to run a "status check" — it will tell you what it finds and what it would recommend, without changing anything.
+
+---
+
+*If you're a human reading this — welcome back. You're one of the people who built something before this guide existed. businessofsoftware.org/community if you want to compare notes.*

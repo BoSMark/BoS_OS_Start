@@ -1,9 +1,11 @@
 # Agent Specification Template
 
-**Author:** Tim Barker
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Purpose:** Universal template for defining an AI agent's role, boundaries, and operating parameters.
 
 ---
+
+> **This is an AI agent specification, not a human role description.** You are defining what an AI agent is authorised to do on a person's behalf — their decision boundary, escalation triggers, hard constraints, and evaluation criteria. If you are trying to describe a person's job, title, or responsibilities, you want a role stub (see `03_AGENTS/` after Bootstrap). The distinction matters: a role stub describes a human. An agent spec defines what an AI is permitted to do in that human's domain.
 
 ## Overview
 

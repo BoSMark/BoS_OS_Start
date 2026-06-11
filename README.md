@@ -1,41 +1,32 @@
 # BoS OS Start
 
-The BoS Agent OS helps you understand and manage your company operating system.
+The BoS OS helps you get clear on how your company actually works — how decisions get made, who owns what, and what you're optimising for — and gives AI a governed place inside it.
 
 Most companies add AI tools on top of an operating system nobody has written down. Strategy lives in the founder's head. Roles blur. Decisions don't stick. AI amplifies whatever's already there — clarity becomes velocity; muddle becomes noise.
 
-These three skills fix the foundation first.
+These three skills fix the foundation first, then put it to work.
 
-**Current version: v2.0.1** — [What's new](CHANGELOG.md)
+**Current version: v2.2** — [What's new](CHANGELOG.md)
 
 ---
 
 ## What's here
 
-This repo contains three skills that build, refine, and operate your company Agent OS:
+This repo contains three skills that activate your company BoS OS:
 
 **Bootstrap** — models your company OS from public information in under an hour. It produces a first draft of your strategy layer, agent roles, and decision governance — plus a seeded first mission so your agents have a real job from day one. Think of it as the AI doing its homework on your company before you meet.
 
 **Workshop** — helps you refine what Bootstrap produced. It works with your insider knowledge, challenging assumptions, sharpening priorities, and turning the skeleton into something that reflects how you actually run the business. As you work through it, the AI starts to understand your strategic goals, identify gaps, and surface opportunities and threats specific to your business.
 
-**Run** — gives you the coordination layer to operate the OS day to day. Three agents, one pipeline: a Mission Shaper that coaches a rough idea into a sharp, measurable Mission Brief; an Agent Planner that staffs the mission by casting and speccing the agent team; and a Delivery Manager that drives each deliverable to completion and runs the day-to-day backlog.
+**Run** — the coordination layer for operating your BoS OS day to day. Three agents — Mission Shaper, Agent Planner, Delivery Manager — that take a rough idea and turn it into a staffed, running mission. Use this once Bootstrap and Workshop have done their job.
 
-Use them in sequence. Bootstrap first, Workshop second, Run when you're ready to operate missions with agents.
+Use them in sequence. Bootstrap first, Workshop second, Run when you're ready to operate.
 
-> **In plain English:** Bootstrap creates; Workshop refines; Run operates. If Bootstrap gives you the map and Workshop helps you navigate it, Run is how you drive.
+> **In plain English:** Bootstrap creates; Workshop refines; Run operates.
 
 ---
 
-## What v2.0 adds
-
-v2.0 turns the toolkit from a one-time setup into a system that compounds:
-
-- **Memory layer** — agents get smarter over time instead of starting from scratch each session
-- **Quality gates** — work is checked before it reaches you, not after
-- **Hardened decision cascade** — confidential content stays out of git; every decision names what it affects
-- **Bootstrap summary** — you finish with a clear "here's what to do next", not a folder full of documents
-
-See the full [CHANGELOG](CHANGELOG.md) for detail and upgrade instructions.
+See the full [CHANGELOG](CHANGELOG.md) for what's new and upgrade instructions.
 
 ---
 
@@ -45,7 +36,7 @@ Every company already has an operating system. Most just don't know what's in it
 
 ![Every Company OS Ever](images/Every_Company_OS.png)
 
-The BoS Agent OS maps that structure — then gives AI a governed place inside it.
+The BoS OS maps that structure — then gives AI a governed place inside it.
 
 ![The same structure with AI inside](images/Company_OS_With_AI.png)
 
@@ -64,6 +55,7 @@ Your folder structure is your system. The files are the memory.
 Go to the [latest release](https://github.com/BoSMark/BoS_OS_Start/releases/latest) and download:
 - `agent-os-bootstrap.skill`
 - `agent-os-workshop.skill`
+- `agent-os-run.skill` *(optional — install after Bootstrap and Workshop are working)*
 
 These are ready-to-upload files. **Do not unzip them.** Upload each file as-is in Step 3.
 
@@ -87,7 +79,7 @@ This is not optional. Without a project, nothing saves and you will need to star
 
 **Step 3 — Install the skills**
 
-In Cowork, click **Customize** in the left sidebar → **Skills** → click the **+** icon (top right of the skills panel) → **Create skill** → **Upload a skill** → select `agent-os-bootstrap.skill`. Repeat for `agent-os-workshop.skill`.
+In Cowork, click **Customize** in the left sidebar → **Skills** → click the **+** icon (top right of the skills panel) → **Create skill** → **Upload a skill** → select `agent-os-bootstrap.skill`. Repeat for `agent-os-workshop.skill` and, when you're ready to run missions, `agent-os-run.skill`.
 
 > **Don't click "Browse skills" or "Browse plugins"** — those only show pre-built options and won't let you upload your own file.
 
@@ -101,9 +93,9 @@ It will ask for your company name and build your OS draft from there.
 
 ---
 
-## A note on RFCs
+## A note on strategy documents
 
-Your OS is built around documents called **RFCs** (short for Request for Comments — a term borrowed from internet standards, where it means a living document open to refinement). RFCs are your strategy documents. Each one covers a distinct area of your business. They're called RFCs because they're meant to evolve, not be set in stone. You'll refine them as you learn more about what the system can do.
+Your BoS OS is built around strategy documents. Each one covers a distinct area of your business — values, growth, product, decision governance, and more. They are living documents, meant to evolve as you learn more about what the system can do. Bootstrap produces a first draft of each from public information. Workshop helps you enrich them with what only you know.
 
 ---
 
@@ -112,17 +104,17 @@ Your OS is built around documents called **RFCs** (short for Request for Comment
 Bootstrap produces a lot. Don't try to process it all at once. Check your `BOOTSTRAP_SUMMARY.md` first — it tells you exactly what to do next. Then:
 
 1. Read your CLAUDE.md and correct anything that's wrong — pay particular attention to tone and terminology
-2. Read your Values RFC and adjust it to sound like you, not like a consultant wrote it
-3. Pick one RFC that covers your biggest current challenge and spend 20 minutes with Workshop on that alone
+2. Read your Values strategy document and adjust it to sound like you, not like a consultant wrote it
+3. Pick one strategy document that covers your biggest current challenge and spend 20 minutes with Workshop on that alone
 4. Ignore everything else for now — the rest will still be there
 
 The system is designed to be lived in gradually, not consumed in one sitting.
 
 ---
 
-## Upgrading from v1.0
+## Upgrading from an earlier version
 
-If you installed the toolkit at Business of Software conference, v2.0 is a significant upgrade. Your existing files are safe — the migration is additive.
+If you installed the toolkit at a Business of Software conference or from an earlier release, v2.2 is a significant upgrade. Your existing files are safe — the migration is additive.
 
 See [CHANGELOG.md](CHANGELOG.md) for the upgrade steps.
 
@@ -155,6 +147,7 @@ Claude's UI labels vary slightly across accounts and versions. If you can't find
 
 - Bootstrap only → [BoSOS-Bootstrap](https://github.com/BoSMark/BoSOS-Bootstrap)
 - Workshop only → [BoSOS-Workshop](https://github.com/BoSMark/BoSOS-Workshop)
+- Run layer → included in this repo under `agent-os-run/`
 
 ---
 
@@ -168,15 +161,14 @@ All BoSMark repos → [github.com/BoSMark](https://github.com/BoSMark)
 
 ---
 
-## Using this?
+## Stay in the loop
 
-If you've set this up and it's working — or if you're stuck — we'd like to know.
+Workshops, user groups, and community support:
 
-**[Tell us you're using it →](https://www.businessofsoftware.org/using-bos-os)**
+**[businessofsoftware.org/updates](https://www.businessofsoftware.org/updates)**
 
-We use this to improve the toolkit. People who register get early access to new skills and agents as they ship, and first notice of guided cohorts.
+Subscribe for workshop announcements, guided cohorts, and peer community access.
 
 ---
 
-*Built by Tim Barker and [Business of Software](https://businessofsoftware.org) — helping software founders build profitable, enduring companies since 2007.*
-
+*Built by Tim Barker, Mark Littlewood and [Business of Software](https://businessofsoftware.org) — helping software founders build profitable, enduring companies since 2007.*

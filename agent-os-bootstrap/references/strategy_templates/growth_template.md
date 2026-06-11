@@ -1,6 +1,7 @@
-# RFC-102: Growth and Commercial Logic
+# Growth and Commercial Logic
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 102
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -18,8 +19,8 @@ Example: "Figma's growth strategy combines land-and-expand (design teams) with e
 
 ## Scope & Boundaries
 
-This RFC governs:
-- Customer acquisition strategy and channel prioritization
+This document governs:
+- Customer acquisition strategy and channel prioritisation
 - Product positioning for different buyer personas
 - Pricing and packaging philosophy
 - Growth metrics and investment priorities
@@ -27,7 +28,7 @@ This RFC governs:
 Out of scope:
 - Detailed sales execution (see 04_MISSIONS/)
 - Individual deal negotiation
-- Product roadmap prioritization (see RFC-103)
+- Product roadmap prioritisation (see Product Strategy document)
 
 ## Buyer Personas & Funnel
 
@@ -84,10 +85,10 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-101:** Brand messaging (supports go-to-market narrative)
-- **RFC-103:** Product strategy (product evolution drives growth)
-- **RFC-104:** Financial model (growth targets and unit economics)
-- **RFC-109:** Competitive positioning (positioning informs channel strategy)
+- **Brand and Messaging:** Brand supports go-to-market narrative
+- **Product Strategy:** Product evolution drives growth
+- **Financial Model:** Growth targets and unit economics
+- **Competitive Positioning:** Positioning informs channel strategy
 
 ## Changelog
 

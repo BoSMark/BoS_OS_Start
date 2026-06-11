@@ -1,6 +1,6 @@
 # Agent OS — Run
 
-The coordination layer for operating your BoS Agent OS day to day.
+The coordination layer for operating your BoS OS day to day.
 
 Use this after you've run **Bootstrap** and **Workshop**. You have a strategy layer and refined agent roles. This is how you put them to work.
 
@@ -92,6 +92,6 @@ Adapt the governing document references in each spec to point to your own system
 
 ---
 
-*Part of the [BoS Agent OS](https://github.com/BoSMark/BoS_OS_Start) — built by Tim Barker, Mark Littlewood and [Business of Software](https://businessofsoftware.org).*
+*Part of the [BoS OS](https://github.com/BoSMark/BoS_OS_Start) — built by Tim Barker, Mark Littlewood and [Business of Software](https://businessofsoftware.org).*
 
 *[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — use and adapt freely; credit Business of Software.*

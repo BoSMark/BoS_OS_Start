@@ -1,6 +1,7 @@
-# RFC-101: Brand and Messaging Principles
+# Brand and Messaging Principles
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 101
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -8,20 +9,20 @@
 
 [POPULATE: Company's market positioning, target audience, and brand history. Source: marketing website, investor materials, public interviews.]
 
-Example: "Slack's brand emphasizes playful, user-friendly communication. Their messaging celebrates how teams *actually* work, not how process documentation says they should."
+Example: "Slack's brand emphasises playful, user-friendly communication. Their messaging celebrates how teams *actually* work, not how process documentation says they should."
 
 ## Governing Framework
 
 - **Brand Pillars:** [POPULATE: 3-5 core brand themes. e.g., "trust", "simplicity", "innovation"]
 - **Tone & Voice:** [POPULATE: Formal, conversational, authoritative? Who is "we" speaking to?]
-- **Visual Identity:** [POPULATE: Any publicly documented color, design, or visual standards]
+- **Visual Identity:** [POPULATE: Any publicly documented colour, design, or visual standards]
 
 ## Scope & Boundaries
 
-This RFC governs:
+This document governs:
 - All customer-facing messaging (marketing, product UI, support)
 - Communications with investors, partners, and media
-- Internal communications that represent company to external parties
+- Internal communications that represent the company to external parties
 - AI-generated content that carries company voice
 
 Out of scope:
@@ -72,9 +73,9 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-100:** Values and ethics (values reflected in brand messaging)
-- **RFC-102:** Growth strategy (brand supports go-to-market)
-- **RFC-109:** Competitive positioning (how brand differentiates)
+- **Values:** Values reflected in brand messaging
+- **Growth Strategy:** Brand supports go-to-market
+- **Competitive Positioning:** How brand differentiates
 
 ## Changelog
 

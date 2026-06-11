@@ -1,6 +1,7 @@
-# RFC-100: Company Values and Ethical Foundations
+# Company Values and Ethical Foundations
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 100
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -13,19 +14,19 @@ Example: "Founded in 2018, Acme SaaS built their platform around the belief that
 ## Governing Framework
 
 - **Ethical Principles:** [POPULATE: Any published ethical guidelines, AI principles, or values statements]
-- **Stakeholder Model:** [POPULATE: Who the company prioritizes: customers, employees, shareholders, community?]
+- **Stakeholder Model:** [POPULATE: Who the company prioritises: customers, employees, shareholders, community?]
 - **Decision Framework:** [POPULATE: How are value conflicts resolved when they arise?]
 
 ## Scope & Boundaries
 
-This RFC governs:
-- How values translate to product decisions and feature prioritization
+This document governs:
+- How values translate to product decisions and feature prioritisation
 - How values inform customer relationships and commercial terms
 - How values shape hiring, onboarding, and workplace culture
 - How values apply to AI/ML if the company uses it
 
 Out of scope:
-- Day-to-day operational decisions (those should reference this RFC, not override it)
+- Day-to-day operational decisions (those should reference this document, not override it)
 - Individual performance management (use HR frameworks)
 
 ## Decision Rights
@@ -45,7 +46,7 @@ Out of scope:
 
 ## Current State Assessment
 
-[POPULATE: What values does the company currently emphasize? Are they internally consistent? Do employees and customers understand them?]
+[POPULATE: What values does the company currently emphasise? Are they internally consistent? Do employees and customers understand them?]
 
 ## Regulatory/Compliance Anchors
 
@@ -56,9 +57,9 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-101:** Brand and messaging principles (values expressed in customer messaging)
-- **RFC-103:** Product north star (values guide feature prioritization)
-- **RFC-109:** Competitive differentiation (values as market positioning)
+- **Brand and Messaging:** Values expressed in customer messaging
+- **Product Strategy:** Values guide feature prioritisation
+- **Competitive Positioning:** Values as market differentiation
 
 ## Changelog
 

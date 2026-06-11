@@ -1,6 +1,6 @@
 # Evaluation Frameworks by Domain
 
-**Author:** Tim Barker
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Purpose:** Common evaluation frameworks that executives can adopt (or adapt) when building agents.
 
 ---
@@ -795,3 +795,7 @@ Evaluation frameworks are the backbone of agent decision-making. They turn subje
 Before building an agent, pick (or create) a framework. Train your agent on it. Measure how well it works. Update it based on outcomes.
 
 The frameworks here are starting points. Adapt them to your business. Measure their effectiveness. Improve them over time.
+
+---
+
+*If you're a human reading this — you're in the engine room. This is what the Workshop uses to help your agents make consistent decisions. businessofsoftware.org/talks has the frameworks that inspired much of it.*

@@ -8,7 +8,7 @@
 **Owner:**
 **Escalation owner:** *(who handles a block if the owner is unavailable)*
 **Created:**
-**Governing documents:** CLAUDE.md + [values RFC]
+**Governing documents:** CLAUDE.md + [values strategy document]
 
 ---
 
@@ -67,9 +67,9 @@
 
 | Gap | Type | What closes it |
 |-----|------|----------------|
-|     | decision-boundary / knowledge / RFC-judgment |  |
+|     | decision-boundary / knowledge / strategy-judgment |  |
 
-**Coherence with strategy** *(which RFC / objective this serves; any tension flagged)*
+**Coherence with strategy** *(which strategy document / objective this serves; any tension flagged)*
 -
 
 ---

@@ -1,6 +1,6 @@
 # Mission Plan Template
 
-**Author:** Tim Barker
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Purpose:** Universal template for defining a time-bound execution mission (deployment of an agent into production).
 
 ---
@@ -773,3 +773,7 @@ Week 9+:  Phase 5 (autonomous operation)
 - [ ] Data requirements are clear (how do you get ground truth?)
 - [ ] Ownership is assigned (who runs each phase?)
 - [ ] Stakeholders are aligned (does everyone want this?)
+
+---
+
+*If you're a human reading this — a mission without a template is just a good intention. Feel free to adapt this. businessofsoftware.org/talks has 400+ examples of founders doing exactly that.*

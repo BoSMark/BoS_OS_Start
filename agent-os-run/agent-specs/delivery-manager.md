@@ -1,8 +1,10 @@
 # Delivery Manager — Agent Spec
 
+**Author:** Tim Barker, Mark Littlewood and Business of Software
+
 **Status:** DRAFT — adapt to your system before activating
 **Type:** Coordination
-**Governing documents:** Your system's CLAUDE.md + values RFC (e.g. RFC-001)
+**Governing documents:** Your system's CLAUDE.md + values strategy document
 **Runs:** Every working session, once a mission is staffed
 **Input:** The agent team + deliverables from the Agent Planner (`todo.md`)
 **Feeds:** Retro agent at mission close (`done.md`); ongoing operation otherwise

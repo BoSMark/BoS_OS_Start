@@ -1,30 +1,31 @@
-# RFC-105: Domain Governance Framework
+# Domain Governance Framework
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 105
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
 ## Context
 
-[POPULATE: What is the company's core domain and its governance requirements? This RFC is highly variable by industry.]
+[POPULATE: What is the company's core domain and its governance requirements? This document is highly variable by industry.]
 
 **For SaaS/Technology:** Focus on product quality, data governance, customer trust, and responsible AI.
 **For Healthcare:** Focus on clinical governance, patient safety, regulated content, and qualified practitioner oversight.
 **For Finance:** Focus on fiduciary responsibilities, audit, regulatory compliance, and risk management.
 
-Example: "Slack operates in a trust-critical domain (enterprise communication). Their governance emphasizes: data classification, access controls, security review of features, and responsible disclosure of vulnerabilities."
+Example: "Slack operates in a trust-critical domain (enterprise communication). Their governance emphasises: data classification, access controls, security review of features, and responsible disclosure of vulnerabilities."
 
 ## Governing Framework
 
 [POPULATE: What are the non-negotiable governance principles for this company's domain?]
 
 - **Primary Domain:** [POPULATE: What is the core business area?]
-- **Critical Governance Areas:** [POPULATE: 3-4 areas where governance is non-negotiable]
+- **Critical Governance Areas:** [POPULATE: 3–4 areas where governance is non-negotiable]
 - **Decision Framework:** [POPULATE: How are conflicts between speed and safety resolved?]
 
 ## Scope & Boundaries
 
-This RFC governs:
+This document governs:
 - Quality gates and approval workflows for [DOMAIN]
 - What decisions require expert oversight vs can be delegated
 - Escalation paths when issues arise
@@ -32,13 +33,13 @@ This RFC governs:
 - Third-party vendor evaluation in this domain
 
 Out of scope:
-- Operational execution (see specific RFC for that domain)
+- Operational execution (see specific strategy documents for each domain)
 - Day-to-day quality monitoring (see ops team)
 - Individual vendor contracts
 
 ## Domain-Specific Governance Areas
 
-[POPULATE: Customize these based on company domain. Examples below for different industries:]
+[POPULATE: Customise these based on company domain. Examples below for different industries:]
 
 ### For SaaS/Tech:
 - **Data Governance:** Classification, access controls, retention, deletion
@@ -49,7 +50,7 @@ Out of scope:
 ### For Healthcare:
 - **Clinical Governance:** Qualified practitioner oversight, clinical evidence review, safety escalation
 - **Patient Safety:** Incident reporting, serious adverse event handling, regulatory notification
-- **Data Protection:** Patient consent, anonymization, secure handling
+- **Data Protection:** Patient consent, anonymisation, secure handling
 
 ### For Finance:
 - **Audit & Control:** Segregation of duties, transaction approval, reconciliation
@@ -104,9 +105,9 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-108:** Platform and architecture (technical controls support governance)
-- **RFC-107:** Security framework (overlaps with governance)
-- **RFC-100:** Values (governance reflects company values and commitments)
+- **Platform Strategy:** Technical controls support governance
+- **Security and Compliance:** Overlaps with governance
+- **Values:** Governance reflects company values and commitments
 
 ## Changelog
 

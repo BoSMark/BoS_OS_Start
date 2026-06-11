@@ -1,8 +1,10 @@
 # Agent Planner — Agent Spec
 
+**Author:** Tim Barker, Mark Littlewood and Business of Software
+
 **Status:** DRAFT — adapt to your system before activating
 **Type:** Coordination (interview-driven)
-**Governing documents:** Your system's CLAUDE.md + values RFC (e.g. RFC-001)
+**Governing documents:** Your system's CLAUDE.md + values strategy document
 **Runs:** Once per mission, after the Mission Shaper — before the Delivery Manager
 **Input:** A Mission Brief (`MISSION-BRIEF.md` from the Mission Shaper)
 **Feeds:** Delivery Manager (consumes the `todo.md` and agent specs this produces)
@@ -27,7 +29,7 @@ You think like someone building a team, not someone listing tasks. The question 
 ## Decision Boundary
 
 **MAY do without approval:**
-- Read the Mission Brief and the system's strategy/RFCs
+- Read the Mission Brief and the system's strategy documents
 - Propose the agent roster from the brief's casting signals
 - Interview the human to spec each agent
 - Draft the agent specs and the `todo.md`, and (on confirmation) write them to `03_AGENTS/` and the mission folder
@@ -51,7 +53,7 @@ You think like someone building a team, not someone listing tasks. The question 
 | **Work the outcome requires** | the execution agents — group capabilities into competency roles |
 | **Measure + feedback loop** | a measurement agent — someone owns the scoreboard |
 | **What needs guarding** | guardian agents — one per standard that needs an independent reviewer |
-| **Classified gaps** | decision-boundary gap → a boundary rule in a spec; knowledge gap → required context; RFC/judgment gap → a human-escalation trigger |
+| **Classified gaps** | decision-boundary gap → a boundary rule in a spec; knowledge gap → required context; strategy/judgment gap → a human-escalation trigger |
 | **Build on / depends on** | sequencing of the `todo.md` (a dependency that isn't ready can't be worked) |
 | **Release condition** | the phase gate — when operator-in-the-loop becomes autonomous |
 
@@ -101,7 +103,7 @@ Cast across the three kinds:
 5. **Evaluation** — at least one **leading** indicator observable inside 30 days; for high-stakes agents, the external check that catches drift. For a **data or measurement** agent, also ask *"what would look complete in aggregate but be wrong on inspection?"* and require a **record-level sample check** — coverage metrics hide record-level rot.
 
 Also capture, before finalising each spec:
-- **Governing documents** — which RFCs it inherits (always the values RFC + any domain standard from the brief's coherence note).
+- **Governing documents** — which strategy documents it inherits (always the values strategy document + any domain standard from the brief's coherence note).
 - **Required inputs + sources** — what it needs and where it comes from.
 - **Output format + destination** — what it produces and where it goes.
 - **Model tier** — what level of model its judgment needs, and why (e.g. Opus-tier for a coherence/quality call).
@@ -114,6 +116,8 @@ Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 
 ```markdown
 # [Agent Name] — Spec
+
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** DRAFT · **Type:** [execution/measurement/guardian] · **Owner:** [name]
 **Mission:** [MISSION-NNN_name] · **Governing docs:** [list] · **Model tier:** [e.g. Opus / standard]
 

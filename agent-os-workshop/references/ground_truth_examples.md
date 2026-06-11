@@ -1,6 +1,6 @@
 # Ground Truth Examples by Domain
 
-**Author:** Tim Barker
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Purpose:** Domain-specific examples of what expert human judgment ("ground truth") looks like for agent calibration.
 
 ---
@@ -952,3 +952,7 @@ When building an agent in any domain:
 6. **Move to Phase 2** (expand to 20–30 cases; aim for >85%)
 
 The 8 domains above cover most business functions. If you're building an agent in a different area, follow the same pattern: find an expert, collect their judgment, measure agent accuracy against it.
+
+---
+
+*If you're a human reading this — ground truth is the whole game. Everything here is about what good looks like before an agent tries to replicate it. businessofsoftware.org/talks if you want the source material.*

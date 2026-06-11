@@ -1,6 +1,7 @@
-# RFC-104: Financial Model and Commercial Framework
+# Financial Model and Commercial Framework
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 104
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -19,7 +20,7 @@ Example: "Stripe's financial model: transaction-based revenue (2.9% + $0.30 per 
 
 ## Scope & Boundaries
 
-This RFC governs:
+This document governs:
 - Pricing philosophy and structure
 - Contract terms and discount frameworks
 - Revenue recognition and financial reporting
@@ -81,9 +82,9 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-102:** Growth strategy (growth targets drive financial planning)
-- **RFC-103:** Product strategy (pricing supports product positioning)
-- **RFC-107:** Security and compliance (compliance costs factored into margins)
+- **Growth Strategy:** Growth targets drive financial planning
+- **Product Strategy:** Pricing supports product positioning
+- **Security and Compliance:** Compliance costs factored into margins
 
 ## Changelog
 

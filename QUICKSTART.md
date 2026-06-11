@@ -1,4 +1,4 @@
-# BoS Agent OS — Quickstart
+# BoS OS — Quickstart
 
 Get from zero to your first Bootstrap session in under 10 minutes.
 
@@ -67,9 +67,23 @@ Claude will ask for your company name, then build your OS draft from there. The 
 
 ---
 
-## That's it
+## That's it — for now
 
 When Bootstrap finishes, read `BOOTSTRAP_SUMMARY.md` in your project folder. It tells you exactly what was created and what to do next.
+
+Run Workshop next to deepen what Bootstrap produced. Once your strategy layer and agent specs are solid, come back and install the Run skill to start operating missions.
+
+---
+
+## Installing the Run skill (after Bootstrap and Workshop)
+
+When you're ready to run missions:
+
+1. Go to the [latest release](https://github.com/BoSMark/BoS_OS_Start/releases/latest) and download `agent-os-run.skill`
+2. Install it the same way: **Customize → Skills → + → Create skill → Upload a skill**
+3. In your project, load the Mission Shaper and describe a rough goal — it will coach you through turning it into a shaped mission
+
+The Run layer uses three agents in sequence: **Mission Shaper** (shapes the mission) → **Agent Planner** (staffs it) → **Delivery Manager** (runs it). Each is a separate spec you load when needed.
 
 The full README has everything else — background, upgrade instructions, troubleshooting. Come back to it when you need it.
 

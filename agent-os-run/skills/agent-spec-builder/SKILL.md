@@ -3,7 +3,7 @@ name: agent-spec-builder
 description: |
   Interview-driven agent spec builder. Takes ONE named agent and conducts a structured interview to produce a finished, runnable spec — covering role, type, decision boundary, escalation triggers, and evaluation criteria. Use when someone wants to spec an agent, define an agent's decision boundary, write an agent spec, build an agent specification, or turn a vague agent idea into a precise runnable document. Triggers: "spec this agent", "help me define my agent", "write an agent spec", "what should my agent be allowed to do", "decision boundary", "escalation triggers", "agent specification". MANDATORY TRIGGERS: agent spec, agent specification, decision boundary, spec builder, spec an agent.
 metadata:
-  author: Business of Software
+  author: Tim Barker, Mark Littlewood and Business of Software
 ---
 
 # Agent Spec Builder

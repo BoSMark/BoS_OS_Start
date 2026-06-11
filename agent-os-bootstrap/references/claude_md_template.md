@@ -1,19 +1,19 @@
-# CLAUDE.md Template for Agent OS
+# CLAUDE.md Template for BoS OS
 
-Below is a template for the project instruction file that governs an Agent OS. Use the placeholders (marked with `{{...}}`) to customize for your company and industry.
+Below is a template for the project instruction file that governs a BoS OS. Use the placeholders (marked with `{{...}}`) to customize for your company and industry.
 
 Copy this template to your `agent-os/CLAUDE.md` and fill in the blanks before starting agent work.
 
 ---
 
 ```markdown
-# CLAUDE.md — {{COMPANY_NAME}}: Agent Operating System
+# CLAUDE.md — {{COMPANY_NAME}}: BoS OS
 
 ## Purpose
 
-This repository defines the Claude Agent operating system for {{COMPANY_NAME}}.
+This repository defines the BoS OS for {{COMPANY_NAME}}.
 
-The goal is **not** to replace {{COMPANY_NAME}}'s existing teams or decision-making. Instead, this system defines how Claude agents can **augment** our existing {{TEAM_DESCRIPTION}}, **audit** {{WHAT_WE_AUDIT}}, and **accelerate** {{WHAT_WE_ACCELERATE}} while maintaining the highest standards for {{PRIMARY_VALUE}} and {{SECONDARY_VALUE}}.
+The goal is **not** to replace {{COMPANY_NAME}}'s existing teams or decision-making. Instead, this system defines how the BoS OS can **augment** our existing {{TEAM_DESCRIPTION}}, **audit** {{WHAT_WE_AUDIT}}, and **accelerate** {{WHAT_WE_ACCELERATE}} while maintaining the highest standards for {{PRIMARY_VALUE}} and {{SECONDARY_VALUE}}.
 
 **Examples of primary values by industry:**
 - SaaS: "product quality" and "customer trust"
@@ -107,7 +107,7 @@ Add your industry's hard constraints here. Examples below by industry:
 - No customer data (PII, usage metrics, settings) in training or local context.
 - No API keys, database credentials, or access tokens in git.
 - All production changes must have rollback plan.
-- Code commits must reference a ticket or RFC.
+- Code commits must reference a ticket or task.
 
 **Add your {{INDUSTRY}}-specific constraints here:**
 - {{CONSTRAINT_1}}
@@ -127,7 +127,7 @@ agent-os/
 │   ├── session_summary.md
 │   ├── session_review_log.md
 │   └── decisions.md
-├── 02_STRATEGY/               # Strategic documents (RFCs)
+├── 02_STRATEGY/               # Strategy documents
 ├── 03_AGENTS/                 # Agent specifications
 ├── 04_MISSIONS/               # Time-bound execution projects
 ├── 05_ARTIFACTS/              # Final deliverables
@@ -154,7 +154,7 @@ All decisions follow this flow:
   - **What are the options?** (List 2+ alternatives)
   - **What does the agent recommend?** (And why?)
   - **What are the trade-offs?** (What are we *not* choosing?)
-  - **What governance applies?** (Which RFC or hard constraint?)
+  - **What governance applies?** (Which strategy document or hard constraint?)
   - **When is decision needed?** (Deadline)
 
 ### 3. Approval Phase
@@ -170,7 +170,7 @@ All decisions follow this flow:
   - Decision name and date
   - Stakeholders who approved
   - Rationale
-  - Governing RFC (if any)
+  - Governing strategy document (if any)
   - Outcome (if already known)
 - Moves work from 00_LOCAL_CONTEXT to appropriate tracked folder (01–05)
 - Only tracked files modified after explicit approval
@@ -186,7 +186,7 @@ All decisions follow this flow:
 
 ## Regulatory & Compliance Alignment
 
-This agent OS aligns with the following frameworks and requirements:
+This BoS OS aligns with the following frameworks and requirements:
 
 **Universal:**
 - GDPR (if serving EU customers) / CCPA (if serving California customers)
@@ -206,7 +206,7 @@ This agent OS aligns with the following frameworks and requirements:
 - *If Retail:* FTC (consumer protection), PCI-DSS (payments), state commerce departments
 - *If SaaS:* SOC 2, industry-specific standards (ISO 9001, etc.)
 
-All RFCs in `02_STRATEGY/` are designed to keep the organization compliant with these bodies.
+All strategy documents in `02_STRATEGY/` are designed to keep the organization compliant with these bodies.
 
 ---
 
@@ -214,7 +214,7 @@ All RFCs in `02_STRATEGY/` are designed to keep the organization compliant with 
 
 Today's date is **{{CURRENT_DATE}}**.
 
-Agents use this to contextualize their work (e.g., "this RFC is due by end of Q2" or "this mission started 6 weeks ago"). Update this at the start of each session.
+Agents use this to contextualize their work (e.g., "this document is due by end of Q2" or "this mission started 6 weeks ago"). Update this at the start of each session.
 
 ---
 
@@ -238,8 +238,8 @@ Agents use this to contextualize their work (e.g., "this RFC is due by end of Q2
 
 ### For Auditors
 1. Review `01_STATE/decisions.md` for a sample of decisions (e.g., last 20)
-2. Verify each decision includes: stakeholder approval, rationale, governing RFC, outcome
-3. Check `02_STRATEGY/` for RFCs and verify agents follow them
+2. Verify each decision includes: stakeholder approval, rationale, governing strategy document, outcome
+3. Check `02_STRATEGY/` for strategy documents and verify agents follow them
 4. Audit a sample of agent outputs from `05_ARTIFACTS/` (quality, confidentiality, compliance)
 5. Review `04_MISSIONS/` to ensure phased rollout was followed (no rushing to autonomous operation)
 6. Confirm no confidential data in tracked files; spot-check 00_LOCAL_CONTEXT/ for sensitive info handling
@@ -260,7 +260,7 @@ Agents use this to contextualize their work (e.g., "this RFC is due by end of Q2
 - **Folder Structure:** See `folder_structure.md`
 - **Industry Patterns:** See `industry_patterns.md`
 - **Agent Specification Template:** See `agent_spec_template.md`
-- **RFC Process:** See `02_STRATEGY/README.md` (or first RFC in that folder)
+- **Strategy Documents:** See `02_STRATEGY/`
 
 ---
 
@@ -272,7 +272,7 @@ Agents use this to contextualize their work (e.g., "this RFC is due by end of Q2
 
 ---
 
-**This document was generated using the Agent OS Bootstrap skill (Author: Tim Barker). It is not legal or regulatory advice. Organizations must review with their legal counsel and compliance teams before deploying agents.**
+**This document was generated using the BoS OS Bootstrap skill (built by Tim Barker, Mark Littlewood and Business of Software). It is not legal or regulatory advice. Organizations must review with their legal counsel and compliance teams before deploying agents.**
 ```
 
 ---
@@ -307,7 +307,7 @@ Before deploying this CLAUDE.md:
 
 4. **Update current date regularly.** Agents need to know what day it is to contextualize deadlines and mission phases.
 
-5. **Link to your RFCs.** This file should reference `02_STRATEGY/` frequently. It's the source of truth for why constraints exist.
+5. **Link to your strategy documents.** This file should reference `02_STRATEGY/` frequently. It's the source of truth for why constraints exist.
 
 6. **Make it accessible.** New agents (and auditors) should be able to read this in 15 minutes and understand: scope, constraints, process, contacts.
 
@@ -318,11 +318,11 @@ Before deploying this CLAUDE.md:
 ## Example: Filled-In CLAUDE.md for a Fictional SaaS Company
 
 ```markdown
-# CLAUDE.md — Acme SaaS: Agent Operating System
+# CLAUDE.md — Acme SaaS: BoS OS
 
 ## Purpose
 
-This repository defines the Claude Agent operating system for Acme SaaS, a B2B invoicing platform serving 5,000+ SMBs.
+This repository defines the BoS OS for Acme SaaS, a B2B invoicing platform serving 5,000+ SMBs.
 
 The goal is to augment Acme's engineering, product, and operations teams, audit product quality and compliance, and accelerate growth while maintaining the highest standards for customer trust and data security.
 

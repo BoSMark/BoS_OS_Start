@@ -1,6 +1,7 @@
-# RFC-103: Product North Star and Vision
+# Product North Star and Vision
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 103
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -8,26 +9,26 @@
 
 [POPULATE: What problem does the product solve? What is the company's vision for how it changes its market? Source: product announcements, founder interviews, roadmap documentation.]
 
-Example: "Notion's vision: transform how teams organize information. Their north star isn't 'meetings scheduled' but 'teams adopting Notion as single source of truth'."
+Example: "Notion's vision: transform how teams organise information. Their north star isn't 'meetings scheduled' but 'teams adopting Notion as single source of truth'."
 
 ## Governing Framework
 
 - **North Star Metric:** [POPULATE: Single metric that reflects core value delivery. e.g., "Active DAU per workspace", "Docs created per customer"]
-- **Product Vision:** [POPULATE: 2-3 year view of where the product is headed]
+- **Product Vision:** [POPULATE: 2–3 year view of where the product is headed]
 - **Core User Journey:** [POPULATE: How does a user experience value? What are the critical moments?]
 
 ## Scope & Boundaries
 
-This RFC governs:
-- Feature prioritization and roadmap decisions
+This document governs:
+- Feature prioritisation and roadmap decisions
 - Product strategy and multi-product portfolio decisions
 - User experience principles and design constraints
 - Data that products collect and how they use it
 
 Out of scope:
-- Engineering velocity targets (see platform RFC)
+- Engineering velocity targets (see Platform Strategy document)
 - UX design specs (see design system)
-- Go-to-market rollout (see growth RFC)
+- Go-to-market rollout (see Growth Strategy document)
 
 ## Product Architecture
 
@@ -62,7 +63,7 @@ Out of scope:
 
 | Decision | Authority | Review |
 |----------|-----------|--------|
-| Feature prioritization | [POPULATE: e.g., Chief Product Officer] | Quarterly |
+| Feature prioritisation | [POPULATE: e.g., Chief Product Officer] | Quarterly |
 | North star metric change | [POPULATE: e.g., VP Product + Finance] | Annual |
 | Product strategy pivot | [POPULATE: e.g., CEO + product leadership] | As needed |
 
@@ -87,10 +88,10 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-100:** Values (product decisions reflect company values)
-- **RFC-102:** Growth strategy (product roadmap supports go-to-market)
-- **RFC-104:** Financial model (pricing supports product monetization)
-- **RFC-108:** Platform architecture (technical enablement of product)
+- **Values:** Product decisions reflect company values
+- **Growth Strategy:** Product roadmap supports go-to-market
+- **Financial Model:** Pricing supports product monetisation
+- **Platform Strategy:** Technical enablement of product
 
 ## Changelog
 

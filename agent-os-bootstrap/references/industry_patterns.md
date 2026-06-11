@@ -1,6 +1,8 @@
-# Industry-Specific Agent OS Patterns
+# Industry-Specific BoS OS Patterns
 
-This guide explains how to tailor the Agent OS folder structure, RFCs, and agent types for different industries. Each industry has different regulatory pressures, stakeholder accountability requirements, and operational rhythms.
+**Author:** Tim Barker, Mark Littlewood and Business of Software
+
+This guide explains how to tailor the BoS OS folder structure, strategy documents, and agent types for different industries. Each industry has different regulatory pressures, stakeholder accountability requirements, and operational rhythms.
 
 ---
 
@@ -8,16 +10,16 @@ This guide explains how to tailor the Agent OS folder structure, RFCs, and agent
 
 This is the baseline pattern. Most organizations start here and specialize from it.
 
-### Primary RFCs
-- **RFC-101:** Decision Cascade Governance
-- **RFC-102:** Confidentiality (protect customer data, financial terms)
-- **RFC-103:** Agent Authority (which agents can commit to APIs, databases, contracts)
-- **RFC-301:** Engineering Change Control (code review gates, deployment approval)
-- **RFC-401:** Pricing & Contract Authority (who can approve discounts, usage terms)
+### Primary Strategy Documents
+- Decision Cascade Governance
+- Confidentiality (protect customer data, financial terms)
+- Agent Authority (which agents can commit to APIs, databases, contracts)
+- Engineering Change Control (code review gates, deployment approval)
+- Pricing and Contract Authority (who can approve discounts, usage terms)
 
 ### Regulatory / Compliance Bodies
 - **SOC 2 Type II** (if serving enterprise customers)
-- **GDPR** (if serving EU customers; privacy RFCs)
+- **GDPR** (if serving EU customers; privacy strategy documents)
 - **Industry standards:** ISO 27001 (information security), ISO 9001 (quality)
 - **Customer contracts:** SLAs, indemnification, liability caps
 
@@ -38,7 +40,7 @@ This is the baseline pattern. Most organizations start here and specialize from 
 3. All production changes must have a rollback plan
 4. Customer-impacting decisions require approval from product or exec team
 5. Price commitments must be approved by legal and finance
-6. Code commits must reference a ticket or RFC
+6. Code commits must reference a ticket or strategy document
 7. Major feature work must have a design doc reviewed by engineering leadership
 
 ### Example Agent Spec: Revenue Operations Agent
@@ -65,14 +67,14 @@ Success metric: Revenue forecast accuracy >85%
 
 Healthcare is high-stakes and heavily regulated. Patient safety is paramount. The agent OS must be designed to escalate clinical decisions, not make them.
 
-### Primary RFCs
-- **RFC-101:** Decision Cascade Governance
-- **RFC-102:** Confidentiality & Patient Privacy (HIPAA, GDPR, local health regulations)
-- **RFC-201:** Clinical Safety (no agent generates, modifies, or approves clinical content without clinical review)
-- **RFC-202:** Safeguarding & Duty of Care (no agent makes safeguarding decisions)
-- **RFC-203:** Regulatory Alignment (CQC, Care Quality Commission standards; NICE guidelines)
-- **RFC-301:** Audit & Compliance (all clinical decisions logged; regular audit reviews)
-- **RFC-402:** Consent & Transparency (patients know when AI is involved; opt-out available)
+### Primary Strategy Documents
+- Decision Cascade Governance
+- Confidentiality & Patient Privacy (HIPAA, GDPR, local health regulations)
+- Clinical Safety (no agent generates, modifies, or approves clinical content without clinical review)
+- Safeguarding and Duty of Care (no agent makes safeguarding decisions)
+- Regulatory Alignment (CQC, Care Quality Commission standards; NICE guidelines)
+- Audit and Compliance (all clinical decisions logged; regular audit reviews)
+- Consent and Transparency (patients know when AI is involved; opt-out available)
 
 ### Regulatory / Compliance Bodies
 - **National bodies:** CQC (UK), CMS (US), provincial health ministries (Canada)
@@ -127,15 +129,15 @@ Success metric: Notes approved by clinician 95% of the time; zero safety inciden
 
 Financial services faces constant regulatory scrutiny, market surveillance, and audit. Decisions must be traceable and justified.
 
-### Primary RFCs
-- **RFC-101:** Decision Cascade Governance
-- **RFC-102:** Confidentiality (customer account data, trading information, financial records)
-- **RFC-201:** Regulatory Alignment (SEC, FINRA, FCA, CFTC requirements; anti-money laundering)
-- **RFC-202:** Fiduciary Duty (decisions benefiting clients, not the firm; conflicts of interest disclosed)
-- **RFC-203:** Market Surveillance & Compliance (suspicious activity reporting, trade reporting)
-- **RFC-301:** Audit & Logging (every decision, every trade, every contact logged with timestamp, user, rationale)
-- **RFC-302:** Escalation & Approval (dollar thresholds for manual review, conflict resolution)
-- **RFC-401:** Risk Management (counterparty risk, market risk, operational risk gates)
+### Primary Strategy Documents
+- Decision Cascade Governance
+- Confidentiality (customer account data, trading information, financial records)
+- Regulatory Alignment (SEC, FINRA, FCA, CFTC requirements; anti-money laundering)
+- Fiduciary Duty (decisions benefiting clients, not the firm; conflicts of interest disclosed)
+- Market Surveillance and Compliance (suspicious activity reporting, trade reporting)
+- Audit and Logging (every decision, every trade, every contact logged with timestamp, user, rationale)
+- Escalation and Approval (dollar thresholds for manual review, conflict resolution)
+- Risk Management (counterparty risk, market risk, operational risk gates)
 
 ### Regulatory / Compliance Bodies
 - **US:** SEC (securities), FINRA (brokers), OCC (banks), CFTC (derivatives)
@@ -191,14 +193,14 @@ Success metric: 100% of recommendations pass compliance review; zero customer co
 
 Professional services depends on expertise and judgment. Agents augment expert work but do not replace it. Client confidentiality and professional liability are paramount.
 
-### Primary RFCs
-- **RFC-101:** Decision Cascade Governance
-- **RFC-102:** Confidentiality (attorney-client privilege, accountant-client privilege; work product protection)
-- **RFC-201:** Professional Standards (bar association, accounting board, consulting ethics)
-- **RFC-202:** Liability & Malpractice (AI recommendations are attributed to the responsible professional)
-- **RFC-301:** Quality Assurance (peer review of AI-assisted work before client delivery)
-- **RFC-302:** Expert Authority (only experts can approve client-facing work)
-- **RFC-401:** Conflict of Interest (cannot advise multiple clients on same matter without disclosure)
+### Primary Strategy Documents
+- Decision Cascade Governance
+- Confidentiality (attorney-client privilege, accountant-client privilege; work product protection)
+- Professional Standards (bar association, accounting board, consulting ethics)
+- Liability and Malpractice (AI recommendations are attributed to the responsible professional)
+- Quality Assurance (peer review of AI-assisted work before client delivery)
+- Expert Authority (only experts can approve client-facing work)
+- Conflict of Interest (cannot advise multiple clients on same matter without disclosure)
 
 ### Regulatory / Compliance Bodies
 - **Legal:** State bar associations, ABA Model Rules, court ethics rules
@@ -253,14 +255,14 @@ Success metric: Attorney approval rate 95%; zero research errors caught post-del
 
 Education involves institutional reputation, student outcomes, and sometimes safeguarding. Agents support educators but do not replace instruction or mentorship.
 
-### Primary RFCs
-- **RFC-101:** Decision Cascade Governance
-- **RFC-102:** Confidentiality (FERPA student records in US; data minimization for minors)
-- **RFC-201:** Pedagogical Integrity (AI is study tool, not assessment; student learning is human-verified)
-- **RFC-202:** Safeguarding & Duty of Care (no AI unsupervised with minors; escalate welfare concerns)
-- **RFC-203:** Academic Integrity (disclosure of AI use in assignments; plagiarism detection)
-- **RFC-301:** Equity & Accessibility (AI bias monitoring for student subgroups; accessibility for students with disabilities)
-- **RFC-401:** Outcomes Accountability (track student learning gains, graduation rates, employment outcomes)
+### Primary Strategy Documents
+- Decision Cascade Governance
+- Confidentiality (FERPA student records in US; data minimization for minors)
+- Pedagogical Integrity (AI is study tool, not assessment; student learning is human-verified)
+- Safeguarding and Duty of Care (no AI unsupervised with minors; escalate welfare concerns)
+- Academic Integrity (disclosure of AI use in assignments; plagiarism detection)
+- Equity and Accessibility (AI bias monitoring for student subgroups; accessibility for students with disabilities)
+- Outcomes Accountability (track student learning gains, graduation rates, employment outcomes)
 
 ### Regulatory / Compliance Bodies
 - **US:** FERPA (student privacy), ADA (accessibility), Title IX (non-discrimination, harassment), accreditation bodies (SACSCOC, etc.)
@@ -316,13 +318,13 @@ Success metric: Instructor adoption rate 80%; student learning gains match or ex
 
 Retail and e-commerce move fast. Agents automate routine decisions and surface exceptions. Customer trust and unit economics matter most.
 
-### Primary RFCs
-- **RFC-101:** Decision Cascade Governance
-- **RFC-102:** Confidentiality (customer purchase history, payment info; payment card compliance, PCI-DSS)
-- **RFC-201:** Customer Protection (no discriminatory pricing, no predatory recommendations, fraud prevention)
-- **RFC-202:** Financial Controls (refund authority, fraud liability, chargebacks)
-- **RFC-301:** Operational Efficiency (decision automation, inventory management, shipping optimization)
-- **RFC-401:** Customer Experience (personalization bounds, recommendation quality, complaint handling)
+### Primary Strategy Documents
+- Decision Cascade Governance
+- Confidentiality (customer purchase history, payment info; payment card compliance, PCI-DSS)
+- Customer Protection (no discriminatory pricing, no predatory recommendations, fraud prevention)
+- Financial Controls (refund authority, fraud liability, chargebacks)
+- Operational Efficiency (decision automation, inventory management, shipping optimization)
+- Customer Experience (personalization bounds, recommendation quality, complaint handling)
 
 ### Regulatory / Compliance Bodies
 - **Payment:** PCI-DSS (card data), Visa/Mastercard rules, local payment regulations

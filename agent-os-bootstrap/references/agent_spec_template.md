@@ -1,8 +1,27 @@
 # Agent Specification Template
 
+**Author:** Tim Barker, Mark Littlewood and Business of Software
+
+> **When to use this:** This template is for the Workshop phase, not Bootstrap. If you are running Bootstrap, you are not filling this in yet.
+>
+> **What Bootstrap produces:** Lightweight role stubs — one file per person, capturing name, title, functions owned, and strategy documents owned. That is all Bootstrap needs. Role stubs live in `03_AGENTS/` and look like this:
+>
+> ```
+> Name: Sarah Chen
+> Title: CEO
+> Functions owned: Strategy, commercial direction, investor relations
+> Strategy documents owned: Our_Values.md, How_We_Grow.md, How_We_Make_Decisions.md
+> ```
+>
+> **What Workshop produces:** Full agent specs — this template. Once you have worked with the BoS OS for a few sessions and understand how decisions actually flow, come back here and turn the role stubs into proper agent specs with decision boundaries, escalation triggers, and evaluation criteria.
+>
+> The distinction matters: a role stub describes a person. An agent spec defines what an AI agent is authorised to do on that person's behalf.
+
+---
+
 This is the canonical template for an agent specification. An agent spec defines a single AI agent: its role, authority, constraints, interfaces, and evaluation criteria.
 
-Use this template for every new agent. Fill in all sections; if a section doesn't apply to your agent, write "N/A" and explain why.
+Fill in all sections. If a section doesn't apply to your agent, write "N/A" and explain why.
 
 ---
 
@@ -54,7 +73,7 @@ Before this agent begins work:
 - [ ] Read 01_STATE/session_summary.md (what's active, what's blocked)
 - [ ] Review 01_STATE/session_review_log.md (decisions waiting on this agent)
 - [ ] Scan 01_STATE/decisions.md (last 5–10 decisions to understand context)
-- [ ] Check 02_STRATEGY/ for RFCs governing this agent's domain
+- [ ] Check 02_STRATEGY/ for strategy documents governing this agent's domain
 - [ ] Read this spec in full (especially Decision Boundary and Escalation Triggers)
 - [ ] Confirm owner is available for decisions needing approval
 - [ ] Scan 04_MISSIONS/ for active missions this agent supports
@@ -170,21 +189,21 @@ Examples:
 
 ---
 
-## 4. Governing RFCs
+## 4. Governing Strategy Documents
 
-**Which RFCs govern this agent's work?**
+**Which strategy documents govern this agent's work?**
 
-- RFC-101: {{TITLE}} (governs {{WHAT}})
-- RFC-102: {{TITLE}} (governs {{WHAT}})
-- RFC-{{NUMBER}}: {{TITLE}} (governs {{WHAT}})
+- {{STRATEGY_DOC_TITLE}} (governs {{WHAT}})
 
-Every agent spec should list at least 2–3 RFCs. These are the strategic documents that constrain the agent's work. If this agent's decision boundary contradicts an RFC, the RFC wins.
+
+
+Every agent spec should list at least 2-3 strategy documents. These constrain the agent's work. If the agent's decision boundary contradicts a strategy document, the strategy document wins.
 
 **Example (SaaS):**
-- RFC-101: Decision Cascade Governance (all pricing decisions require approval from VP Revenue before implementation)
-- RFC-102: Confidentiality (no customer subscription or usage data in local context)
-- RFC-103: Agent Authority (Execution agents cannot override Finance; escalation required for discounts >20%)
-- RFC-401: Pricing Authority (pricing changes above 10% must include market research and competitive analysis)
+- Decision Cascade Governance (all pricing decisions require approval from VP Revenue before implementation)
+- Confidentiality (no customer subscription or usage data in local context)
+- Agent Authority (Execution agents cannot override Finance; escalation required for discounts >20%)
+- Pricing Authority (pricing changes above 10% must include market research and competitive analysis)
 
 ---
 
@@ -556,7 +575,7 @@ This section is filled in when the spec is finalized. Until then, it shows "PEND
 - **Type:** Execution
 - **Decision boundary:** Autonomous on forecasts and analysis; escalates discounts >15% and pricing >10%
 - **Owner:** VP Revenue
-- **Governing RFCs:** RFC-101 (governance), RFC-102 (confidentiality), RFC-401 (pricing authority)
+- **Governing strategy docs:** Decision Cascade Governance, Confidentiality, Pricing Authority
 - **Required inputs:** CRM (customer data), Finance (actuals), Product Analytics (adoption)
 - **Outputs:** Monthly forecast (Slack report), weekly opportunities (CSV), discount recommendations (on request)
 - **Interfaces:** Sales Ops (uses opportunities), Finance (provides actuals), Pricing Exp Agent (coordinates pricing tests)
@@ -573,7 +592,7 @@ This section is filled in when the spec is finalized. Until then, it shows "PEND
 - **Type:** Operational
 - **Decision boundary:** Autonomous on note drafting and concern flagging; does NOT decide diagnosis, treatment, or safeguarding actions
 - **Owner:** Clinical Supervisor
-- **Governing RFCs:** RFC-201 (clinical safety), RFC-202 (safeguarding), RFC-203 (regulatory alignment)
+- **Governing strategy docs:** Clinical Safety, Safeguarding and Duty of Care, Regulatory Alignment
 - **Required inputs:** Session transcript (practitioner-reviewed), patient history (anonymised), clinical guidelines
 - **Outputs:** Draft note (for practitioner review before medical record), safety flags (escalated immediately)
 - **Interfaces:** Safeguarding Guardian (escalates safety concerns), Practitioner (reviews and approves notes)

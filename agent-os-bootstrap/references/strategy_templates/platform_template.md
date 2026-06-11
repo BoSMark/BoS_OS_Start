@@ -1,6 +1,7 @@
-# RFC-108: Platform and Product Architecture
+# Platform and Product Architecture
 
-**Author:** Agent OS: Company Bootstrap
+**Reference:** Strategy Doc 108
+**Author:** Tim Barker, Mark Littlewood and Business of Software
 **Status:** Template (populate with company data)
 **Last Updated:** [CURRENT_DATE]
 
@@ -18,7 +19,7 @@ Example: "Figma's architecture is built on a web-native stack (WebGL, WebAssembl
 
 ## Scope & Boundaries
 
-This RFC governs:
+This document governs:
 - Technology selection and evaluation
 - Architectural decisions and patterns
 - Infrastructure and scalability approach
@@ -71,6 +72,18 @@ Out of scope:
 - **Rate Limiting:** [POPULATE: Per-user or per-application limits]
 - **Third-party Integrations:** [POPULATE: Marketplace model, official partners, webhooks]
 
+## AI and Automation Footprint
+
+[POPULATE: What AI/ML is already in the product or internal tooling? Source: job postings, product pages, engineering blogs, press releases.]
+
+- **AI in product:** [POPULATE: e.g., "Embedded LLM for customer support summarisation", "ML-based churn scoring", "None identified publicly"]
+- **AI in internal operations:** [POPULATE: e.g., "GitHub Copilot across engineering", "AI-assisted content drafting", "None identified publicly"]
+- **AI infrastructure:** [POPULATE: e.g., "OpenAI API", "Bedrock", "Fine-tuned internal models", "Unknown"]
+- **Vendor dependencies:** [POPULATE: Any third-party AI platforms, model providers, or MLOps tooling visible from public data]
+- **Governance signals:** [POPULATE: Any public statements on AI use policy, responsible AI, or data-use commitments relevant to their platform]
+
+This section matters for the BoS OS because it shows where agent work will slot into an existing AI context — and where the company has already made bets that shape what's possible.
+
 ## Code Quality & Engineering Standards
 
 [POPULATE: What are the non-negotiable engineering practices?]
@@ -111,9 +124,9 @@ Out of scope:
 
 ## Cross-References
 
-- **RFC-103:** Product strategy (architecture enables product features)
-- **RFC-107:** Security framework (security controls are part of platform)
-- **RFC-106:** Measurement (observability and monitoring architecture)
+- **Product Strategy:** Architecture enables product features
+- **Security and Compliance:** Security controls are part of platform
+- **Measurement Framework:** Observability and monitoring architecture
 
 ## Changelog
 
