@@ -4,7 +4,7 @@ description: |
   Guide an executive through refining their BoS OS, deepening strategy documents, mapping the roles and responsibilities of people in the organisation, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my BoS OS, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: BoS OS, workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
   authors: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.1
+  version: 2.2
 ---
 
 # BoS OS: Executive Workshop
@@ -202,9 +202,15 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
 
 6. **Success metrics** - How they'll know the mission worked. Be specific: "Agent matches expert judgment on 80%+ of test cases" or "Reduces time-to-review from 4 hours to 30 minutes while maintaining quality score above X."
 
-**Deliverable:** Create `04_MISSIONS/M01_[mission_name]/MISSION.md` with the mission plan.
+**Deliverable:** Once the mission plan is confirmed, scaffold the full mission folder so the Run skill has a clean starting state:
 
-**Phase 3 closing:** "Phase 3 done. The BoS OS has a first mission: [name it]. The mission plan is saved to 04_MISSIONS/. Think about where you started today, a bootstrap draft built from public information. You now have a strategy document that reflects how your company actually works, a clear picture of who owns what, and a real first job for the system to prove itself on. That's not a setup. That's a working operating system. One short final phase to close everything out properly."
+1. Find the next mission number — scan `04_MISSIONS/` for existing `MISSION-NNN_*` folders; take the highest + 1, zero-padded to three digits (e.g. `003`). If `04_MISSIONS/` doesn't exist yet, create it and start at `001`.
+2. Slug the mission name — lower-case and hyphenate (e.g. "Pricing Exception Agent" → `pricing-exception-agent`).
+3. Create `04_MISSIONS/MISSION-NNN_slug/` and write the mission plan into it as `MISSION-BRIEF.md`.
+4. Create the five state files in the same folder, empty but ready: `todo.md`, `in-progress.md`, `blocked.md`, `done.md` — use the templates from `agent-os-run/mission-templates/` if available, otherwise create minimal blank files with the correct headings.
+5. Confirm the path back to the exec: *"Saved as `MISSION-003_pricing-exception-agent`. The folder is ready — the Run skill picks up from here."*
+
+**Phase 3 closing:** "Phase 3 done. The BoS OS has a first mission: [name it]. The mission folder is scaffolded and ready at `04_MISSIONS/MISSION-NNN_[name]/` — brief, state files, all of it. When you open the Run skill next session, it will find the folder, read the brief, and pick up exactly where we left off. Think about where you started today — a bootstrap draft built from public information. You now have a strategy document that reflects how your company actually works, a clear picture of who owns what, and a real first job for the system to prove itself on. That's not a setup. That's a working operating system. One short final phase to close everything out properly."
 
 ---
 

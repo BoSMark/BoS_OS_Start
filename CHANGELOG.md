@@ -4,6 +4,43 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
+## v2.2.1 — 2026-06-12
+
+### Bug fixes and improvements (patch)
+
+**agent-os-run: self-contained SKILL.md (critical fix)**
+The v2.2 `agent-os-run` skill referenced three sub-spec files (`agent-specs/mission-shaper.md`, `agent-specs/agent-planner.md`, `agent-specs/delivery-manager.md`) that were not accessible at runtime. Root cause: Cowork's skill installer extracts only `SKILL.md` from the `.skill` package; all subdirectories are silently dropped on install. Fix: all sub-spec content is consolidated directly into `SKILL.md`. The skill is now fully self-contained with no external file dependencies. The repo retains the modular structure for readability; `SKILL.md` is the compiled distribution artifact.
+
+**agent-os-run: "Where am I?" session opener (new)**
+A standard session opener is added to the beginning of `agent-os-run/SKILL.md`. On starting any Run session, the skill reads `01_STATE/session_summary.md`, `01_STATE/decisions.md`, and any active `MISSION-BRIEF.md` files to determine which pipeline stage the user is in (pre-mission / brief shaped / staffed and in delivery / mission complete). It reports the current state and confirms the next action with the user before proceeding. Fixes: no documented "resume from Staff" entry point when returning to a partially-built mission.
+
+**agent-os-run: scheduling timing note (new)**
+A note is added to the "Where am I?" section flagging that `create_scheduled_task` applies an approximately 6-minute deterministic delay. Users asking for "noon" will get 12:06. The skill surfaces this at scheduling time rather than leaving users to discover it.
+
+**Agent Spec Builder: progress markers (new)**
+Each element now displays its position — "Element 1 of 5" through "Element 5 of 5" — so users entering mid-interview know where they are and how much is left. Addresses a real friction point from the GoodFreight road test.
+
+**Agent Spec Builder: type consequences (new)**
+A one-line explanation of what changes based on the agent type is now shown alongside each option. Execution: tightest boundary, because it acts. Measurement: wider boundary, because it only observes. Guardian: stopping criteria must be specific, not a vibe. Removes the abstraction from a question that previously felt arbitrary to first-time users.
+
+**Agent Spec Builder: "non-exception exceptions" bucket (new)**
+The boundary conversation now explicitly surfaces the pattern of logging near-boundary cases separately for periodic review rather than escalating each one individually. Offered as a standard option for early-phase execution agents where the right boundary isn't fully known yet. Emerged from the GoodFreight road test; generalisable to any execution agent operating near a decision boundary.
+
+**Agent Spec Builder: "log now, reason later" (new)**
+The boundary conversation now explicitly surfaces the pattern of capturing structured data in real time and filling in reasoning in periodic calibration sessions rather than in-the-moment. Offered as a standard option for agents that need to learn from decisions over time. Keeps the agent lightweight; puts reasoning where there's actually space to think.
+
+**agent-os-workshop: mission folder scaffolding at Phase 3 close (new)**
+The Workshop now scaffolds the full mission folder when the Phase 3 mission plan is confirmed — creating `04_MISSIONS/MISSION-NNN_slug/`, writing `MISSION-BRIEF.md`, and creating the five state files (`todo.md`, `in-progress.md`, `blocked.md`, `done.md`). Previously the Workshop only produced `MISSION.md` and left folder creation to the Delivery Manager on first Run session. The Run skill's "Where am I?" opener now finds a clean starting state rather than doing setup overhead on first session.
+
+**Version metadata: all three skills bumped to v2.2**
+Internal `version:` metadata in `agent-os-bootstrap/SKILL.md` and `agent-os-workshop/SKILL.md` updated from `2.1` to `2.2` — now consistent with the README declaration. `agent-os-run/SKILL.md` is `2.2.1` per this patch.
+
+### Upgrade path
+
+Download `agent-os-run.skill` from the v2.2.1 release and reinstall via **Customize → Skills** in Cowork. Bootstrap and Workshop users can optionally reinstall those skills to pick up the version metadata correction — no functional change.
+
+---
+
 ## v2.2 — 2026-06-11
 
 ### Run layer — new

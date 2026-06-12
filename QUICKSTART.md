@@ -81,9 +81,9 @@ When you're ready to run missions:
 
 1. Go to the [latest release](https://github.com/BoSMark/BoS_OS_Start/releases/latest) and download `agent-os-run.skill`
 2. Install it the same way: **Customize → Skills → + → Create skill → Upload a skill**
-3. In your project, load the Mission Shaper and describe a rough goal — it will coach you through turning it into a shaped mission
+3. In your project, type: **Run a mission** — the skill will orient itself to where you are and guide you from there
 
-The Run layer uses three agents in sequence: **Mission Shaper** (shapes the mission) → **Agent Planner** (staffs it) → **Delivery Manager** (runs it). Each is a separate spec you load when needed.
+The Run skill is self-contained. It includes everything it needs — you don't load separate files. It works in three stages: **Mission Shaper** (coaches your rough idea into a measurable Mission Brief) → **Agent Planner** (staffs the mission with a team of agents) → **Delivery Manager** (runs the backlog and drives delivery). The skill knows which stage you're in and picks up from there each session.
 
 The full README has everything else — background, upgrade instructions, troubleshooting. Come back to it when you need it.
 
