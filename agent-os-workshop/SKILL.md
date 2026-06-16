@@ -4,7 +4,7 @@ description: |
   Guide an executive through refining their BoS OS, deepening strategy documents, mapping the roles and responsibilities of people in the organisation, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my BoS OS, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: BoS OS, workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
   authors: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.2
+  version: 2.2.3
 ---
 
 # BoS OS: Executive Workshop
@@ -43,6 +43,14 @@ If the folder structure doesn't exist at all, tell the user: "I need the BoS OS 
 Then ask: "Which executive role are you working in today?" Some people wear multiple hats, so scope the session to one role at a time.
 
 If this is a continuation session, check the state folder for previous progress and pick up where you left off.
+
+**Personalization check:** Before starting any phase, check the OS shorthand. Look in `CLAUDE.md` for a header like `# CLAUDE.md — [XX] BoS OS, built for [Name]`. If the shorthand `[XX]` is present, use it throughout this session when referencing the OS.
+
+If no shorthand is present (older bootstraps or external imports), ask the founder:
+
+> "By the way, I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this."
+
+Once they provide two letters, update the CLAUDE.md header to include it, and use the shorthand throughout this session.
 
 ## Workshop Flow
 
