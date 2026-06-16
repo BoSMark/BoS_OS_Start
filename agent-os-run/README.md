@@ -22,6 +22,8 @@ It forces the outcome-vs-activity distinction, sets a real measure, decides whet
 
 Takes the Mission Brief and staffs the mission — casts the agent team the way you'd hire one, then specs each role to a runnable standard. Competency roles, not task-bots, so agents compound across missions.
 
+For speccing individual agents to a runnable standard, Agent Planner uses the **Agent Spec Builder** sub-skill (`/skills/agent-spec-builder/SKILL.md`) — an interview-driven tool that produces finished specs with decision boundaries, escalation triggers, and evaluation criteria.
+
 **Input:** `MISSION-BRIEF.md` → **Output:** agent specs + a prioritised `todo.md`
 
 ### 3. Delivery Manager — *deliver the mission*
