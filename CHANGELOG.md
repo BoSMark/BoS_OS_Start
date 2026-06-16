@@ -4,6 +4,35 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
+## v2.2.3 — 2026-06-16
+
+### Bootstrap personalization — new
+
+**Two-question personalization flow (new)**
+Bootstrap now opens with two personalization questions before research:
+1. "What would you like me to call you?" — captures the founder's name for use throughout the session
+2. "I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this." — captures a two-letter shorthand (e.g., "BB", "DF", "M") that the founder chooses
+
+The shorthand reinforces "BoS OS" in daily conversation while giving the founder personal ownership through their chosen abbreviation. All downstream output personalizes using `{{FOUNDER_NAME}}` and `{{OS_SHORTHAND}}`.
+
+**Workshop shorthand detection (new)**
+Workshop now checks for the OS shorthand in CLAUDE.md on session start. If present, it uses the shorthand throughout the session (e.g., "The BB BoS OS will use this to..."). If missing, it asks the founder to provide one and updates CLAUDE.md.
+
+**Run shorthand detection (new)**
+Run now checks for the OS shorthand at session start. If present, all agent prompts and output use the shorthand. If missing, it asks the founder to provide one at the beginning of the session.
+
+**Agent Spec Builder examples (new)**
+Three concrete walkthroughs of the Run layer agents in action: Mission Shaper ("We need to fix our onboarding"), Agent Planner ("We're launching a new pricing model"), Delivery Manager ("Ship the Q3 product roadmap"). Each example walks through the agent's questions, decision-making process, and output. Provides new users with realistic scenarios instead of abstract descriptions.
+
+**Version metadata: all three skills bumped to v2.2.3**
+All three skills (Bootstrap, Workshop, Run) now at v2.2.3. Consistent versioning across the toolkit.
+
+### Upgrade path
+
+Download the three .skill files from the v2.2.3 release and reinstall via **Customize → Skills** in Cowork. The personalization feature is automatic on next session — no configuration needed.
+
+---
+
 ## v2.2.1 — 2026-06-12
 
 ### Bug fixes and improvements (patch)
