@@ -1,4 +1,4 @@
-# in-progress.md — [Mission Name]
+# in-progress.md — {{OS_SHORTHAND}} BoS OS — [Mission Name]
 
 What is being worked on right now. One agent owns each item.
 **If an item here is actually blocked, move it to blocked.md immediately.**

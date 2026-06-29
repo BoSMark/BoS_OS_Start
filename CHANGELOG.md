@@ -4,24 +4,40 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
+## v2.3 — 2026-06-29
+
+### OS personalisation — complete implementation
+
+This release delivers the full personalisation feature across all three skills. v2.2.3 introduced a partial version; v2.3 is the complete and consistent implementation.
+
+**What changes:** when you run Bootstrap for the first time, it asks you two questions before doing anything else:
+
+1. "What would you like me to call you?" — your name, used throughout the session
+2. "Think of two letters that mean something to you" — a two-letter shorthand you choose (e.g. "JK", "BB", "M") that becomes the prefix for your OS
+
+From that point on, your OS has a name that's yours. If your initials are JK, your OS is "the JK BoS OS" — in every agent prompt, every mission template header, every session. It's a small thing that makes a real difference in how it feels to use day to day.
+
+**Bootstrap** — asks both questions upfront; propagates `{{FOUNDER_NAME}}` and `{{OS_SHORTHAND}}` through all generated output; CLAUDE.md header now reads `# CLAUDE.md — [XX] BoS OS, built for [Name]`
+
+**Workshop** — reads the shorthand from your CLAUDE.md on session start and uses it throughout; if you're on an older bootstrap without a shorthand, asks the two-letter question and updates CLAUDE.md before proceeding
+
+**Run** — same shorthand detection at session start; all Mission Shaper, Agent Planner, and Delivery Manager prompts use your shorthand; mission template headers (`todo.md`, `in-progress.md`, `blocked.md`, `done.md`) include the shorthand
+
+**Reference files updated:** `claude_md_template.md`, `session_summary_template.md` (new), agent specs, mission templates, Release QA Checklist (new), pre-release script
+
+### Upgrade path
+
+Download all three `.skill` files from the v2.3 release and reinstall via **Customize → Skills** in Cowork.
+
+On your next session, Workshop or Run will detect that your CLAUDE.md doesn't have a shorthand yet and ask you to choose one. Bootstrap users starting fresh will be asked during setup. No other configuration needed.
+
+---
+
 ## v2.2.3 — 2026-06-16
 
-### Bootstrap personalization — new
+> **Note:** The personalisation items from this release (two-question flow, Workshop shorthand detection, Run shorthand detection) were a partial implementation. The complete version shipped in v2.3. If you're on v2.2.3, upgrade to v2.3 to get the full feature.
 
-**Two-question personalization flow (new)**
-Bootstrap now opens with two personalization questions before research:
-1. "What would you like me to call you?" — captures the founder's name for use throughout the session
-2. "I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this." — captures a two-letter shorthand (e.g., "BB", "DF", "M") that the founder chooses
-
-The shorthand reinforces "BoS OS" in daily conversation while giving the founder personal ownership through their chosen abbreviation. All downstream output personalizes using `{{FOUNDER_NAME}}` and `{{OS_SHORTHAND}}`.
-
-**Workshop shorthand detection (new)**
-Workshop now checks for the OS shorthand in CLAUDE.md on session start. If present, it uses the shorthand throughout the session (e.g., "The BB BoS OS will use this to..."). If missing, it asks the founder to provide one and updates CLAUDE.md.
-
-**Run shorthand detection (new)**
-Run now checks for the OS shorthand at session start. If present, all agent prompts and output use the shorthand. If missing, it asks the founder to provide one at the beginning of the session.
-
-**Agent Spec Builder examples (new)**
+### Agent Spec Builder examples (new)
 Three concrete walkthroughs of the Run layer agents in action: Mission Shaper ("We need to fix our onboarding"), Agent Planner ("We're launching a new pricing model"), Delivery Manager ("Ship the Q3 product roadmap"). Each example walks through the agent's questions, decision-making process, and output. Provides new users with realistic scenarios instead of abstract descriptions.
 
 **Version metadata: all three skills bumped to v2.2.3**

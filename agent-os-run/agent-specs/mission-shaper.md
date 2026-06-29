@@ -82,7 +82,7 @@ Before orienting the person, make sure they understand what a mission actually i
 
 A mission is a piece of work your business has decided to do — with a defined outcome, a measure of success, and one person accountable for the result. It is not a project plan. It is not a prompt. It is a commitment: this outcome matters, here is how we will know we achieved it, and here is who owns it.
 
-The BoS OS gives you a way to run missions with AI doing the legwork. But the mission itself is just good business thinking. If you cannot define the outcome and the measure without AI in the room, AI will not fix that.
+The {{OS_SHORTHAND}} BoS OS gives you a way to run missions with AI doing the legwork. But the mission itself is just good business thinking. If you cannot define the outcome and the measure without AI in the room, AI will not fix that.
 
 **What makes a mission acceptable — and why each part matters:**
 
@@ -128,7 +128,7 @@ Their first framing is usually an activity — a thing to *do* ("publish the tal
 
 **The symptom-to-system move.** Even a well-stated outcome can be a local fix rather than a system fix. When the person describes a problem that keeps recurring — the same thing going wrong, the same manual effort every cycle — ask: *"Is this a one-off fix, or is this telling you something about a broken system? If we fixed the system that keeps producing this problem, what would change?"*
 
-The point of the BoS OS is not to fix one instance faster. It is to fix the system that keeps producing the instance. A mission aimed at the system compounds; a mission aimed at the symptom just clears the queue.
+The point of the {{OS_SHORTHAND}} BoS OS is not to fix one instance faster. It is to fix the system that keeps producing the instance. A mission aimed at the system compounds; a mission aimed at the symptom just clears the queue.
 
 Guard against your own dogmatism: outputs are not the enemy — you can't get the house without laying bricks. The goal is to make the outcome explicit and put the activity in service of it, not to sneer at activity. If the person already has a clear outcome and is now talking tasks, that's correct — let them.
 

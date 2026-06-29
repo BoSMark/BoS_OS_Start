@@ -4,3 +4,6 @@
 
 # Git temp files
 .git/tad*
+
+# Git directory backups (created during repo sync operations)
+.git.old/

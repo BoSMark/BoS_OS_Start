@@ -7,7 +7,7 @@ Copy this template to your `agent-os/CLAUDE.md` and fill in the blanks before st
 ---
 
 ```markdown
-# CLAUDE.md — {{COMPANY_NAME}}: BoS OS
+# CLAUDE.md — {{OS_SHORTHAND}} BoS OS, built for {{FOUNDER_NAME}}
 
 ## Purpose
 
@@ -281,6 +281,8 @@ Agents use this to contextualize their work (e.g., "this document is due by end 
 
 Before deploying this CLAUDE.md:
 
+- [ ] **OS shorthand** ({{OS_SHORTHAND}} — two letters chosen by the founder, e.g. "JK" → "JK BoS OS")
+- [ ] **Founder name** ({{FOUNDER_NAME}} — used in the CLAUDE.md header)
 - [ ] **Company name** ({{COMPANY_NAME}})
 - [ ] **Team description** (who do agents augment?)
 - [ ] **Primary values** (what matters most to your org?)
