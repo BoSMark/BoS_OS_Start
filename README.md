@@ -50,6 +50,8 @@ Your folder structure is your system. The files are the memory.
 
 > **New to Cowork?** Start with the [Quickstart](QUICKSTART.md) — it gets you to your first session in under 10 minutes.
 
+> **Connect a folder before Step 1.** In Cowork, connect a folder on your computer — somewhere in Dropbox, Google Drive, or similar — before you do anything else. This is where the BoS OS saves everything it creates. If you skip this, files land in Cowork's temporary sandbox and are hard to find later. Step 2 below walks you through it.
+
 **Step 1 — Download the skills**
 
 Go to the [latest release](https://github.com/BoSMark/BoS_OS_Start/releases/latest) and download:
