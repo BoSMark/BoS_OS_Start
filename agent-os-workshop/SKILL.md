@@ -4,7 +4,7 @@ description: |
   Guide an executive through refining their BoS OS, deepening strategy documents, mapping the roles and responsibilities of people in the organisation, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my BoS OS, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: BoS OS, workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
   authors: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.3
+  version: 2.3.1
 ---
 
 # BoS OS: Executive Workshop
@@ -44,9 +44,11 @@ If no shorthand is present (older bootstraps or external imports), ask the found
 
 > "By the way, I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this."
 
-Once they provide two letters, update the CLAUDE.md header to include it, and use the shorthand throughout this session.
+Once they provide two letters, update the CLAUDE.md header to include it, and use the shorthand throughout this session. Edit only the header line itself — if `*Bootstrapped from BoS OS Toolkit vX.Y.Z on [date]*` and `*Last synced with BoS OS Toolkit vX.Y.Z on [date]*` lines sit directly beneath it, leave both untouched. Neither is something Workshop maintains today.
 
-If the folder structure doesn't exist at all, tell the user: "I need the BoS OS folder structure to work with. You can create it using the BoS OS Bootstrap skill, or set it up manually with folders: 00_LOCAL_CONTEXT, 01_STATE, 02_STRATEGY, 03_AGENTS, 04_MISSIONS, 05_ARTIFACTS."
+If the folder structure doesn't exist at all, do not offer to create the folders manually and do not list them out as something to set up by hand. Tell the user: "This company doesn't have a BoS OS yet — I need to run Bootstrap first. That's not just about creating folders: Bootstrap researches your company and populates real, specific content in them — strategy documents grounded in your actual market and positioning, not blank templates you'd have to fill in yourself. Setting the folders up by hand would skip all of that. Let's run Bootstrap now, it only takes a few minutes, and it makes everything after this easier, not harder."
+
+The reason this matters: an empty folder structure with no researched content gives Workshop nothing to deep-dive on. Every phase of Workshop assumes there's already a first draft to sharpen. Manual folder creation produces a shell that looks ready but isn't — the user ends up doing Bootstrap's research work by hand, inside Workshop, without Workshop being built for that. Sending them to Bootstrap first isn't a formality, it's the path that actually saves them time.
 
 Then ask: "Which executive role are you working in today?" Some people wear multiple hats, so scope the session to one role at a time.
 

@@ -9,6 +9,9 @@ Copy this template to your `agent-os/CLAUDE.md` and fill in the blanks before st
 ```markdown
 # CLAUDE.md — {{OS_SHORTHAND}} BoS OS, built for {{FOUNDER_NAME}}
 
+*Bootstrapped from BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*
+*Last synced with BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*
+
 ## Purpose
 
 This repository defines the BoS OS for {{COMPANY_NAME}}.
@@ -27,7 +30,7 @@ The goal is **not** to replace {{COMPANY_NAME}}'s existing teams or decision-mak
 
 ## Hard Constraints
 
-Hard constraints are non-negotiable rules. No agent may violate these. If a constraint is breached, escalate immediately to {{ESCALATION_OWNER}}.
+Hard constraints are non-negotiable rules. No agent may violate these. If a constraint is breached, the agent escalates immediately — by default, that means telling the person it's currently talking to, clearly and by name: "this needs sign-off from {{ESCALATION_OWNER}} before I continue," and letting them loop {{ESCALATION_OWNER}} in. Only describe the agent as contacting, messaging, or notifying {{ESCALATION_OWNER}} directly if this OS has an actual tool connected for that (e.g. a Slack or paging integration) and the agent is explicitly authorised to use it for this purpose — say so plainly here if that's true. Otherwise, assume no such channel exists. Don't let this file describe escalation as automatic outreach by default; that's the failure mode this constraint exists to prevent.
 
 ### Universal Constraints (All Organizations)
 
@@ -64,6 +67,12 @@ Hard constraints are non-negotiable rules. No agent may violate these. If a cons
    - Financial account numbers, routing numbers: never in git. Stored in secure vaults only.
    - Customer PII (SSN, DOB, full names if risky): never in git. Anonymised references only.
    - Regulatory license numbers, accreditation IDs: scrubbed before committing.
+
+7. **Escalation Defaults to Telling the Current User — Not Contacting Anyone Else, Unless That's Genuinely True**
+   - By default, an agent's only channel is the conversation it's in. It cannot email, message, call, or otherwise notify a person who isn't in that conversation.
+   - "Escalate to {{ROLE}}" defaults to: stop, state plainly that this needs {{ROLE}}'s sign-off, and let the human decide how to reach them.
+   - **Exception:** if this OS has a real notification or paging tool connected, and the agent is explicitly authorised to use it for a specific purpose, describe that accurately instead of defaulting. Name the tool and the authorisation. Don't leave it implied or generic.
+   - When writing or reviewing any escalation clause in this file (or in agent specs), check it against what's actually true for this system. Unverified or generic-sounding "notify/contact/surface to" language is the failure mode — either back it with a real, named tool and authorisation, or rewrite it to the default.
 
 ### Industry-Specific Constraints
 
@@ -248,6 +257,8 @@ Agents use this to contextualize their work (e.g., "this document is due by end 
 
 ## Key Contacts
 
+These contacts are for the humans operating this system. An agent that needs to name who should be looped in refers to this list when talking to the current user — it does not contact anyone on it directly.
+
 - **Project Owner:** {{PROJECT_OWNER_NAME}}, {{EMAIL}}
 - **Compliance/Governance:** {{COMPLIANCE_OWNER_NAME}}, {{EMAIL}}
 - **Escalation (emergencies):** {{ESCALATION_OWNER_NAME}}, {{PHONE}}
@@ -288,7 +299,7 @@ Before deploying this CLAUDE.md:
 - [ ] **Primary values** (what matters most to your org?)
 - [ ] **What is confidential?** ({{LIST_CONFIDENTIAL_CATEGORIES}})
 - [ ] **Industry** ({{INDUSTRY}})
-- [ ] **Escalation owner** (who decides in emergencies?)
+- [ ] **Escalation owner** (who the agent should name when it needs to stop and hand off — not someone it contacts itself)
 - [ ] **Industry-specific hard constraints** (add your own)
 - [ ] **Regulators & compliance bodies** (who audits you?)
 - [ ] **Log review cadence** (monthly? quarterly?)
@@ -296,6 +307,7 @@ Before deploying this CLAUDE.md:
 - [ ] **Key contacts** (who to call for approval, escalation, audit)
 - [ ] **Current date** (update at session start)
 - [ ] **Version history** (when was this created?)
+- [ ] **Toolkit version stamps** (both lines set automatically by Bootstrap, to the same version and date. Don't hand-edit either one. "Bootstrapped from" is a permanent record and never changes again. "Last synced" is meant to update later, once a sync capability exists — for now it just sits at its initial value.)
 
 ---
 
@@ -308,6 +320,8 @@ Before deploying this CLAUDE.md:
 3. **Tailor to your industry.** A SaaS company needs different constraints than a bank. Use the industry patterns guide to customize.
 
 4. **Update current date regularly.** Agents need to know what day it is to contextualize deadlines and mission phases.
+
+4a. **Leave the Toolkit version stamps alone — they're two different facts, not one.** "Bootstrapped from" is permanent: it records which Toolkit version this OS started from and never changes again, no matter what happens later. "Last synced" starts out identical but is meant to move: it's where a future sync capability would record "a newer Toolkit version has since brought this OS up to date," once that capability exists. Nothing in this repo updates "Last synced" automatically yet — for now it just holds its initial value — but the field exists so that work doesn't require another template migration when it's built. Don't hand-edit either line.
 
 5. **Link to your strategy documents.** This file should reference `02_STRATEGY/` frequently. It's the source of truth for why constraints exist.
 
@@ -373,7 +387,7 @@ The goal is to augment Acme's engineering, product, and operations teams, audit 
 
 5. **SLA Compliance**
    - Uptime target: 99.9%. P1 incidents response <1hr, resolution <4hrs.
-   - Agent escalates any incident that might miss SLA within 15 mins of discovery.
+   - Agent flags to the current user, within 15 mins of discovery, any incident that might miss SLA. The user escalates from there — the agent has no way to page anyone directly.
 
 ## Project Structure
 

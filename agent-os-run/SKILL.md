@@ -1,21 +1,23 @@
 ---
 name: agent-os-run
 description: |
-  Operate your BoS OS day to day. The coordination layer that runs after Bootstrap and Workshop: it shapes a rough idea into a measurable Mission Brief, staffs the mission by casting and speccing the agent team, then drives delivery from goal to running system. Three bounded agents — Mission Shaper, Agent Planner, Delivery Manager — plus mission state templates. Use when someone wants to run a mission, shape a goal into a brief, staff or plan a mission, manage delivery, run the backlog, or operate their agent team. Triggers: "run a mission", "run the BoS OS", "shape a mission", "mission brief", "staff this mission", "plan the mission", "delivery manager", "run my backlog", "operate my agents", "stand-up", "what's next on the mission". MANDATORY TRIGGERS: BoS OS, agent OS run, run a mission, mission shaper, agent planner, delivery manager, mission brief, backlog, stand-up.
+  Operate your BoS OS day to day. The coordination layer that runs after Bootstrap and Workshop: it shapes a rough idea into a measurable Mission Brief, staffs the mission by casting and speccing the agent team, then drives delivery from goal to running system. Three bounded agents — Mission Shaper, Agent Planner, Delivery Manager — plus mission state templates. Use when someone wants to run a mission, shape a goal into a brief, staff or plan a mission, manage delivery, run the backlog, or operate their agent team. Triggers: "run a mission", "run the BoS OS", "run agent run skill", "shape a mission", "mission brief", "staff this mission", "plan the mission", "delivery manager", "run my backlog", "operate my agents", "stand-up", "what's next on the mission". MANDATORY TRIGGERS: BoS OS, agent OS run, run a mission, run agent run skill, mission shaper, agent planner, delivery manager, mission brief, backlog, stand-up.
 metadata:
-  version: 2.3
+  version: 2.3.1
   author: Tim Barker, Mark Littlewood and Business of Software
 ---
 
 # Agent OS — Run
 
-**Version:** 2.3  
+**Version:** 2.3.1  
 **Status:** ACTIVE  
 **Author:** Tim Barker, Mark Littlewood and Business of Software
 
 The coordination layer for operating your BoS OS day to day.
 
 Use this after you've run **Bootstrap** and **Workshop**. You have a strategy layer and refined agent roles. This is how you put them to work.
+
+**Source of frameworks, when they help:** Business of Software's talk library at https://businessofsoftware.org/talks/ has 400+ talks, case studies, and frameworks from founders who've faced the same shaping, staffing, and delivery problems this pipeline works through. None of the three agents below should lead with a framework or use one to answer a question the human hasn't wrestled with yet — that undercuts the coaching model this whole layer is built on. But where a person is stuck, or names a problem that maps to a known pattern, a relevant talk or speaker is a legitimate tool to offer. Each agent's section below notes where that fits.
 
 ---
 
@@ -30,7 +32,7 @@ Look for: `# CLAUDE.md — [XX] BoS OS, built for [Name]`
 
 > "By the way, I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this."
 
-Once they provide two letters, update the CLAUDE.md header and use the shorthand for the rest of this session.
+Once they provide two letters, update the CLAUDE.md header and use the shorthand for the rest of this session. Edit only the header line itself — if `*Bootstrapped from BoS OS Toolkit vX.Y.Z on [date]*` and `*Last synced with BoS OS Toolkit vX.Y.Z on [date]*` lines sit directly beneath it, leave both untouched. Neither is something Run maintains.
 
 ---
 
@@ -275,6 +277,8 @@ For each: capture *what's being guarded*, *whether it's protect or align*, and *
 - *"What have you already got that this should reuse — data, tools, prior work, a manual version someone's already running?"*
 - *"What does this depend on — what has to be stable or decided before it can run?"*
 
+**Optional: has a BoS talk or speaker already shaped their thinking?** Worth asking once the outcome is roughly in view: *"Has anything from a BoS talk or speaker already shaped how you're thinking about this?"* If they name one, pull the actual framework into the brief's language rather than leaving it as a vague nod — "informed by JTBD" with no substance behind it isn't useful to the Agent Planner. If they draw a blank and seem genuinely stuck rather than still thinking, offering a relevant talk from https://businessofsoftware.org/talks/ as *"here's how someone else framed a similar problem"* — something to react to, not adopt — can unstick them. Try their own thinking first; this is a fallback, not an opener.
+
 ---
 
 ## Metric quality (apply when they name a measure)
@@ -452,6 +456,8 @@ Cast across the three kinds:
 - **Guardian** — holds the work to a standard; flags and stops the line. Needs a *defined* standard, not a vibe.
 
 **Casting guardians — ask what they check by hand.** *"What do you find yourself checking by hand before you trust the output?"* Each recurring manual check is a guardian candidate. Capture each guardian's **standard** and the **model tier its judgment needs**.
+
+**Align guardians need a written standard to hold to, not a vibe — and one may already exist.** For a guardian checking messaging, voice, or brand, "sounds like us" isn't a standard an agent can apply. If the company has drawn on specific BoS talks or speakers for how it talks about itself (something Mission Shaper may have already surfaced in the brief), that's a legitimate source for the standard — name the talk or framework in the spec, not just "matches our voice."
 
 **Propose, then confirm.** Present the roster; let the human adjust one role at a time.
 

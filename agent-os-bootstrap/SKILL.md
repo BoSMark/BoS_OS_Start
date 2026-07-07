@@ -4,7 +4,7 @@ description: |
   Build the BoS OS for a company, a structured operating system that helps a CEO or founder make better decisions and helps their team understand what they are trying to do. Researches the company from public information, creates the folder structure, populates strategy documents with company-specific content, maps people and their roles, and generates a CLAUDE.md. Triggers: "run the BoS OS", "BoS OS", "Company OS", "bootstrap my company OS", "create an operating system for [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "operating model", "folder structure for agents", "bootstrap my company". MANDATORY TRIGGERS: BoS OS, Company OS, bootstrap, company setup, agent framework, AI strategy, operating model, folder structure.
 metadata:
   author: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.3
+  version: 2.3.1
 ---
 
 # BoS OS: Company Bootstrap
@@ -248,4 +248,102 @@ If no shorthand was provided in Question 2, just use "BoS OS" and note in the fo
 
 ---
 
-[Rest of document continues as in original - Steps 6, 7, 8, Summary Report, etc. - all unchanged]
+### Step 6: Create the Agent Map
+
+Create `03_AGENTS/agent_map.md`, a table mapping every exec to their strategy documents and agents:
+
+```markdown
+| Executive | Title | Strategy Docs | Agents | Agent Type | Maturity |
+|-----------|-------|--------------|--------|------------|----------|
+```
+
+Set all maturity levels to "Bootstrapped - requires internal enrichment" except note which ones are likely strongest based on available public data.
+
+---
+
+### Step 7: Generate CLAUDE.md
+
+Read `references/claude_md_template.md` and populate it for this specific company. Include:
+- Company name and description
+- Industry-appropriate hard constraints
+- The folder structure
+- Decision cascade governance rules
+- Current date
+
+Use the CLAUDE.md header format defined above: `# CLAUDE.md — {{OS_SHORTHAND}} BoS OS, built for {{FOUNDER_NAME}}`. If no shorthand was set, use `# CLAUDE.md — BoS OS, built for {{FOUNDER_NAME}}`.
+
+**Set the Toolkit version stamps.** Directly under the header, the template has two lines: `*Bootstrapped from BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*` and `*Last synced with BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*`. Fill `{{BOS_OS_VERSION}}` from this skill's own `version:` field in the frontmatter at the top of this file — read it, don't hardcode it, so the stamp stays correct as this skill is updated. Fill `{{BOOTSTRAP_DATE}}` with today's date. At bootstrap both lines get the same values — that's expected, nothing has synced yet. They mean different things and stay different going forward: "Bootstrapped from" is a permanent record and nothing should ever change it again. "Last synced" is where a future sync capability would record that a newer Toolkit version has since brought this OS up to date — no such capability exists yet, so for now it simply holds its initial value. Set both. Don't skip either, and don't ask the user for either.
+
+In the CLAUDE.md, refer to `02_STRATEGY/` documents by their plain English names. For example: "Agents must follow the decisions framework in `02_STRATEGY/How_We_Make_Decisions.md`."
+
+**Before saving, check every escalation clause.** By default, an agent's only channel is the conversation it's in — it cannot email, message, call, or notify anyone who isn't the person it's currently talking to, unless this company has actually connected a real notification or paging tool and explicitly authorised the agent to use it. You have no public information suggesting that's the case for a bootstrap, so default every escalation clause to what a stock agent can do: stop, and tell the current user by name who needs to sign off or be looped in. A common failure mode is generating language like "pause and surface to the CEO" or "notify {{ROLE}}" as if the agent has a channel it doesn't have — rewrite any clause that reads that way. This applies to hard constraints, industry-specific rules, and the Key Contacts framing alike. `references/claude_md_template.md` models the correct default pattern; match it. If a later Workshop session confirms the company has real paging/notification tooling wired up, that's the point to describe it accurately — not at bootstrap, when it's a guess.
+
+Save to the workspace root.
+
+---
+
+### Step 8: Summary Report
+
+Present a summary to the user:
+
+1. **What was created** - list of all files with brief descriptions
+2. **Where the public picture is clear** - which strategy documents had enough public information to produce a solid first draft. This is not a judgement of how good the company is in these areas. It is a reflection of how much was findable. A company with a clear public presence will score well here regardless of whether the underlying reality matches.
+3. **Where the {{OS_SHORTHAND}} BoS OS needs your input** - which documents are thin because the information simply isn't public. These are not weaknesses in your business. They are gaps in what the outside world can see. Only you can fill them in. Ordered by priority: which ones matter most for how the {{OS_SHORTHAND}} BoS OS will support your decisions.
+4. **Personal goal and North Star metric** - confirm both answers from the opening questions and note where they're reflected in the documents. If either is unresolved, surface your suggested answer now: "Based on everything I've built, here's what I'd suggest, and here's why: [your suggestion]. Does that feel right, or is there something you'd push back on?"
+5. **What to do next** - see below
+
+**Recommended next step - start with yourself, not your team:**
+
+The founder or CEO is the first and most important user of the {{OS_SHORTHAND}} BoS OS. Before involving anyone else, work through it yourself. That process is how you learn how the system works, and you cannot explain it to your team until you understand it yourself.
+
+**Make this feel like a moment of discovery.** When you present the summary, don't just hand them a list of files. Show them what you found. Pick two or three genuinely interesting things the research surfaced: a competitive position they haven't articulated, a pattern in how they talk about their customers, a gap in their leadership map that's worth naming. Make them feel that the {{OS_SHORTHAND}} BoS OS already knows something real about their company. That's what pulls them in.
+
+Tell the user something like:
+
+> "To be clear about where we are: what you have is a first draft built entirely from public information and two questions. Some of it will be wrong. Some of it will be focused on the wrong things. That's expected. The system has never spoken to you before.
+>
+> The next step is to give it feedback. Open the documents, read them, and start shaping what's there so it reflects what you actually know your company to be. Correct what's wrong. Add what's missing. Remove what doesn't apply. This is the process of making the {{OS_SHORTHAND}} BoS OS yours.
+>
+> Here's one thing I noticed while building it that might be worth looking at first: [one specific, genuine observation from the research, something concrete, not generic]."
+
+Then present the "next 90 minutes" guidance:
+
+```
+## Your next 90 minutes
+
+What you have is a first draft from public information and two questions.
+Some of it will be wrong. Some of it will be focused on the wrong things.
+That's fine. This step is about giving the {{OS_SHORTHAND}} BoS OS feedback and starting to
+shape it into something that reflects what you know your company to be.
+
+1. Start with your Values document. Correct anything that doesn't sound like you,
+   add what's missing, remove what doesn't apply.
+2. Open the strategy document most relevant to your biggest current challenge.
+   Add the two or three things only you know that aren't in there yet.
+3. Check the people map. Correct any names, titles, or responsibilities that are wrong.
+4. Ignore everything else for now.
+
+Use the BoS OS Workshop skill to guide you through each of these.
+
+You can do this in chunks. It doesn't have to be one sitting.
+That said, most people find that once they start, they cancel the next meeting.
+```
+
+---
+
+## Tone and Quality
+
+Be direct and specific. Generic filler like "the company aims to be a leader in its space" is useless. If you found that the company raised a Series C at $200M valuation and is expanding into APAC, say that. If their job postings reveal they use Kubernetes on GCP with a React frontend, put that in the platform architecture document.
+
+When you can't find information, say so explicitly: `[INTERNAL: No public data found for this section. The [role] should provide: ...]`. This is more useful than filling in generic content that the exec will have to delete.
+
+Use the language this company actually uses. If their website says "clients" not "customers," use clients. If they call their product a "platform" not a "tool," use platform. One wrong term and the whole {{OS_SHORTHAND}} BoS OS feels like it was written for someone else.
+
+---
+
+## Multi-Session Support
+
+If the bootstrap takes more than one session (unlikely but possible for very large companies), use the state folder:
+- Update `session_summary.md` with what was completed
+- Add open items to `session_review_log.md`
+- Next session, read the state folder and resume where you left off
