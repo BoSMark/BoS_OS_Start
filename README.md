@@ -6,7 +6,7 @@ Most companies add AI tools on top of an operating system nobody has written dow
 
 These three skills fix the foundation first, then put it to work.
 
-**Current version: v2.3.1** — [What's new](CHANGELOG.md)
+**Current version: v2.4.0** — [What's new](CHANGELOG.md)
 
 ---
 
@@ -112,6 +112,8 @@ Bootstrap produces a lot. Don't try to process it all at once. Check your `BOOTS
 
 The system is designed to be lived in gradually, not consumed in one sitting.
 
+If Bootstrap gave you something useful in the last 90 minutes, a star on this repo helps the next founder find it too.
+
 ---
 
 ## Upgrading from an earlier version
@@ -159,9 +161,9 @@ Once Bootstrap, Workshop, and (if you're running missions) Run are working, the 
 
 Further skills, scheduled tasks, and agent specs are also released on an ongoing basis in this repo and others.
 
-**Follow or watch this repo** to get notified when new ones ship.
-
 All BoSMark repos → [github.com/BoSMark](https://github.com/BoSMark)
+
+**Questions, ideas, or feedback?** → [BoS OS Discussions](https://github.com/BoSMark/BoS_OS_Start/discussions)
 
 ---
 
