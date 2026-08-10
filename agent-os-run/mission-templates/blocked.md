@@ -1,4 +1,4 @@
-# blocked.md — {{OS_SHORTHAND}} BoS OS — [Mission Name]
+# blocked.md — BoS OS — [Mission Name]
 
 Your decision queue. **The most important file in the mission.**
 

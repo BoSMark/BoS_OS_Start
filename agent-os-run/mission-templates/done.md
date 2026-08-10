@@ -1,4 +1,4 @@
-# done.md — {{OS_SHORTHAND}} BoS OS — [Mission Name]
+# done.md — BoS OS — [Mission Name]
 
 Completed work. One-line production note per item.
 **This file is the raw input to your retro at mission close.**
