@@ -3,7 +3,7 @@
 # Updated as part of the three-phase release process (Phase 1 planning)
 
 skills:
-  # BoS_OS_Start — Core BoS OS toolkit
+  # BoS_OS_Start - Core BoS OS toolkit
   agent-os-bootstrap:
     repo: "BoS_OS_Start"
     path: "agent-os-bootstrap/SKILL.md"
@@ -19,7 +19,7 @@ skills:
     path: "agent-os-run/SKILL.md"
     description: "Operate your BoS OS day to day"
 
-  # Quick_Questions — Quick diagnostic conversations for founders
+  # Quick_Questions - Quick diagnostic conversations for founders
   ai-readiness-check:
     repo: "Quick_Questions"
     path: "ai-readiness-check/SKILL.md"
@@ -50,7 +50,7 @@ skills:
     path: "your-next-hire/SKILL.md"
     description: "Money is no object. Who is your next hire"
 
-  # BoS_OS_Advancing_Skills — Advanced skills for ongoing operation
+  # BoS_OS_Advancing_Skills - Advanced skills for ongoing operation
   prospect-intelligence-scoping:
     repo: "BoS_OS_Advancing_Skills"
     path: "prospect-intelligence-scoping/SKILL.md"
@@ -60,3 +60,8 @@ skills:
     repo: "BoS_OS_Advancing_Skills"
     path: "signalprocessing/SKILL.md"
     description: "Turn recorded conversations into actionable signals"
+
+  skill-currency-check:
+    repo: "BoS_OS_Advancing_Skills"
+    path: "skill-currency-check/SKILL.md"
+    description: "Check your installed skills against the canonical GitHub versions"
