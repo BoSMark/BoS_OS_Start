@@ -1,0 +1,62 @@
+# BoS OS Skills Manifest
+# Central registry mapping each skill to its GitHub repo and SKILL.md path
+# Updated as part of the three-phase release process (Phase 1 planning)
+
+skills:
+  # BoS_OS_Start — Core BoS OS toolkit
+  agent-os-bootstrap:
+    repo: "BoS_OS_Start"
+    path: "agent-os-bootstrap/SKILL.md"
+    description: "Models your company OS from public information"
+
+  agent-os-workshop:
+    repo: "BoS_OS_Start"
+    path: "agent-os-workshop/SKILL.md"
+    description: "Refine your BoS OS with insider knowledge"
+
+  agent-os-run:
+    repo: "BoS_OS_Start"
+    path: "agent-os-run/SKILL.md"
+    description: "Operate your BoS OS day to day"
+
+  # Quick_Questions — Quick diagnostic conversations for founders
+  ai-readiness-check:
+    repo: "Quick_Questions"
+    path: "ai-readiness-check/SKILL.md"
+    description: "Where does AI fit in your business"
+
+  ceo-interview-prep:
+    repo: "Quick_Questions"
+    path: "ceo-interview-prep/SKILL.md"
+    description: "Prepare for a CEO interview"
+
+  founder-alignment-check:
+    repo: "Quick_Questions"
+    path: "founder-alignment/SKILL.md"
+    description: "Are you and your team pointed at the same thing"
+
+  founder-replaceability-check:
+    repo: "Quick_Questions"
+    path: "founder-replaceability-check/SKILL.md"
+    description: "Could your business run without you"
+
+  why-oh-why:
+    repo: "Quick_Questions"
+    path: "why-oh-why/SKILL.md"
+    description: "What are you actually trying to achieve"
+
+  your-next-hire:
+    repo: "Quick_Questions"
+    path: "your-next-hire/SKILL.md"
+    description: "Money is no object. Who is your next hire"
+
+  # BoS_OS_Advancing_Skills — Advanced skills for ongoing operation
+  prospect-intelligence-scoping:
+    repo: "BoS_OS_Advancing_Skills"
+    path: "prospect-intelligence-scoping/SKILL.md"
+    description: "Scope a prospect-intelligence system"
+
+  signalprocessing:
+    repo: "BoS_OS_Advancing_Skills"
+    path: "signalprocessing/SKILL.md"
+    description: "Turn recorded conversations into actionable signals"
