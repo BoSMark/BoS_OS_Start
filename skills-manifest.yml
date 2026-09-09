@@ -41,10 +41,10 @@ skills:
     version: "1.0.0"
     description: "Prepare for a CEO interview"
 
-  founder-alignment-check:
+  founder-alignment:
     repo: "Quick_Questions"
     path: "founder-alignment/SKILL.md"
-    version: "1.0.0"
+    version: "2.0.0"
     description: "Are you and your team pointed at the same thing"
 
   founder-replaceability-check:
