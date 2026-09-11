@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Pre-Release Checklist for BoS OS GitHub Release — v2
+# Pre-Release Checklist for BoS OS GitHub Release — v3
 #
 # This script validates that a release is ready to push to main.
 # Incorporates all safeguards: repository state, versions, structure,
-# changelog, and consistency across the three-skill bundle.
+# changelog, package structure, and consistency across the three-skill bundle.
 #
 # Run this BEFORE committing and pushing a version bump.
 #
@@ -44,7 +44,7 @@ check_warn() {
 }
 
 echo "=========================================="
-echo "BoS OS Pre-Release Checklist v2"
+echo "BoS OS Pre-Release Checklist v3"
 echo "=========================================="
 echo ""
 
@@ -52,36 +52,42 @@ echo ""
 echo "=== PHASE 0: PERSONALISATION VERIFICATION ==="
 echo ""
 
-# Check 0a: No bare 'the OS' references left in SKILL.md files
-# (these should all have been replaced with {{OS_SHORTHAND}} BoS OS)
-echo "Checking for unreplaced 'the OS' references in SKILL.md files..."
-BARE_OS_HITS=0
+# As of v2.4.0 the two-letter OS-shorthand mechanic is removed (see CHANGELOG.md).
+# The system now refers to itself consistently as "the BoS OS" — no per-founder
+# nickname. The founder's-name personalisation (Question 1 / {{FOUNDER_NAME}})
+# is unchanged and still required. This phase now checks for the opposite of
+# what it checked pre-v2.4.0: no leftover shorthand tokens, and founder-name
+# personalisation still intact.
+
+# Check 0a: No leftover {{OS_SHORTHAND}} tokens in any of the three SKILL.md files
+# (the mechanic was removed in v2.4.0 — any hit here is a leftover artifact, not intentional)
+echo "Checking for leftover {{OS_SHORTHAND}} tokens in SKILL.md files..."
+SHORTHAND_HITS=0
 for skill_file in agent-os-bootstrap/SKILL.md agent-os-workshop/SKILL.md agent-os-run/SKILL.md; do
     if [ -f "$skill_file" ]; then
-        COUNT=$(grep "\bthe OS\b" "$skill_file" 2>/dev/null | grep -v '"the OS"' | wc -l || true)
+        COUNT=$(grep -c "OS_SHORTHAND" "$skill_file" 2>/dev/null || true)
         if [ "$COUNT" -gt 0 ]; then
-            check_fail "$skill_file contains $COUNT bare 'the OS' reference(s) — should be '{{OS_SHORTHAND}} BoS OS'"
-            grep -n "\bthe OS\b" "$skill_file" | grep -v '"the OS"'
-            BARE_OS_HITS=$((BARE_OS_HITS + COUNT))
+            check_fail "$skill_file contains $COUNT leftover OS_SHORTHAND token(s) — shorthand mechanic was removed in v2.4.0, these should not be present"
+            grep -n "OS_SHORTHAND" "$skill_file"
+            SHORTHAND_HITS=$((SHORTHAND_HITS + COUNT))
         fi
     fi
 done
-if [ "$BARE_OS_HITS" -eq 0 ]; then
-    check_pass "No bare 'the OS' references found in SKILL.md files"
+if [ "$SHORTHAND_HITS" -eq 0 ]; then
+    check_pass "No leftover OS_SHORTHAND tokens found in SKILL.md files"
 fi
 
-# Check 0b: {{OS_SHORTHAND}} placeholder present in all three SKILL.md files
+# Check 0b: {{FOUNDER_NAME}} placeholder still present in agent-os-bootstrap/SKILL.md
+# (founder-name personalisation is unchanged by the v2.4.0 shorthand removal)
 echo ""
-echo "Checking {{OS_SHORTHAND}} placeholder is present..."
-for skill_file in agent-os-bootstrap/SKILL.md agent-os-workshop/SKILL.md agent-os-run/SKILL.md; do
-    if [ -f "$skill_file" ]; then
-        if grep -q "OS_SHORTHAND" "$skill_file"; then
-            check_pass "$skill_file contains OS_SHORTHAND placeholder"
-        else
-            check_fail "$skill_file missing OS_SHORTHAND placeholder — personalisation not applied"
-        fi
+echo "Checking {{FOUNDER_NAME}} placeholder is present in agent-os-bootstrap/SKILL.md..."
+if [ -f agent-os-bootstrap/SKILL.md ]; then
+    if grep -q "FOUNDER_NAME" agent-os-bootstrap/SKILL.md; then
+        check_pass "agent-os-bootstrap/SKILL.md contains FOUNDER_NAME placeholder"
+    else
+        check_fail "agent-os-bootstrap/SKILL.md missing FOUNDER_NAME placeholder — founder-name personalisation not applied"
     fi
-done
+fi
 
 # ==================== PHASE 1: REPOSITORY STATE ====================
 echo ""
@@ -274,6 +280,33 @@ else
         fi
     fi
 fi
+
+# ==================== PHASE 6: PACKAGE STRUCTURE ====================
+echo ""
+echo ""
+echo "=== PHASE 6: PACKAGE STRUCTURE ==="
+echo ""
+
+# Check 15: each .skill package, built the same way release.yml builds it,
+# must have SKILL.md at the zip's root — not nested inside a wrapping folder.
+# `zip -r x.skill dir/` packages the folder itself and breaks Cowork's skill
+# uploader, which looks for SKILL.md at the top level. Added v2.4.0 after
+# exactly this bug shipped in every release up to and including v2.3.1.
+echo "Building .skill packages locally to verify structure (same method release.yml uses)..."
+TMP_PKG_DIR=$(mktemp -d)
+for DIR in agent-os-bootstrap agent-os-workshop agent-os-run; do
+    if [ -d "$DIR" ]; then
+        (cd "$DIR" && zip -qr "$TMP_PKG_DIR/${DIR}.skill" .)
+        if unzip -l "$TMP_PKG_DIR/${DIR}.skill" | awk '{print $4}' | grep -qx "SKILL.md"; then
+            check_pass "$DIR.skill has SKILL.md at its root (not nested)"
+        else
+            check_fail "$DIR.skill does NOT have SKILL.md at its root — packaging is nested, will break Cowork's uploader"
+        fi
+    else
+        check_fail "$DIR/ not found — cannot verify package structure"
+    fi
+done
+rm -rf "$TMP_PKG_DIR"
 
 # ==================== SUMMARY ====================
 echo ""

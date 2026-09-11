@@ -3,13 +3,13 @@ name: agent-os-run
 description: |
   Operate your BoS OS day to day. The coordination layer that runs after Bootstrap and Workshop: it shapes a rough idea into a measurable Mission Brief, staffs the mission by casting and speccing the agent team, then drives delivery from goal to running system. Three bounded agents — Mission Shaper, Agent Planner, Delivery Manager — plus mission state templates. Use when someone wants to run a mission, shape a goal into a brief, staff or plan a mission, manage delivery, run the backlog, or operate their agent team. Triggers: "run a mission", "run the BoS OS", "run agent run skill", "shape a mission", "mission brief", "staff this mission", "plan the mission", "delivery manager", "run my backlog", "operate my agents", "stand-up", "what's next on the mission". MANDATORY TRIGGERS: BoS OS, agent OS run, run a mission, run agent run skill, mission shaper, agent planner, delivery manager, mission brief, backlog, stand-up.
 metadata:
-  version: 2.3.1
+  version: 2.4.0
   author: Tim Barker, Mark Littlewood and Business of Software
 ---
 
 # Agent OS — Run
 
-**Version:** 2.3.1  
+**Version:** 2.4.0  
 **Status:** ACTIVE  
 **Author:** Tim Barker, Mark Littlewood and Business of Software
 
@@ -23,16 +23,7 @@ Use this after you've run **Bootstrap** and **Workshop**. You have a strategy la
 
 ## "Where am I?" — Session Opener (always do this first)
 
-**Personalisation check:** Before reading any mission files, check the CLAUDE.md header for a two-letter shorthand.
-
-Look for: `# CLAUDE.md — [XX] BoS OS, built for [Name]`
-
-- **If `[XX]` is present:** Use it throughout this session. Reference the BoS OS as "`[XX] BoS OS`" in all prompts and output.
-- **If `[XX]` is NOT present:** Ask the founder:
-
-> "By the way, I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this."
-
-Once they provide two letters, update the CLAUDE.md header and use the shorthand for the rest of this session. Edit only the header line itself — if `*Bootstrapped from BoS OS Toolkit vX.Y.Z on [date]*` and `*Last synced with BoS OS Toolkit vX.Y.Z on [date]*` lines sit directly beneath it, leave both untouched. Neither is something Run maintains.
+Read the CLAUDE.md header to confirm which company's BoS OS this is: `# CLAUDE.md — BoS OS, built with [Name]`.
 
 ---
 
@@ -78,7 +69,7 @@ Retro (at close)   →  reads done.md
 
 Each agent is bounded: the Shaper shapes (it doesn't cast), the Planner casts and specs (it doesn't run), the Delivery Manager delivers and runs (it doesn't re-shape).
 
-**Note on naming:** Throughout the pipeline, all agent prompts and outputs reference the OS by its chosen shorthand. If the shorthand is "DF", agents say things like: "I'm the DF BoS OS Mission Shaper" or "Let's move this to the DF BoS OS backlog." Use `{{OS_SHORTHAND}} BoS OS` wherever you'd otherwise say "the OS" or "your OS". If no shorthand was set, use "the BoS OS".
+**Note on naming:** Throughout the pipeline, all agent prompts and outputs reference the operating system as "the BoS OS" — for example: "I'm the BoS OS Mission Shaper" or "Let's move this to the BoS OS backlog."
 
 ---
 
@@ -225,7 +216,7 @@ Work the lines of challenge below (A–E). Follow the conversation where it goes
 
 Their first framing is usually an activity. Make them state the change in the world that activity is in service of.
 
-- **The "…so that what?" ladder.** *"Suppose you do all of that, perfectly. So what? What's different afterwards?"* Ladder until you hit a change in the business.
+- **The "…so what?" ladder.** *"Suppose you do all of that, perfectly. So what? What's different afterwards?"* Ladder until you hit a change in the business.
 - **Write the success announcement (your strongest move).** *"Imagine it's [end of horizon] and this worked. Write the two-sentence internal announcement you'd send the team. What does it say happened?"*
 
 > **Limp** (activity-framed): *"We've published all 12 talks from the last conference and transcribed them into the library."*  
@@ -788,4 +779,4 @@ Require at least one **leading indicator** — something observable early, befor
 
 ---
 
-*Agent OS Run v2.3 — Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*
+*Agent OS Run v2.4 — Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*

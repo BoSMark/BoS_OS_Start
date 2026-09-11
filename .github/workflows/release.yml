@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -44,21 +44,47 @@ jobs:
       - name: Build .skill files
         if: steps.check_release.outputs.exists == 'false'
         run: |
-          # Create .skill files (zip archives)
-          zip -r agent-os-bootstrap.skill agent-os-bootstrap/
-          zip -r agent-os-workshop.skill agent-os-workshop/
-          zip -r agent-os-run.skill agent-os-run/
+          # Create .skill files (zip archives). Package each skill folder's
+          # CONTENTS at the zip root, not the folder itself — `zip -r x.skill dir/`
+          # wraps everything one level deeper (dir/SKILL.md inside the zip),
+          # which breaks Cowork's skill uploader: it looks for SKILL.md at the
+          # zip's top level and fails with a nested/secondary-level error.
+          # Fixed in v2.4.0 — same bug existed in every prior release.
+          (cd agent-os-bootstrap && zip -r ../agent-os-bootstrap.skill .)
+          (cd agent-os-workshop && zip -r ../agent-os-workshop.skill .)
+          (cd agent-os-run && zip -r ../agent-os-run.skill .)
           ls -lh *.skill
+
+      - name: Verify .skill package structure
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          # Guard against the nested-folder bug regressing: each .skill must
+          # have SKILL.md at its root, not inside a subfolder. Fails the whole
+          # release if packaging goes wrong again.
+          for f in agent-os-bootstrap.skill agent-os-workshop.skill agent-os-run.skill; do
+            if unzip -l "$f" | awk '{print $4}' | grep -qx "SKILL.md"; then
+              echo "OK: $f has SKILL.md at its root"
+            else
+              echo "FAIL: $f does not have SKILL.md at its root — packaging is nested"
+              unzip -l "$f"
+              exit 1
+            fi
+          done
 
       - name: Get commit message
         id: commit_msg
         run: |
-          MSG=$(git log -1 --pretty=%B)
-          # Escape for JSON
-          MSG="${MSG//'%'/'%25'}"
-          MSG="${MSG//$'\n'/'%0A'}"
-          MSG="${MSG//$'\r'/'%0D'}"
-          echo "message=$MSG" >> $GITHUB_OUTPUT
+          # [FIXED — v2.4.0, release-backlog.md open item] Previously percent-encoded
+          # newlines (%0A) for the old ::set-output command, but $GITHUB_OUTPUT (the
+          # file-based replacement) doesn't decode that — the literal "%0A" string
+          # was landing in the published release notes instead of a line break.
+          # Fixed using $GITHUB_OUTPUT's own multiline heredoc syntax, which preserves
+          # real newlines with no manual encoding needed.
+          {
+            echo "message<<EOF"
+            git log -1 --pretty=%B
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Create Release
         if: steps.check_release.outputs.exists == 'false'
@@ -68,7 +94,7 @@ jobs:
           name: v${{ steps.version.outputs.version }}
           body: |
             ## Changes
-            
+
             ${{ steps.commit_msg.outputs.message }}
           files: |
             agent-os-bootstrap.skill
@@ -83,4 +109,3 @@ jobs:
           curl -X POST -H 'Content-type: application/json' \
             --data '{"text":"BoS OS v${{ steps.version.outputs.version }} released"}' \
             ${{ secrets.SLACK_WEBHOOK_URL }} || true
-

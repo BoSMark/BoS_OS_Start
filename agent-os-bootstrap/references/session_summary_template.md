@@ -26,4 +26,3 @@ The summary reflects the current session only. Historical sessions live in `01_S
 - Keep entries short — this file is read at every session start; bloat here is a context cost.
 - Decisions go here as a one-liner; full detail stays in `01_STATE/decisions.md`.
 - Open items carry forward until resolved; closed items archive to `01_STATE/sessions/`.
-- The {{OS_SHORTHAND}} shorthand appears naturally in entry content (e.g. "JK BoS OS v2.3 personalisation applied") — it is not part of the file header format.

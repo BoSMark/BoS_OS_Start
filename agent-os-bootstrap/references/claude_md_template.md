@@ -7,7 +7,7 @@ Copy this template to your `agent-os/CLAUDE.md` and fill in the blanks before st
 ---
 
 ```markdown
-# CLAUDE.md — {{OS_SHORTHAND}} BoS OS, built for {{FOUNDER_NAME}}
+# CLAUDE.md — BoS OS, built with {{FOUNDER_NAME}}
 
 *Bootstrapped from BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*
 *Last synced with BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*
@@ -292,7 +292,6 @@ These contacts are for the humans operating this system. An agent that needs to 
 
 Before deploying this CLAUDE.md:
 
-- [ ] **OS shorthand** ({{OS_SHORTHAND}} — two letters chosen by the founder, e.g. "JK" → "JK BoS OS")
 - [ ] **Founder name** ({{FOUNDER_NAME}} — used in the CLAUDE.md header)
 - [ ] **Company name** ({{COMPANY_NAME}})
 - [ ] **Team description** (who do agents augment?)

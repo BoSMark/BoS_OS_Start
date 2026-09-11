@@ -4,7 +4,7 @@ description: |
   Guide an executive through refining their BoS OS, deepening strategy documents, mapping the roles and responsibilities of people in the organisation, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my BoS OS, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: BoS OS, workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
   authors: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.3.1
+  version: 2.4.0
 ---
 
 # BoS OS: Executive Workshop
@@ -38,13 +38,7 @@ At the start of every workshop session:
 3. Read the exec's existing strategy document(s) from `02_STRATEGY/`
 4. Read the exec's existing agent spec(s) from `03_AGENTS/`
 
-**Personalisation check:** Before starting any phase, check the BoS OS shorthand. Look in `CLAUDE.md` for a header like `# CLAUDE.md — [XX] BoS OS, built for [Name]`. If the shorthand `[XX]` is present, use it throughout this session when referencing the BoS OS.
-
-If no shorthand is present (older bootstraps or external imports), ask the founder:
-
-> "By the way, I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this."
-
-Once they provide two letters, update the CLAUDE.md header to include it, and use the shorthand throughout this session. Edit only the header line itself — if `*Bootstrapped from BoS OS Toolkit vX.Y.Z on [date]*` and `*Last synced with BoS OS Toolkit vX.Y.Z on [date]*` lines sit directly beneath it, leave both untouched. Neither is something Workshop maintains today.
+Read the CLAUDE.md header to confirm which company's BoS OS this is: `# CLAUDE.md — BoS OS, built with [Name]`.
 
 If the folder structure doesn't exist at all, do not offer to create the folders manually and do not list them out as something to set up by hand. Tell the user: "This company doesn't have a BoS OS yet — I need to run Bootstrap first. That's not just about creating folders: Bootstrap researches your company and populates real, specific content in them — strategy documents grounded in your actual market and positioning, not blank templates you'd have to fill in yourself. Setting the folders up by hand would skip all of that. Let's run Bootstrap now, it only takes a few minutes, and it makes everything after this easier, not harder."
 
@@ -58,7 +52,7 @@ If this is a continuation session, check the state folder for previous progress 
 
 The workshop has four phases. Each is self-contained, so an exec can complete one phase per session if time is limited. Track progress and resume seamlessly.
 
-**Note on personalisation:** Throughout all phases, reference the operating system using the founder's chosen shorthand: `{{OS_SHORTHAND}} BoS OS`. For example: "Your strategy documents are the foundation of the {{OS_SHORTHAND}} BoS OS" rather than "the OS" or "your OS". If no shorthand was set (see Before You Begin), use "the BoS OS". This reinforces the founder's naming choice from Bootstrap and keeps "BoS OS" in the language.
+**Note on naming:** Throughout all phases, reference the operating system as "the BoS OS" rather than "the OS" or "your OS" — for example: "Your strategy documents are the foundation of the BoS OS."
 
 **Progress is everything.** People lose confidence when they can't see where they are or how far they have to go. At the start of each phase, tell the exec exactly where they are, what the phase will produce, and what comes after it. At the end of each phase, summarise what was accomplished before moving on. Don't just slide into the next topic. Make every transition feel like a milestone.
 

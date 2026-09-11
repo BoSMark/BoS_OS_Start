@@ -4,6 +4,30 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
+## v2.4.0 — 2026-08-06
+
+### Removed: OS shorthand naming (Bootstrap, Run, Workshop)
+
+The two-letter OS-shorthand mechanic introduced in v2.3 (asking the founder to pick two letters, e.g. "BB BoS OS", then threading `{{OS_SHORTHAND}}` through every session header, agent prompt, and mission template) is removed. In practice it consumed opening minutes of a Bootstrap session getting the shorthand "right" without adding much — founders got tied up naming the system before any research had happened. The underlying personalization principle stands (see `Design_Principles.md` #1): asking for and using the founder's own name throughout a session is unchanged. What's removed is the negotiate-a-nickname-for-the-OS layer on top of it. The system is now consistently "the BoS OS" everywhere a shorthand used to appear.
+
+**Bootstrap** — Question 2 ("OS shorthand") removed from the Opening Questions; Personal goal and North Star metric renumbered to Questions 2 and 3. The "Personalization: Using the shorthand throughout" section removed. All `{{OS_SHORTHAND}}` tokens in Steps 3, 7, and 8 replaced with plain "BoS OS".
+
+**Run** — the session-opener check for a missing shorthand (and the prompt asking the founder to choose one) removed; Run now just confirms which company's BoS OS it's operating against. "Note on naming" simplified to always use "the BoS OS".
+
+**Workshop** — same removal: the personalisation check and ask-for-a-shorthand fallback removed from Before You Begin; "Note on personalisation" simplified to always use "the BoS OS".
+
+**Reference files updated:** `claude_md_template.md` (header token and checklist item removed), `session_summary_template.md` (usage note removed), `mission-shaper.md` and all four mission templates (`todo.md`, `in-progress.md`, `blocked.md`, `done.md`) — `{{OS_SHORTHAND}}` replaced with plain "BoS OS" throughout.
+
+### Changed: Bootstrap now requires a website URL (or LinkedIn) alongside company name
+
+`agent-os-bootstrap`'s "Before You Begin" previously treated a URL as optional ("company name... and optionally URL"), which meant Step 1 research sometimes had nothing to anchor on but a name — a problem for generic or common company names, where a few keywords aren't enough to find the right company. Bootstrap now asks for the company website URL as part of the minimum to proceed; if the founder doesn't have a website yet, it asks for a LinkedIn profile (theirs or the company's) instead and uses that to orient research.
+
+### Upgrading
+
+Existing BoS OS instances with a shorthand already set (e.g. `# CLAUDE.md — DF BoS OS, built for...`) are unaffected by this change — nothing rewrites an existing CLAUDE.md header. This only changes what new Bootstrap sessions ask, and what Run/Workshop do when a shorthand is absent (previously: ask for one; now: nothing, just use "BoS OS").
+
+---
+
 ## v2.3.1 — 2026-07-07
 
 ### New feature: Toolkit version stamping

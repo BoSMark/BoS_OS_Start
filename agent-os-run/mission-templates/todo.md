@@ -1,4 +1,4 @@
-# todo.md — {{OS_SHORTHAND}} BoS OS — [Mission Name]
+# todo.md — BoS OS — [Mission Name]
 
 Prioritised backlog. Items are ordered by priority. Each item has an assigned agent and a review date.
 **Items past their review date must be flagged for cull — do not silently carry them.**

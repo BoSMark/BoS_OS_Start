@@ -4,7 +4,7 @@ description: |
   Build the BoS OS for a company, a structured operating system that helps a CEO or founder make better decisions and helps their team understand what they are trying to do. Researches the company from public information, creates the folder structure, populates strategy documents with company-specific content, maps people and their roles, and generates a CLAUDE.md. Triggers: "run the BoS OS", "BoS OS", "Company OS", "bootstrap my company OS", "create an operating system for [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "operating model", "folder structure for agents", "bootstrap my company". MANDATORY TRIGGERS: BoS OS, Company OS, bootstrap, company setup, agent framework, AI strategy, operating model, folder structure.
 metadata:
   author: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.3.1
+  version: 2.4.0
 ---
 
 # BoS OS: Company Bootstrap
@@ -17,9 +17,9 @@ Your job is to research the company from public information and create a complet
 
 1. Read `references/folder_structure.md` to understand the canonical structure
 2. Read `references/industry_patterns.md` to understand how to adapt by industry
-3. Have the user's company name (and optionally: URL, industry, brief description)
+3. Have the user's company name and website URL
 
-If the user hasn't provided a company name, ask for one. You need at minimum a company name to proceed. A URL or brief description helps but isn't required; you'll research the rest.
+If the user hasn't provided a company name, ask for one. Then ask: "What's the company website URL?" A name alone is often too thin to research reliably, especially when it's a generic or common name shared with unrelated businesses; without a URL you end up guessing from a handful of keywords instead of finding the actual company. If they don't have a website yet, ask for a LinkedIn profile instead (their own or the company's) and use that to anchor the research. Industry and a brief description are still optional and helpful, but company name plus (website URL or LinkedIn profile) is the minimum to proceed.
 
 **Web search is required.** This skill relies on researching the company from public data. If web search is not available in the current environment, tell the user: "This skill needs internet access to research your company. Please ensure web search is enabled in your settings, then try again."
 
@@ -35,52 +35,33 @@ If the user hasn't provided a company name, ask for one. You need at minimum a c
 
 A friendly question. Use this throughout the session to personalise everything that follows.
 
-### Question 2: OS shorthand
-
-> "I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this."
-
-The OS is asking for a personal shorthand. This keeps "BoS OS" in the name while creating a snappy daily callout.
-
-**If the founder doesn't have a shorthand yet:**
-> "That's fine. For now, I'm just the BoS OS. You can always add a shorthand later once you get to know me."
-
-**If you already know the company name, offer a suggestion:**
-> "I'm called the Business of Software Operating System. Maybe I need a better name. Think of two letters that mean something to you. The more you talk to me, the more you'll appreciate this.
->
-> Given that this is [Company Name], I'd suggest [XX] — but what works for you?"
-
-**Examples of natural answers:**
-- "BB" → "I'm the BB BoS OS"
-- "DF" → "I'm the DF BoS OS"
-- "M" → "I'm the M BoS OS"
-
-### Question 3: Personal goal
+### Question 2: Personal goal
 
 > "What's your personal goal in this business? There's no wrong answer. It could be 'exit in 18 months', 'build this for 30 years', 'create something I'm proud of', 'financial independence by 50'. Knowing your motivation shapes how we prioritise everything that follows."
 
 This answer is foundational. It determines:
 - How aggressively to set growth targets in the commercial strategy document
-- Whether the {{OS_SHORTHAND}} BoS OS should be optimised for speed and scale or durability and margin
+- Whether the BoS OS should be optimised for speed and scale or durability and margin
 - How to frame the work in the BoS OS Workshop skill. A founder planning an exit needs very different OKRs than one building a generational business.
 
 **If they have a clear answer:** Note it explicitly. Use it to calibrate tone and priorities throughout every strategy document. Pass it forward clearly, as this context is also valuable input for the BoS OS Workshop skill.
 
-**If they're unsure:** Don't push. Say: "That's worth thinking about. We'll come back to it. It tends to become clearer once you see the {{OS_SHORTHAND}} BoS OS take shape." Flag it as an open item in `session_review_log.md`.
+**If they're unsure:** Don't push. Say: "That's worth thinking about. We'll come back to it. It tends to become clearer once you see the BoS OS take shape." Flag it as an open item in `session_review_log.md`.
 
-### Question 4: North Star metric
+### Question 3: North Star metric
 
 > "Before I start building, what's the one number you watch that tells you the business is heading in the right direction? Revenue, active users, margin, something else? If you don't have one yet, that's fine. It's the first thing we'll work out together."
 
 This is not a warm-up question. The answer:
 - Anchors every strategy document that follows
 - Tells you immediately whether the founder has clarity about what they're optimising for
-- If they don't have an answer, resolving it in this session is the first concrete proof that the {{OS_SHORTHAND}} BoS OS is useful
+- If they don't have an answer, resolving it in this session is the first concrete proof that the BoS OS is useful
 
 **If they have an answer:** Acknowledge it, note it, and use it throughout the bootstrap. Every strategy document should reference this number where relevant.
 
-**If they don't have one yet:** Say: "Excellent, that's the kind of thing the {{OS_SHORTHAND}} BoS OS is designed to help you think through. We're coming back to that and by the end of this session you'll have a draft answer." Then surface it in Step 8 (Summary Report) as a named output.
+**If they don't have one yet:** Say: "Excellent, that's the kind of thing the BoS OS is designed to help you think through. We're coming back to that and by the end of this session you'll have a draft answer." Then surface it in Step 8 (Summary Report) as a named output.
 
-Once you have answers to all four questions (or have acknowledged gaps), proceed to research.
+Once you have answers to all three questions (or have acknowledged gaps), proceed to research.
 
 ---
 
@@ -154,28 +135,28 @@ Create the canonical folder structure in the user's workspace:
 └── CLAUDE.md
 ```
 
-**What this folder structure is:** This is where your BoS OS lives. It sits on your machine, synced to Dropbox, Google Drive, or wherever you chose when setting up your Cowork project. Everything the {{OS_SHORTHAND}} BoS OS produces, remembers, and decides goes here. The files are the memory.
+**What this folder structure is:** This is where your BoS OS lives. It sits on your machine, synced to Dropbox, Google Drive, or wherever you chose when setting up your Cowork project. Everything the BoS OS produces, remembers, and decides goes here. The files are the memory.
 
-**Sharing and privacy - keep it simple for now:** Everything in your BoS OS sits within one folder, and you can isolate that from anything else on your network. As you are getting started, the most important thing is to get the {{OS_SHORTHAND}} BoS OS up and running, so for now, set it up as-is for yourself.
+**Sharing and privacy - keep it simple for now:** Everything in your BoS OS sits within one folder, and you can isolate that from anything else on your network. As you are getting started, the most important thing is to get the BoS OS up and running, so for now, set it up as-is for yourself.
 
-When you are ready to involve your team, you will want to give more thought to who gets access to what. Different people and different teams will need access to different parts of the {{OS_SHORTHAND}} BoS OS, and some information you will want to keep private. The BoS OS has a structure for that, but it is not something you need to configure during bootstrap. Get it working first, then bring your team in.
+When you are ready to involve your team, you will want to give more thought to who gets access to what. Different people and different teams will need access to different parts of the BoS OS, and some information you will want to keep private. The BoS OS has a structure for that, but it is not something you need to configure during bootstrap. Get it working first, then bring your team in.
 
 **Initialise the state files:**
 
 `session_summary.md` - Write an initial entry:
 
 ```
-# Session — {{OS_SHORTHAND}} BoS OS
+# Session — BoS OS
 
 **For:** {{FOUNDER_NAME}}  
 **Date:** [Date]
 
-{{OS_SHORTHAND}} BoS OS bootstrapped from public data. All strategy documents require internal enrichment by their respective owners. See session_review_log.md for the list of items that need attention.
+BoS OS bootstrapped from public data. All strategy documents require internal enrichment by their respective owners. See session_review_log.md for the list of items that need attention.
 ```
 
 `session_review_log.md` - Create with a section for open items. Add one item per strategy document: "[Document name] - bootstrapped from public data, requires internal review and enrichment by [owner name]."
 
-`decisions.md` - Create empty with a header: "Decision log for {{FOUNDER_NAME}}'s {{OS_SHORTHAND}} BoS OS."
+`decisions.md` - Create empty with a header: "Decision log for {{FOUNDER_NAME}}'s BoS OS."
 
 ---
 
@@ -233,21 +214,6 @@ Read `references/agent_spec_template.md` to understand what comes next, but do n
 
 ---
 
-## Personalization: Using the {{OS_SHORTHAND}} BoS OS shorthand throughout
-
-The founder has chosen a two-letter shorthand for this OS (e.g., "BB BoS OS", "DF BoS OS"). Use it consistently in all output:
-
-- **CLAUDE.md header:** `# CLAUDE.md — {{OS_SHORTHAND}} BoS OS, built for {{FOUNDER_NAME}}`
-- **Session files:** `"{{OS_SHORTHAND}} BoS OS — Session [date]"`
-- **Agent prompts:** `"I am the {{OS_SHORTHAND}} BoS OS..."`
-- **Memory system:** Tag all memory entries with the shorthand
-
-This keeps "BoS OS" in daily conversation and reinforces the brand through use, while giving the founder personal ownership through their chosen abbreviation.
-
-If no shorthand was provided in Question 2, just use "BoS OS" and note in the founder's entry that they can add a shorthand later when they're ready.
-
----
-
 ### Step 6: Create the Agent Map
 
 Create `03_AGENTS/agent_map.md`, a table mapping every exec to their strategy documents and agents:
@@ -270,7 +236,7 @@ Read `references/claude_md_template.md` and populate it for this specific compan
 - Decision cascade governance rules
 - Current date
 
-Use the CLAUDE.md header format defined above: `# CLAUDE.md — {{OS_SHORTHAND}} BoS OS, built for {{FOUNDER_NAME}}`. If no shorthand was set, use `# CLAUDE.md — BoS OS, built for {{FOUNDER_NAME}}`.
+Use the CLAUDE.md header format: `# CLAUDE.md — BoS OS, built with {{FOUNDER_NAME}}`.
 
 **Set the Toolkit version stamps.** Directly under the header, the template has two lines: `*Bootstrapped from BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*` and `*Last synced with BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*`. Fill `{{BOS_OS_VERSION}}` from this skill's own `version:` field in the frontmatter at the top of this file — read it, don't hardcode it, so the stamp stays correct as this skill is updated. Fill `{{BOOTSTRAP_DATE}}` with today's date. At bootstrap both lines get the same values — that's expected, nothing has synced yet. They mean different things and stay different going forward: "Bootstrapped from" is a permanent record and nothing should ever change it again. "Last synced" is where a future sync capability would record that a newer Toolkit version has since brought this OS up to date — no such capability exists yet, so for now it simply holds its initial value. Set both. Don't skip either, and don't ask the user for either.
 
@@ -288,21 +254,21 @@ Present a summary to the user:
 
 1. **What was created** - list of all files with brief descriptions
 2. **Where the public picture is clear** - which strategy documents had enough public information to produce a solid first draft. This is not a judgement of how good the company is in these areas. It is a reflection of how much was findable. A company with a clear public presence will score well here regardless of whether the underlying reality matches.
-3. **Where the {{OS_SHORTHAND}} BoS OS needs your input** - which documents are thin because the information simply isn't public. These are not weaknesses in your business. They are gaps in what the outside world can see. Only you can fill them in. Ordered by priority: which ones matter most for how the {{OS_SHORTHAND}} BoS OS will support your decisions.
+3. **Where the BoS OS needs your input** - which documents are thin because the information simply isn't public. These are not weaknesses in your business. They are gaps in what the outside world can see. Only you can fill them in. Ordered by priority: which ones matter most for how the BoS OS will support your decisions.
 4. **Personal goal and North Star metric** - confirm both answers from the opening questions and note where they're reflected in the documents. If either is unresolved, surface your suggested answer now: "Based on everything I've built, here's what I'd suggest, and here's why: [your suggestion]. Does that feel right, or is there something you'd push back on?"
 5. **What to do next** - see below
 
 **Recommended next step - start with yourself, not your team:**
 
-The founder or CEO is the first and most important user of the {{OS_SHORTHAND}} BoS OS. Before involving anyone else, work through it yourself. That process is how you learn how the system works, and you cannot explain it to your team until you understand it yourself.
+The founder or CEO is the first and most important user of the BoS OS. Before involving anyone else, work through it yourself. That process is how you learn how the system works, and you cannot explain it to your team until you understand it yourself.
 
-**Make this feel like a moment of discovery.** When you present the summary, don't just hand them a list of files. Show them what you found. Pick two or three genuinely interesting things the research surfaced: a competitive position they haven't articulated, a pattern in how they talk about their customers, a gap in their leadership map that's worth naming. Make them feel that the {{OS_SHORTHAND}} BoS OS already knows something real about their company. That's what pulls them in.
+**Make this feel like a moment of discovery.** When you present the summary, don't just hand them a list of files. Show them what you found. Pick two or three genuinely interesting things the research surfaced: a competitive position they haven't articulated, a pattern in how they talk about their customers, a gap in their leadership map that's worth naming. Make them feel that the BoS OS already knows something real about their company. That's what pulls them in.
 
 Tell the user something like:
 
 > "To be clear about where we are: what you have is a first draft built entirely from public information and two questions. Some of it will be wrong. Some of it will be focused on the wrong things. That's expected. The system has never spoken to you before.
 >
-> The next step is to give it feedback. Open the documents, read them, and start shaping what's there so it reflects what you actually know your company to be. Correct what's wrong. Add what's missing. Remove what doesn't apply. This is the process of making the {{OS_SHORTHAND}} BoS OS yours.
+> The next step is to give it feedback. Open the documents, read them, and start shaping what's there so it reflects what you actually know your company to be. Correct what's wrong. Add what's missing. Remove what doesn't apply. This is the process of making the BoS OS yours.
 >
 > Here's one thing I noticed while building it that might be worth looking at first: [one specific, genuine observation from the research, something concrete, not generic]."
 
@@ -313,7 +279,7 @@ Then present the "next 90 minutes" guidance:
 
 What you have is a first draft from public information and two questions.
 Some of it will be wrong. Some of it will be focused on the wrong things.
-That's fine. This step is about giving the {{OS_SHORTHAND}} BoS OS feedback and starting to
+That's fine. This step is about giving the BoS OS feedback and starting to
 shape it into something that reflects what you know your company to be.
 
 1. Start with your Values document. Correct anything that doesn't sound like you,
@@ -337,7 +303,7 @@ Be direct and specific. Generic filler like "the company aims to be a leader in 
 
 When you can't find information, say so explicitly: `[INTERNAL: No public data found for this section. The [role] should provide: ...]`. This is more useful than filling in generic content that the exec will have to delete.
 
-Use the language this company actually uses. If their website says "clients" not "customers," use clients. If they call their product a "platform" not a "tool," use platform. One wrong term and the whole {{OS_SHORTHAND}} BoS OS feels like it was written for someone else.
+Use the language this company actually uses. If their website says "clients" not "customers," use clients. If they call their product a "platform" not a "tool," use platform. One wrong term and the whole BoS OS feels like it was written for someone else.
 
 ---
 
