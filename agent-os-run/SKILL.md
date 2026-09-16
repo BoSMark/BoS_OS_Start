@@ -779,4 +779,4 @@ Require at least one **leading indicator** — something observable early, befor
 
 ---
 
-*Agent OS Run v2.4 — Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*
+*Agent OS Run v2.4.0 — Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*
