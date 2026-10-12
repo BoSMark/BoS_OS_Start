@@ -56,13 +56,13 @@ skills:
   why-oh-why:
     repo: "Quick_Questions"
     path: "why-oh-why/SKILL.md"
-    version: "1.0.0"
+    version: "1.1.0"
     description: "What are you actually trying to achieve"
 
   your-next-hire:
     repo: "Quick_Questions"
     path: "your-next-hire/SKILL.md"
-    version: "1.0.0"
+    version: "1.1.0"
     description: "Money is no object. Who is your next hire"
 
   # BoS_OS_Advancing_Skills - Advanced skills for ongoing operation
@@ -81,5 +81,5 @@ skills:
   skill-currency-check:
     repo: "BoS_OS_Advancing_Skills"
     path: "skill-currency-check/SKILL.md"
-    version: "1.1.0"
+    version: "1.2.0"
     description: "Check your installed skills against the canonical GitHub versions"
