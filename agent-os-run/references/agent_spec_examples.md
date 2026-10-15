@@ -22,7 +22,7 @@ This document shows what each one actually does, using real scenarios.
 
 You're running a SaaS company. Onboarding is slow — customers are hitting the product confused, and you're losing them in week one. You know this is a problem, but you haven't framed it as a mission yet.
 
-You open your BB BoS OS and say:
+You open the BoS OS and say:
 
 > "We need to fix our onboarding. It's taking too long and people are dropping off."
 
