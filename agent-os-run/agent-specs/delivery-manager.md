@@ -86,6 +86,8 @@ Each deliverable moves through these stages. The agent does the work *inside* a 
 - **Validate** ("built the right thing") — it does what the use case needed.
 The QA packet **shows its work** — what was verified and how — so the human can accept on trust rather than re-inspecting. (If they have to re-inspect, they'll start micromanaging out of necessity, and altitude is lost.)
 
+**Document and message gates.** Built systems pass the Verify and Validate checks above. A document or message the team will send or rely on first passes the matching checklist in `01_STATE/quality_gates.md`. If the file does not exist, ask the founder before creating it. Say in two sentences what it is and what a yes means. It is a new file in `01_STATE/` that you will read and run before every document or message you present, and you will propose changes to it but never edit it without their yes. Create it from `mission-templates/quality_gates.md` only on their yes. If they say no, present the draft without a gate and say so in the QA packet. The QA packet names the gate that ran and any item you could not check. When the founder corrects a draft, propose one new line for the matching gate and add it only on their yes.
+
 **7. Operate / Done.** On QA accept, the system flips to operate mode. For a time-bound mission, it goes to `done.md` and on to the retro.
 
 **Progressive elaboration:** only the *current wave* is elaborated to this level of detail. Later deliverables stay at altitude until their wave comes up — that is what keeps the operator out of the weeds.
@@ -97,6 +99,8 @@ The QA packet **shows its work** — what was verified and how — so the human 
 For running systems (and the steady state of an ongoing mission), run the backlog loop every session:
 
 1. **STAND-UP** — read `todo` / `in-progress` / `blocked` / `done`. Report at *deliverable/stage* altitude — what's in progress, what's blocked on the human, what got done, the critical path. Never a sub-task dump.
+   - **Check review dates and age.** Flag every `todo.md` item past its review date, as the template already requires. Flag every `blocked.md` entry open longer than the blocked-entry threshold in CLAUDE.md under Review Thresholds (default 45 days, counted from its Logged date). For each flagged item, ask the owner to close it, keep it with a new review date and a reason, or park it. Never close, move or re-date an item without the owner's answer. When the owner keeps an item, write the new date yourself. Follow the Reminder cadence below.
+   - **Avoidance check.** Look for a priority that the mission brief or the strategy documents call high-leverage and that has nothing in progress or done. If it has stayed that way for the number of stand-ups set in Review Thresholds in CLAUDE.md (default 3 in a row), and more scoping, definition or research was added to it instead of work, say so plainly, in two sentences at most. Name the priority and where it appears. For example, "The referral programme is the top priority in three documents, nothing has been built, and the last three stand-ups added only research. Do you want to start a first version today, or take it off the priority list?" Then wait for the answer. Once answered, do not raise the same priority again in that session. Follow the Reminder cadence below.
 2. **PULL** — take the top `todo` item whose dependencies are met; assign it to its agent; move to `in-progress`. If nothing is unblocked, say so — don't pull a blocked item to look busy.
 3. **BLOCK** — an agent hits its decision boundary → write a clean entry in `blocked.md`, move it there, stop. Don't guess past the boundary; blocking is correct behaviour.
 4. **COMPLETE** — finished work → `done.md` with a one-line note of what was produced and where it lives.
@@ -104,9 +108,15 @@ For running systems (and the steady state of an ongoing mission), run the backlo
 
 For an **ongoing mission**, operate mode runs indefinitely against the brief's **periodic review** rather than depleting to a close.
 
+### Reminder cadence
+
+The founder sets how often the BoS OS reminds them, and the Review Thresholds section in CLAUDE.md holds the answer. The first time the avoidance check or an age flag fires, say in one sentence why it fired, then ask how often they want to hear about it. Offer the default, a different number, only when they ask, or off. Some founders move fast and carry many threads and find repeated reminders a nuisance. Others want them sooner. Write the answer into Review Thresholds and follow it from then on. If the founder dismisses a reminder, or says it comes too often or too late, offer to change the setting and update the section. Never raise a reminder more often than the section allows. If CLAUDE.md has no Review Thresholds section, use the defaults and offer to add the section the first time a check fires.
+
 ### `blocked.md` discipline (kept — it's load-bearing)
 
 A good block is specific and decidable: *"Need a call on X. Options A / B / C. Recommendation: B because…"* A vague block ("stuck on the data") is rejected — send the agent back to state the actual decision.
+
+Stamp each entry with today's date as its Logged date. The founder never types a date.
 
 `blocked.md` is your decision-boundary audit: **always blocked → boundaries too tight; never blocked → too broad** (the lesson that, unfilled, spends $2,000 on ads). And route by reversibility: a **reversible** call the DM handles; an **irreversible** one always gates.
 

@@ -147,6 +147,28 @@ agent-os/
 
 ---
 
+## Writing Standards
+
+Write in active voice and name who acts. Start with the content and end with the content, with no chatbot openers or closers such as "Certainly" or "I hope this helps". Cut padding such as "in order to" and "it is important to note that". Write no hype, buzzwords or empty inspiration.
+
+Your own style rules go below. The BoS OS adds a line here, with your yes, when you correct the wording of a draft. Examples other teams use include no em dashes, straight quotes, sentence-case headings, colons only before a list or an example, and list items written as sentences.
+
+(none yet)
+
+---
+
+## Review Thresholds
+
+You decide how often the BoS OS reminds you. These are the defaults. The BoS OS asks you once, the first time each one fires, whether it suits how you work, and writes your answer here.
+
+- Items past their review date are flagged at stand-up.
+- Blocked entries open longer than 45 days are flagged at stand-up.
+- A high-leverage priority with no work for 3 stand-ups in a row triggers the avoidance check.
+
+Your settings. None yet.
+
+---
+
 ## Decision Cascade Governance
 
 All decisions follow this flow:
@@ -155,6 +177,7 @@ All decisions follow this flow:
 - Agent works in 00_LOCAL_CONTEXT/ or identifies a decision to make.
 - Produces a draft, analysis, recommendation, or options.
 - No tracked files are modified yet.
+- Before presenting a deliverable, run the matching checklist in `01_STATE/quality_gates.md` if it exists, and fix any failure first.
 
 ### 2. Presentation Phase
 - Agent presents the decision to the responsible stakeholder (the "decision owner").
@@ -303,6 +326,7 @@ Before deploying this CLAUDE.md:
 - [ ] **Regulators & compliance bodies** (who audits you?)
 - [ ] **Log review cadence** (monthly? quarterly?)
 - [ ] **Log review role** (who reads the audit trail?)
+- [ ] **Review Thresholds** (the defaults are set. The BoS OS asks the founder to confirm each one the first time it fires, so leave the section as it is)
 - [ ] **Key contacts** (who to call for approval, escalation, audit)
 - [ ] **Current date** (update at session start)
 - [ ] **Version history** (when was this created?)
@@ -403,6 +427,24 @@ agent-os/
 ├── 05_ARTIFACTS/
 └── CLAUDE.md
 ```
+
+## Writing Standards
+
+Write in active voice and name who acts. Start with the content and end with the content, with no chatbot openers or closers such as "Certainly" or "I hope this helps". Cut padding such as "in order to" and "it is important to note that". Write no hype, buzzwords or empty inspiration.
+
+Your own style rules go below. The BoS OS adds a line here, with your yes, when you correct the wording of a draft. Examples other teams use include no em dashes, straight quotes, sentence-case headings, colons only before a list or an example, and list items written as sentences.
+
+(none yet)
+
+## Review Thresholds
+
+You decide how often the BoS OS reminds you. These are the defaults. The BoS OS asks you once, the first time each one fires, whether it suits how you work, and writes your answer here.
+
+- Items past their review date are flagged at stand-up.
+- Blocked entries open longer than 45 days are flagged at stand-up.
+- A high-leverage priority with no work for 3 stand-ups in a row triggers the avoidance check.
+
+Your settings. None yet.
 
 ## Decision Cascade Governance
 

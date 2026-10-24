@@ -4,6 +4,27 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
+## v2.5.0 (2026-10-23)
+
+### Added
+
+- Run: the Mission Shaper asks, before drafting a brief, whether the mission is the biggest thing the person could be working on against their North Star.
+- Run: the Delivery Manager names a high-leverage priority that has stayed unbuilt while scoping continued (default three stand-ups in a row), flags `todo.md` items past their review date and `blocked.md` entries open longer than 45 days, and runs a checklist before a document or message reaches the founder.
+- Run: the founder sets how often these reminders come. The first time one fires, the Delivery Manager says why and asks how often the founder wants to hear about it, then records the answer in CLAUDE.md. It never reminds more often than that.
+- Run: a starter `quality_gates.md` template.
+- Bootstrap reference: Writing Standards and Review Thresholds sections in the CLAUDE.md template.
+- Every SKILL.md now carries an Integration & Hand-offs section.
+
+### Corrected
+
+The v2.0 entry below listed a memory system (`01_STATE/memory/`), a bootstrap summary (`BOOTSTRAP_SUMMARY.md`), context-window discipline and a rule that every decision names the documents it affects. These are not in the current skills. Quality gates, also listed under v2.0, return in this release in a smaller form. The rest is under review. The README and QUICKSTART no longer send readers to `BOOTSTRAP_SUMMARY.md`, which Bootstrap does not write.
+
+### Upgrading
+
+Existing BoS OS instances keep working. A CLAUDE.md written with an earlier version has no Review Thresholds section, so the Delivery Manager uses the defaults and offers to add the section the first time a reminder fires. Download the three `.skill` files from the release page and reinstall them to get the new behaviour.
+
+---
+
 ## v2.4.0 — 2026-08-06
 
 ### Removed: OS shorthand naming (Bootstrap, Run, Workshop)

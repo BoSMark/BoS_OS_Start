@@ -205,10 +205,11 @@ For an **ongoing** mission the measure is a level or rate you *hold*, not a one-
 
 ## The commitment point (transition to Phase 2)
 
-Do not draft until **both** are true:
+Do not draft until **all three** are true:
 
 - The person has stated an **outcome** (and their success announcement reflects it), **OR** has explicitly chosen this is an **exploration** with a stated hypothesis, validation condition, and kill condition.
 - They have consciously chosen **commit vs. explore**, **incremental vs. step-change**, and — if committed — **time-bound vs. ongoing**.
+- They have answered one question, asked once before you draft. Is this the biggest thing they could be working on against the North Star they gave at Bootstrap, or only the thing in front of them? If they name something bigger, say so back to them and let them choose. Do not draft until they have chosen.
 
 When you believe you're there, say so and get explicit confirmation: *"I think we've got the thinking clear enough to write this up — ready?"* This makes the transition the person's decision, not something you slide into.
 

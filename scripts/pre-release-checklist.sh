@@ -119,8 +119,8 @@ echo "Checking if main is up to date with origin..."
 git fetch origin main >/dev/null 2>&1 || true
 LOCAL_COMMIT=$(git rev-parse main)
 REMOTE_COMMIT=$(git rev-parse origin/main 2>/dev/null || echo "unknown")
-if [ "$LOCAL_COMMIT" = "$REMOTE_COMMIT" ] || [ "$REMOTE_COMMIT" = "unknown" ]; then
-    check_pass "Main branch is up to date with origin"
+if [ "$REMOTE_COMMIT" = "unknown" ] || git merge-base --is-ancestor "$REMOTE_COMMIT" "$LOCAL_COMMIT"; then
+    check_pass "Main branch contains everything on origin (equal or ahead)"
 else
     check_fail "Main branch is behind origin. Pull before pushing."
 fi

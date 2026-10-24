@@ -69,7 +69,7 @@ Claude will ask for your company name, then build your OS draft from there. The 
 
 ## That's it — for now
 
-When Bootstrap finishes, read `BOOTSTRAP_SUMMARY.md` in your project folder. It tells you exactly what was created and what to do next.
+When Bootstrap finishes, read the summary Bootstrap gives you in the conversation. It tells you exactly what was created and what to do next.
 
 Run Workshop next to deepen what Bootstrap produced. Once your strategy layer and agent specs are solid, come back and install the Run skill to start operating missions.
 

@@ -219,6 +219,18 @@ When the interview is complete, produce a finished agent spec in this format and
 
 ---
 
+## Integration & Hand-offs
+
+Agent Spec Builder is a sub-skill bundled with Run. It is the lighter way to spec one agent outside a full mission run. Inside a mission, the Agent Planner casts the team and specs each role.
+
+What it needs. One named agent. It does not need a Mission Brief.
+
+What it produces. One finished, runnable agent spec.
+
+What comes next. The spec joins the agent team. When the agent is part of a mission, the Delivery Manager assigns work to it from the spec.
+
+---
+
 ## How to Start
 
 When the human names an agent, begin with:

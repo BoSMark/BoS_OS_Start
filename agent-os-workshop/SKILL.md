@@ -4,7 +4,7 @@ description: |
   Guide an executive through refining their BoS OS, deepening strategy documents, mapping the roles and responsibilities of people in the organisation, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my BoS OS, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: BoS OS, workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
   authors: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.4.0
+  version: 2.5.0
 ---
 
 # BoS OS: Executive Workshop
@@ -261,6 +261,18 @@ When two executives share ownership of a strategy document:
 - Scope the deep-dive to their angle
 - Note where the other owner's perspective is needed and flag it for their session
 - Never overwrite another exec's contributions. Add to the change log.
+
+## Integration & Hand-offs
+
+Workshop is the second of three skills in the BoS OS toolkit (Bootstrap, Workshop, Run).
+
+What it assumes is done. Bootstrap has created the folder structure and a researched first draft. If not, Workshop sends the founder to Bootstrap first.
+
+What it produces. Sharper strategy documents in `02_STRATEGY/`, role definitions in `03_AGENTS/`, a planned first mission in `04_MISSIONS/`, and updated state files.
+
+What comes next. Run. It shapes missions into measurable briefs, staffs them with agent specs, and drives delivery from the files Workshop leaves in place. Run is a separate, optional install.
+
+---
 
 ## Universal Constraints
 

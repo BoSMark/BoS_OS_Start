@@ -6,7 +6,7 @@ Most companies add AI tools on top of an operating system nobody has written dow
 
 These three skills fix the foundation first, then put it to work.
 
-**Current version: v2.4.0** — [What's new](CHANGELOG.md)
+**Current version: v2.5.0**. [What's new](CHANGELOG.md)
 
 ---
 
@@ -103,7 +103,7 @@ Your BoS OS is built around strategy documents. Each one covers a distinct area 
 
 ## Your first 90 minutes after Bootstrap
 
-Bootstrap produces a lot. Don't try to process it all at once. Check your `BOOTSTRAP_SUMMARY.md` first, it tells you exactly what to do next. Then:
+Bootstrap produces a lot. Don't try to process it all at once. Read the summary Bootstrap gives you at the end of the session first, it tells you exactly what to do next. Then:
 
 1. Read your CLAUDE.md and correct anything that's wrong, paying particular attention to tone and terminology
 2. Read your Values strategy document and adjust it to sound like you, not like a consultant wrote it

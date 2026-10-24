@@ -4,7 +4,7 @@ description: |
   Build the BoS OS for a company, a structured operating system that helps a CEO or founder make better decisions and helps their team understand what they are trying to do. Researches the company from public information, creates the folder structure, populates strategy documents with company-specific content, maps people and their roles, and generates a CLAUDE.md. Triggers: "run the BoS OS", "BoS OS", "Company OS", "bootstrap my company OS", "create an operating system for [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "operating model", "folder structure for agents", "bootstrap my company". MANDATORY TRIGGERS: BoS OS, Company OS, bootstrap, company setup, agent framework, AI strategy, operating model, folder structure.
 metadata:
   author: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.4.0
+  version: 2.5.0
 ---
 
 # BoS OS: Company Bootstrap
@@ -234,6 +234,7 @@ Read `references/claude_md_template.md` and populate it for this specific compan
 - Industry-appropriate hard constraints
 - The folder structure
 - Decision cascade governance rules
+- Writing standards and review thresholds, with the template's defaults
 - Current date
 
 Use the CLAUDE.md header format: `# CLAUDE.md — BoS OS, built with {{FOUNDER_NAME}}`.
@@ -313,3 +314,17 @@ If the bootstrap takes more than one session (unlikely but possible for very lar
 - Update `session_summary.md` with what was completed
 - Add open items to `session_review_log.md`
 - Next session, read the state folder and resume where you left off
+
+---
+
+## Integration & Hand-offs
+
+Bootstrap is the first of three skills in the BoS OS toolkit (Bootstrap, Workshop, Run).
+
+What it needs before it starts. A company name, a website URL (or a LinkedIn profile), and web search turned on.
+
+What it produces. The folder structure, a first draft of the strategy documents from public information, role stubs in `03_AGENTS/`, a CLAUDE.md, and the state files.
+
+What comes next. Workshop. It reads the draft Bootstrap leaves and sharpens it with the founder or executive, one role at a time. Workshop sends anyone without Bootstrap's output back to Bootstrap.
+
+Later. Run, which is optional. Install it once Workshop has produced a strategy layer and agent roles worth operating.
