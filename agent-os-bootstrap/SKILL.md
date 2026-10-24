@@ -4,7 +4,7 @@ description: |
   Build the BoS OS for a company, a structured operating system that helps a CEO or founder make better decisions and helps their team understand what they are trying to do. Researches the company from public information, creates the folder structure, populates strategy documents with company-specific content, maps people and their roles, and generates a CLAUDE.md. Triggers: "run the BoS OS", "BoS OS", "Company OS", "bootstrap my company OS", "create an operating system for [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "operating model", "folder structure for agents", "bootstrap my company". MANDATORY TRIGGERS: BoS OS, Company OS, bootstrap, company setup, agent framework, AI strategy, operating model, folder structure.
 metadata:
   author: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.5.0
+  version: 2.5.1
 ---
 
 # BoS OS: Company Bootstrap
@@ -20,6 +20,8 @@ Your job is to research the company from public information and create a complet
 3. Have the user's company name and website URL
 
 If the user hasn't provided a company name, ask for one. Then ask: "What's the company website URL?" A name alone is often too thin to research reliably, especially when it's a generic or common name shared with unrelated businesses; without a URL you end up guessing from a handful of keywords instead of finding the actual company. If they don't have a website yet, ask for a LinkedIn profile instead (their own or the company's) and use that to anchor the research. Industry and a brief description are still optional and helpful, but company name plus (website URL or LinkedIn profile) is the minimum to proceed.
+
+**If the reference files are missing.** Some installs, including Cowork uploads, keep only this SKILL.md and drop the folders it points to. Before you start, check that `references/folder_structure.md` is present. If it is not, download each file you need with curl from the release that matches this skill's version. The address is `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.1/agent-os-bootstrap/references/<file>`. For `strategy_templates/`, list the folder at `https://api.github.com/repos/BoSMark/BoS_OS_Start/contents/agent-os-bootstrap/references/strategy_templates?ref=v2.5.1` and download the templates you need. Read each downloaded file in full. Do not use a tool that summarises pages, and do not rebuild a file from memory. If a download fails, stop, tell the user which file is missing, and say the result will be thinner without it. Do not carry on silently.
 
 **Web search is required.** This skill relies on researching the company from public data. If web search is not available in the current environment, tell the user: "This skill needs internet access to research your company. Please ensure web search is enabled in your settings, then try again."
 

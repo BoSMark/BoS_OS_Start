@@ -308,6 +308,42 @@ for DIR in agent-os-bootstrap agent-os-workshop agent-os-run; do
 done
 rm -rf "$TMP_PKG_DIR"
 
+echo ""
+echo "=== PHASE 7: REFERENCE FALLBACK ==="
+echo ""
+
+# Check 16: each skill's "reference files missing" fallback points at the release
+# tag for this version, and every path it names exists in the repo. Added v2.5.1
+# after Cowork uploads were found to keep only SKILL.md.
+for DIR in agent-os-bootstrap agent-os-workshop agent-os-run; do
+    URLS=$(grep -o 'BoS_OS_Start/v[0-9][0-9.]*/[^`<> ?]*\|contents/[^`<> ?]*?ref=v[0-9][0-9.]*' "$DIR/SKILL.md" | sort -u)
+    if [ -z "$URLS" ]; then
+        check_fail "$DIR/SKILL.md has no reference-fallback download address"
+        continue
+    fi
+    BAD_TAG=$(echo "$URLS" | grep -o 'v[0-9][0-9.]*' | grep -vx "v$VERSION" | sort -u | tr '\n' ' ')
+    if [ -n "$BAD_TAG" ]; then
+        check_fail "$DIR/SKILL.md fallback address uses tag $BAD_TAG but the release is v$VERSION"
+    else
+        check_pass "$DIR/SKILL.md fallback addresses all use tag v$VERSION"
+    fi
+    MISSING=""
+    for U in $(echo "$URLS" | grep '^BoS_OS_Start/' | sed "s#BoS_OS_Start/v$VERSION/##" | grep -v '<'); do
+        [ -e "$U" ] || MISSING="$MISSING $U"
+    done
+    for U in $(echo "$URLS" | grep '^contents/' | sed -e 's#contents/##' -e 's#?ref=.*##'); do
+        [ -d "$U" ] || MISSING="$MISSING $U"
+    done
+    for U in $(echo "$URLS" | grep '<' | sed "s#BoS_OS_Start/v$VERSION/##" | sed 's#/<.*##'); do
+        [ -d "$U" ] || MISSING="$MISSING $U"
+    done
+    if [ -z "$MISSING" ]; then
+        check_pass "$DIR fallback paths exist in the repo"
+    else
+        check_fail "$DIR fallback paths not found in the repo:$MISSING"
+    fi
+done
+
 # ==================== SUMMARY ====================
 echo ""
 echo ""

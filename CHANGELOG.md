@@ -4,10 +4,25 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
+## v2.5.1 (2026-10-24)
+
+### Fixed
+
+- Bootstrap, Workshop and Run: a skill uploaded to Cowork can arrive with only its `SKILL.md`, so the reference files and templates it reads were missing. Each skill now checks for its files and, if they are missing, downloads them with curl from the matching release on GitHub. If a download fails, the skill stops and names the missing file.
+- The pre-release script has a new check that the release tag in those download addresses matches the skill version.
+- QUICKSTART no longer links to two install screenshots that were never added to the repository. The install steps are unchanged.
+- The v2.5.0 summary below now says what changed.
+
+### Upgrading
+
+Reinstall the three `.skill` files. Existing BoS OS folders need no change. On a network that blocks `raw.githubusercontent.com`, the skill stops and says which file it could not fetch.
+
+---
+
 ## v2.5.0 (2026-10-23)
 
 ### TL;DR
-This update includes a bunch of things that help new users understand how you can orient yourself in the BoS OS and maintain your focus on the important stuff in your business, not the stuff that matters less.
+v2.5.0 adds checks to Run so a founder keeps working on the biggest thing against the North Star. The Mission Shaper asks whether a mission is the biggest thing before it drafts a brief. The Delivery Manager flags a priority that has stayed unbuilt while scoping continues, and flags overdue and long-blocked items. The founder sets how often these reminders come.
 
 ### Added
 

@@ -45,11 +45,7 @@ Before installing anything, set up your project:
 
 In Cowork, click **Customize** in the left sidebar.
 
-![Step 3a: In Cowork, click Customize in the left sidebar](images/step3a_cowork_customize.png)
-
 Then: **Skills** → click the **+** icon (top right of the skills panel) → **Create skill** → **Upload a skill** → select `agent-os-bootstrap.skill`.
-
-![Step 3b: Skills → + → Create skill → Upload a skill](images/step3b_upload_skill.png)
 
 > **Don't click "Browse skills" or "Browse plugins"** — those only show pre-built options and won't let you upload your own file.
 
