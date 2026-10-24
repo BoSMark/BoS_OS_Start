@@ -6,6 +6,9 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ## v2.5.0 (2026-10-23)
 
+### TL;DR
+This update includes a bunch of things that help new users understand how you can orient yourself in the BoS OS and maintain your focus on the important stuff in your business, not the stuff that matters less.
+
 ### Added
 
 - Run: the Mission Shaper asks, before drafting a brief, whether the mission is the biggest thing the person could be working on against their North Star.
