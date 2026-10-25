@@ -10,12 +10,15 @@ agent-os/
 ├── 01_STATE/                  # Session continuity and decision history
 │   ├── session_summary.md
 │   ├── session_review_log.md
-│   └── decisions.md
+│   ├── decisions.md
+│   └── memory/
+│       └── README.md
 ├── 02_STRATEGY/               # Strategy documents
 ├── 03_AGENTS/                 # Agent specifications and governance
 ├── 04_MISSIONS/               # Time-bound execution workstreams
 ├── 05_ARTIFACTS/              # Final deliverables and published assets
-└── CLAUDE.md                  # Project instructions (scope, constraints, governance)
+├── CLAUDE.md                  # Project instructions (scope, constraints, governance)
+└── BOOTSTRAP_SUMMARY.md       # Dated setup record; current state stays in session_summary.md
 ```
 
 ---
@@ -447,3 +450,7 @@ This structure draws on:
 - RACI matrices and accountability frameworks (agent types, decision boundaries)
 - Agile mission planning (phased rollout, success criteria)
 - Change management best practices (session continuity, audit trails)
+
+## Learning and the setup record
+
+`01_STATE/memory/README.md` defines the learning protocol. Start empty and add a domain only when there is useful evidence, through the company's approval flow. Existing domains and thresholds are preserved. `BOOTSTRAP_SUMMARY.md` records the confirmed setup, next actions and operating limits. It is not updated as a live backlog; use `01_STATE/session_summary.md` and the existing review log or mission files for current work.

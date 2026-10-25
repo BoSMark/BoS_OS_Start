@@ -161,3 +161,7 @@ Stamp each entry with today's date as its Logged date. The founder never types a
 - Silent failures — a pass that broke an invariant — slip through QA.
 - Vague blocks; specs with no tests; gates that rubber-stamp instead of deciding.
 - Work state has to be reconstructed from memory.
+
+## Session continuity and learning
+
+Follow the company's CLAUDE.md and the Context and continuity, Decision effects and Learning check rules in the Run skill. Retrieve only task-relevant decisions and memory. Save and reread the restart note before stopping. Record affected-file completion and propose sourced learning updates through existing approval rules. Do not silently install missing sections in an older company folder.

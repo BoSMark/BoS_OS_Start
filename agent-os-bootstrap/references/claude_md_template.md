@@ -135,7 +135,8 @@ agent-os/
 ├── 01_STATE/                  # Session continuity and decision history
 │   ├── session_summary.md
 │   ├── session_review_log.md
-│   └── decisions.md
+│   ├── decisions.md
+│   └── memory/               # Evidence-backed learning, starting empty
 ├── 02_STRATEGY/               # Strategy documents
 ├── 03_AGENTS/                 # Agent specifications
 ├── 04_MISSIONS/               # Time-bound execution projects
@@ -188,6 +189,7 @@ All decisions follow this flow:
   - **What are the trade-offs?** (What are we *not* choosing?)
   - **What governance applies?** (Which strategy document or hard constraint?)
   - **When is decision needed?** (Deadline)
+  - **Which files does this affect?** Name proposed changes and related records to check.
 
 ### 3. Approval Phase
 - Decision owner reviews and either:
@@ -204,6 +206,7 @@ All decisions follow this flow:
   - Rationale
   - Governing strategy document (if any)
   - Outcome (if already known)
+  - Affected files, each marked updated and checked, pending with an owner, or not required with a reason
 - Moves work from 00_LOCAL_CONTEXT to appropriate tracked folder (01–05)
 - Only tracked files modified after explicit approval
 
@@ -247,6 +250,30 @@ All strategy documents in `02_STRATEGY/` are designed to keep the organization c
 Today's date is **{{CURRENT_DATE}}**.
 
 Agents use this to contextualize their work (e.g., "this document is due by end of Q2" or "this mission started 6 weeks ago"). Update this at the start of each session.
+
+---
+
+## Context and continuity
+
+At session start, read the project instructions and current session summary, then the handoffs, review items, mission files and memory domains relevant to the task. Follow this company's existing startup and staging rules. Search decision history for the specific question when needed; do not load the entire history by default. If a needed file is unavailable, say which file and what you cannot establish without it.
+
+Before changing tasks, ending the session or approaching a context limit, save unfinished drafts and a short restart note: the current objective, decisions made, files changed, unresolved checks and the exact next action. Link to evidence rather than copying long logs. Keep the current summary current; preserve history in the company's existing archive. Never claim work was saved without checking the saved file.
+
+## Decision effects
+
+Before seeking approval, name the files the decision would change and any related files that may need updating. After approval, record each affected file as updated and checked, pending with a named owner, or not required with a reason. Approval for one change is not approval for every related edit discovered later. Put unresolved dependent work in the existing review log or mission todo. Use the company's established decision-staging and approval process.
+
+## Learning check
+
+At session close, check whether the work produced a reusable correction, a test result, or evidence supporting or contradicting an existing hypothesis. If so, propose the specific update in the relevant memory domain, with the source and the next validation step. If not, make no memory entry. Read relevant confirmed rules when doing that work again. Never turn an inference into a rule, count duplicate evidence as new confirmation, or change an operating rule without its owner's approval. Keep confidential source material in the company's authorized private location; shared memory contains only an approved safe statement and appropriate source reference.
+
+## Applying these rules within existing authority
+
+Declining an upgrade withholds permission for the upgrade edits. It does not grant permission to write elsewhere. Continue normal session work under the company's existing approval rules. Save a restart note only in an already authorized location; if none is available, present the restart information in the conversation and explicitly say it was not saved.
+
+Use a confirmed owner for pending work. If none is known, mark it unassigned and ask the current user to assign it; do not invent a person or assume a colleague has accepted the work.
+
+A proposed memory change stays in the company's authorized draft location, or in the conversation when no draft location is authorized, until its normal approval process permits a domain-file update. Contradictory evidence stays visible with the hypothesis pending owner review; do not automatically change its status or erase supporting evidence.
 
 ---
 

@@ -312,3 +312,7 @@ If any answer is no, go back. A brief that fails this check will stall the next 
 - Gating exploration (demanding a revenue metric from genuine hypothesis work).
 - Never relenting.
 - Producing a polished artifact nobody owns.
+
+## Session continuity and learning
+
+Follow the company's CLAUDE.md and the Context and continuity, Decision effects and Learning check rules in the Run skill. Retrieve only task-relevant decisions and memory. Save and reread the restart note before stopping. Record affected-file completion and propose sourced learning updates through existing approval rules. Do not silently install missing sections in an older company folder.

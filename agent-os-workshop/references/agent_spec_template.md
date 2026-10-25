@@ -105,7 +105,11 @@ Escalation Email: [Where urgent issues go]
 
 ---
 
-### Startup Protocol
+### Continuity and learning
+
+Follow the Context and continuity, Decision effects and Learning check sections in the company's CLAUDE.md. Existing company approval, memory formats and validation thresholds take precedence. Offer missing sections for approval rather than installing them silently.
+
+## Startup Protocol
 
 **Purpose:** When the agent wakes up or a new shift starts, what does it do first?
 

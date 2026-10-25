@@ -4,7 +4,7 @@ description: |
   Guide an executive through refining their BoS OS, deepening strategy documents, mapping the roles and responsibilities of people in the organisation, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my BoS OS, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: BoS OS, workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
   authors: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.5.1
+  version: 2.6.0
 ---
 
 # BoS OS: Executive Workshop
@@ -48,7 +48,7 @@ Then ask: "Which executive role are you working in today?" Some people wear mult
 
 If this is a continuation session, check the state folder for previous progress and pick up where you left off.
 
-**If the reference files are missing.** Some installs, including Cowork uploads, keep only this SKILL.md and drop the folders it points to. Before you start, check that `references/strategy_doc_quality_checklist.md` is present. If it is not, download each file you need with curl from the release that matches this skill's version. The address is `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.1/agent-os-workshop/references/<file>`. Read each downloaded file in full. Do not use a tool that summarises pages, and do not rebuild a file from memory. If a download fails, stop, tell the user which file is missing, and say the result will be thinner without it. Do not carry on silently.
+**If the reference files are missing.** Some installs, including Cowork uploads, keep only this SKILL.md and drop the folders it points to. Before you start, check that `references/strategy_doc_quality_checklist.md` is present. If it is not, download each file you need with curl from the release that matches this skill's version. The address is `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-workshop/references/<file>`. Read each downloaded file in full. Do not use a tool that summarises pages, and do not rebuild a file from memory. If a download fails, stop, tell the user which file is missing, and say the result will be thinner without it. Do not carry on silently.
 
 ## Workshop Flow
 
@@ -231,6 +231,8 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
 3. Confirm the role stubs in `03_AGENTS/` have enough detail to guide the next session
 4. Walk the exec through resuming: "Next session, start by asking 'What do we need to focus on today?' and the BoS OS will pick up exactly where we left off."
 5. If this is the first exec to complete the workshop, note in the state summary that their work is now the reference pattern for subsequent execs.
+6. Run the Learning check below only if this session produced reusable evidence; propose the update rather than inventing an entry.
+7. Reread the saved current summary and verify its exact next action and evidence links before reporting that work is saved.
 
 **Workshop closing - make this a moment:**
 
@@ -245,6 +247,34 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
 > Next step: run the mission. Start with Phase 1, one real example, compared against your own judgment. That's where the calibration happens and where you'll start to see what the system can actually do."
 
 **Deliverable:** State files updated. Exec knows they're done and what to do next.
+
+---
+
+## Operating rules for this skill
+
+Follow these rules alongside the company's CLAUDE.md. On an older company folder, offer missing sections for approval before adding them; do not rewrite existing instructions, state, memory formats or thresholds. If the founder declines, continue within current rules and report the limitation.
+
+## Context and continuity
+
+At session start, read the project instructions and current session summary, then the handoffs, review items, mission files and memory domains relevant to the task. Follow this company's existing startup and staging rules. Search decision history for the specific question when needed; do not load the entire history by default. If a needed file is unavailable, say which file and what you cannot establish without it.
+
+Before changing tasks, ending the session or approaching a context limit, save unfinished drafts and a short restart note: the current objective, decisions made, files changed, unresolved checks and the exact next action. Link to evidence rather than copying long logs. Keep the current summary current; preserve history in the company's existing archive. Never claim work was saved without checking the saved file.
+
+## Decision effects
+
+Before seeking approval, name the files the decision would change and any related files that may need updating. After approval, record each affected file as updated and checked, pending with a named owner, or not required with a reason. Approval for one change is not approval for every related edit discovered later. Put unresolved dependent work in the existing review log or mission todo. Use the company's established decision-staging and approval process.
+
+## Learning check
+
+At session close, check whether the work produced a reusable correction, a test result, or evidence supporting or contradicting an existing hypothesis. If so, propose the specific update in the relevant memory domain, with the source and the next validation step. If not, make no memory entry. Read relevant confirmed rules when doing that work again. Never turn an inference into a rule, count duplicate evidence as new confirmation, or change an operating rule without its owner's approval. Keep confidential source material in the company's authorized private location; shared memory contains only an approved safe statement and appropriate source reference.
+
+## Applying these rules within existing authority
+
+Declining an upgrade withholds permission for the upgrade edits. It does not grant permission to write elsewhere. Continue normal session work under the company's existing approval rules. Save a restart note only in an already authorized location; if none is available, present the restart information in the conversation and explicitly say it was not saved.
+
+Use a confirmed owner for pending work. If none is known, mark it unassigned and ask the current user to assign it; do not invent a person or assume a colleague has accepted the work.
+
+A proposed memory change stays in the company's authorized draft location, or in the conversation when no draft location is authorized, until its normal approval process permits a domain-file update. Contradictory evidence stays visible with the hypothesis pending owner review; do not automatically change its status or erase supporting evidence.
 
 ---
 

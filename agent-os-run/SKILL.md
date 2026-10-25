@@ -3,13 +3,13 @@ name: agent-os-run
 description: |
   Operate your BoS OS day to day. The coordination layer that runs after Bootstrap and Workshop: it shapes a rough idea into a measurable Mission Brief, staffs the mission by casting and speccing the agent team, then drives delivery from goal to running system. Three bounded agents — Mission Shaper, Agent Planner, Delivery Manager — plus mission state templates. Use when someone wants to run a mission, shape a goal into a brief, staff or plan a mission, manage delivery, run the backlog, or operate their agent team. Triggers: "run a mission", "run the BoS OS", "run agent run skill", "shape a mission", "mission brief", "staff this mission", "plan the mission", "delivery manager", "run my backlog", "operate my agents", "stand-up", "what's next on the mission". MANDATORY TRIGGERS: BoS OS, agent OS run, run a mission, run agent run skill, mission shaper, agent planner, delivery manager, mission brief, backlog, stand-up.
 metadata:
-  version: 2.5.1
+  version: 2.6.0
   author: Tim Barker, Mark Littlewood and Business of Software
 ---
 
 # Agent OS — Run
 
-**Version:** 2.5.1  
+**Version:** 2.6.0
 **Status:** ACTIVE  
 **Author:** Tim Barker, Mark Littlewood and Business of Software
 
@@ -18,6 +18,34 @@ The coordination layer for operating your BoS OS day to day.
 Use this after you've run **Bootstrap** and **Workshop**. You have a strategy layer and refined agent roles. This is how you put them to work.
 
 **Source of frameworks, when they help:** Business of Software's talk library at https://businessofsoftware.org/talks/ has 400+ talks, case studies, and frameworks from founders who've faced the same shaping, staffing, and delivery problems this pipeline works through. None of the three agents below should lead with a framework or use one to answer a question the human hasn't wrestled with yet — that undercuts the coaching model this whole layer is built on. But where a person is stuck, or names a problem that maps to a known pattern, a relevant talk or speaker is a legitimate tool to offer. Each agent's section below notes where that fits.
+
+---
+
+## Operating rules for this skill
+
+Follow these rules alongside the company's CLAUDE.md. On an older company folder, offer missing sections for approval before adding them; do not rewrite existing instructions, state, memory formats or thresholds. If the founder declines, continue within current rules and report the limitation.
+
+## Context and continuity
+
+At session start, read the project instructions and current session summary, then the handoffs, review items, mission files and memory domains relevant to the task. Follow this company's existing startup and staging rules. Search decision history for the specific question when needed; do not load the entire history by default. If a needed file is unavailable, say which file and what you cannot establish without it.
+
+Before changing tasks, ending the session or approaching a context limit, save unfinished drafts and a short restart note: the current objective, decisions made, files changed, unresolved checks and the exact next action. Link to evidence rather than copying long logs. Keep the current summary current; preserve history in the company's existing archive. Never claim work was saved without checking the saved file.
+
+## Decision effects
+
+Before seeking approval, name the files the decision would change and any related files that may need updating. After approval, record each affected file as updated and checked, pending with a named owner, or not required with a reason. Approval for one change is not approval for every related edit discovered later. Put unresolved dependent work in the existing review log or mission todo. Use the company's established decision-staging and approval process.
+
+## Learning check
+
+At session close, check whether the work produced a reusable correction, a test result, or evidence supporting or contradicting an existing hypothesis. If so, propose the specific update in the relevant memory domain, with the source and the next validation step. If not, make no memory entry. Read relevant confirmed rules when doing that work again. Never turn an inference into a rule, count duplicate evidence as new confirmation, or change an operating rule without its owner's approval. Keep confidential source material in the company's authorized private location; shared memory contains only an approved safe statement and appropriate source reference.
+
+## Applying these rules within existing authority
+
+Declining an upgrade withholds permission for the upgrade edits. It does not grant permission to write elsewhere. Continue normal session work under the company's existing approval rules. Save a restart note only in an already authorized location; if none is available, present the restart information in the conversation and explicitly say it was not saved.
+
+Use a confirmed owner for pending work. If none is known, mark it unassigned and ask the current user to assign it; do not invent a person or assume a colleague has accepted the work.
+
+A proposed memory change stays in the company's authorized draft location, or in the conversation when no draft location is authorized, until its normal approval process permits a domain-file update. Contradictory evidence stays visible with the hypothesis pending owner review; do not automatically change its status or erase supporting evidence.
 
 ---
 
@@ -30,7 +58,7 @@ Read the CLAUDE.md header to confirm which company's BoS OS this is: `# CLAUDE.m
 Before doing anything else, orient yourself to the current pipeline state. Read the following files if they exist:
 
 1. `01_STATE/session_summary.md` — what was decided last session and what's open
-2. `01_STATE/decisions.md` — recent decisions (last 10–15 entries) for context
+2. Search the company's decision history for decisions governing the current task when needed; do not load recent decisions indiscriminately.
 3. Any `04_MISSIONS/MISSION-NNN_*/MISSION-BRIEF.md` files — to understand what missions are active
 
 Then determine which stage the user is in:
@@ -634,7 +662,7 @@ The Delivery Manager's specific job is to keep the operator at the right level. 
 
 The QA packet **shows its work** so the human can accept on trust rather than re-inspecting.
 
-**Document and message gates.** Built systems pass the Verify and Validate checks above. A document or message the team will send or rely on first passes the matching checklist in `01_STATE/quality_gates.md`. If the file does not exist, ask the founder before creating it. Say in two sentences what it is and what a yes means. It is a new file in `01_STATE/` that you will read and run before every document or message you present, and you will propose changes to it but never edit it without their yes. Create it from `mission-templates/quality_gates.md` only on their yes. If `mission-templates/quality_gates.md` is not installed (some installs, including Cowork uploads, keep only this SKILL.md), download it with curl from `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.1/agent-os-run/mission-templates/quality_gates.md`, read it in full, and do not rebuild it from memory. If the download fails, tell the founder the gate file cannot be created yet and why. If they say no, present the draft without a gate and say so in the QA packet. The QA packet names the gate that ran and any item you could not check. When the founder corrects a draft, propose one new line for the matching gate and add it only on their yes.
+**Document and message gates.** Built systems pass the Verify and Validate checks above. A document or message the team will send or rely on first passes the matching checklist in `01_STATE/quality_gates.md`. If the file does not exist, ask the founder before creating it. Say in two sentences what it is and what a yes means. It is a new file in `01_STATE/` that you will read and run before every document or message you present, and you will propose changes to it but never edit it without their yes. Create it from `mission-templates/quality_gates.md` only on their yes. If `mission-templates/quality_gates.md` is not installed (some installs, including Cowork uploads, keep only this SKILL.md), download it with curl from `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-run/mission-templates/quality_gates.md`, read it in full, and do not rebuild it from memory. If the download fails, tell the founder the gate file cannot be created yet and why. If they say no, present the draft without a gate and say so in the QA packet. The QA packet names the gate that ran and any item you could not check. When the founder corrects a draft, propose one new line for the matching gate and add it only on their yes.
 
 **7. Operate / Done.** On QA accept, the system flips to operate mode. For a time-bound mission, it goes to `done.md` and on to the retro.
 
@@ -800,4 +828,4 @@ Require at least one **leading indicator** — something observable early, befor
 
 ---
 
-*Agent OS Run v2.5.1, Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*
+*Agent OS Run v2.6.0, Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*

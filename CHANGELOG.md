@@ -4,6 +4,26 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
+## v2.6.0 (2026-10-25)
+
+### Added
+
+- Bootstrap saves a confirmed `BOOTSTRAP_SUMMARY.md` with up to three next actions, owners, completion conditions and operating limits. It is a dated setup record; the session summary remains the source for current work.
+- Bootstrap creates an empty learning protocol in `01_STATE/memory/README.md`. Workshop and Run check for sourced, reusable learning at session close. Existing memory formats and approval thresholds are preserved; hypotheses do not become rules without owner approval.
+- Context rules load task-relevant history and learning, save restart instructions and verify saved work. Decisions name affected documents and track checked updates or work still pending with an owner.
+- Existing company folders receive proposed additions for approval, rather than a new bootstrap or an automatic rewrite.
+
+### Fixed
+
+- Bootstrap uses explicit reference paths instead of a GitHub API directory listing. It checks individual files, downloads missing or empty copies to writable storage and stops if recovery fails.
+- The North Star question asks about customer value. Revenue, profit and margin remain commercial goals and can still be the most urgent priority. Unconfirmed measures stay labelled candidates.
+
+### Upgrading
+
+Reinstall the three `.skill` files. In an existing company folder, ask Workshop or Run to review the new operating sections and approve the specific additions you want. Existing strategy, decisions and memory are not replaced. `BOOTSTRAP_SUMMARY.md` is optional for an existing folder; improve the current session summary instead of reconstructing setup history. Reference downloads require access to `raw.githubusercontent.com`.
+
+---
+
 ## v2.5.1 (2026-10-24)
 
 ### Fixed

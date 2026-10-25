@@ -188,3 +188,7 @@ If any answer is no, go back. A roster that fails this hands the Delivery Manage
 - Task-bot sprawl — an agent per verb, with blurred boundaries.
 - Vague boundaries that send everything to the human, or let the agent act past its remit.
 - A backlog nobody can action, or one that ignores dependencies and stalls in week one.
+
+## Session continuity and learning
+
+Follow the company's CLAUDE.md and the Context and continuity, Decision effects and Learning check rules in the Run skill. Retrieve only task-relevant decisions and memory. Save and reread the restart note before stopping. Record affected-file completion and propose sourced learning updates through existing approval rules. Do not silently install missing sections in an older company folder.

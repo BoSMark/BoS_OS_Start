@@ -63,6 +63,10 @@ Fill in all sections. If a section doesn't apply to your agent, write "N/A" and 
 
 ---
 
+## Continuity and learning
+
+Follow the Context and continuity, Decision effects and Learning check sections in the company's CLAUDE.md. Existing company approval, memory formats and validation thresholds take precedence. Offer missing sections for approval rather than installing them silently.
+
 ## Startup Protocol
 
 **New Session Checklist:**
@@ -72,8 +76,8 @@ Before this agent begins work:
 - [ ] Read CLAUDE.md (project scope and hard constraints)
 - [ ] Read 01_STATE/session_summary.md (what's active, what's blocked)
 - [ ] Review 01_STATE/session_review_log.md (decisions waiting on this agent)
-- [ ] Scan 01_STATE/decisions.md (last 5–10 decisions to understand context)
-- [ ] Check 02_STRATEGY/ for strategy documents governing this agent's domain
+- [ ] Search decision history for the specific task when needed; do not load the entire history at startup
+- [ ] Read only the strategy documents and confirmed memory rules relevant to this task
 - [ ] Read this spec in full (especially Decision Boundary and Escalation Triggers)
 - [ ] Confirm owner is available for decisions needing approval
 - [ ] Scan 04_MISSIONS/ for active missions this agent supports

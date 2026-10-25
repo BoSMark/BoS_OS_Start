@@ -2,7 +2,7 @@
 
 Use this template for `01_STATE/session_summary.md`. Overwrite the file at each session close — do not append.
 
-The summary reflects the current session only. Historical sessions live in `01_STATE/sessions/YYYY-MM-DD.md`.
+The summary reflects current state and unresolved work; carry forward open items until they are resolved. Historical sessions live in `01_STATE/sessions/YYYY-MM-DD.md`.
 
 ---
 
@@ -16,7 +16,10 @@ The summary reflects the current session only. Historical sessions live in `01_S
 - [file path] — [what changed]
 
 ## Open items for next session
-- [item — owner]
+- [item; confirmed owner or unassigned; complete when; next action; evidence link]
+
+## Restart here
+- [Current objective and exact next action, including any unresolved check]
 ```
 
 ---

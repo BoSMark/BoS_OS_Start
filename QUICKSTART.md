@@ -86,3 +86,7 @@ The full README has everything else — background, upgrade instructions, troubl
 ---
 
 *[Full README](README.md) · [Troubleshooting](README.md#troubleshooting) · [BoS workshops and community](https://businessofsoftware.org/updates)*
+
+## At the end of Bootstrap
+
+Review the setup summary before it is saved as `BOOTSTRAP_SUMMARY.md`. Check its next actions, owners and completion conditions. Use `01_STATE/session_summary.md` for current work after setup. The learning protocol starts in `01_STATE/memory/README.md` with no invented entries. Existing company folders do not need to be bootstrapped again; review proposed additions in Workshop or Run.

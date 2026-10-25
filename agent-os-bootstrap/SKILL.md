@@ -4,7 +4,7 @@ description: |
   Build the BoS OS for a company, a structured operating system that helps a CEO or founder make better decisions and helps their team understand what they are trying to do. Researches the company from public information, creates the folder structure, populates strategy documents with company-specific content, maps people and their roles, and generates a CLAUDE.md. Triggers: "run the BoS OS", "BoS OS", "Company OS", "bootstrap my company OS", "create an operating system for [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "operating model", "folder structure for agents", "bootstrap my company". MANDATORY TRIGGERS: BoS OS, Company OS, bootstrap, company setup, agent framework, AI strategy, operating model, folder structure.
 metadata:
   author: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.5.1
+  version: 2.6.0
 ---
 
 # BoS OS: Company Bootstrap
@@ -15,17 +15,44 @@ Your job is to research the company from public information and create a complet
 
 ## Before You Begin
 
+**Check reference files before reading them.** Some installs, including Cowork uploads, keep only this SKILL.md. Before the first reference-file read, check each file listed below is present and non-empty. Also check any other reference file before using it. Keep the files already installed. Download only missing or empty files with `curl --fail --location --silent --show-error` from the base address below, followed by the exact relative path. The address is pinned to this skill's release. Use these paths directly; no GitHub API request or directory listing is needed.
+
+Base address: `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-bootstrap/references/`
+
+- `agent_spec_template.md`
+- `bootstrap_summary_template.md`
+- `memory_protocol_template.md`
+- `claude_md_template.md`
+- `folder_structure.md`
+- `industry_patterns.md`
+- `session_summary_template.md`
+- `strategy_templates/brand_template.md`
+- `strategy_templates/competitive_template.md`
+- `strategy_templates/financial_template.md`
+- `strategy_templates/governance_template.md`
+- `strategy_templates/growth_template.md`
+- `strategy_templates/measurement_template.md`
+- `strategy_templates/platform_template.md`
+- `strategy_templates/product_template.md`
+- `strategy_templates/security_template.md`
+- `strategy_templates/values_template.md`
+- `strategy_templates/README.md`
+
+Save downloads in a writable working folder, preserving the paths under `references/`. Do not assume the installed skill folder is writable. Use the installed file when it is present and non-empty, and the downloaded copy otherwise. Download to a temporary file, require a successful HTTP response and non-empty content, then move it to its destination. Read each required file in full before using it. Do not use a tool that summarises pages. Do not rebuild a file from memory. If a download fails or is empty, stop before generating documents. Tell the user the exact missing path and the failure, and ask them to restore access or provide that release's file. Do not continue with a substitute template.
+
 1. Read `references/folder_structure.md` to understand the canonical structure
 2. Read `references/industry_patterns.md` to understand how to adapt by industry
 3. Have the user's company name and website URL
 
 If the user hasn't provided a company name, ask for one. Then ask: "What's the company website URL?" A name alone is often too thin to research reliably, especially when it's a generic or common name shared with unrelated businesses; without a URL you end up guessing from a handful of keywords instead of finding the actual company. If they don't have a website yet, ask for a LinkedIn profile instead (their own or the company's) and use that to anchor the research. Industry and a brief description are still optional and helpful, but company name plus (website URL or LinkedIn profile) is the minimum to proceed.
 
-**If the reference files are missing.** Some installs, including Cowork uploads, keep only this SKILL.md and drop the folders it points to. Before you start, check that `references/folder_structure.md` is present. If it is not, download each file you need with curl from the release that matches this skill's version. The address is `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.1/agent-os-bootstrap/references/<file>`. For `strategy_templates/`, list the folder at `https://api.github.com/repos/BoSMark/BoS_OS_Start/contents/agent-os-bootstrap/references/strategy_templates?ref=v2.5.1` and download the templates you need. Read each downloaded file in full. Do not use a tool that summarises pages, and do not rebuild a file from memory. If a download fails, stop, tell the user which file is missing, and say the result will be thinner without it. Do not carry on silently.
-
 **Web search is required.** This skill relies on researching the company from public data. If web search is not available in the current environment, tell the user: "This skill needs internet access to research your company. Please ensure web search is enabled in your settings, then try again."
 
 **Source of frameworks and ideas:** Business of Software has been running conferences and building resources for software founders since 2007. Their talk library at https://businessofsoftware.org/talks/ contains hundreds of frameworks, case studies, and practical ideas for building great products and companies. Draw on this when populating strategy documents, especially around growth, product thinking, leadership, and culture. A relevant talk or framework is more useful than a generic statement.
+
+## Existing company folders
+
+Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Present the missing operating sections and proposed files, explain the affected paths, and wait for approval. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules and report the limitation. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record.
 
 ## The Opening Questions
 
@@ -52,16 +79,19 @@ This answer is foundational. It determines:
 
 ### Question 3: North Star metric
 
-> "Before I start building, what's the one number you watch that tells you the business is heading in the right direction? Revenue, active users, margin, something else? If you don't have one yet, that's fine. It's the first thing we'll work out together."
+> "What's the one number that best shows customers are getting the value they came to you for? If you don't have one yet, that's fine. We'll work out a draft together."
 
-This is not a warm-up question. The answer:
-- Anchors every strategy document that follows
-- Tells you immediately whether the founder has clarity about what they're optimising for
-- If they don't have an answer, resolving it in this session is the first concrete proof that the BoS OS is useful
+A North Star measures value delivered to customers. Revenue, profit and margin measure business health; keep them as commercial goals and constraints. A commercial goal can be the most urgent priority without becoming the North Star.
 
-**If they have an answer:** Acknowledge it, note it, and use it throughout the bootstrap. Every strategy document should reference this number where relevant.
+**If they have an answer:** Ask what customer outcome the number represents and why an increase means customers received more value. Do not accept a metric just because it is already tracked. Activity or engagement counts qualify only when the founder can explain the connection to value delivered.
 
-**If they don't have one yet:** Say: "Excellent, that's the kind of thing the BoS OS is designed to help you think through. We're coming back to that and by the end of this session you'll have a draft answer." Then surface it in Step 8 (Summary Report) as a named output.
+**If they name revenue, profit, margin or another business-health measure:** Acknowledge its importance and keep it as a commercial goal. Then ask: "What are customers getting when that number grows, and how could we measure that?" Help them identify a customer-value measure. Do not relabel their commercial goal as the North Star or imply it matters less.
+
+**If they have a plausible customer-value measure:** Say it back with its definition, who receives the value and the period measured. Ask the founder to confirm it before using it as the North Star. If the connection to customer value is still uncertain, label it a candidate and record what needs testing.
+
+**If they don't have one yet:** Do not force a metric or invent a target. Keep it as an open question while researching the company. In Step 8 (Summary Report), propose a candidate grounded in what customers hire the company to do, explain why it might measure value, and ask for confirmation. Keep any unresolved question explicit in `session_review_log.md` and the summary.
+
+Use the confirmed North Star, or clearly labelled candidate, where relevant in the strategy documents. Keep commercial goals visible alongside it.
 
 Once you have answers to all three questions (or have acknowledged gaps), proceed to research.
 
@@ -129,12 +159,15 @@ Create the canonical folder structure in the user's workspace:
 ├── 01_STATE/
 │   ├── session_summary.md
 │   ├── session_review_log.md
-│   └── decisions.md
+│   ├── decisions.md
+│   └── memory/
+│       └── README.md
 ├── 02_STRATEGY/
 ├── 03_AGENTS/
 ├── 04_MISSIONS/
 ├── 05_ARTIFACTS/
-└── CLAUDE.md
+├── CLAUDE.md
+└── BOOTSTRAP_SUMMARY.md       # Dated setup record, written after summary confirmation
 ```
 
 **What this folder structure is:** This is where your BoS OS lives. It sits on your machine, synced to Dropbox, Google Drive, or wherever you chose when setting up your Cowork project. Everything the BoS OS produces, remembers, and decides goes here. The files are the memory.
@@ -159,6 +192,10 @@ BoS OS bootstrapped from public data. All strategy documents require internal en
 `session_review_log.md` - Create with a section for open items. Add one item per strategy document: "[Document name] - bootstrapped from public data, requires internal review and enrichment by [owner name]."
 
 `decisions.md` - Create empty with a header: "Decision log for {{FOUNDER_NAME}}'s BoS OS."
+
+Read `references/memory_protocol_template.md` in full and use it to create `01_STATE/memory/README.md`. Start with no learning entries. Do not seed generic hypotheses. Existing company memory files and validation thresholds must be preserved.
+
+Use `references/session_summary_template.md` for the current summary. Keep confirmed next actions and unresolved questions there, with an owner and completion condition where known. Unassigned work stays visibly unassigned.
 
 ---
 
@@ -237,6 +274,7 @@ Read `references/claude_md_template.md` and populate it for this specific compan
 - The folder structure
 - Decision cascade governance rules
 - Writing standards and review thresholds, with the template's defaults
+- Context and continuity, decision effects, and the learning check, as written in the template
 - Current date
 
 Use the CLAUDE.md header format: `# CLAUDE.md — BoS OS, built with {{FOUNDER_NAME}}`.
@@ -260,6 +298,8 @@ Present a summary to the user:
 3. **Where the BoS OS needs your input** - which documents are thin because the information simply isn't public. These are not weaknesses in your business. They are gaps in what the outside world can see. Only you can fill them in. Ordered by priority: which ones matter most for how the BoS OS will support your decisions.
 4. **Personal goal and North Star metric** - confirm both answers from the opening questions and note where they're reflected in the documents. If either is unresolved, surface your suggested answer now: "Based on everything I've built, here's what I'd suggest, and here's why: [your suggestion]. Does that feel right, or is there something you'd push back on?"
 5. **What to do next** - see below
+
+**Save the confirmed setup record.** After presenting this summary and receiving the founder's confirmation, read `references/bootstrap_summary_template.md` and save `BOOTSTRAP_SUMMARY.md` at the workspace root. Include no more than three next actions, each with a confirmed owner or an explicit unassigned status, an observable completion condition and a link to its live working record. Proposed tasks stay labelled proposed; do not invent targets, owners, activated agents or an approved mission. Record missing inputs and access. Check that links resolve, reread the saved file and then tell the founder where it is. This is a dated setup record, not the current task tracker: current state stays in `01_STATE/session_summary.md`. If confirmation is withheld, keep the draft in `00_LOCAL_CONTEXT/` and leave setup-record creation pending.
 
 **Recommended next step - start with yourself, not your team:**
 
