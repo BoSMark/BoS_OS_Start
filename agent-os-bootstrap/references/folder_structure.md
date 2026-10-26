@@ -231,7 +231,7 @@ Additional strategy documents should be added to match the company's actual doma
 
 After Bootstrap, this folder contains role stubs — one file per person, capturing name, title, functions owned, and strategy documents owned. Role stubs describe the humans running the company. They are the starting point.
 
-After Workshop, role stubs become full agent specs — defining what an AI agent is authorised to do on that person's behalf, including decision boundary, escalation triggers, evaluation criteria, and hard constraints.
+When a mission needs agents, the Run skill's Agent Planner turns role stubs into full agent specs, defining what an AI agent is authorised to do on that person's behalf, including decision boundary, escalation triggers, evaluation criteria, and hard constraints.
 
 Do not skip from nothing to full agent specs. Bootstrap first, then Workshop.
 

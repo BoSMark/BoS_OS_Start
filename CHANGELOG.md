@@ -20,7 +20,7 @@ All notable changes to the BoS OS Toolkit are documented here.
 - Workshop saves the first mission as a Mission Brief in the format Run reads, and no longer creates empty state files. Run sends a folder from an earlier Workshop, a phase-plan brief with empty state files, to the Mission Shaper and then the Agent Planner.
 - Bootstrap tells the founder where it will create the project folder and what it will write, and waits for a yes before the first file.
 - The Agent Planner specs each role itself. The Agent Spec Builder stays as the standalone interview for one named agent, and its output is a draft until the owner, the 24 hour re-read and the escalation approver have all signed.
-- The CLAUDE.md template, README and QUICKSTART say "the BoS OS" where they said "this OS" or "your OS".
+- The CLAUDE.md template, README and QUICKSTART now call the system "the BoS OS" throughout.
 - The Integration & Hand-offs notes in Run, Workshop and the Agent Spec Builder now match what each skill does.
 
 ### Upgrading

@@ -357,7 +357,7 @@ Before deploying this CLAUDE.md:
 - [ ] **Key contacts** (who to call for approval, escalation, audit)
 - [ ] **Current date** (update at session start)
 - [ ] **Version history** (when was this created?)
-- [ ] **Toolkit version stamps** (both lines set automatically by Bootstrap, to the same version and date. Don't hand-edit either one. "Bootstrapped from" is a permanent record and never changes again. "Last synced" is meant to update later, once a sync capability exists — for now it just sits at its initial value.)
+- [ ] **Toolkit version stamps** (both lines set automatically by Bootstrap, to the same version and date. Don't hand-edit either one. "Bootstrapped from" is a permanent record and never changes again. "Last synced" is set by Bootstrap when an approved upgrade is applied to an existing folder.)
 
 ---
 
@@ -371,7 +371,7 @@ Before deploying this CLAUDE.md:
 
 4. **Update current date regularly.** Agents need to know what day it is to contextualize deadlines and mission phases.
 
-4a. **Leave the Toolkit version stamps alone. They're two different facts, not one.** "Bootstrapped from" is permanent: it records which Toolkit version the BoS OS started from and never changes again, no matter what happens later. "Last synced" starts out identical but is meant to move: it's where a future sync capability would record "a newer Toolkit version has since brought the BoS OS up to date," once that capability exists. Nothing in this repo updates "Last synced" automatically yet. For now it just holds its initial value, but the field exists so that work doesn't require another template migration when it's built. Don't hand-edit either line.
+4a. **Leave the Toolkit version stamps alone. They're two different facts, not one.** "Bootstrapped from" is permanent: it records which Toolkit version the BoS OS started from and never changes again, no matter what happens later. "Last synced" starts out identical but is meant to move: it records the date a newer Toolkit version last brought the BoS OS up to date. Bootstrap sets it when the founder approves upgrade additions to an existing folder and they are applied (new Toolkit version, today's date, plus a Version History row naming the additions). Don't hand-edit either line.
 
 5. **Link to your strategy documents.** This file should reference `02_STRATEGY/` frequently. It's the source of truth for why constraints exist.
 

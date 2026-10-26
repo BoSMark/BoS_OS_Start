@@ -118,7 +118,7 @@ If Bootstrap gave you something useful, a star on this repo helps the next found
 
 ## Upgrading from an earlier version
 
-If you installed the toolkit at a Business of Software conference or from an earlier release, v2.2 is a significant upgrade. Your existing files are safe, the migration is additive.
+If you installed the toolkit at a Business of Software conference or from an earlier release, v2.6 adds operating sections to the CLAUDE.md template. Your existing files are safe, the migration is additive.
 
 See [CHANGELOG.md](CHANGELOG.md) for the upgrade steps.
 

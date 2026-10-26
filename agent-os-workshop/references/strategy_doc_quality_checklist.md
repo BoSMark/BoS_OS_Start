@@ -163,7 +163,7 @@ If the exec owns multiple strategy documents and you're deciding where to spend 
 
 **At the start of the session, offer the exec a choice:**
 
-- **Quick win:** "Pick a document we can work through in 20 minutes. You should leave with at least one useful insight. And you'll have given me your first feedback, and I love feedback."
+- **Quick win:** "Pick a document we can work through in this session. You should leave with at least one useful insight. And you'll have given me your first feedback, and I love feedback."
 - **Deep dig:** "Pick the document that matters most to you right now. We'll go where it leads, though I'll flag if we're spending time on something that won't affect any real decision in the next 30 days."
 
 Let them choose. Both are valid. The quick win is usually better for a first session.

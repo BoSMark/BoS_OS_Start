@@ -14,7 +14,7 @@ The scenarios below describe the v2.0 skills. For v2.6.0, see "Upgrading an exis
 |----------|---------|-----|
 | New bootstrap → new workshop, no existing OS | **Go ahead** | Clean slate, full benefit |
 | New workshop on existing old OS (no re-bootstrap) | **Go ahead** | Workshop detects old naming, surfaces differences, asks permission — safe |
-| New bootstrap on existing OS → new workshop | **Take care — limited value** | Bootstrap will propose changes to your existing files for your approval. If your OS is already well-enriched with internal content, the value of re-bootstrapping is low and the risk of approving the wrong change is real. Workshop will then run cleanly on whatever the bootstrap produced. |
+| New bootstrap on existing BoS OS → new workshop | **Take care, limited value** | Bootstrap will propose changes to your existing files for your approval. If your BoS OS is already well-enriched with internal content, the value of re-bootstrapping is low and the risk of approving the wrong change is real. Workshop will then run cleanly on whatever the bootstrap produced. |
 | Old workshop on existing old OS | **Continue as normal** | Nothing changes — old skill still works on old OS |
 
 ---
@@ -220,14 +220,14 @@ The additions you can ask for are:
 - Affected-document tracking. Each decision names the files it would change and records each one as updated and checked, or pending with a named owner.
 - Rules for working within existing authority. Declining an upgrade withholds permission for the upgrade edits only. Normal session work continues under the company's existing approval rules.
 
-Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner.
+Bootstrap then sets "Last synced" to the new Toolkit version and adds a Version History row naming the additions you approved. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner.
 
 ---
 
 ## Summary: What Should I Do?
 
 **I have an existing OS and want to run the new Workshop.**
-→ Back up your OS first. Then run the Workshop. It will detect your setup, surface any differences, and ask what you want before changing anything.
+→ Back up your BoS OS first. Then run the Workshop. It will detect your setup, surface any differences, and ask what you want before changing anything.
 
 **I want to adopt plain English file naming.**
 → Back up first. Then run the Workshop and choose option B when it surfaces the naming difference. It will show you each proposed rename and ask for your confirmation before touching anything.

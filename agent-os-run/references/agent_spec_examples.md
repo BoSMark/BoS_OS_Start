@@ -258,8 +258,8 @@ Delivery Manager maintains a simple tracking structure:
 | **Delivery Manager** | You have a team working and need to drive to completion | Weekly status, blockers, decisions, task tracking |
 
 **Typical flow:**
-1. Run Mission Shaper (1–2 hours, produces brief)
-2. Run Agent Planner (1–2 hours, produces agent specs)
+1. Run Mission Shaper (produces the brief)
+2. Run Agent Planner (produces agent specs)
 3. Run Delivery Manager (ongoing, 30 min per week)
 
 ---

@@ -167,7 +167,7 @@ If the exec owns multiple strategy documents, do the most important one in this 
 
 3. **Gaps and overlaps** - Are there decisions that nobody owns clearly? Functions that fall between two people? Name them. These are usually where the most value is, and where agents can help most.
 
-4. **Capture in role stubs** - Once the conversation is clear, use `references/agent_spec_template.md` to capture each person's role: what they own, what they decide, what strategy documents govern their domain, what hard constraints apply. Keep these as role definitions for now. Full agent specs — where a role stub becomes a specification of what an AI agent is authorised to do on that person's behalf — come later, with experience of working the system. The role stub is the human picture. The agent spec is what you build on top of it once you know how decisions actually flow in practice.
+4. **Capture in role stubs** - Once the conversation is clear, capture each person's role in a short stub: what they own, what they decide, what strategy documents govern their domain, what hard constraints apply. Do not use `references/agent_spec_template.md` for stubs. That template is the full agent spec, which the Run skill's Agent Planner uses when a mission needs agents. Keep these as role definitions for now. Full agent specs, where a role stub becomes a specification of what an AI agent is authorised to do on that person's behalf, come later, with experience of working the system. The role stub is the human picture. The agent spec is what you build on top of it once you know how decisions actually flow in practice.
 
 **Deliverable:** Save role stubs to `03_AGENTS/`, one file per person. Add a change log entry.
 

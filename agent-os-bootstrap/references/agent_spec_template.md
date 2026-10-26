@@ -13,7 +13,7 @@
 > Strategy documents owned: Our_Values.md, How_We_Grow.md, How_We_Make_Decisions.md
 > ```
 >
-> **What Workshop produces:** Full agent specs — this template. Once you have worked with the BoS OS for a few sessions and understand how decisions actually flow, come back here and turn the role stubs into proper agent specs with decision boundaries, escalation triggers, and evaluation criteria.
+> **Who writes full specs:** the Run skill's Agent Planner, using this template, when a mission needs agents. Once you have worked with the BoS OS for a few sessions and understand how decisions actually flow, come back here and turn the role stubs into proper agent specs with decision boundaries, escalation triggers, and evaluation criteria.
 >
 > The distinction matters: a role stub describes a person. An agent spec defines what an AI agent is authorised to do on that person's behalf.
 

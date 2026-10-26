@@ -52,7 +52,7 @@ If the user hasn't provided a company name, ask for one. Then ask: "What's the c
 
 ## Existing company folders
 
-Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Present the missing operating sections and proposed files, explain the affected paths, and wait for approval. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules and report the limitation. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record.
+Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Present the missing operating sections and proposed files, explain the affected paths, and wait for approval. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules and report the limitation. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record. When approved additions are applied, set "Last synced" to this skill's version and today's date and add a Version History row naming them. Never change "Bootstrapped from".
 
 ## The Opening Questions
 
@@ -99,7 +99,7 @@ Once you have answers to all three questions (or have acknowledged gaps), procee
 
 ## The Bootstrap Process
 
-Work through these steps in order. Summarise what you found after each step and confirm with the user before moving on.
+Work through these steps in order. Summarise what you found after each step. Confirm with the user before moving on after Steps 1 and 2. Steps 3 to 7 run under the single yes asked before the first file (see "Ask before you write anything"): summarise after each one and carry on unless the founder objects.
 
 ### Step 1: Research the Company
 
@@ -151,7 +151,7 @@ Tell the user: "Based on my research, I'm treating [Company] as a [industry] com
 
 ### Step 3: Create the Folder Structure
 
-**Ask before you write anything.** Tell the founder where you will create the project folder and what you will write there: the six folders, the strategy documents, the agent map, CLAUDE.md and the state files. Say that every file is a draft until they confirm the summary in Step 8. If the place already holds files, name them and ask whether to continue there or choose another place. Never overwrite a file. Wait for a yes. One yes covers Steps 3 to 7, so do not ask again file by file.
+**Ask before you write anything.** Tell the founder where you will create the project folder and what you will write there: the six folders, the strategy documents, the agent map, CLAUDE.md and the state files, plus `BOOTSTRAP_SUMMARY.md` once they confirm the summary. Say that every file is a draft until they confirm the summary in Step 8. If the place already holds files, name them and ask whether to continue there or choose another place. Never overwrite a file. Wait for a yes. One yes covers Steps 3 to 7, so do not ask again file by file.
 
 Create the canonical folder structure in the user's workspace:
 
@@ -235,7 +235,7 @@ Inside each document, include a reference number in the header block (e.g., `Str
 
 ### Step 5: Map the People and Their Roles
 
-> **Bootstrap produces role stubs, not agent specs.** A role stub captures a person's name, title, functions, and which strategy documents they own. That is all you need at this stage. Full agent specs — with decision boundaries, escalation triggers, and evaluation criteria — are Workshop territory. Do not attempt them here.
+> **Bootstrap produces role stubs, not agent specs.** A role stub captures a person's name, title, functions, and which strategy documents they own. That is all you need at this stage. Full agent specs, with decision boundaries, escalation triggers, and evaluation criteria, are written later by the Run skill's Agent Planner. Do not attempt them here.
 
 Before thinking about agents, map the people. This step is about identifying who is actually running this company, their names, their roles, and what each of them is responsible for. Agents come later. Right now, you are mapping the human operating system.
 
@@ -281,7 +281,7 @@ Read `references/claude_md_template.md` and populate it for this specific compan
 
 Use the CLAUDE.md header format: `# CLAUDE.md — BoS OS, built with {{FOUNDER_NAME}}`.
 
-**Set the Toolkit version stamps.** Directly under the header, the template has two lines: `*Bootstrapped from BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*` and `*Last synced with BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*`. Fill `{{BOS_OS_VERSION}}` from this skill's own `version:` field in the frontmatter at the top of this file — read it, don't hardcode it, so the stamp stays correct as this skill is updated. Fill `{{BOOTSTRAP_DATE}}` with today's date. At bootstrap both lines get the same values — that's expected, nothing has synced yet. They mean different things and stay different going forward: "Bootstrapped from" is a permanent record and nothing should ever change it again. "Last synced" is where a future sync capability would record that a newer Toolkit version has since brought this OS up to date — no such capability exists yet, so for now it simply holds its initial value. Set both. Don't skip either, and don't ask the user for either.
+**Set the Toolkit version stamps.** Directly under the header, the template has two lines: `*Bootstrapped from BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*` and `*Last synced with BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*`. Fill `{{BOS_OS_VERSION}}` from this skill's own `version:` field in the frontmatter at the top of this file, read it, don't hardcode it, so the stamp stays correct as this skill is updated. Fill `{{BOOTSTRAP_DATE}}` with today's date. At bootstrap both lines get the same values, that's expected, nothing has synced yet. They mean different things and stay different going forward: "Bootstrapped from" is a permanent record and nothing should ever change it again. "Last synced" records the date a newer Toolkit version last brought the BoS OS up to date. Bootstrap sets it when the founder approves upgrade additions to an existing folder and they are applied: new Toolkit version, today's date, plus a Version History row naming the additions. Set both. Don't skip either, and don't ask the user for either.
 
 In the CLAUDE.md, refer to `02_STRATEGY/` documents by their plain English names. For example: "Agents must follow the decisions framework in `02_STRATEGY/How_We_Make_Decisions.md`."
 
@@ -311,7 +311,7 @@ The founder or CEO is the first and most important user of the BoS OS. Before in
 
 Tell the user something like:
 
-> "To be clear about where we are: what you have is a first draft built entirely from public information and two questions. Some of it will be wrong. Some of it will be focused on the wrong things. That's expected. The system has never spoken to you before.
+> "To be clear about where we are: what you have is a first draft built entirely from public information and three questions. Some of it will be wrong. Some of it will be focused on the wrong things. That's expected. The system has never spoken to you before.
 >
 > The next step is to give it feedback. Open the documents, read them, and start shaping what's there so it reflects what you actually know your company to be. Correct what's wrong. Add what's missing. Remove what doesn't apply. This is the process of making the BoS OS yours.
 >
@@ -322,7 +322,7 @@ Then present the next-steps guidance:
 ```
 ## Your next steps
 
-What you have is a first draft from public information and two questions.
+What you have is a first draft from public information and three questions.
 Some of it will be wrong. Some of it will be focused on the wrong things.
 That's fine. This step is about giving the BoS OS feedback and starting to
 shape it into something that reflects what you know your company to be.
