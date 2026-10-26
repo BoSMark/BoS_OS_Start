@@ -66,9 +66,12 @@ Then determine which stage the user is in:
 | What you find | Where they are | What to do next |
 |---|---|---|
 | No missions folder / no MISSION-BRIEF.md files | Pre-mission — haven't shaped anything yet | Offer to run the **Mission Shaper** |
-| MISSION-BRIEF.md exists, no agent specs or todo.md | Brief is shaped, not yet staffed | Offer to run the **Agent Planner** |
+| MISSION-BRIEF.md in Mission Brief format (Outcome, Measure and Time frame sections), no agent specs, todo.md missing or empty | Brief is shaped, not yet staffed | Offer to run the **Agent Planner** |
+| MISSION-BRIEF.md written as a phase plan (phases, hard constraints, success metrics, no Outcome or Measure sections), empty state files, no agent specs | Planned by an earlier Workshop, not yet shaped | Offer to run the **Mission Shaper** to convert the plan into a Mission Brief, then the **Agent Planner** |
 | Agent specs and todo.md exist, todo has open items | Staffed and in delivery | Offer to run the **Delivery Manager** (operate mode stand-up) |
 | todo.md depleted, done.md has entries | Mission may be complete | Offer retro or new mission |
+
+For a phase-plan brief, the Mission Shaper starts from what the plan already says and asks only for the sections that are missing. It does not restart the interview.
 
 Report what you found in one short paragraph: what missions exist, which stage each is in, and what the natural next action is. Then ask the user to confirm before proceeding. Do not assume — a user returning after a gap may want to start something new, not continue what's open.
 
@@ -128,9 +131,9 @@ If any of these are missing, run **Bootstrap** first, then **Workshop** before u
 
 ## Integration & Hand-offs
 
-Run is the third skill in the BoS OS toolkit (Bootstrap, Workshop, Run) and is optional.
+Run is the third skill in the BoS OS toolkit (Bootstrap, Workshop, Run). It is a separate, optional install.
 
-What it assumes is done. Bootstrap and Workshop. Run needs CLAUDE.md, live strategy documents, agent specs in `03_AGENTS/`, and the state files, as the Governance assumptions above list. If any are missing, run Bootstrap first, then Workshop.
+What it assumes is done. Bootstrap and Workshop. Run needs CLAUDE.md, live strategy documents, role stubs in `03_AGENTS/` (the Agent Planner writes the full specs), and the session summary and decisions files in `01_STATE/`, as the Governance assumptions above list. If any are missing, run Bootstrap first, then Workshop.
 
 What it produces. A Mission Brief (Mission Shaper), agent specs and `todo.md` (Agent Planner), and a running delivery loop with `in-progress.md`, `blocked.md` and `done.md` (Delivery Manager).
 
@@ -143,7 +146,7 @@ What comes next. At mission close, a retro or a new mission.
 # PART 1: MISSION SHAPER
 
 **Author:** Tim Barker, Mark Littlewood and Business of Software  
-**Status:** DRAFT — adapt to your system before activating  
+**Status:** ACTIVE
 **Type:** Coordination (interview-driven)  
 **Runs:** Once, at the start of a mission — before agents are cast or specced  
 **Feeds:** Agent Planner (consumes the Mission Brief this produces)
@@ -405,13 +408,13 @@ The Mission Shaper *names* these; the Agent Planner *casts and specs* them.
 # PART 2: AGENT PLANNER
 
 **Author:** Tim Barker, Mark Littlewood and Business of Software  
-**Status:** DRAFT — adapt to your system before activating  
+**Status:** ACTIVE
 **Type:** Coordination (interview-driven)  
 **Runs:** Once per mission, after the Mission Shaper  
 **Input:** A Mission Brief (`MISSION-BRIEF.md` from the Mission Shaper)  
 **Feeds:** Delivery Manager (consumes the `todo.md` and agent specs this produces)
 
-> This is the canonical successor to the earlier "Agent Spec Builder." It both **casts** the agent team and **specs** each role. Don't run it alongside the old builder; this replaces it.
+> The Agent Planner both **casts** the agent team and **specs** each role itself. The Agent Spec Builder (see the appendix) is the standalone interview for one named agent outside a mission. The Planner may offer it when the founder wants to go deeper on one role. Never run both for the same role.
 
 ---
 
@@ -521,7 +524,7 @@ Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 # [Agent Name] — Spec
 
 **Author:** Tim Barker, Mark Littlewood and Business of Software
-**Status:** DRAFT · **Type:** [execution/measurement/guardian] · **Owner:** [name]
+**Status:** DRAFT · **Type:** [execution/measurement/guardian] · **Owner:** [name] · **Escalation approver:** [name, required before ACTIVE]
 **Mission:** [MISSION-NNN_name] · **Governing docs:** [list] · **Model tier:** [e.g. Opus / standard]
 
 ## Role
@@ -544,6 +547,12 @@ Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 
 ## Evaluation (30 days)
 - Leading indicator: …  · Failure mode to watch: …
+
+## Sign-off
+- [ ] Owner reviewed
+- [ ] Owner re-read 24h later
+- [ ] Escalation approver confirmed
+- [ ] Status set to ACTIVE only after all three above
 ```
 
 ---
@@ -580,7 +589,7 @@ Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 # PART 3: DELIVERY MANAGER
 
 **Author:** Tim Barker, Mark Littlewood and Business of Software  
-**Status:** DRAFT — adapt to your system before activating  
+**Status:** ACTIVE
 **Type:** Coordination  
 **Runs:** Every working session, once a mission is staffed  
 **Input:** The agent team + deliverables from the Agent Planner (`todo.md`)  
@@ -726,7 +735,7 @@ Stamp each entry with today's date as its Logged date. The founder never types a
 
 ---
 
-You are an interview-driven agent spec builder. Your job is to take ONE named agent and interview the human through building a finished, runnable spec for it.
+You are an interview-driven agent spec builder. Your job is to take ONE named agent and interview the human through building a complete spec for it, saved as DRAFT until it is signed off.
 
 You do not hand back a blank template. You ask questions, reflect answers back, pressure-test them, and only move on when the answer is tight enough to be useful.
 

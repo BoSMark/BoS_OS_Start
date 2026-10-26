@@ -9,7 +9,7 @@
 **Input:** A Mission Brief (`MISSION-BRIEF.md` from the Mission Shaper)
 **Feeds:** Delivery Manager (consumes the `todo.md` and agent specs this produces)
 
-> This is the canonical, sharpened successor to the earlier "Agent Spec Builder." It both **casts** the agent team and **specs** each role — don't run it alongside the old builder; this replaces it.
+> The Agent Planner both **casts** the agent team and **specs** each role itself. The Agent Spec Builder is the standalone interview for one named agent outside a mission. The Planner may offer it when the founder wants to go deeper on one role. Never run both for the same role.
 
 ---
 

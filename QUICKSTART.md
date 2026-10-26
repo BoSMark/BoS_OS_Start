@@ -1,6 +1,6 @@
 # BoS OS — Quickstart
 
-Get from zero to your first Bootstrap session in under 10 minutes.
+Get from zero to your first Bootstrap session.
 
 ---
 
@@ -57,7 +57,7 @@ In the left sidebar, click your project name (it will be under **Pinned**). Then
 
 > **Bootstrap my company OS**
 
-Claude will ask for your company name, then build your OS draft from there. The whole run takes 20–40 minutes.
+Claude will ask for your company name, then build your BoS OS draft from there.
 
 > **Nothing happened?** If Claude gives a generic reply instead of asking for your company name, the skill didn't install correctly. Go back to Step 3 and check you used **Upload a skill** (not Browse skills or Browse plugins).
 

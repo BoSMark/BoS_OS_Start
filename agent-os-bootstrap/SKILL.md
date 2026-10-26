@@ -101,7 +101,7 @@ Once you have answers to all three questions (or have acknowledged gaps), procee
 
 Work through these steps in order. Summarise what you found after each step and confirm with the user before moving on.
 
-### Step 1: Research the Company (5-10 minutes)
+### Step 1: Research the Company
 
 Search for and gather:
 
@@ -150,6 +150,8 @@ Tell the user: "Based on my research, I'm treating [Company] as a [industry] com
 ---
 
 ### Step 3: Create the Folder Structure
+
+**Ask before you write anything.** Tell the founder where you will create the project folder and what you will write there: the six folders, the strategy documents, the agent map, CLAUDE.md and the state files. Say that every file is a draft until they confirm the summary in Step 8. If the place already holds files, name them and ask whether to continue there or choose another place. Never overwrite a file. Wait for a yes. One yes covers Steps 3 to 7, so do not ask again file by file.
 
 Create the canonical folder structure in the user's workspace:
 
@@ -315,10 +317,10 @@ Tell the user something like:
 >
 > Here's one thing I noticed while building it that might be worth looking at first: [one specific, genuine observation from the research, something concrete, not generic]."
 
-Then present the "next 90 minutes" guidance:
+Then present the next-steps guidance:
 
 ```
-## Your next 90 minutes
+## Your next steps
 
 What you have is a first draft from public information and two questions.
 Some of it will be wrong. Some of it will be focused on the wrong things.

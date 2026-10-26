@@ -14,7 +14,7 @@ These three skills fix the foundation first, then put it to work.
 
 This repo contains three skills that activate your company BoS OS:
 
-**Bootstrap** models your company OS from public information in under an hour. It produces a first draft of your strategy layer, agent roles, and decision governance, plus a seeded first mission so your agents have a real job from day one. Think of it as the AI doing its homework on your company before you meet.
+**Bootstrap** models your company OS from public information. It produces a first draft of your strategy layer, agent roles, and decision governance, plus a seeded first mission so your agents have a real job from day one. Think of it as the AI doing its homework on your company before you meet.
 
 **Workshop** helps you refine what Bootstrap produced. It works with your insider knowledge, challenging assumptions, sharpening priorities, and turning the skeleton into something that reflects how you actually run the business. As you work through it, the AI starts to understand your strategic goals, identify gaps, and surface opportunities and threats specific to your business.
 
@@ -48,7 +48,7 @@ Your folder structure is your system. The files are the memory.
 
 **Prerequisites:** Claude Pro subscription · Cowork mode enabled
 
-> **New to Cowork?** Start with the [Quickstart](QUICKSTART.md). It gets you to your first session in under 10 minutes.
+> **New to Cowork?** Start with the [Quickstart](QUICKSTART.md). It gets you to your first session.
 
 > **Connect a folder before Step 1.** In Cowork, connect a folder on your computer, somewhere in Dropbox, Google Drive, or similar, before you do anything else. This is where the BoS OS saves everything it creates. If you skip this, files land in Cowork's temporary sandbox and are hard to find later. Step 2 below walks you through it.
 
@@ -91,7 +91,7 @@ In the left sidebar, click your project name (it will be under **Pinned**). Then
 
 > **Bootstrap my company OS**
 
-It will ask for your company name and build your OS draft from there.
+It will ask for your company name and build your BoS OS draft from there.
 
 ---
 
@@ -101,18 +101,18 @@ Your BoS OS is built around strategy documents. Each one covers a distinct area 
 
 ---
 
-## Your first 90 minutes after Bootstrap
+## Your first steps after Bootstrap
 
 Bootstrap produces a lot. Don't try to process it all at once. Read the summary Bootstrap gives you at the end of the session first, it tells you exactly what to do next. Then:
 
 1. Read your CLAUDE.md and correct anything that's wrong, paying particular attention to tone and terminology
 2. Read your Values strategy document and adjust it to sound like you, not like a consultant wrote it
-3. Pick one strategy document that covers your biggest current challenge and spend 20 minutes with Workshop on that alone
+3. Pick one strategy document that covers your biggest current challenge and start with Workshop on that document alone
 4. Ignore everything else for now. The rest will still be there
 
 The system is designed to be lived in gradually, not consumed in one sitting.
 
-If Bootstrap gave you something useful in the last 90 minutes, a star on this repo helps the next founder find it too.
+If Bootstrap gave you something useful, a star on this repo helps the next founder find it too.
 
 ---
 

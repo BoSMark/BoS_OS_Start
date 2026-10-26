@@ -37,6 +37,7 @@ At the start of every workshop session:
 2. Check if an agent map exists (`03_AGENTS/agent_map.md`). If it does, read it to understand the exec's portfolio.
 3. Read the exec's existing strategy document(s) from `02_STRATEGY/`
 4. Read the exec's existing agent spec(s) from `03_AGENTS/`
+5. If `BOOTSTRAP_SUMMARY.md` exists at the workspace root, read it for the dated setup record. Skip this step when the file does not exist. The session summary stays the source for current work.
 
 Read the CLAUDE.md header to confirm which company's BoS OS this is: `# CLAUDE.md — BoS OS, built with [Name]`.
 
@@ -58,19 +59,19 @@ The workshop has four phases. Each is self-contained, so an exec can complete on
 
 **Progress is everything.** People lose confidence when they can't see where they are or how far they have to go. At the start of each phase, tell the exec exactly where they are, what the phase will produce, and what comes after it. At the end of each phase, summarise what was accomplished before moving on. Don't just slide into the next topic. Make every transition feel like a milestone.
 
-**Time expectations - set these early.** The fastest anyone gets through all four phases is around 30 to 40 minutes, and that's moving quickly with a company they already know well. More likely it takes longer, and that's fine. Tell the exec this upfront:
+**Set expectations early.** The workshop can take more than one sitting, and that's fine. Tell the exec this upfront:
 
 > "This doesn't have to be done in one sitting. The best approach is to set aside some time, work until you've had enough, then come back and pick up where you left off. The BoS OS saves your progress at every phase, so you won't lose anything. Some people do it across three or four short sessions. Others go deep in one long one and cancel their next meeting. Either works."
 
 ---
 
-### Phase 0: Orientation (5-10 minutes) - Phase 1 of 4
+### Phase 0: Orientation - Phase 1 of 4
 
 **Goal:** Establish who they are, what they own, and what "done" looks like.
 
 **Open with a map.** Before anything else, tell them where they're going:
 
-> "The workshop has four phases. Today we'll start with Phase 0 - just orientation, five to ten minutes - and then move into Phase 1, which is a deep-dive on your strategy documents. Depending on how much time you have, we may get through Phase 2 as well. Here's the full picture:
+> "The workshop has four phases. Today we'll start with Phase 0, a short orientation, and then move into Phase 1, which is a deep-dive on your strategy documents. Depending on how much time you have, we may get through Phase 2 as well. Here's the full picture:
 >
 > - **Phase 0:** Orientation - where you are now, what you own, what done looks like
 > - **Phase 1:** Strategy deep-dive - taking your strategy documents from a first draft to something genuinely useful
@@ -98,7 +99,7 @@ Ask if they have questions, then move to Phase 1.
 
 ---
 
-### Phase 1: Strategy Deep-Dive (25-40 minutes) - Phase 2 of 4
+### Phase 1: Strategy Deep-Dive - Phase 2 of 4
 
 **Open with a phase announcement:**
 > "We're now in Phase 1 of 4 - the strategy deep-dive. This is usually the most valuable part of the workshop. By the end of this phase you'll have a strategy document that's specific enough for the BoS OS to actually use. Let's start with your most important document."
@@ -142,7 +143,7 @@ If the exec owns multiple strategy documents, do the most important one in this 
 
 ---
 
-### Phase 2: Roles and Responsibilities (25-40 minutes) - Phase 3 of 4
+### Phase 2: Roles and Responsibilities - Phase 3 of 4
 
 **Open with a phase announcement:**
 > "Phase 2 of 4 - roles and responsibilities. Phase 1 gave the BoS OS your strategy. Now we're going to look at the people in your organisation - what each person actually owns, what they decide, and where their authority starts and stops. Once we're clear on that, we'll capture it in a format the BoS OS can use. This is less about AI and more about getting honest about how your company actually works."
@@ -174,7 +175,7 @@ If the exec owns multiple strategy documents, do the most important one in this 
 
 ---
 
-### Phase 3: First Mission Definition (20-30 minutes) - Phase 4 of 4
+### Phase 3: First Mission Definition - Phase 4 of 4
 
 **Open with a phase announcement:**
 > "Last phase - Phase 3. This is where it gets real. We're going to define one concrete first project for your agent, something specific, bounded, and provable. By the end of this phase your agent will have an actual job to do, not just a spec. Let's find the right first mission."
@@ -210,19 +211,33 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
 
 6. **Success metrics** - How they'll know the mission worked. Be specific: "Agent matches expert judgment on 80%+ of test cases" or "Reduces time-to-review from 4 hours to 30 minutes while maintaining quality score above X."
 
-**Deliverable:** Once the mission plan is confirmed, scaffold the full mission folder so the Run skill has a clean starting state:
+**Deliverable:** Once the mission plan is confirmed, save it as a Mission Brief, the format the Run skill reads:
 
 1. Find the next mission number — scan `04_MISSIONS/` for existing `MISSION-NNN_*` folders; take the highest + 1, zero-padded to three digits (e.g. `003`). If `04_MISSIONS/` doesn't exist yet, create it and start at `001`.
 2. Slug the mission name — lower-case and hyphenate (e.g. "Pricing Exception Agent" → `pricing-exception-agent`).
-3. Create `04_MISSIONS/MISSION-NNN_slug/` and write the mission plan into it as `MISSION-BRIEF.md`.
-4. Create the five state files in the same folder, empty but ready: `todo.md`, `in-progress.md`, `blocked.md`, `done.md` — use the templates from `agent-os-run/mission-templates/` if available, otherwise create minimal blank files with the correct headings.
-5. Confirm the path back to the exec: *"Saved as `MISSION-003_pricing-exception-agent`. The folder is ready — the Run skill picks up from here."*
+3. Create `04_MISSIONS/MISSION-NNN_slug/` and write the mission plan into it as `MISSION-BRIEF.md`. Write it as a committed, time-bound Mission Brief, not as a phase plan. Fill these sections from the answers above.
+   - Type and shape. Committed, time-bound.
+   - Outcome. The first use case (question 1), written as what changes, not what the agent does.
+   - Measure. The success metrics (question 6), with the current value, the target and how it is measured.
+   - Time frame. The horizon and close date for the phases (question 4).
+   - Feedback loop. The ground truth comparison (question 2) and who acts when the agent drifts.
+   - Approach. The phase structure (question 4) and why it suits the risk level.
+   - Work the outcome requires. The task the agent does and the inputs it needs (question 3).
+   - Success announcement. Two sentences that describe what changed.
+   - What needs guarding. The mission hard constraints (question 5), each with the standard to enforce.
+   - Classified gaps. The gaps this phase found, each with what closes it.
+   - Coherence with strategy. The strategy document the mission serves.
+   - Owner and escalation owner.
 
-**Phase 3 closing:** "Phase 3 done. The BoS OS has a first mission: [name it]. The mission folder is scaffolded and ready at `04_MISSIONS/MISSION-NNN_[name]/` — brief, state files, all of it. When you open the Run skill next session, it will find the folder, read the brief, and pick up exactly where we left off. Think about where you started today — a bootstrap draft built from public information. You now have a strategy document that reflects how your company actually works, a clear picture of who owns what, and a real first job for the system to prove itself on. That's not a setup. That's a working operating system. One short final phase to close everything out properly."
+   If the Run skill is installed, use the mission brief template in `agent-os-run/mission-templates/` for the layout. If not, use the section names above.
+4. Do not create `todo.md`, `in-progress.md`, `blocked.md` or `done.md`. The Run skill creates them when it staffs and starts the mission.
+5. Confirm the path back to the exec: *"Saved as `MISSION-003_pricing-exception-agent`. The brief is ready. When you open the Run skill, it offers the Agent Planner, which casts the agents and builds the backlog from this brief."*
+
+**Phase 3 closing:** "Phase 3 done. The BoS OS has a first mission: [name it]. The mission brief is saved at `04_MISSIONS/MISSION-NNN_[name]/MISSION-BRIEF.md`. When you open the Run skill next session, it will find the brief and offer the Agent Planner, which casts the agents and builds the backlog. Think about where you started today. You began with a bootstrap draft built from public information. You now have a strategy document that reflects how your company actually works, a clear picture of who owns what, and a real first job for the system to prove itself on. That's not a setup. That's a working operating system. One short final phase to close everything out properly."
 
 ---
 
-### Phase 4: State Setup and Handoff (5-10 minutes) - Workshop Complete
+### Phase 4: State Setup and Handoff - Workshop Complete
 
 **Goal:** Ensure session continuity works for this exec going forward, and give them a clear "you're done" moment.
 
@@ -300,9 +315,9 @@ Workshop is the second of three skills in the BoS OS toolkit (Bootstrap, Worksho
 
 What it assumes is done. Bootstrap has created the folder structure and a researched first draft. If not, Workshop sends the founder to Bootstrap first.
 
-What it produces. Sharper strategy documents in `02_STRATEGY/`, role definitions in `03_AGENTS/`, a planned first mission in `04_MISSIONS/`, and updated state files.
+What it produces. Sharper strategy documents in `02_STRATEGY/`, role definitions in `03_AGENTS/`, a first mission saved as a Mission Brief in `04_MISSIONS/`, and updated state files.
 
-What comes next. Run. It shapes missions into measurable briefs, staffs them with agent specs, and drives delivery from the files Workshop leaves in place. Run is a separate, optional install.
+What comes next. Run. It offers the Agent Planner, which casts the agents and builds the backlog from the Mission Brief Workshop saves, and then the Delivery Manager runs delivery. Run is a separate, optional install.
 
 ---
 

@@ -17,10 +17,15 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 - Bootstrap uses explicit reference paths instead of a GitHub API directory listing. It checks individual files, downloads missing or empty copies to writable storage and stops if recovery fails.
 - The North Star question asks about customer value. Revenue, profit and margin remain commercial goals and can still be the most urgent priority. Unconfirmed measures stay labelled candidates.
+- Workshop saves the first mission as a Mission Brief in the format Run reads, and no longer creates empty state files. Run sends a folder from an earlier Workshop, a phase-plan brief with empty state files, to the Mission Shaper and then the Agent Planner.
+- Bootstrap tells the founder where it will create the project folder and what it will write, and waits for a yes before the first file.
+- The Agent Planner specs each role itself. The Agent Spec Builder stays as the standalone interview for one named agent, and its output is a draft until the owner, the 24 hour re-read and the escalation approver have all signed.
+- The CLAUDE.md template, README and QUICKSTART say "the BoS OS" where they said "this OS" or "your OS".
+- The Integration & Hand-offs notes in Run, Workshop and the Agent Spec Builder now match what each skill does.
 
 ### Upgrading
 
-Reinstall the three `.skill` files. In an existing company folder, ask Workshop or Run to review the new operating sections and approve the specific additions you want. Existing strategy, decisions and memory are not replaced. `BOOTSTRAP_SUMMARY.md` is optional for an existing folder; improve the current session summary instead of reconstructing setup history. Reference downloads require access to `raw.githubusercontent.com`.
+Reinstall the three `.skill` files. In an existing company folder, ask Bootstrap to compare the folder with the current CLAUDE.md template, and approve the specific additions you want. Bootstrap proposes and changes nothing without your yes. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner. `BOOTSTRAP_SUMMARY.md` is optional for an existing folder, so improve the current session summary instead of rebuilding setup history. Reference downloads need access to `raw.githubusercontent.com`.
 
 ---
 

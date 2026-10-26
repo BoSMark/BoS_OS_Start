@@ -4,6 +4,8 @@
 
 **What this covers:** What happens when you run new versions of the Bootstrap or Workshop skill on an existing BoS OS. What changes, what doesn't, and what needs your explicit permission.
 
+
+The scenarios below describe the v2.0 skills. For v2.6.0, see "Upgrading an existing folder to v2.6.0" before the summary at the end of this guide.
 ---
 
 ## Scenario Summary
@@ -203,6 +205,22 @@ These are hard limits regardless of version:
 | Upgrade detection | None | Detects old vs new bootstrap; surfaces differences; asks permission |
 | Quality checklist file | `rfc_quality_checklist.md` | `strategy_doc_quality_checklist.md` (same content, updated terminology) |
 | File change model | Not explicit | No change to any file without explicit user permission |
+
+---
+
+## Upgrading an existing folder to v2.6.0
+
+v2.6.0 adds operating sections to the CLAUDE.md template and a dated setup record. A folder built with an earlier version keeps working without them. To add them, back up the folder, open Bootstrap in it and ask it to compare the folder with the current CLAUDE.md template. Bootstrap proposes each addition and changes nothing without your yes to that specific change.
+
+The additions you can ask for are:
+
+- A confirmed setup summary, saved as `BOOTSTRAP_SUMMARY.md`. It is optional for an existing folder. Improve the current session summary instead of rebuilding setup history.
+- The learning protocol in `01_STATE/memory/README.md`. It starts empty, and existing memory formats stay as they are.
+- Context rules and a restart note. Sessions load the history the task needs and save a short restart note before a task changes or a session ends.
+- Affected-document tracking. Each decision names the files it would change and records each one as updated and checked, or pending with a named owner.
+- Review Thresholds and quality gates.
+
+Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner.
 
 ---
 

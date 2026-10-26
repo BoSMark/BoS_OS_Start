@@ -3,6 +3,8 @@
 **Author:** Tim Barker, Mark Littlewood and Business of Software
 **Purpose:** Universal template for defining a time-bound execution mission (deployment of an agent into production).
 
+**How Workshop uses this template:** Workshop saves the mission as a Mission Brief, the format the Run skill reads. This template supplies the phase model, and the phases go under Approach in that brief.
+
 ---
 
 ## Overview
