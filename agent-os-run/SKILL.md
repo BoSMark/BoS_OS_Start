@@ -68,8 +68,8 @@ Then determine which stage the user is in:
 | No missions folder / no MISSION-BRIEF.md files | Pre-mission — haven't shaped anything yet | Offer to run the **Mission Shaper** |
 | MISSION-BRIEF.md in Mission Brief format (Outcome, Measure and Time frame sections), no agent specs, todo.md missing, empty or still the unfilled template | Brief is shaped, not yet staffed | Offer to run the **Agent Planner** |
 | MISSION-BRIEF.md written as a phase plan (phases, hard constraints, success metrics, no Outcome or Measure sections), state files empty or still the unfilled template, no agent specs | Planned by an earlier Workshop, not yet shaped | Offer to run the **Mission Shaper** to convert the plan into a Mission Brief, then the **Agent Planner** |
-| Agent specs exist but every one is still DRAFT (sign-off boxes not all ticked) | Staffed, specs not yet signed | Offer to finish the sign-off: owner review, the 24 hour re-read and the escalation approver. Then, if `todo.md` is missing or empty, go to Agent Planner Phase 3 (plan the work). Otherwise run the **Delivery Manager** |
-| At least one ACTIVE agent spec, `todo.md` missing, empty or still the unfilled template, and no entries in `done.md` | Staffed, no backlog yet | Offer Agent Planner Phase 3 (plan the work) |
+| Agent specs exist but every one is still DRAFT (sign-off boxes not all ticked) | Staffed, specs not yet signed | Offer to finish the sign-off: owner review, the 24 hour re-read and the escalation approver. Then, if `todo.md` is missing, empty or still the unfilled template, go to Agent Planner Phase 3 (plan the work). Otherwise run the **Delivery Manager** |
+| At least one ACTIVE agent spec, `todo.md` missing, empty or still the unfilled template, and `done.md` missing, empty or still the unfilled template | Staffed, no backlog yet | Offer Agent Planner Phase 3 (plan the work) |
 | At least one ACTIVE agent spec and todo.md with open items | Staffed and in delivery | Offer to run the **Delivery Manager** (operate mode stand-up) |
 | todo.md depleted, done.md has entries | Mission may be complete | Offer retro or new mission |
 

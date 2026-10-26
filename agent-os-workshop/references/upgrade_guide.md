@@ -15,7 +15,7 @@ The scenarios below describe the v2.0 skills. For v2.5.2, see "Upgrading an exis
 |----------|---------|-----|
 | New bootstrap → new workshop, no existing OS | **Go ahead** | Clean slate, full benefit |
 | New workshop on existing old OS (no re-bootstrap) | **Go ahead** | Workshop detects old naming, surfaces differences, asks permission — safe |
-| New bootstrap on existing BoS OS → new workshop | **Take care, limited value** | Bootstrap will propose changes to your existing files for your approval. If your BoS OS is already well-enriched with internal content, the value of re-bootstrapping is low and the risk of approving the wrong change is real. Workshop will then run cleanly on whatever the bootstrap produced. |
+| New bootstrap on existing BoS OS → new workshop (v2.0 advice) | **Take care, limited value** | Bootstrap will propose changes to your existing files for your approval. If your BoS OS is already well-enriched with internal content, the value of re-bootstrapping is low and the risk of approving the wrong change is real. Workshop will then run cleanly on whatever the bootstrap produced. |
 | Old workshop on existing old OS | **Continue as normal** | Nothing changes — old skill still works on old OS |
 
 ---
@@ -113,7 +113,9 @@ Each rename is confirmed individually. Cross-reference updates are shown and con
 
 ---
 
-## Scenario 2: Re-running the new Bootstrap on an existing OS
+## Scenario 2: Re-running the new Bootstrap on an existing OS (v2.0 history)
+
+This scenario describes v2.0. For v2.5.2, do not rerun Bootstrap. Use "Upgrading an existing folder to v2.5.2" below.
 
 **Your situation:** You want to run the new Bootstrap skill on an OS you've already built. Maybe you want the new file naming, or the improved CLAUDE.md, or updated strategy document templates.
 
@@ -226,6 +228,8 @@ Bootstrap then sets "Last synced" to the new Toolkit version and today's date, a
 ---
 
 ## Summary: What Should I Do?
+
+The advice below is for the v2.0 skills. For v2.5.2, use "Upgrading an existing folder to v2.5.2" above.
 
 **I have an existing OS and want to run the new Workshop.**
 → Back up your BoS OS first. Then run the Workshop. It will detect your setup, surface any differences, and ask what you want before changing anything.
