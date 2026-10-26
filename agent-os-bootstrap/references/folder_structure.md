@@ -233,7 +233,7 @@ After Bootstrap, this folder contains role stubs — one file per person, captur
 
 When a mission needs agents, the Run skill's Agent Planner turns role stubs into full agent specs, defining what an AI agent is authorised to do on that person's behalf, including decision boundary, escalation triggers, evaluation criteria, and hard constraints.
 
-Do not skip from nothing to full agent specs. Bootstrap first, then Workshop.
+Do not skip from nothing to full agent specs. Bootstrap first, then Workshop, then the Run skill's Agent Planner writes the specs.
 
 **Typical layout after Bootstrap:**
 ```
@@ -244,7 +244,7 @@ Do not skip from nothing to full agent specs. Bootstrap first, then Workshop.
 └── ...
 ```
 
-**Typical layout after Workshop:**
+**Typical layout once agents are specced:**
 ```
 03_AGENTS/
 ├── agent_map.md
@@ -253,7 +253,7 @@ Do not skip from nothing to full agent specs. Bootstrap first, then Workshop.
 └── ...
 ```
 
-**Key sections of a full agent spec** (Workshop phase):
+**Key sections of a full agent spec** (written by the Agent Planner):
 - Role and domain
 - Decision boundary (what it decides; what it does not)
 - Required inputs and data sources

@@ -10,7 +10,7 @@ This directory contains the reference files used by the BoS OS Bootstrap skill d
 
 **claude_md_template.md** - Read during Step 7 (Generate CLAUDE.md). Use this template to produce the company's CLAUDE.md. Fill in all placeholders with company-specific content from the research conducted in Step 1.
 
-**agent_spec_template.md** - Read during Step 5 (Map the People and Their Roles) for orientation only. Bootstrap does not produce full agent specs. It produces role stubs: name, title, functions owned, strategy documents owned. This template shows where those stubs are heading — full agent specs are built in the Workshop phase, once the founder has worked with the system and understands how decisions actually flow.
+**agent_spec_template.md** - Read during Step 5 (Map the People and Their Roles) for orientation only. Bootstrap does not produce full agent specs. It produces role stubs: name, title, functions owned, strategy documents owned. This template shows where those stubs are heading, the Run skill's Agent Planner builds full agent specs when a mission needs agents, once the founder has worked with the system and understands how decisions actually flow.
 
 **strategy_templates/** - Read during Step 4 (Populate Strategy Documents). Ten templates covering the core strategy document domains. Each template defines the structure and POPULATE placeholders. Fill these with real company-specific content from public research, not generic statements.
 

@@ -249,7 +249,7 @@ For each identified leader (C-suite, senior leadership, or key function owner):
 
 4. **Note any obvious gaps.** If the company has a function with no clear leader (common in early-stage companies), flag it: `[GAP: No identified owner for [function] - founder may be covering this directly]`.
 
-Read `references/agent_spec_template.md` to understand what comes next, but do not build full agent specs at this stage. Create lightweight role stubs in `03_AGENTS/` that capture: name, title, functions owned, strategy documents owned. These become the foundation for proper agent specs in the Workshop phase.
+Read `references/agent_spec_template.md` to understand what comes next, but do not build full agent specs at this stage. Create lightweight role stubs in `03_AGENTS/` that capture: name, title, functions owned, strategy documents owned. These become the foundation for proper agent specs, which the Run skill's Agent Planner writes when a mission needs agents.
 
 **Keep it proportionate.** A 10-person company might have 3 people covering 7 functions. A 200-person company might have 8 leaders. Map what's actually there. Don't invent a leadership structure that doesn't exist.
 

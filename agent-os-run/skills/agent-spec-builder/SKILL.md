@@ -120,7 +120,7 @@ Before finalising the spec, confirm:
 - **What it doesn't touch** — explicit out-of-scope list. What adjacent things might look like its job but aren't?
 - **Required inputs** — what does it need to operate? (Files, data sources, approvals.)
 - **Output format** — what does it produce, and where does it go?
-- **Sign-off protocol** — who reviews this spec before it goes ACTIVE? Recommend the owner reads it again 24 hours later with fresh eyes.
+- **Sign-off protocol**: ask for two names, the owner and the escalation approver. The owner reviews the spec and re-reads it 24 hours later. The approver confirms. The spec goes ACTIVE only after all three.
 
 ---
 

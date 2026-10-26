@@ -37,7 +37,7 @@ Before running any new version of the Bootstrap or Workshop skill on an existing
 2. Name it clearly: `[company]-agent-os-BACKUP-[date]`
 3. Store it somewhere you can find it (a folder outside the active OS, a cloud backup, a zip)
 
-This takes two minutes. If anything goes wrong — a file gets overwritten, a change turns out to be wrong — you have a clean restore point.
+If anything goes wrong, a file gets overwritten, a change turns out to be wrong, you have a clean restore point.
 
 **Do not skip this step.** Skills can read and write files. Even with explicit-permission controls, having a backup means you can always recover.
 
@@ -157,7 +157,7 @@ For most users, re-running the Bootstrap is more disruptive than it's worth. The
 1. Back up your entire OS (see top of this guide)
 2. Read the new Bootstrap's SKILL.md to understand what changed
 3. Apply only the specific changes you want — new CLAUDE.md format, new file naming, updated templates — manually
-4. Run the new Workshop to deepen your strategy documents and agent specs through the phase process
+4. Run the new Workshop to deepen your strategy documents and role definitions through the phase process
 
 This gives you the benefit of the improvements without the risk of accepting the wrong change.
 
@@ -220,7 +220,7 @@ The additions you can ask for are:
 - Affected-document tracking. Each decision names the files it would change and records each one as updated and checked, or pending with a named owner.
 - Rules for working within existing authority. Declining an upgrade withholds permission for the upgrade edits only. Normal session work continues under the company's existing approval rules.
 
-Bootstrap then sets "Last synced" to the new Toolkit version and adds a Version History row naming the additions you approved. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner.
+Bootstrap then sets "Last synced" to the new Toolkit version and today's date, adds a new row at the bottom of the Version History table naming the additions you approved, and leaves "Bootstrapped from" unchanged. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner.
 
 ---
 

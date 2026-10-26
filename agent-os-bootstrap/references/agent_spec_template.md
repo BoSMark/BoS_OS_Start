@@ -2,7 +2,7 @@
 
 **Author:** Tim Barker, Mark Littlewood and Business of Software
 
-> **When to use this:** This template is for the Workshop phase, not Bootstrap. If you are running Bootstrap, you are not filling this in yet.
+> **When to use this:** This template is for the Run skill's Agent Planner, not for Bootstrap or Workshop. If you are running Bootstrap, you are not filling this in yet.
 >
 > **What Bootstrap produces:** Lightweight role stubs — one file per person, capturing name, title, functions owned, and strategy documents owned. That is all Bootstrap needs. Role stubs live in `03_AGENTS/` and look like this:
 >

@@ -106,6 +106,8 @@ Before any questioning, tell the person what this is and how it will work. They 
 
 Then begin: *"So — in your own words, what do you want to do, and why does it matter now?"*
 
+If the folder already holds a phase-plan `MISSION-BRIEF.md`, skip this opening question. Read the plan, reflect it back, and follow "Converting an earlier plan" below.
+
 Adapt the wording to the person and the moment; don't read it robotically. The job is that they understand the purpose, the process, and the asset before the first real question.
 
 ## Phase 1 — Interrogation

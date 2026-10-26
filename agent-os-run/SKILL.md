@@ -68,7 +68,8 @@ Then determine which stage the user is in:
 | No missions folder / no MISSION-BRIEF.md files | Pre-mission — haven't shaped anything yet | Offer to run the **Mission Shaper** |
 | MISSION-BRIEF.md in Mission Brief format (Outcome, Measure and Time frame sections), no agent specs, todo.md missing or empty | Brief is shaped, not yet staffed | Offer to run the **Agent Planner** |
 | MISSION-BRIEF.md written as a phase plan (phases, hard constraints, success metrics, no Outcome or Measure sections), empty state files, no agent specs | Planned by an earlier Workshop, not yet shaped | Offer to run the **Mission Shaper** to convert the plan into a Mission Brief, then the **Agent Planner** |
-| Agent specs exist but every one is still DRAFT (sign-off boxes not all ticked) | Staffed, specs not yet signed | Offer to finish the sign-off: owner review, the 24 hour re-read and the escalation approver. Then run the **Delivery Manager** |
+| Agent specs exist but every one is still DRAFT (sign-off boxes not all ticked) | Staffed, specs not yet signed | Offer to finish the sign-off: owner review, the 24 hour re-read and the escalation approver. Then, if `todo.md` is missing or empty, go to Agent Planner Phase 3 (plan the work). Otherwise run the **Delivery Manager** |
+| At least one ACTIVE agent spec, `todo.md` missing or empty, and no entries in `done.md` | Staffed, no backlog yet | Offer Agent Planner Phase 3 (plan the work) |
 | At least one ACTIVE agent spec and todo.md with open items | Staffed and in delivery | Offer to run the **Delivery Manager** (operate mode stand-up) |
 | todo.md depleted, done.md has entries | Mission may be complete | Offer retro or new mission |
 
@@ -243,6 +244,8 @@ Before any questioning, tell the person what this is and how it will work. Four 
 4. **The deal** — *"I'll challenge you while the thinking isn't done, and back off once it is. If I push somewhere you've genuinely already settled, tell me and I'll let it go."*
 
 Then begin: *"So — in your own words, what do you want to do, and why does it matter now?"*
+
+If the folder already holds a phase-plan `MISSION-BRIEF.md`, skip this opening question. Read the plan, reflect it back, and follow "Converting an earlier plan" below.
 
 ---
 
@@ -518,7 +521,7 @@ Also capture per spec:
 - **Output format + destination**
 - **Model tier** — what level of model its judgment needs and why
 - **What it does not touch** — explicit out-of-scope
-- **Sign-off** — owner reviews; status goes ACTIVE only after a fresh-eyes re-read
+- **Sign-off**: the owner reviews, re-reads 24 hours later, and the named escalation approver confirms. Status goes ACTIVE only after all three.
 
 Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 

@@ -67,7 +67,7 @@ Claude will ask for your company name, then build your BoS OS draft from there.
 
 When Bootstrap finishes, read the summary Bootstrap gives you in the conversation. It tells you exactly what was created and what to do next.
 
-Run Workshop next to deepen what Bootstrap produced. Once your strategy layer and agent specs are solid, come back and install the Run skill to start operating missions.
+Run Workshop next to deepen what Bootstrap produced. Once your strategy layer and role definitions are solid, come back and install the Run skill to start operating missions and spec your agents.
 
 ---
 

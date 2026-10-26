@@ -375,7 +375,7 @@ Before deploying this CLAUDE.md:
 
 5. **Link to your strategy documents.** This file should reference `02_STRATEGY/` frequently. It's the source of truth for why constraints exist.
 
-6. **Make it accessible.** New agents (and auditors) should be able to read this in 15 minutes and understand: scope, constraints, process, contacts.
+6. **Make it accessible.** New agents (and auditors) should be able to read this quickly and understand: scope, constraints, process, contacts.
 
 7. **Review annually.** At the end of each year, review CLAUDE.md with stakeholders. Has scope changed? Do hard constraints still apply? Update accordingly.
 
