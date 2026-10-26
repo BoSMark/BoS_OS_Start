@@ -4,7 +4,7 @@ description: |
   Build the BoS OS for a company, a structured operating system that helps a CEO or founder make better decisions and helps their team understand what they are trying to do. Researches the company from public information, creates the folder structure, populates strategy documents with company-specific content, maps people and their roles, and generates a CLAUDE.md. Triggers: "run the BoS OS", "BoS OS", "Company OS", "bootstrap my company OS", "create an operating system for [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "operating model", "folder structure for agents", "bootstrap my company". MANDATORY TRIGGERS: BoS OS, Company OS, bootstrap, company setup, agent framework, AI strategy, operating model, folder structure.
 metadata:
   author: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.6.0
+  version: 2.5.2
 ---
 
 # BoS OS: Company Bootstrap
@@ -17,7 +17,7 @@ Your job is to research the company from public information and create a complet
 
 **Check reference files before reading them.** Some installs, including Cowork uploads, keep only this SKILL.md. Before the first reference-file read, check each file listed below is present and non-empty. Also check any other reference file before using it. Keep the files already installed. Download only missing or empty files with `curl --fail --location --silent --show-error` from the base address below, followed by the exact relative path. The address is pinned to this skill's release. Use these paths directly; no GitHub API request or directory listing is needed.
 
-Base address: `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-bootstrap/references/`
+Base address: `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.2/agent-os-bootstrap/references/`
 
 - `agent_spec_template.md`
 - `bootstrap_summary_template.md`
@@ -52,7 +52,7 @@ If the user hasn't provided a company name, ask for one. Then ask: "What's the c
 
 ## Existing company folders
 
-Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Present the missing operating sections and proposed files, explain the affected paths, and wait for approval. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules and report the limitation. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record. When approved additions are applied, set "Last synced" to this skill's version and today's date and add a Version History row naming them. Never change "Bootstrapped from".
+Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Ask the founder to back up the folder, then compare it with the current CLAUDE.md template. Skip the Opening Questions, the research steps and Steps 3 to 7 unless the founder asks for them. Present the missing operating sections and proposed files, explain the affected paths, and wait for approval. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules and report the limitation. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record. When approved additions are applied, set "Last synced" to this skill's version and today's date and add a Version History row naming them. Never change "Bootstrapped from".
 
 ## The Opening Questions
 

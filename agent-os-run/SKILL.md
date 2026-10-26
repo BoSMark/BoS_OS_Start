@@ -3,13 +3,13 @@ name: agent-os-run
 description: |
   Operate your BoS OS day to day. The coordination layer that runs after Bootstrap and Workshop: it shapes a rough idea into a measurable Mission Brief, staffs the mission by casting and speccing the agent team, then drives delivery from goal to running system. Three bounded agents — Mission Shaper, Agent Planner, Delivery Manager — plus mission state templates. Use when someone wants to run a mission, shape a goal into a brief, staff or plan a mission, manage delivery, run the backlog, or operate their agent team. Triggers: "run a mission", "run the BoS OS", "run agent run skill", "shape a mission", "mission brief", "staff this mission", "plan the mission", "delivery manager", "run my backlog", "operate my agents", "stand-up", "what's next on the mission". MANDATORY TRIGGERS: BoS OS, agent OS run, run a mission, run agent run skill, mission shaper, agent planner, delivery manager, mission brief, backlog, stand-up.
 metadata:
-  version: 2.6.0
+  version: 2.5.2
   author: Tim Barker, Mark Littlewood and Business of Software
 ---
 
 # Agent OS — Run
 
-**Version:** 2.6.0
+**Version:** 2.5.2
 **Status:** ACTIVE  
 **Author:** Tim Barker, Mark Littlewood and Business of Software
 
@@ -66,14 +66,16 @@ Then determine which stage the user is in:
 | What you find | Where they are | What to do next |
 |---|---|---|
 | No missions folder / no MISSION-BRIEF.md files | Pre-mission — haven't shaped anything yet | Offer to run the **Mission Shaper** |
-| MISSION-BRIEF.md in Mission Brief format (Outcome, Measure and Time frame sections), no agent specs, todo.md missing or empty | Brief is shaped, not yet staffed | Offer to run the **Agent Planner** |
-| MISSION-BRIEF.md written as a phase plan (phases, hard constraints, success metrics, no Outcome or Measure sections), empty state files, no agent specs | Planned by an earlier Workshop, not yet shaped | Offer to run the **Mission Shaper** to convert the plan into a Mission Brief, then the **Agent Planner** |
+| MISSION-BRIEF.md in Mission Brief format (Outcome, Measure and Time frame sections), no agent specs, todo.md missing, empty or still the unfilled template | Brief is shaped, not yet staffed | Offer to run the **Agent Planner** |
+| MISSION-BRIEF.md written as a phase plan (phases, hard constraints, success metrics, no Outcome or Measure sections), state files empty or still the unfilled template, no agent specs | Planned by an earlier Workshop, not yet shaped | Offer to run the **Mission Shaper** to convert the plan into a Mission Brief, then the **Agent Planner** |
 | Agent specs exist but every one is still DRAFT (sign-off boxes not all ticked) | Staffed, specs not yet signed | Offer to finish the sign-off: owner review, the 24 hour re-read and the escalation approver. Then, if `todo.md` is missing or empty, go to Agent Planner Phase 3 (plan the work). Otherwise run the **Delivery Manager** |
-| At least one ACTIVE agent spec, `todo.md` missing or empty, and no entries in `done.md` | Staffed, no backlog yet | Offer Agent Planner Phase 3 (plan the work) |
+| At least one ACTIVE agent spec, `todo.md` missing, empty or still the unfilled template, and no entries in `done.md` | Staffed, no backlog yet | Offer Agent Planner Phase 3 (plan the work) |
 | At least one ACTIVE agent spec and todo.md with open items | Staffed and in delivery | Offer to run the **Delivery Manager** (operate mode stand-up) |
 | todo.md depleted, done.md has entries | Mission may be complete | Offer retro or new mission |
 
 For a phase-plan brief, the Mission Shaper starts from what the plan already says and asks only for the sections that are missing. It does not restart the interview.
+
+If some specs are ACTIVE and others are still DRAFT, work with the ACTIVE ones and tell the founder which specs still need sign-off.
 
 Report what you found in one short paragraph: what missions exist, which stage each is in, and what the natural next action is. Then ask the user to confirm before proceeding. Do not assume — a user returning after a gap may want to start something new, not continue what's open.
 
@@ -678,7 +680,7 @@ The Delivery Manager's specific job is to keep the operator at the right level. 
 
 The QA packet **shows its work** so the human can accept on trust rather than re-inspecting.
 
-**Document and message gates.** Built systems pass the Verify and Validate checks above. A document or message the team will send or rely on first passes the matching checklist in `01_STATE/quality_gates.md`. If the file does not exist, ask the founder before creating it. Say in two sentences what it is and what a yes means. It is a new file in `01_STATE/` that you will read and run before every document or message you present, and you will propose changes to it but never edit it without their yes. Create it from `mission-templates/quality_gates.md` only on their yes. If `mission-templates/quality_gates.md` is not installed (some installs, including Cowork uploads, keep only this SKILL.md), download it with curl from `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-run/mission-templates/quality_gates.md`, read it in full, and do not rebuild it from memory. If the download fails, tell the founder the gate file cannot be created yet and why. If they say no, present the draft without a gate and say so in the QA packet. The QA packet names the gate that ran and any item you could not check. When the founder corrects a draft, propose one new line for the matching gate and add it only on their yes.
+**Document and message gates.** Built systems pass the Verify and Validate checks above. A document or message the team will send or rely on first passes the matching checklist in `01_STATE/quality_gates.md`. If the file does not exist, ask the founder before creating it. Say in two sentences what it is and what a yes means. It is a new file in `01_STATE/` that you will read and run before every document or message you present, and you will propose changes to it but never edit it without their yes. Create it from `mission-templates/quality_gates.md` only on their yes. If `mission-templates/quality_gates.md` is not installed (some installs, including Cowork uploads, keep only this SKILL.md), download it with curl from `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.2/agent-os-run/mission-templates/quality_gates.md`, read it in full, and do not rebuild it from memory. If the download fails, tell the founder the gate file cannot be created yet and why. If they say no, present the draft without a gate and say so in the QA packet. The QA packet names the gate that ran and any item you could not check. When the founder corrects a draft, propose one new line for the matching gate and add it only on their yes.
 
 **7. Operate / Done.** On QA accept, the system flips to operate mode. For a time-bound mission, it goes to `done.md` and on to the retro.
 
@@ -791,6 +793,10 @@ Well-formed: *"when a draft references a competitor by name"*
 **Element 5 of 5 — Evaluation (30 days)**  
 Require at least one **leading indicator** — something observable early, before the lagging outcome shows up.
 
+### Sign-off names (before the coherence check)
+
+Ask for two names: the owner and the escalation approver. The owner reviews the spec and re-reads it 24 hours later. The approver confirms. The spec goes ACTIVE only after all three. Record both names in the spec header.
+
 ### Coherence Check (before finishing)
 
 1. Is the decision boundary specific enough that a new hire could act on it without asking?
@@ -844,4 +850,4 @@ Require at least one **leading indicator** — something observable early, befor
 
 ---
 
-*Agent OS Run v2.6.0, Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*
+*Agent OS Run v2.5.2, Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*

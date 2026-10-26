@@ -5,7 +5,8 @@
 **What this covers:** What happens when you run new versions of the Bootstrap or Workshop skill on an existing BoS OS. What changes, what doesn't, and what needs your explicit permission.
 
 
-The scenarios below describe the v2.0 skills. For v2.6.0, see "Upgrading an existing folder to v2.6.0" before the summary at the end of this guide.
+The scenarios below describe the v2.0 skills. For v2.5.2, see "Upgrading an existing folder to v2.5.2" before the summary at the end of this guide. For v2.5.2, do not rerun Bootstrap on an existing folder. Ask it to compare the folder with the current CLAUDE.md template, as that section describes. The re-run scenarios below are v2.0 history.
+
 ---
 
 ## Scenario Summary
@@ -208,9 +209,9 @@ These are hard limits regardless of version:
 
 ---
 
-## Upgrading an existing folder to v2.6.0
+## Upgrading an existing folder to v2.5.2
 
-v2.6.0 adds operating sections to the CLAUDE.md template and a dated setup record. A folder built with an earlier version keeps working without them. To add them, back up the folder, open Bootstrap in it and ask it to compare the folder with the current CLAUDE.md template. Bootstrap proposes each addition and changes nothing without your yes to that specific change.
+v2.5.2 adds operating sections to the CLAUDE.md template and a dated setup record. A folder built with an earlier version keeps working without them. To add them, back up the folder, open Bootstrap in it and ask it to compare the folder with the current CLAUDE.md template. Bootstrap proposes each addition and changes nothing without your yes to that specific change.
 
 The additions you can ask for are:
 

@@ -13,19 +13,19 @@ skills:
   agent-os-bootstrap:
     repo: "BoS_OS_Start"
     path: "agent-os-bootstrap/SKILL.md"
-    version: "2.6.0"
+    version: "2.5.2"
     description: "Models your company OS from public information"
 
   agent-os-workshop:
     repo: "BoS_OS_Start"
     path: "agent-os-workshop/SKILL.md"
-    version: "2.6.0"
+    version: "2.5.2"
     description: "Refine your BoS OS with insider knowledge"
 
   agent-os-run:
     repo: "BoS_OS_Start"
     path: "agent-os-run/SKILL.md"
-    version: "2.6.0"
+    version: "2.5.2"
     description: "Operate your BoS OS day to day"
 
   # Quick_Questions - Quick diagnostic conversations for founders

@@ -4,7 +4,7 @@ description: |
   Guide an executive through refining their BoS OS, deepening strategy documents, mapping the roles and responsibilities of people in the organisation, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my BoS OS, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: BoS OS, workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
   authors: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.6.0
+  version: 2.5.2
 ---
 
 # BoS OS: Executive Workshop
@@ -49,7 +49,7 @@ Then ask: "Which executive role are you working in today?" Some people wear mult
 
 If this is a continuation session, check the state folder for previous progress and pick up where you left off.
 
-**If the reference files are missing.** Some installs, including Cowork uploads, keep only this SKILL.md and drop the folders it points to. Before you start, check that `references/strategy_doc_quality_checklist.md` is present. If it is not, download each file you need with curl from the release that matches this skill's version. The address is `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-workshop/references/<file>`. Read each downloaded file in full. Do not use a tool that summarises pages, and do not rebuild a file from memory. If a download fails, stop, tell the user which file is missing, and say the result will be thinner without it. Do not carry on silently.
+**If the reference files are missing.** Some installs, including Cowork uploads, keep only this SKILL.md and drop the folders it points to. Before you start, check that `references/strategy_doc_quality_checklist.md` is present. If it is not, download each file you need with curl from the release that matches this skill's version. The address is `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.2/agent-os-workshop/references/<file>`. Read each downloaded file in full. Do not use a tool that summarises pages, and do not rebuild a file from memory. If a download fails, stop, tell the user which file is missing, and say the result will be thinner without it. Do not carry on silently.
 
 ## Workshop Flow
 
@@ -263,7 +263,7 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
 >
 > Your BoS OS now has a strategy it can act on, a clear picture of who owns what, and a real first job to prove itself. That's not a draft. That's a working system.
 >
-> Next step: run the mission. Start with Phase 1, one real example, compared against your own judgment. That's where the calibration happens and where you'll start to see what the system can actually do."
+> Next step: open the Run skill. It offers the Agent Planner, which casts the agents and builds the backlog from your Mission Brief. Then start with mission Phase 1, one real example, compared against your own judgment. That's where the calibration happens and where you'll start to see what the system can actually do."
 
 **Deliverable:** State files updated. Exec knows they're done and what to do next.
 
