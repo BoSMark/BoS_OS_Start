@@ -6,7 +6,7 @@ Most companies add AI tools on top of an operating system nobody has written dow
 
 These three skills fix the foundation first, then put it to work.
 
-**Current version: v2.5.2**. [What's new](CHANGELOG.md)
+**Current version: v2.5.3**. [What's new](CHANGELOG.md)
 
 ---
 
@@ -118,7 +118,7 @@ If Bootstrap gave you something useful, a star on this repo helps the next found
 
 ## Upgrading from an earlier version
 
-If you installed the toolkit at a Business of Software conference or from an earlier release, v2.5.2 adds operating sections to the CLAUDE.md template. Your existing files are safe, the migration is additive.
+If you installed the toolkit at a Business of Software conference or from an earlier release, v2.5.3 adds operating sections to the CLAUDE.md template. Your existing files are safe, the migration is additive.
 
 See [CHANGELOG.md](CHANGELOG.md) for the upgrade steps.
 
@@ -179,6 +179,6 @@ Subscribe for workshop announcements, guided cohorts, and peer community access.
 
 *Built by Tim Barker, Mark Littlewood and [Business of Software](https://businessofsoftware.org), helping software founders build profitable, enduring companies since 2007.*
 
-## Continuity and learning in v2.5.2
+## Continuity and learning in v2.5.3
 
 Bootstrap finishes with a saved setup summary, up to three next actions and clear operating limits. The current session summary tracks ongoing work. Learning records start empty and grow only from sourced observations and tests; a human owner approves operating rules. Workshop and Run preserve these distinctions and offer additions to existing folders for approval.

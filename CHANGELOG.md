@@ -4,7 +4,7 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
-## v2.5.2 (2026-10-25)
+## v2.5.3 (2026-10-25)
 
 ### Added
 
@@ -22,10 +22,11 @@ All notable changes to the BoS OS Toolkit are documented here.
 - The Agent Planner specs each role itself. The Agent Spec Builder stays as the standalone interview for one named agent, and its output is a draft until the owner, the 24 hour re-read and the escalation approver have all signed.
 - The CLAUDE.md template, README and QUICKSTART now call the system "the BoS OS" throughout.
 - The Integration & Hand-offs notes in Run, Workshop and the Agent Spec Builder now match what each skill does.
+- The Run package held two files named SKILL.md, which Cowork's uploader rejects. The Agent Spec Builder file is now `AGENT_SPEC_BUILDER.md`, and the pre-release script checks that each package holds exactly one SKILL.md.
 
 ### Upgrading
 
-Reinstall the three `.skill` files. In an existing company folder, back it up, then ask Bootstrap to compare the folder with the current CLAUDE.md template, and approve the specific additions you want. The list of additions is in "Upgrading an existing folder to v2.5.2" in `agent-os-workshop/references/upgrade_guide.md`. Bootstrap proposes and changes nothing without your yes. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner. `BOOTSTRAP_SUMMARY.md` is optional for an existing folder, so improve the current session summary instead of rebuilding setup history. Reference downloads need access to `raw.githubusercontent.com`.
+Reinstall the three `.skill` files. In an existing company folder, back it up, then ask Bootstrap to compare the folder with the current CLAUDE.md template, and approve the specific additions you want. The list of additions is in "Upgrading an existing folder to v2.5.3" in `agent-os-workshop/references/upgrade_guide.md`. Bootstrap proposes and changes nothing without your yes. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner. `BOOTSTRAP_SUMMARY.md` is optional for an existing folder, so improve the current session summary instead of rebuilding setup history. Reference downloads need access to `raw.githubusercontent.com`.
 
 ---
 

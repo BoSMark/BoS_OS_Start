@@ -302,6 +302,14 @@ for DIR in agent-os-bootstrap agent-os-workshop agent-os-run; do
         else
             check_fail "$DIR.skill does NOT have SKILL.md at its root — packaging is nested, will break Cowork's uploader"
         fi
+        # Check 15b: Cowork's uploader rejects a package with more than one file named SKILL.md.
+        # Added v2.5.3 after the Run package shipped a second SKILL.md in skills/agent-spec-builder/.
+        SKILL_MD_COUNT=$(unzip -Z1 "$TMP_PKG_DIR/${DIR}.skill" | awk -F/ '$NF=="SKILL.md"' | wc -l | tr -d '[:space:]')
+        if [ "$SKILL_MD_COUNT" = "1" ]; then
+            check_pass "$DIR.skill contains exactly one SKILL.md"
+        else
+            check_fail "$DIR.skill contains $SKILL_MD_COUNT files named SKILL.md, Cowork's uploader needs exactly one"
+        fi
     else
         check_fail "$DIR/ not found — cannot verify package structure"
     fi

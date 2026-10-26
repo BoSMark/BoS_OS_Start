@@ -22,7 +22,7 @@ It forces the outcome-vs-activity distinction, sets a real measure, decides whet
 
 Takes the Mission Brief and staffs the mission — casts the agent team the way you'd hire one, then specs each role to a runnable standard. Competency roles, not task-bots, so agents compound across missions.
 
-Inside a mission, Agent Planner specs each role itself. To spec one named agent outside a mission, use the **Agent Spec Builder** sub-skill (`/skills/agent-spec-builder/SKILL.md`), an interview-driven tool that produces a complete draft spec with decision boundaries, escalation triggers and evaluation criteria. Agent Planner may offer it when you want to go deeper on one role.
+Inside a mission, Agent Planner specs each role itself. To spec one named agent outside a mission, use the **Agent Spec Builder** sub-skill (`/skills/agent-spec-builder/AGENT_SPEC_BUILDER.md`), an interview-driven tool that produces a complete draft spec with decision boundaries, escalation triggers and evaluation criteria. Agent Planner may offer it when you want to go deeper on one role.
 
 **Input:** `MISSION-BRIEF.md` → **Output:** agent specs + a prioritised `todo.md`
 

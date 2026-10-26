@@ -5,7 +5,7 @@
 **What this covers:** What happens when you run new versions of the Bootstrap or Workshop skill on an existing BoS OS. What changes, what doesn't, and what needs your explicit permission.
 
 
-The scenarios below describe the v2.0 skills. For v2.5.2, see "Upgrading an existing folder to v2.5.2" before the summary at the end of this guide. For v2.5.2, do not rerun Bootstrap on an existing folder. Ask it to compare the folder with the current CLAUDE.md template, as that section describes. The re-run scenarios below are v2.0 history.
+The scenarios below describe the v2.0 skills. For v2.5.3, see "Upgrading an existing folder to v2.5.3" before the summary at the end of this guide. For v2.5.3, do not rerun Bootstrap on an existing folder. Ask it to compare the folder with the current CLAUDE.md template, as that section describes. The re-run scenarios below are v2.0 history.
 
 ---
 
@@ -115,7 +115,7 @@ Each rename is confirmed individually. Cross-reference updates are shown and con
 
 ## Scenario 2: Re-running the new Bootstrap on an existing OS (v2.0 history)
 
-This scenario describes v2.0. For v2.5.2, do not rerun Bootstrap. Use "Upgrading an existing folder to v2.5.2" below.
+This scenario describes v2.0. For v2.5.3, do not rerun Bootstrap. Use "Upgrading an existing folder to v2.5.3" below.
 
 **Your situation:** You want to run the new Bootstrap skill on an OS you've already built. Maybe you want the new file naming, or the improved CLAUDE.md, or updated strategy document templates.
 
@@ -211,9 +211,9 @@ These are hard limits regardless of version:
 
 ---
 
-## Upgrading an existing folder to v2.5.2
+## Upgrading an existing folder to v2.5.3
 
-v2.5.2 adds operating sections to the CLAUDE.md template and a dated setup record. A folder built with an earlier version keeps working without them. To add them, back up the folder, open Bootstrap in it and ask it to compare the folder with the current CLAUDE.md template. Bootstrap proposes each addition and changes nothing without your yes to that specific change.
+v2.5.3 adds operating sections to the CLAUDE.md template and a dated setup record. A folder built with an earlier version keeps working without them. To add them, back up the folder, open Bootstrap in it and ask it to compare the folder with the current CLAUDE.md template. Bootstrap proposes each addition and changes nothing without your yes to that specific change.
 
 The additions you can ask for are:
 
@@ -229,7 +229,7 @@ Bootstrap then sets "Last synced" to the new Toolkit version and today's date, a
 
 ## Summary: What Should I Do?
 
-The advice below is for the v2.0 skills. For v2.5.2, use "Upgrading an existing folder to v2.5.2" above.
+The advice below is for the v2.0 skills. For v2.5.3, use "Upgrading an existing folder to v2.5.3" above.
 
 **I have an existing OS and want to run the new Workshop.**
 → Back up your BoS OS first. Then run the Workshop. It will detect your setup, surface any differences, and ask what you want before changing anything.
