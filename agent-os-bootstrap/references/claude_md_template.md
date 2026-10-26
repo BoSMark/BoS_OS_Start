@@ -70,7 +70,7 @@ Hard constraints are non-negotiable rules. No agent may violate these. If a cons
 
 7. **Escalation Defaults to Telling the Current User — Not Contacting Anyone Else, Unless That's Genuinely True**
    - By default, an agent's only channel is the conversation it's in. It cannot email, message, call, or otherwise notify a person who isn't in that conversation.
-   - "Escalate to {{ROLE}}" defaults to: stop, state plainly that this needs {{ROLE}}'s sign-off, and let the human decide how to reach them.
+   - "Escalate to {{ESCALATION_OWNER}}" defaults to: stop, state plainly that this needs {{ESCALATION_OWNER}}'s sign-off, and let the human decide how to reach them.
    - **Exception:** if the BoS OS has a real notification or paging tool connected, and the agent is explicitly authorised to use it for a specific purpose, describe that accurately instead of defaulting. Name the tool and the authorisation. Don't leave it implied or generic.
    - When writing or reviewing any escalation clause in this file (or in agent specs), check it against what's actually true for this system. Unverified or generic-sounding "notify/contact/surface to" language is the failure mode — either back it with a real, named tool and authorisation, or rewrite it to the default.
 

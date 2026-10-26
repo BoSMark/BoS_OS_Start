@@ -211,6 +211,8 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
 
 6. **Success metrics** - How they'll know the mission worked. Be specific: "Agent matches expert judgment on 80%+ of test cases" or "Reduces time-to-review from 4 hours to 30 minutes while maintaining quality score above X."
 
+7. **Guardrail release and dependencies** - If the mission starts with a guardrail (for example "no autonomous outbound until we are sure"), ask what they would need to see to lift it. Also ask what this mission builds on and what must be stable first. Leave both blank if neither applies, and say so in the brief.
+
 **Deliverable:** Once the mission plan is confirmed, save it as a Mission Brief, the format the Run skill reads:
 
 1. Find the next mission number — scan `04_MISSIONS/` for existing `MISSION-NNN_*` folders; take the highest + 1, zero-padded to three digits (e.g. `003`). If `04_MISSIONS/` doesn't exist yet, create it and start at `001`.
@@ -227,6 +229,8 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
    - What needs guarding. The mission hard constraints (question 5), each with the standard to enforce.
    - Classified gaps. The gaps this phase found, each with what closes it.
    - Coherence with strategy. The strategy document the mission serves.
+   - Release condition. Only if a guardrail applies: what must be true to lift it (question 7).
+   - Build on / depends on. What the mission reuses and what must be stable first (question 7).
    - Owner and escalation owner.
 
    If the Run skill is installed, use the mission brief template in `agent-os-run/mission-templates/` for the layout. If not, use the section names above.

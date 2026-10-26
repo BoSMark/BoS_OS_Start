@@ -218,7 +218,7 @@ The additions you can ask for are:
 - The learning protocol in `01_STATE/memory/README.md`. It starts empty, and existing memory formats stay as they are.
 - Context rules and a restart note. Sessions load the history the task needs and save a short restart note before a task changes or a session ends.
 - Affected-document tracking. Each decision names the files it would change and records each one as updated and checked, or pending with a named owner.
-- Review Thresholds and quality gates.
+- Rules for working within existing authority. Declining an upgrade withholds permission for the upgrade edits only. Normal session work continues under the company's existing approval rules.
 
 Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner.
 

@@ -25,7 +25,7 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ### Upgrading
 
-Reinstall the three `.skill` files. In an existing company folder, ask Bootstrap to compare the folder with the current CLAUDE.md template, and approve the specific additions you want. Bootstrap proposes and changes nothing without your yes. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner. `BOOTSTRAP_SUMMARY.md` is optional for an existing folder, so improve the current session summary instead of rebuilding setup history. Reference downloads need access to `raw.githubusercontent.com`.
+Reinstall the three `.skill` files. In an existing company folder, back it up, then ask Bootstrap to compare the folder with the current CLAUDE.md template, and approve the specific additions you want. The list of additions is in "Upgrading an existing folder to v2.6.0" in `agent-os-workshop/references/upgrade_guide.md`. Bootstrap proposes and changes nothing without your yes. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner. `BOOTSTRAP_SUMMARY.md` is optional for an existing folder, so improve the current session summary instead of rebuilding setup history. Reference downloads need access to `raw.githubusercontent.com`.
 
 ---
 

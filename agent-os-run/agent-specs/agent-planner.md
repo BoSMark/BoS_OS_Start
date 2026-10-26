@@ -108,7 +108,7 @@ Also capture, before finalising each spec:
 - **Output format + destination** — what it produces and where it goes.
 - **Model tier** — what level of model its judgment needs, and why (e.g. Opus-tier for a coherence/quality call).
 - **What it does not touch** — explicit out-of-scope.
-- **Sign-off** — owner reviews; status goes ACTIVE only after a fresh-eyes re-read.
+- **Sign-off**: the owner reviews, re-reads 24 hours later, and the named escalation approver confirms. Status goes ACTIVE only after all three.
 
 Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 
@@ -118,7 +118,7 @@ Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 # [Agent Name] — Spec
 
 **Author:** Tim Barker, Mark Littlewood and Business of Software
-**Status:** DRAFT · **Type:** [execution/measurement/guardian] · **Owner:** [name]
+**Status:** DRAFT · **Type:** [execution/measurement/guardian] · **Owner:** [name] · **Escalation approver:** [name, required before ACTIVE]
 **Mission:** [MISSION-NNN_name] · **Governing docs:** [list] · **Model tier:** [e.g. Opus / standard]
 
 ## Role
@@ -141,6 +141,12 @@ Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 
 ## Evaluation (30 days)
 - Leading indicator: …  · Failure mode to watch: …
+
+## Sign-off
+- [ ] Owner reviewed
+- [ ] Owner re-read 24h later
+- [ ] Escalation approver confirmed
+- [ ] Status set to ACTIVE only after all three above
 ```
 
 ---

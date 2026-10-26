@@ -68,7 +68,8 @@ Then determine which stage the user is in:
 | No missions folder / no MISSION-BRIEF.md files | Pre-mission — haven't shaped anything yet | Offer to run the **Mission Shaper** |
 | MISSION-BRIEF.md in Mission Brief format (Outcome, Measure and Time frame sections), no agent specs, todo.md missing or empty | Brief is shaped, not yet staffed | Offer to run the **Agent Planner** |
 | MISSION-BRIEF.md written as a phase plan (phases, hard constraints, success metrics, no Outcome or Measure sections), empty state files, no agent specs | Planned by an earlier Workshop, not yet shaped | Offer to run the **Mission Shaper** to convert the plan into a Mission Brief, then the **Agent Planner** |
-| Agent specs and todo.md exist, todo has open items | Staffed and in delivery | Offer to run the **Delivery Manager** (operate mode stand-up) |
+| Agent specs exist but every one is still DRAFT (sign-off boxes not all ticked) | Staffed, specs not yet signed | Offer to finish the sign-off: owner review, the 24 hour re-read and the escalation approver. Then run the **Delivery Manager** |
+| At least one ACTIVE agent spec and todo.md with open items | Staffed and in delivery | Offer to run the **Delivery Manager** (operate mode stand-up) |
 | todo.md depleted, done.md has entries | Mission may be complete | Offer retro or new mission |
 
 For a phase-plan brief, the Mission Shaper starts from what the plan already says and asks only for the sections that are missing. It does not restart the interview.
@@ -247,6 +248,8 @@ Then begin: *"So — in your own words, what do you want to do, and why does it 
 
 ## Phase 1 — Interrogation
 
+**Converting an earlier plan:** if the folder already holds a phase-plan `MISSION-BRIEF.md` written by an earlier Workshop, read it first. Reflect back what it already says as the starting point and ask only for the Mission Brief sections it lacks (Outcome, Measure, Time frame and the rest). Do not run the opening interview again.
+
 Open **wide, not narrow.** Ask the person to describe what they want to do and why it matters now — at whatever length they like. Let them talk, then reflect a crisp one-line synthesis back and check you've got it before you start challenging.
 
 **Fast path:** if the opening already contains a measurable outcome *and* a horizon, don't ladder for the sake of it — reflect it back, confirm the approach choices, and move to synthesis.
@@ -360,7 +363,8 @@ After drafting, **read it back and ask the person to correct it.** It is theirs,
 
 ### Save it — create the mission folder
 
-1. Scan `04_MISSIONS/` for existing `MISSION-NNN_*` folders; take the highest + 1, zero-padded to three digits.
+0. **Converting an earlier plan?** If the brief came from a phase-plan `MISSION-BRIEF.md` that already sits in a `MISSION-NNN_*` folder, do not create a new folder or number. Keep the folder name, save the old text as `MISSION-PLAN-original.md` in the same folder, and write the new brief over `MISSION-BRIEF.md` once the person confirms it.
+1. Otherwise, scan `04_MISSIONS/` for existing `MISSION-NNN_*` folders; take the highest + 1, zero-padded to three digits.
 2. Slug the mission's short name (lower-case, hyphenated).
 3. Create `04_MISSIONS/MISSION-NNN_slug/` and write the brief as `MISSION-BRIEF.md`.
 4. Confirm the path: *"Saved as `MISSION-026_content-operations`. The Agent Planner picks up from here."*
@@ -681,7 +685,7 @@ The QA packet **shows its work** so the human can accept on trust rather than re
 
 ## Operate mode — the session loop
 
-1. **STAND-UP** — read `todo` / `in-progress` / `blocked` / `done`. Report at *deliverable/stage* altitude — what's in progress, what's blocked on the human, what got done, the critical path. Never a sub-task dump.
+1. **STAND-UP**: if `in-progress.md`, `blocked.md` or `done.md` is missing, create it from `mission-templates/` first and say so. Then read `todo` / `in-progress` / `blocked` / `done`. Report at *deliverable/stage* altitude: what's in progress, what's blocked on the human, what got done, the critical path. Never a sub-task dump.
    - **Check review dates and age.** Flag every `todo.md` item past its review date, as the template already requires. Flag every `blocked.md` entry open longer than the blocked-entry threshold in CLAUDE.md under Review Thresholds (default 45 days, counted from its Logged date). For each flagged item, ask the owner to close it, keep it with a new review date and a reason, or park it. Never close, move or re-date an item without the owner's answer. When the owner keeps an item, write the new date yourself. Follow the Reminder cadence below.
    - **Avoidance check.** Look for a priority that the mission brief or the strategy documents call high-leverage and that has nothing in progress or done. If it has stayed that way for the number of stand-ups set in Review Thresholds in CLAUDE.md (default 3 in a row), and more scoping, definition or research was added to it instead of work, say so plainly, in two sentences at most. Name the priority and where it appears. For example, "The referral programme is the top priority in three documents, nothing has been built, and the last three stand-ups added only research. Do you want to start a first version today, or take it off the priority list?" Then wait for the answer. Once answered, do not raise the same priority again in that session. Follow the Reminder cadence below.
 2. **PULL** — take the top `todo` item whose dependencies are met; assign it to its agent; move to `in-progress`. If nothing is unblocked, say so.

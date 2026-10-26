@@ -110,6 +110,8 @@ Adapt the wording to the person and the moment; don't read it robotically. The j
 
 ## Phase 1 — Interrogation
 
+**Converting an earlier plan:** if the folder already holds a phase-plan `MISSION-BRIEF.md` written by an earlier Workshop, read it first. Reflect back what it already says as the starting point and ask only for the Mission Brief sections it lacks (Outcome, Measure, Time frame and the rest). Do not run the opening interview again.
+
 Open **wide, not narrow.** Ask the person to describe, *in their own words and at whatever length they like*, what they want to do and why it matters now — *"tell me what you're trying to do and why now; don't worry about being concise yet."* Most people arrive with a dialogue, not a sentence, and that sprawl is the raw material the rest of the interview feeds on — the wedge, the constraints, the half-named risks all live in it. Do **not** ask them to compress to one sentence: **the one-sentence discipline is your job on the output, not theirs on the input.** Let them talk, then reflect a crisp one-line synthesis back and check you've got it before you start challenging.
 
 **Fast path:** if that opening already contains a measurable outcome *and* a horizon, don't ladder for the sake of it — reflect it back, confirm the approach choices, and move to synthesis. Don't manufacture a struggle the person has already won.
@@ -249,7 +251,8 @@ After drafting, **read it back and ask the person to correct it.** It is theirs,
 
 Once the person confirms the brief, give the mission its home in the repo, following the kit's convention (`04_MISSIONS/MISSION-NNN_name/`):
 
-1. **Find the next number.** Scan `04_MISSIONS/` for existing `MISSION-NNN_*` folders; take the highest `NNN` + 1, zero-padded to three digits (e.g. `026`). If `04_MISSIONS/` doesn't exist yet, create it and start at `001`.
+0. **Converting an earlier plan?** If the brief came from a phase-plan `MISSION-BRIEF.md` that already sits in a `MISSION-NNN_*` folder, do not create a new folder or number. Keep the folder name, save the old text as `MISSION-PLAN-original.md` in the same folder, and write the new brief over `MISSION-BRIEF.md` once the person confirms it.
+1. **Otherwise, find the next number.** Scan `04_MISSIONS/` for existing `MISSION-NNN_*` folders; take the highest `NNN` + 1, zero-padded to three digits (e.g. `026`). If `04_MISSIONS/` doesn't exist yet, create it and start at `001`.
 2. **Slug the name.** Lower-case and hyphenate the mission's short name (e.g. "Content Operations" → `content-operations`).
 3. **Create the folder** `04_MISSIONS/MISSION-NNN_slug/` and write the brief into it as `MISSION-BRIEF.md`.
 4. **Confirm the path** back to the person: *"Saved as `MISSION-026_content-operations`. The Agent Planner picks up from here."*
