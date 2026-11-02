@@ -46,6 +46,8 @@ Save downloads in a writable working folder, preserving the paths under `referen
 2. Read `references/industry_patterns.md` to understand how to adapt by industry
 3. Have the user's company name and website URL
 
+**Check for an existing folder first.** Before asking for a website, look in the folder the founder names. If it already holds a `CLAUDE.md` or a `02_STRATEGY/` folder, it is an existing company folder. Do not ask for a URL. Go straight to "Existing company folders" below.
+
 If the user hasn't provided a company name, ask for one. Then ask: "What's the company website URL?" A name alone is often too thin to research reliably, especially when it's a generic or common name shared with unrelated businesses; without a URL you end up guessing from a handful of keywords instead of finding the actual company. If they don't have a website yet, ask for a LinkedIn profile instead (their own or the company's) and use that to anchor the research. Industry and a brief description are still optional and helpful, but company name plus (website URL or LinkedIn profile) is the minimum to proceed.
 
 **Web search is required.** This skill relies on researching the company from public data. If web search is not available in the current environment, tell the user: "This skill needs internet access to research your company. Please ensure web search is enabled in your settings, then try again."
@@ -54,7 +56,7 @@ If the user hasn't provided a company name, ask for one. Then ask: "What's the c
 
 ## Existing company folders
 
-Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Ask the founder to back up the folder, then compare it with the current CLAUDE.md template. Skip the Opening Questions, the research steps and Steps 3 to 7 unless the founder asks for them. Present the missing operating sections and proposed files, including `AGENTS.md` and the parking list, explain the affected paths, and wait for approval. Role stubs written before v2.6.0 keep working without the new fields; offer the new fields only as an addition. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules and report the limitation. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record. When approved additions are applied, set "Last synced" to this skill's version and today's date and add a Version History row naming them. Never change "Bootstrapped from".
+Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Ask the founder to back up the folder, then compare it with the current CLAUDE.md template. Skip the Opening Questions, the research steps and Steps 3 to 7 unless the founder asks for them. Present the missing operating sections and proposed files, including `AGENTS.md`, explain the affected paths, and wait for an explicit yes to each addition. "Sounds good" or a general nod is not a yes to a change. Do not write an addition until the founder has approved that one. The parking list needs no upgrade, because it is created the first time a topic is noted. Role stubs written before v2.6.0 keep working without the new fields; offer the new fields only as an addition. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules, report the limitation, and record the decline in `01_STATE/decisions.md` so it is not offered again unasked. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record. When approved additions are applied, set "Last synced" to this skill's version and today's date and add a Version History row naming them. Never change "Bootstrapped from".
 
 ## The Opening Questions
 
@@ -103,9 +105,9 @@ Once you have answers to all three questions (or have acknowledged gaps), procee
 
 ## Topics that come up mid-step
 
-When the founder raises a topic that is not part of the current step, do three things. Say it back in one line. Ask once, "Is this the biggest thing you could work on against [North Star], or the thing in front of you today?" Then add it to `01_STATE/parking_list.md` with the date and their answer, and return to the step. If they say it is the biggest, say so plainly and finish the current step first. Workshop's last phase ranks the parked topics against the first mission. Do not drop a topic they care about, and do not follow it mid-step.
+The aim is to get to the end of the setup. Other topics will come up along the way, and that is fine. When one does, say it back in one line, add it to `01_STATE/parking_list.md` with the date, and return to the step. Everything is noted and nothing is lost. Workshop's last phase goes back through the list with the founder and works out which topics matter most against the first mission. Do not follow a topic mid-step.
 
-Create `parking_list.md` the first time something is parked. Give it a header and one row per topic with the date, the topic, the answer and a status.
+Create `parking_list.md` the first time something is parked. Give it a header and one row per topic with the date, the topic and a status. Tell the founder you are creating it.
 
 ---
 

@@ -17,7 +17,7 @@ This release brings together the changes made since v2.5.1. v2.5.2 was replaced 
 - Bootstrap and Workshop start from roles. Each role gets four questions (what it does today, what you want it to do, what the person enjoys, what they dislike). The role stub gains three fields, wanted, time should go to, and candidate jobs for an AI. Workshop sorts the work into what a person should keep and what an AI could carry. Answers about someone else are marked "founder's view, to confirm with the person" and kept out of the stub.
 - Bootstrap states one early insight, labelled Observed or Inferred, before it writes the strategy documents. It flags a bigger or more urgent challenge than the one the opening answers point to.
 - Workshop starts Phase 1 with the document that gates the North Star, not the first file in the folder.
-- Bootstrap and Workshop keep a parking list at `01_STATE/parking_list.md`. A topic raised mid-step is parked with one question, "Is this the biggest thing you could work on against your North Star, or the thing in front of you today?" Workshop ranks the parked topics against the first mission at the end.
+- Bootstrap and Workshop keep a parking list at `01_STATE/parking_list.md`. A topic raised mid-step is noted with its date and the step carries on, so the setup reaches its end. Workshop goes back through the list at the end and works out the priorities against the first mission. Run notes topics the same way and reviews the list at mission close.
 - The Agent Planner reads the role stubs' candidate jobs when it casts agents.
 - Each skill states its version on the first line of its first reply in a session, read from its own metadata.
 
