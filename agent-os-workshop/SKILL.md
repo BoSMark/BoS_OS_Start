@@ -4,7 +4,7 @@ description: |
   Guide an executive through refining their BoS OS, deepening strategy documents, mapping the roles and responsibilities of people in the organisation, and defining their first mission with phased validation. Runs as an interactive workshop with a challenger-advisor tone. Use when someone wants to improve agent specs, refine strategy documents, create a mission, define decision boundaries, or build an evaluation framework. Triggers: "help me refine my strategy", "my agent spec needs work", "what should my agent's first mission be", "how do I test my agent", "walk me through the workshop", "I've bootstrapped my BoS OS, now what", "executive workshop", "strategy deep-dive", "agent refinement", "mission planning", "ground truth", "calibration". MANDATORY TRIGGERS: BoS OS, workshop, refine, strategy, agent spec, mission, evaluation framework, ground truth, calibrate, decision boundary.
 metadata:
   authors: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.5.3
+  version: 2.6.0
 ---
 
 # BoS OS: Executive Workshop
@@ -29,14 +29,18 @@ But you're warm about it. You're on their side. You're the advisor who cares eno
 - Produce concrete deliverables (updated files) at the end of each phase, not just conversation.
 - If this is the first exec to complete the workshop in this company, their work becomes the reference pattern for subsequent execs. Tell them this, as it focuses the mind.
 
+**Words we use.** A role is a job with an owner, the decisions it makes and the documents it follows. The owner can be a person, an AI, or both. An agent is an AI that carries one narrow, specified job inside a role. An agent has a named human owner, and an Approver signs it off before it goes active. A role held by a person needs no sign-off. This skill talks about roles. The word agent appears when a job is handed to an AI, which in this toolkit happens in Run.
+
 ## Before You Begin
+
+Begin your first reply of every session with one line, "BoS OS Workshop v" followed by this skill's `version:` field, read from the frontmatter at the top of this file and not typed from memory.
 
 At the start of every workshop session:
 
 1. Check if a state folder exists (`01_STATE/`). If it does, read `session_summary.md` and `session_review_log.md` for context on where the overall operating system stands.
 2. Check if an agent map exists (`03_AGENTS/agent_map.md`). If it does, read it to understand the exec's portfolio.
 3. Read the exec's existing strategy document(s) from `02_STRATEGY/`
-4. Read the exec's existing agent spec(s) from `03_AGENTS/`
+4. Read the exec's existing role stub(s) from `03_AGENTS/`
 5. If `BOOTSTRAP_SUMMARY.md` exists at the workspace root, read it for the dated setup record. Skip this step when the file does not exist. The session summary stays the source for current work.
 
 Read the CLAUDE.md header to confirm which company's BoS OS this is: `# CLAUDE.md — BoS OS, built with [Name]`.
@@ -49,11 +53,11 @@ Then ask: "Which executive role are you working in today?" Some people wear mult
 
 If this is a continuation session, check the state folder for previous progress and pick up where you left off.
 
-**If the reference files are missing.** Some installs, including Cowork uploads, keep only this SKILL.md and drop the folders it points to. Before you start, check that `references/strategy_doc_quality_checklist.md` is present. If it is not, download each file you need with curl from the release that matches this skill's version. The address is `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.3/agent-os-workshop/references/<file>`. Read each downloaded file in full. Do not use a tool that summarises pages, and do not rebuild a file from memory. If a download fails, stop, tell the user which file is missing, and say the result will be thinner without it. Do not carry on silently.
+**If the reference files are missing.** Some installs, such as skill uploads, keep only this SKILL.md and drop the folders it points to. Before you start, check that `references/strategy_doc_quality_checklist.md` is present. If it is not, download each file you need with curl from the release that matches this skill's version. The address is `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-workshop/references/<file>`. Read each downloaded file in full. Do not use a tool that summarises pages, and do not rebuild a file from memory. If a download fails, stop, tell the user which file is missing, and say the result will be thinner without it. Do not carry on silently.
 
 ## Workshop Flow
 
-The workshop has four phases. Each is self-contained, so an exec can complete one phase per session if time is limited. Track progress and resume seamlessly.
+The workshop has five phases, numbered 0 to 4. Each is self-contained, so an exec can complete one phase per session if time is limited. Track progress and pick up where you stopped.
 
 **Note on naming:** Throughout all phases, reference the operating system as "the BoS OS" rather than "the OS" or "your OS" — for example: "Your strategy documents are the foundation of the BoS OS."
 
@@ -61,17 +65,17 @@ The workshop has four phases. Each is self-contained, so an exec can complete on
 
 **Set expectations early.** The workshop can take more than one sitting, and that's fine. Tell the exec this upfront:
 
-> "This doesn't have to be done in one sitting. The best approach is to set aside some time, work until you've had enough, then come back and pick up where you left off. The BoS OS saves your progress at every phase, so you won't lose anything. Some people do it across three or four short sessions. Others go deep in one long one and cancel their next meeting. Either works."
+> "This doesn't have to be done in one sitting. The best approach is to set aside some time, work until you've had enough, then come back and pick up where you left off. The BoS OS saves your progress at every phase, so you won't lose anything. Some people do it across three or four short sessions. Others do it in one longer one. Either works."
 
 ---
 
-### Phase 0: Orientation - Phase 1 of 4
+### Phase 0: Orientation
 
 **Goal:** Establish who they are, what they own, and what "done" looks like.
 
 **Open with a map.** Before anything else, tell them where they're going:
 
-> "The workshop has four phases. Today we'll start with Phase 0, a short orientation, and then move into Phase 1, which is a deep-dive on your strategy documents. Depending on how much time you have, we may get through Phase 2 as well. Here's the full picture:
+> "The workshop has five phases, numbered 0 to 4. Today we'll start with Phase 0, a short orientation, and then move into Phase 1, which is a deep-dive on your strategy documents. Depending on how much time you have, we may get through Phase 2 as well. Here's the full picture:
 >
 > - **Phase 0:** Orientation - where you are now, what you own, what done looks like
 > - **Phase 1:** Strategy deep-dive - taking your strategy documents from a first draft to something genuinely useful
@@ -99,14 +103,18 @@ Ask if they have questions, then move to Phase 1.
 
 ---
 
-### Phase 1: Strategy Deep-Dive - Phase 2 of 4
+### Phase 1: Strategy Deep-Dive
 
 **Open with a phase announcement:**
-> "We're now in Phase 1 of 4 - the strategy deep-dive. This is usually the most valuable part of the workshop. By the end of this phase you'll have a strategy document that's specific enough for the BoS OS to actually use. Let's start with your most important document."
+> "We're now in Phase 1, the strategy deep-dive. This is usually the most valuable part of the workshop. By the end of this phase you'll have a strategy document that's specific enough for the BoS OS to actually use. Let's start with your most important document."
 
 **Goal:** Take their strategy document(s) from current maturity toward Operational level.
 
 Read `references/strategy_doc_quality_checklist.md` and assess their document against it. Work through the gaps conversationally.
+
+**Start with the document that gates the North Star.** Do not take the documents in file order. Ask once which strategy document, if it stayed vague, would hold back progress on the North Star from Bootstrap the most, and work on that one first. If the founder picks a different document from the one they opened with, say so plainly and let them choose.
+
+**Parked topics.** If the founder raises a topic that is not part of this phase, say it back in one line, ask once whether it is the biggest thing they could work on against the North Star or the thing in front of them today, add it to `01_STATE/parking_list.md` with the date and their answer, and return to the phase. Create the file if it does not exist, and tell the exec you are doing so. Do not drop the topic and do not follow it mid-phase.
 
 **Open with what's strong.** Every document has something. Name it. Then move to what's missing.
 
@@ -143,10 +151,10 @@ If the exec owns multiple strategy documents, do the most important one in this 
 
 ---
 
-### Phase 2: Roles and Responsibilities - Phase 3 of 4
+### Phase 2: Roles and Responsibilities
 
 **Open with a phase announcement:**
-> "Phase 2 of 4 - roles and responsibilities. Phase 1 gave the BoS OS your strategy. Now we're going to look at the people in your organisation - what each person actually owns, what they decide, and where their authority starts and stops. Once we're clear on that, we'll capture it in a format the BoS OS can use. This is less about AI and more about getting honest about how your company actually works."
+> "Phase 2 - roles and responsibilities. Phase 1 gave the BoS OS your strategy. Now we're going to look at the roles in your organisation: what each one does today, what you want it to do, and which work should get more of a person's time. At the end we sort the work into what a person should keep and what an AI could carry, and we capture it in a format the BoS OS can use."
 
 **Goal:** Build a clear picture of who owns what in the organisation, their responsibilities, their decision boundaries, and how they relate to each other. The output is a set of role definitions captured in `03_AGENTS/` that the BoS OS can use to understand the human operating system before any automation is added.
 
@@ -167,18 +175,30 @@ If the exec owns multiple strategy documents, do the most important one in this 
 
 3. **Gaps and overlaps** - Are there decisions that nobody owns clearly? Functions that fall between two people? Name them. These are usually where the most value is, and where agents can help most.
 
-4. **Capture in role stubs** - Once the conversation is clear, capture each person's role in a short stub: what they own, what they decide, what strategy documents govern their domain, what hard constraints apply. Do not use `references/agent_spec_template.md` for stubs. That template is the full agent spec, which the Run skill's Agent Planner uses when a mission needs agents. Keep these as role definitions for now. Full agent specs, where a role stub becomes a specification of what an AI agent is authorised to do on that person's behalf, come later, with experience of working the system. The role stub is the human picture. The agent spec is what you build on top of it once you know how decisions actually flow in practice.
+4. **Role interview** - For each role, including roles that do not exist yet, ask four questions.
+   - What does this role do today, and what would break if it stopped?
+   - What would you like it to do, or do more of?
+   - What does the person in it enjoy doing?
+   - What does the person in it dislike doing?
+
+   For a role that does not exist yet, "what would you want a CEO to do that you do now?" shows the exec which jobs they should hand off.
+
+5. **Sort the work with the exec** - The enjoyed, high-value work is what the person should get more time for. Split the disliked work into two groups. Some of it is specific, repeatable and checkable, and those jobs are candidates for an AI to carry. The rest is judgement, and it stays with a person. The AI-ready jobs from different roles often cluster, and that cluster is the early insight this phase can show the exec. Say so when you see it.
+
+6. **Privacy guard** - A founder answering for someone else reports a view of another person's feelings, and the role stub sits in a folder the team may read. Mark answers about someone else "founder's view, to confirm with the person". Keep them out of the stub unless that person has answered for themselves. This matters most in small companies, where everyone can read the whole folder.
+
+7. **Capture in role stubs** - Once the conversation is clear, capture each role in a short stub with these fields: name and title, owns today, decides, wanted, time should go to, and candidate jobs for an AI. Add the strategy documents that govern the domain and the hard constraints that apply. Each candidate job is named narrowly. "Weekly competitor watch" qualifies, "general marketing" does not. Do not use `references/agent_spec_template.md` for stubs. That template is the full agent spec, which the Run skill's Agent Planner uses when a mission needs agents. Keep these as role definitions for now. Full agent specs, where a role stub becomes a specification of what an AI agent is authorised to do on that person's behalf, come later, with experience of working the system. The role stub is the human picture. The agent spec is what you build on top of it once you know how decisions actually flow in practice. The stub's candidate jobs are the starting list for that work.
 
 **Deliverable:** Save role stubs to `03_AGENTS/`, one file per person. Add a change log entry.
 
-**Phase 2 closing:** Summarise before moving on: "Phase 2 done. We now have a clear picture of who owns what in your organisation and what each person is responsible for deciding. That's saved to 03_AGENTS/. That clarity alone, independent of any AI, is one of the most useful things the BoS OS produces. One phase left. Phase 3 is where we give the system a real first job to prove itself. You're nearly there. Want to continue?"
+**Phase 2 closing:** Summarise before moving on: "Phase 2 done. We now have a clear picture of who owns what in your organisation and what each person is responsible for deciding. That's saved to 03_AGENTS/. That clarity alone, independent of any AI, is one of the most useful things the BoS OS produces. Phase 3 is where we give the system a real first job to prove itself. Want to continue, or is this a good place to stop?"
 
 ---
 
-### Phase 3: First Mission Definition - Phase 4 of 4
+### Phase 3: First Mission Definition
 
 **Open with a phase announcement:**
-> "Last phase - Phase 3. This is where it gets real. We're going to define one concrete first project for your agent, something specific, bounded, and provable. By the end of this phase your agent will have an actual job to do, not just a spec. Let's find the right first mission."
+> "Phase 3, the last working phase. This is where it gets real. We're going to define one concrete first project for your agent, something specific, bounded, and provable. By the end of this phase your agent will have an actual job to do, not just a spec. Let's find the right first mission."
 
 **Goal:** Define their first concrete use of the agent, a specific, bounded project with phased validation.
 
@@ -186,7 +206,7 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
 
 **Work through these questions:**
 
-1. **What's the highest-value first use case?** Not the most ambitious thing the agent could do, but the thing that would prove value fastest. Ask:
+1. **What's the highest-value first use case?** Not the most ambitious thing the agent could do, but the thing that would prove value fastest. Look first at the candidate jobs for an AI from Phase 2. Jobs that cluster across roles are the strongest candidates. Ask:
    - "If you could give one task to the BoS OS tomorrow and have it done well, what would it be?"
    - "What task does your team spend the most time on that's high-volume but requires expertise?"
    - "What task, if done faster and more consistently, would have the biggest impact on your metrics?"
@@ -250,15 +270,16 @@ Read `references/mission_template.md` and `references/ground_truth_examples.md`.
 3. Confirm the role stubs in `03_AGENTS/` have enough detail to guide the next session
 4. Walk the exec through resuming: "Next session, start by asking 'What do we need to focus on today?' and the BoS OS will pick up exactly where we left off."
 5. If this is the first exec to complete the workshop, note in the state summary that their work is now the reference pattern for subsequent execs.
-6. Run the Learning check below only if this session produced reusable evidence; propose the update rather than inventing an entry.
-7. Reread the saved current summary and verify its exact next action and evidence links before reporting that work is saved.
+6. Read `01_STATE/parking_list.md` if it exists. Rank each parked topic against the first mission and the North Star, and tell the exec plainly which, if any, outranks the mission. Do not start work on a parked topic without the exec's yes.
+7. Run the Learning check below only if this session produced reusable evidence; propose the update rather than inventing an entry.
+8. Reread the saved current summary and verify its exact next action and evidence links before reporting that work is saved.
 
 **Workshop closing - make this a moment:**
 
 > "The workshop is complete. Here's what you've produced today:
 >
 > - **[Strategy document name]** - enriched and saved to 02_STRATEGY/
-> - **[Role definitions]** - captured and saved to 03_AGENTS/
+> - **[Role definitions]** - captured and saved to 03_AGENTS/, with the jobs an AI could carry
 > - **[Mission name]** - planned and saved to 04_MISSIONS/
 >
 > Your BoS OS now has a strategy it can act on, a clear picture of who owns what, and a real first job to prove itself. That's not a draft. That's a working system.
@@ -319,7 +340,7 @@ Workshop is the second of three skills in the BoS OS toolkit (Bootstrap, Worksho
 
 What it assumes is done. Bootstrap has created the folder structure and a researched first draft. If not, Workshop sends the founder to Bootstrap first.
 
-What it produces. Sharper strategy documents in `02_STRATEGY/`, role definitions in `03_AGENTS/`, a first mission saved as a Mission Brief in `04_MISSIONS/`, and updated state files.
+What it produces. Sharper strategy documents in `02_STRATEGY/`, role stubs in `03_AGENTS/` that list the jobs an AI could carry, a first mission saved as a Mission Brief in `04_MISSIONS/`, a ranked parking list if topics were parked, and updated state files.
 
 What comes next. Run. It offers the Agent Planner, which casts the agents and builds the backlog from the Mission Brief Workshop saves, and then the Delivery Manager runs delivery. Run is a separate, optional install.
 

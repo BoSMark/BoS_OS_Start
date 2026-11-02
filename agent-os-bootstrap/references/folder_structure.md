@@ -11,6 +11,7 @@ agent-os/
 │   ├── session_summary.md
 │   ├── session_review_log.md
 │   ├── decisions.md
+│   ├── parking_list.md        # Created the first time a topic is parked
 │   └── memory/
 │       └── README.md
 ├── 02_STRATEGY/               # Strategy documents
@@ -18,6 +19,7 @@ agent-os/
 ├── 04_MISSIONS/               # Time-bound execution workstreams
 ├── 05_ARTIFACTS/              # Final deliverables and published assets
 ├── CLAUDE.md                  # Project instructions (scope, constraints, governance)
+├── AGENTS.md                  # One-line pointer for AI tools that look for this name
 └── BOOTSTRAP_SUMMARY.md       # Dated setup record; current state stays in session_summary.md
 ```
 
@@ -374,7 +376,7 @@ This is where work *exits* the agent system. Everything here is clean, reviewed,
 
 ### `CLAUDE.md` — Project Instructions
 
-**Purpose:** The master rulebook for the agent OS. Defines scope, constraints, governance, and how agents should interpret ambiguity.
+**Purpose:** The master rulebook for the BoS OS. Defines scope, constraints, governance, and how agents should interpret ambiguity.
 
 **Required sections:**
 - **Purpose:** What is this system for? What are we trying to do?

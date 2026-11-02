@@ -1,15 +1,15 @@
 ---
 name: agent-os-run
 description: |
-  Operate your BoS OS day to day. The coordination layer that runs after Bootstrap and Workshop: it shapes a rough idea into a measurable Mission Brief, staffs the mission by casting and speccing the agent team, then drives delivery from goal to running system. Three bounded agents — Mission Shaper, Agent Planner, Delivery Manager — plus mission state templates. Use when someone wants to run a mission, shape a goal into a brief, staff or plan a mission, manage delivery, run the backlog, or operate their agent team. Triggers: "run a mission", "run the BoS OS", "run agent run skill", "shape a mission", "mission brief", "staff this mission", "plan the mission", "delivery manager", "run my backlog", "operate my agents", "stand-up", "what's next on the mission". MANDATORY TRIGGERS: BoS OS, agent OS run, run a mission, run agent run skill, mission shaper, agent planner, delivery manager, mission brief, backlog, stand-up.
+  Operate your BoS OS day to day. The coordination layer that runs after Bootstrap and Workshop: it shapes a rough idea into a measurable Mission Brief, staffs the mission by casting and speccing the agent team, then drives delivery from goal to running system. Three bounded agents (Mission Shaper, Agent Planner, Delivery Manager) plus mission state templates. Use when someone wants to run a mission, shape a goal into a brief, staff or plan a mission, manage delivery, run the backlog, or operate their agent team. Triggers: "run a mission", "run the BoS OS", "run agent run skill", "shape a mission", "mission brief", "staff this mission", "plan the mission", "delivery manager", "run my backlog", "operate my agents", "stand-up", "what's next on the mission". MANDATORY TRIGGERS: BoS OS, run a mission, run agent run skill, mission shaper, agent planner, delivery manager, mission brief, backlog, stand-up.
 metadata:
-  version: 2.5.3
+  version: 2.6.0
   author: Tim Barker, Mark Littlewood and Business of Software
 ---
 
-# Agent OS — Run
+# BoS OS Run
 
-**Version:** 2.5.3
+**Version:** 2.6.0
 **Status:** ACTIVE  
 **Author:** Tim Barker, Mark Littlewood and Business of Software
 
@@ -50,6 +50,8 @@ A proposed memory change stays in the company's authorized draft location, or in
 ---
 
 ## "Where am I?" — Session Opener (always do this first)
+
+Begin your first reply of every session with one line, "BoS OS Run v" followed by this skill's `version:` field, read from the frontmatter at the top of this file and not typed from memory. Then orient yourself to the pipeline state.
 
 Read the CLAUDE.md header to confirm which company's BoS OS this is: `# CLAUDE.md — BoS OS, built with [Name]`.
 
@@ -273,10 +275,12 @@ Their first framing is usually an activity. Make them state the change in the wo
 
 **The symptom-to-system move.** When the person describes a problem that keeps recurring, ask: *"Is this a one-off fix, or is this telling you something about a broken system? If we fixed the system that keeps producing this problem, what would change?"*
 
+Do not treat activity as the enemy. If the person already has a clear outcome and is now talking tasks, let them.
+
 ### B. Commit or explore? *(a crossable point, not a label)*
 
 - A **committed mission** is work toward a defined outcome the person is ready to invest in building. It must clear the measurability gate.
-- An **exploration** is "is there something here?" work — hypothesis testing, fuzzy pre-decision thinking.
+- An **exploration** is "is there something here?" work. It covers hypothesis testing and fuzzy pre-decision thinking. Do not force it into business-metric framing.
 
 Name the crossing explicitly: *"It sounds like you're still testing whether this is real — treat this as an exploration, or are you ready to commit to building it?"*
 
@@ -308,7 +312,7 @@ Ask whether this is a small improvement to something that exists, or a fundament
 
 Give a quick example of each, then ask: *"Think about guarding the work, in two senses. First, is there anything that must never happen — a spend, a data exposure, a claim you couldn't stand behind? Second, is there anything the work must stay true to — your messaging, your voice, your values — that an agent left alone would drift from?"*
 
-For each: capture *what's being guarded*, *whether it's protect or align*, and *the standard to enforce*.
+For each: capture *what's being guarded*, *whether it's protect or align*, and *the standard to enforce*. Do not invent a guardian where there is no real standard.
 
 **If a guardian is staged** — ask the release condition: *"What would you need to see to trust it enough to lift that guardrail?"*
 
@@ -389,6 +393,8 @@ Leave `todo.md`, `in-progress.md`, `blocked.md`, `done.md` — those are created
 7. Does the mission cohere with governing strategy documents — or is the tension flagged?
 8. Are owner and escalation named, and is *what it builds on / depends on* captured?
 
+If any answer is no, go back. A brief that fails this check stalls the next step.
+
 ---
 
 ## The handoff contract (what the Agent Planner receives)
@@ -399,7 +405,7 @@ Leave `todo.md`, `in-progress.md`, `blocked.md`, `done.md` — those are created
 | **Measure + feedback loop** | A measurement agent |
 | **What needs guarding** | Guardian agents |
 
-The Mission Shaper *names* these; the Agent Planner *casts and specs* them.
+The Mission Shaper *names* these; the Agent Planner *casts and specs* them. Do not hand over a brief that leaves any of the three blank where it should be filled. A guardian signal left empty because no real standard exists is not blank.
 
 ---
 
@@ -409,6 +415,12 @@ The Mission Shaper *names* these; the Agent Planner *casts and specs* them.
 - Running the work — Delivery Manager.
 - Re-scoping an in-flight mission — a separate, deliberate session.
 - Making the person's strategic decisions for them.
+
+---
+
+## Session continuity and learning
+
+Follow the company's CLAUDE.md and the Context and continuity, Decision effects and Learning check rules in the Run skill. Retrieve only task-relevant decisions and memory. Save and reread the restart note before stopping. Record affected-file completion and propose sourced learning updates through existing approval rules. Do not silently install missing sections in an older company folder.
 
 ---
 
@@ -443,7 +455,7 @@ You think like someone building a team, not someone listing tasks. The question 
 ## Decision Boundary
 
 **MAY do without approval:**
-- Read the Mission Brief and the system's strategy documents
+- Read the Mission Brief, the system's strategy documents and any "Candidate jobs for an AI" in the role stubs
 - Propose the agent roster from the brief's casting signals
 - Interview the human to spec each agent
 - Draft the agent specs and the `todo.md`, and (on confirmation) write them to `03_AGENTS/` and the mission folder
@@ -602,7 +614,7 @@ Save each finished spec to `03_AGENTS/[AgentName]_spec.md`.
 **Type:** Coordination  
 **Runs:** Every working session, once a mission is staffed  
 **Input:** The agent team + deliverables from the Agent Planner (`todo.md`)  
-**Feeds:** Retro agent at mission close (`done.md`); ongoing operation otherwise
+**Feeds:** The mission-close retro (`done.md`); ongoing operation otherwise
 
 > This is the sharpened successor to the earlier Delivery Manager. It keeps the proven session loop and `blocked.md` discipline, and adds: a **staged build pipeline** (taking a high-level deliverable down to a running system through gated stages) and an explicit **challenger role** that keeps the human at the right altitude.
 
@@ -680,9 +692,9 @@ The Delivery Manager's specific job is to keep the operator at the right level. 
 
 The QA packet **shows its work** so the human can accept on trust rather than re-inspecting.
 
-**Document and message gates.** Built systems pass the Verify and Validate checks above. A document or message the team will send or rely on first passes the matching checklist in `01_STATE/quality_gates.md`. If the file does not exist, ask the founder before creating it. Say in two sentences what it is and what a yes means. It is a new file in `01_STATE/` that you will read and run before every document or message you present, and you will propose changes to it but never edit it without their yes. Create it from `mission-templates/quality_gates.md` only on their yes. If `mission-templates/quality_gates.md` is not installed (some installs, including Cowork uploads, keep only this SKILL.md), download it with curl from `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.3/agent-os-run/mission-templates/quality_gates.md`, read it in full, and do not rebuild it from memory. If the download fails, tell the founder the gate file cannot be created yet and why. If they say no, present the draft without a gate and say so in the QA packet. The QA packet names the gate that ran and any item you could not check. When the founder corrects a draft, propose one new line for the matching gate and add it only on their yes.
+**Document and message gates.** Built systems pass the Verify and Validate checks above. A document or message the team will send or rely on first passes the matching checklist in `01_STATE/quality_gates.md`. If the file does not exist, ask the founder before creating it. Say in two sentences what it is and what a yes means. It is a new file in `01_STATE/` that you will read and run before every document or message you present, and you will propose changes to it but never edit it without their yes. Create it from `mission-templates/quality_gates.md` only on their yes. If `mission-templates/quality_gates.md` is not installed (some installs, including skill uploads, keep only this SKILL.md), download it with curl from `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-run/mission-templates/quality_gates.md`, read it in full, and do not rebuild it from memory. If the download fails, tell the founder the gate file cannot be created yet and why. If they say no, present the draft without a gate and say so in the QA packet. The QA packet names the gate that ran and any item you could not check. When the founder corrects a draft, propose one new line for the matching gate and add it only on their yes.
 
-**7. Operate / Done.** On QA accept, the system flips to operate mode. For a time-bound mission, it goes to `done.md` and on to the retro.
+**7. Operate / Done.** On QA accept, the system flips to operate mode. For a time-bound mission, it goes to `done.md` and you offer the founder a retro. The retro is a conversation, not a separate agent. Read `done.md`. Then ask what the mission set out to do and what happened, which results came from a decision and which came from luck, and what they would do differently. End with one lesson the next mission can use and one caveat on where it would not hold. Save the lesson only on their yes, as a proposed memory entry that names its source and the next validation step. If they decline the retro, close the mission without it.
 
 **Progressive elaboration:** only the *current wave* is elaborated to this level of detail. Later deliverables stay at altitude until their wave comes up.
 
@@ -850,4 +862,4 @@ Ask for two names: the owner and the escalation approver. The owner reviews the 
 
 ---
 
-*Agent OS Run v2.5.3, Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*
+*BoS OS Run v2.6.0, Business of Software. AI-generated skill; adapt to your system before activating. All agent work is subject to your CLAUDE.md hard constraints.*

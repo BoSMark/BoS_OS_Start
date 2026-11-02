@@ -4,6 +4,40 @@ All notable changes to the BoS OS Toolkit are documented here.
 
 ---
 
+## v2.6.0 (2026-11-02)
+
+This release brings together the changes made since v2.5.1. v2.5.2 was replaced by v2.5.3 and has no entry of its own. It includes everything in v2.5.3 below.
+
+### Added
+
+- Bootstrap tells the founder that every file is saved to a folder on their own computer, which they own and control, and that this folder is where the BoS OS keeps its information.
+- Bootstrap names the project folder "[company name] BoS OS" instead of "[company-name]-agent-os".
+- The install steps no longer depend on one tool. The README and QUICKSTART say what you need (an AI that can read a folder, and a folder you own), tell you how to ask your AI to connect the folder, and list the routes we know of for Claude, ChatGPT, coding tools and chat-only AIs.
+- Bootstrap writes a one-line `AGENTS.md` that points AI tools to `CLAUDE.md`.
+- Bootstrap and Workshop start from roles. Each role gets four questions (what it does today, what you want it to do, what the person enjoys, what they dislike). The role stub gains three fields, wanted, time should go to, and candidate jobs for an AI. Workshop sorts the work into what a person should keep and what an AI could carry. Answers about someone else are marked "founder's view, to confirm with the person" and kept out of the stub.
+- Bootstrap states one early insight, labelled Observed or Inferred, before it writes the strategy documents. It flags a bigger or more urgent challenge than the one the opening answers point to.
+- Workshop starts Phase 1 with the document that gates the North Star, not the first file in the folder.
+- Bootstrap and Workshop keep a parking list at `01_STATE/parking_list.md`. A topic raised mid-step is parked with one question, "Is this the biggest thing you could work on against your North Star, or the thing in front of you today?" Workshop ranks the parked topics against the first mission at the end.
+- The Agent Planner reads the role stubs' candidate jobs when it casts agents.
+- Each skill states its version on the first line of its first reply in a session, read from its own metadata.
+
+### Fixed
+
+- The BoS OS is called "the BoS OS" throughout, including the README, QUICKSTART, trigger phrases, manifest description and reference files. "Company OS" and "agent OS" are removed.
+- Workshop's phase numbering. The workshop has five phases, numbered 0 to 4, and the headings and announcements now say so.
+- Workshop no longer says some people "cancel their next meeting", and Bootstrap's closing no longer does. Neither skill rewards time spent in the BoS OS.
+- Wording that named one Claude product (a Cowork tab, a Cowork project, Cowork uploads) is reworded in the README, QUICKSTART, Bootstrap, Workshop and the Run README.
+- Run no longer refers to a Retro agent. It offers the retro as a conversation when a time-bound mission closes, and saves nothing without the founder's yes.
+- The Mission Shaper text in Run's `SKILL.md` and in `agent-specs/mission-shaper.md` is now one text. `SKILL.md` is the source and the spec file is a copy of it. Five behaviours the spec carried and `SKILL.md` had lost are back. The Shaper does not treat activity as the enemy, does not force an exploration into business-metric framing, does not invent a guardian without a real standard, does not hand over a brief with a casting signal blank (a guardian signal left empty because no real standard exists is not blank), and goes back when the coherence check fails.
+- Bootstrap fills every CLAUDE.md placeholder from a named source. A name, email address, phone number or regulator the research or the founder did not supply is marked as a gap, not invented. The refund period, regulator and constraint placeholders are gone from the template, and the two escalation placeholders are now one.
+- Bootstrap's note on sharing with your team is shorter. It keeps the one-folder explanation and ends with "Get it working first, then bring your team in."
+
+### Upgrading
+
+Reinstall the three `.skill` files. In an existing company folder, back it up, then ask Bootstrap to compare the folder with the current CLAUDE.md template, and approve the specific additions you want. The list of additions is in "Upgrading an existing folder to v2.6.0" in `agent-os-workshop/references/upgrade_guide.md`. Bootstrap proposes and changes nothing without your yes. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working.
+
+---
+
 ## v2.5.3 (2026-10-25)
 
 ### Added

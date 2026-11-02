@@ -5,7 +5,7 @@
 **What this covers:** What happens when you run new versions of the Bootstrap or Workshop skill on an existing BoS OS. What changes, what doesn't, and what needs your explicit permission.
 
 
-The scenarios below describe the v2.0 skills. For v2.5.3, see "Upgrading an existing folder to v2.5.3" before the summary at the end of this guide. For v2.5.3, do not rerun Bootstrap on an existing folder. Ask it to compare the folder with the current CLAUDE.md template, as that section describes. The re-run scenarios below are v2.0 history.
+The scenarios below describe the v2.0 skills. For v2.6.0, see "Upgrading an existing folder to v2.6.0" before the summary at the end of this guide. For v2.6.0, do not rerun Bootstrap on an existing folder. Ask it to compare the folder with the current CLAUDE.md template, as that section describes. The re-run scenarios below are v2.0 history.
 
 ---
 
@@ -35,7 +35,7 @@ The Workshop and Bootstrap skills will detect differences between your current O
 Before running any new version of the Bootstrap or Workshop skill on an existing OS:
 
 1. Make a complete copy of your BoS OS folder
-2. Name it clearly: `[company]-agent-os-BACKUP-[date]`
+2. Name it clearly: `[company] BoS OS BACKUP [date]`
 3. Store it somewhere you can find it (a folder outside the active OS, a cloud backup, a zip)
 
 If anything goes wrong, a file gets overwritten, a change turns out to be wrong, you have a clean restore point.
@@ -115,7 +115,7 @@ Each rename is confirmed individually. Cross-reference updates are shown and con
 
 ## Scenario 2: Re-running the new Bootstrap on an existing OS (v2.0 history)
 
-This scenario describes v2.0. For v2.5.3, do not rerun Bootstrap. Use "Upgrading an existing folder to v2.5.3" below.
+This scenario describes v2.0. For v2.6.0, do not rerun Bootstrap. Use "Upgrading an existing folder to v2.6.0" below.
 
 **Your situation:** You want to run the new Bootstrap skill on an OS you've already built. Maybe you want the new file naming, or the improved CLAUDE.md, or updated strategy document templates.
 
@@ -211,9 +211,9 @@ These are hard limits regardless of version:
 
 ---
 
-## Upgrading an existing folder to v2.5.3
+## Upgrading an existing folder to v2.6.0
 
-v2.5.3 adds operating sections to the CLAUDE.md template and a dated setup record. A folder built with an earlier version keeps working without them. To add them, back up the folder, open Bootstrap in it and ask it to compare the folder with the current CLAUDE.md template. Bootstrap proposes each addition and changes nothing without your yes to that specific change.
+v2.6.0 adds operating sections to the CLAUDE.md template, a dated setup record, an `AGENTS.md` pointer and new role stub fields. The parking list (`01_STATE/parking_list.md`) needs no upgrade, because Bootstrap and Workshop create it the first time a topic is parked. A folder built with an earlier version keeps working without them. To add them, back up the folder, open Bootstrap in it and ask it to compare the folder with the current CLAUDE.md template. Bootstrap proposes each addition and changes nothing without your yes to that specific change.
 
 The additions you can ask for are:
 
@@ -221,6 +221,8 @@ The additions you can ask for are:
 - The learning protocol in `01_STATE/memory/README.md`. It starts empty, and existing memory formats stay as they are.
 - Context rules and a restart note. Sessions load the history the task needs and save a short restart note before a task changes or a session ends.
 - Affected-document tracking. Each decision names the files it would change and records each one as updated and checked, or pending with a named owner.
+- A one-line `AGENTS.md` at the folder root. It tells AI tools that look for that name to read `CLAUDE.md` first. It holds no content of its own.
+- The new role stub fields (wanted, time should go to, candidate jobs for an AI). Stubs written before v2.6.0 keep working without them. Workshop offers the fields when you next work on a role.
 - Rules for working within existing authority. Declining an upgrade withholds permission for the upgrade edits only. Normal session work continues under the company's existing approval rules.
 
 Bootstrap then sets "Last synced" to the new Toolkit version and today's date, adds a new row at the bottom of the Version History table naming the additions you approved, and leaves "Bootstrapped from" unchanged. Existing strategy, decisions and memory are not replaced. A mission folder written by an earlier Workshop keeps working. Run offers the Mission Shaper to turn its plan into a Mission Brief, then the Agent Planner.
@@ -229,7 +231,7 @@ Bootstrap then sets "Last synced" to the new Toolkit version and today's date, a
 
 ## Summary: What Should I Do?
 
-The advice below is for the v2.0 skills. For v2.5.3, use "Upgrading an existing folder to v2.5.3" above.
+The advice below is for the v2.0 skills. For v2.6.0, use "Upgrading an existing folder to v2.6.0" above.
 
 **I have an existing OS and want to run the new Workshop.**
 → Back up your BoS OS first. Then run the Workshop. It will detect your setup, surface any differences, and ask what you want before changing anything.

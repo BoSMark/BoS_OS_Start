@@ -6,7 +6,7 @@ Most companies add AI tools on top of an operating system nobody has written dow
 
 These three skills fix the foundation first, then put it to work.
 
-**Current version: v2.5.3**. [What's new](CHANGELOG.md)
+**Current version: v2.6.0**. [What's new](CHANGELOG.md)
 
 ---
 
@@ -14,7 +14,7 @@ These three skills fix the foundation first, then put it to work.
 
 This repo contains three skills that activate your company BoS OS:
 
-**Bootstrap** models your BoS OS from public information. It produces a first draft of your strategy layer, agent roles, and decision governance. Workshop then turns that into your first mission, so your agents have a real job from day one. Think of it as the AI doing its homework on your company before you meet.
+**Bootstrap** models your BoS OS from public information. It produces a first draft of your strategy layer, roles, and decision governance. Workshop then turns that into your first mission, so the BoS OS has a real job from day one. Think of it as the AI doing its homework on your company before you meet.
 
 **Workshop** helps you refine what Bootstrap produced. It works with your insider knowledge, challenging assumptions, sharpening priorities, and turning the skeleton into something that reflects how you actually run the business. As you work through it, the AI starts to understand your strategic goals, identify gaps, and surface opportunities and threats specific to your business.
 
@@ -34,7 +34,7 @@ See the full [CHANGELOG](CHANGELOG.md) for what's new and upgrade instructions.
 
 Every company already has an operating system. Most just don't know what's in it.
 
-![Every Company OS Ever](images/Every_Company_OS.png)
+![The structure every company already runs on, before the BoS OS](images/Every_Company_OS.png)
 
 The BoS OS maps that structure, then gives AI a governed place inside it.
 
@@ -46,50 +46,45 @@ Your folder structure is your system. The files are the memory.
 
 ## Getting started
 
-**Prerequisites:** Claude Pro subscription · Cowork mode enabled
+You need two things. An AI that can read a folder of files, and a folder on your computer that you own. The BoS OS is plain text files in that folder. You hold the data, and any AI you give access to the folder reads the same instructions. The [Quickstart](QUICKSTART.md) is the short version.
 
-> **New to Cowork?** Start with the [Quickstart](QUICKSTART.md). It gets you to your first session.
-
-> **Connect a folder before Step 1.** In Cowork, connect a folder on your computer, somewhere in Dropbox, Google Drive, or similar, before you do anything else. This is where the BoS OS saves everything it creates. If you skip this, files land in Cowork's temporary sandbox and are hard to find later. Step 2 below walks you through it.
-
-**Step 1 — Download the skills**
+**Step 1. Download the skills**
 
 Go to the [latest release](https://github.com/BoSMark/BoS_OS_Start/releases/latest) and download:
 - `agent-os-bootstrap.skill`
 - `agent-os-workshop.skill`
 - `agent-os-run.skill` *(optional: install after Bootstrap and Workshop are working)*
 
-These are ready-to-upload files. **Do not unzip them.** Upload each file as-is in Step 3.
+These are ready-to-upload files. **Do not unzip them.** If your AI does not take skill files, see Step 4.
 
-**Step 2 — Set up your Cowork project**
+**Step 2. Make your folder**
 
-Before installing the skills, create your project:
+Make an empty folder on your computer, inside Dropbox, Google Drive or similar, so it is backed up. Bootstrap creates a folder called "[your company name] BoS OS" inside it. Everything the BoS OS produces is saved there.
 
-1. In Cowork, click **Projects** in the left sidebar
-2. Click **New project** (top right)
-3. Choose **Start from scratch**
-4. Give your project a name (e.g. "My Company OS")
-5. Leave Instructions blank — Bootstrap will fill this in automatically
-6. Under **Choose project location**, click the folder path and change it to a folder inside Dropbox, Google Drive, or similar. **Don't leave it as the default** (`Documents/Claude/Projects`)
-7. Click **Create**
+**Step 3. Give your AI access to the folder**
 
-This is not optional. Without a project, nothing saves and you will need to start over.
+The screens differ between tools and change often, so this guide does not list them. If you cannot find the option, ask your AI "How do I connect you to a folder on my computer?" and follow what it tells you. The table shows the routes we know of.
 
-> **Why change the location?** The default folder isn't cloud-synced. If you leave it there, your files won't be backed up and won't be accessible from another machine.
+| Route | What you do | Reads your folder | Writes to your folder |
+|-------|-------------|-------------------|-----------------------|
+| Claude desktop app | Add the folder to a project, then add the skills | Yes | Yes |
+| ChatGPT with the folder attached | Attach the folder to a project in the ChatGPT app. In the project instructions, write "Read CLAUDE.md in this folder in full before doing anything else." | Yes | Yes |
+| ChatGPT on the web, project with uploaded files | Upload the files and paste the same line into the project instructions | A copy only. Upload again after any change | No |
+| Coding tools such as Codex, Cursor and Copilot's coding agent | Open the folder. They look for `AGENTS.md`, which Bootstrap writes | Yes | Yes |
+| Gemini CLI | Open the folder and ask it to read `CLAUDE.md` first | Yes | Yes |
+| Any chat-only AI | Paste the skill as your first message, then copy the results into your folder yourself | No | No |
 
-> **Already have a folder set up?** On the previous screen, choose **Use an existing folder** instead of Start from scratch.
+ChatGPT works with the BoS OS on both of its routes. We have run the BoS OS in a ChatGPT project with the folder attached, and ChatGPT saves what it produces into that folder. We have also run it in ChatGPT on the web, where ChatGPT reads copies of your files, so upload them again after any change. We have run it in Claude, in Codex and in a chat-only AI. We have not run Cursor, Copilot's coding agent or Gemini CLI. The table follows each tool's own documentation for those rows, so treat them as a starting point and expect the screens to change.
 
-**Step 3 — Install the skills**
+**Step 4. Add the skills**
 
-In Cowork, click **Customize** in the left sidebar → **Skills** → click the **+** icon (top right of the skills panel) → **Create skill** → **Upload a skill** → select `agent-os-bootstrap.skill`. Repeat for `agent-os-workshop.skill` and, when you're ready to run missions, `agent-os-run.skill`.
+Where your AI takes skill files, upload each one as you downloaded it. Where it does not, open `agent-os-bootstrap/SKILL.md` in this repo and paste its contents as your first message.
 
-> **Don't click "Browse skills" or "Browse plugins"** — those only show pre-built options and won't let you upload your own file.
+**Step 5. Run Bootstrap**
 
-**Step 4 — Run Bootstrap**
+Start a chat in the place where your AI can see your folder. Then type this exactly:
 
-In the left sidebar, click your project name (it will be under **Pinned**). Then type this exactly:
-
-> **Bootstrap my company OS**
+> **Bootstrap my BoS OS**
 
 It will ask for your company name and build your BoS OS draft from there.
 
@@ -118,7 +113,7 @@ If Bootstrap gave you something useful, a star on this repo helps the next found
 
 ## Upgrading from an earlier version
 
-If you installed the toolkit at a Business of Software conference or from an earlier release, v2.5.3 adds operating sections to the CLAUDE.md template. Your existing files are safe, the migration is additive.
+If you installed the toolkit at a Business of Software conference or from an earlier release, v2.6.0 adds operating sections to the CLAUDE.md template, a one-line `AGENTS.md` pointer and new role stub fields. Your existing files are safe, the migration is additive.
 
 See [CHANGELOG.md](CHANGELOG.md) for the upgrade steps.
 
@@ -126,24 +121,24 @@ See [CHANGELOG.md](CHANGELOG.md) for the upgrade steps.
 
 ## Troubleshooting
 
-**Plugin validation failed**
+**The skill upload failed**
 
 Check the following in order:
 1. Did you download the `.skill` file from the releases page? If you downloaded a zip of the whole repo, that won't work. You need the individual `.skill` file.
 2. Did you unzip it? Don't. Upload the `.skill` file directly as downloaded.
-3. Are you uploading via **Upload a skill** (not Browse skills or Browse plugins)? Browse only shows pre-built options.
+3. Are you using your AI's option to upload your own skill, and not a catalogue of pre-built ones?
 
-**Nothing happened after I typed "Bootstrap my company OS"**
+**Nothing happened after I typed "Bootstrap my BoS OS"**
 
-The skill didn't install correctly, or you're not inside your project. Check: (a) you uploaded via **Customize → Skills → + → Create skill → Upload a skill**, and (b) you clicked your project name in the left sidebar before typing.
+The skill didn't install correctly, or your AI cannot see your folder. Check that the skill appears in your AI's list of skills, and that you started the chat in the place where your folder is connected. If your AI takes no skill files, paste `agent-os-bootstrap/SKILL.md` as your first message.
 
 **Files aren't saving / I can't find what Bootstrap created**
 
-You're not inside a Cowork project, or your project isn't linked to a folder. Go to Projects, check your project exists, and confirm it shows a folder path. If not, create a new project and run Bootstrap again.
+Your AI is not connected to a folder, or it is saving to a temporary workspace. Ask it "Which folder are you saving to?" If the answer is not your folder, connect your folder and run Bootstrap again.
 
-**The UI looks different from the instructions**
+**The screens look different from the instructions**
 
-Claude's UI labels vary slightly across accounts and versions. If you can't find "Upload a skill", look for: *Add skill*, *Upload plugin*, or *Personal plugins → Create plugin*. You're always looking for a way to upload a file, not browse a catalogue.
+AI tools change their menus often. You are always looking for a way to connect a folder and a way to upload a file, not a catalogue to browse. If you cannot find either, ask your AI how.
 
 ---
 
@@ -179,6 +174,6 @@ Subscribe for workshop announcements, guided cohorts, and peer community access.
 
 *Built by Tim Barker, Mark Littlewood and [Business of Software](https://businessofsoftware.org), helping software founders build profitable, enduring companies since 2007.*
 
-## Continuity and learning in v2.5.3
+## Continuity and learning in v2.6.0
 
 Bootstrap finishes with a saved setup summary, up to three next actions and clear operating limits. The current session summary tracks ongoing work. Learning records start empty and grow only from sourced observations and tests; a human owner approves operating rules. Workshop and Run preserve these distinctions and offer additions to existing folders for approval.

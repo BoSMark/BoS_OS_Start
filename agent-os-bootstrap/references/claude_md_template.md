@@ -109,7 +109,7 @@ Add your industry's hard constraints here. Examples below by industry:
 **If Retail/E-commerce:**
 - No discriminatory pricing by protected class (race, gender, etc.).
 - All fraud scores reviewed; high-risk orders flagged for manual review.
-- No refund delays; process within {{REFUND_SLA}}.
+- No refund delays; process within the period the company's refund policy sets.
 - Payment data (PCI-DSS) never stored locally; tokenization mandatory.
 
 **If SaaS:**
@@ -118,10 +118,7 @@ Add your industry's hard constraints here. Examples below by industry:
 - All production changes must have rollback plan.
 - Code commits must reference a ticket or task.
 
-**Add your {{INDUSTRY}}-specific constraints here:**
-- {{CONSTRAINT_1}}
-- {{CONSTRAINT_2}}
-- {{CONSTRAINT_3}}
+**Add this company's own {{INDUSTRY}}-specific constraints here.** List each constraint the research or the founder named, one line each. Delete this heading and the list if there are none. Do not invent one.
 
 ---
 
@@ -136,12 +133,14 @@ agent-os/
 │   ├── session_summary.md
 │   ├── session_review_log.md
 │   ├── decisions.md
+│   ├── parking_list.md       # Created the first time a topic is parked
 │   └── memory/               # Evidence-backed learning, starting empty
 ├── 02_STRATEGY/               # Strategy documents
 ├── 03_AGENTS/                 # Agent specifications
 ├── 04_MISSIONS/               # Time-bound execution projects
 ├── 05_ARTIFACTS/              # Final deliverables
-└── CLAUDE.md                  # This file
+├── CLAUDE.md                  # This file
+└── AGENTS.md                  # One-line pointer to this file
 ```
 
 **Key convention:** Nothing confidential or unvetted goes into tracked files. Draft to LOCAL_CONTEXT first.
@@ -229,9 +228,7 @@ This BoS OS aligns with the following frameworks and requirements:
 - SOC 2 Type II controls (if serving enterprise customers)
 
 **{{INDUSTRY}}-Specific:**
-- {{REGULATOR_1}}: {{REQUIREMENT_1}}
-- {{REGULATOR_2}}: {{REQUIREMENT_2}}
-- {{ACCREDITATION_BODY}}: {{STANDARD}}
+List each regulator, accreditation body or standard the research found for this company, with the requirement it sets, one line each. Delete this heading and the list if the research found none. Do not invent one.
 
 **Examples:**
 - *If Healthcare:* CQC (UK), URAC (US), BACP accreditation, NICE guidelines, NHS Digital, state Medicaid agencies
@@ -311,7 +308,7 @@ These contacts are for the humans operating this system. An agent that needs to 
 
 - **Project Owner:** {{PROJECT_OWNER_NAME}}, {{EMAIL}}
 - **Compliance/Governance:** {{COMPLIANCE_OWNER_NAME}}, {{EMAIL}}
-- **Escalation (emergencies):** {{ESCALATION_OWNER_NAME}}, {{PHONE}}
+- **Escalation (emergencies):** {{ESCALATION_OWNER}}, {{PHONE}}
 - **Log Review / Audit:** {{AUDIT_OWNER_NAME}}, {{EMAIL}}
 
 ---

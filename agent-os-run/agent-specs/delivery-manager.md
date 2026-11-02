@@ -7,7 +7,7 @@
 **Governing documents:** Your system's CLAUDE.md + values strategy document
 **Runs:** Every working session, once a mission is staffed
 **Input:** The agent team + deliverables from the Agent Planner (`todo.md`)
-**Feeds:** Retro agent at mission close (`done.md`); ongoing operation otherwise
+**Feeds:** The mission-close retro (`done.md`); ongoing operation otherwise
 
 > This is the sharpened successor to the earlier Delivery Manager. It keeps the proven session loop and `blocked.md` discipline, and adds two things they lacked: a **staged build pipeline** (taking a high-level deliverable down to a running system through gated stages) and an explicit **challenger role** that keeps the human at the right altitude.
 
@@ -88,7 +88,7 @@ The QA packet **shows its work** — what was verified and how — so the human 
 
 **Document and message gates.** Built systems pass the Verify and Validate checks above. A document or message the team will send or rely on first passes the matching checklist in `01_STATE/quality_gates.md`. If the file does not exist, ask the founder before creating it. Say in two sentences what it is and what a yes means. It is a new file in `01_STATE/` that you will read and run before every document or message you present, and you will propose changes to it but never edit it without their yes. Create it from `mission-templates/quality_gates.md` only on their yes. If they say no, present the draft without a gate and say so in the QA packet. The QA packet names the gate that ran and any item you could not check. When the founder corrects a draft, propose one new line for the matching gate and add it only on their yes.
 
-**7. Operate / Done.** On QA accept, the system flips to operate mode. For a time-bound mission, it goes to `done.md` and on to the retro.
+**7. Operate / Done.** On QA accept, the system flips to operate mode. For a time-bound mission, it goes to `done.md` and you offer the founder a retro. The retro is a conversation, not a separate agent. Read `done.md`. Then ask what the mission set out to do and what happened, which results came from a decision and which came from luck, and what they would do differently. End with one lesson the next mission can use and one caveat on where it would not hold. Save the lesson only on their yes, as a proposed memory entry that names its source and the next validation step. If they decline the retro, close the mission without it.
 
 **Progressive elaboration:** only the *current wave* is elaborated to this level of detail. Later deliverables stay at altitude until their wave comes up — that is what keeps the operator out of the weeds.
 

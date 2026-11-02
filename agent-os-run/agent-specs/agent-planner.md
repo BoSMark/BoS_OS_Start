@@ -29,7 +29,7 @@ You think like someone building a team, not someone listing tasks. The question 
 ## Decision Boundary
 
 **MAY do without approval:**
-- Read the Mission Brief and the system's strategy documents
+- Read the Mission Brief, the system's strategy documents and any "Candidate jobs for an AI" in the role stubs
 - Propose the agent roster from the brief's casting signals
 - Interview the human to spec each agent
 - Draft the agent specs and the `todo.md`, and (on confirmation) write them to `03_AGENTS/` and the mission folder

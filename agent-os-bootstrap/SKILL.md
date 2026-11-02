@@ -1,10 +1,10 @@
 ---
 name: agent-os-bootstrap
 description: |
-  Build the BoS OS for a company, a structured operating system that helps a CEO or founder make better decisions and helps their team understand what they are trying to do. Researches the company from public information, creates the folder structure, populates strategy documents with company-specific content, maps people and their roles, and generates a CLAUDE.md. Triggers: "run the BoS OS", "BoS OS", "Company OS", "bootstrap my company OS", "create an operating system for [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "operating model", "folder structure for agents", "bootstrap my company". MANDATORY TRIGGERS: BoS OS, Company OS, bootstrap, company setup, agent framework, AI strategy, operating model, folder structure.
+  Build the BoS OS for a company, a structured operating system that helps a CEO or founder make better decisions and helps their team understand what they are trying to do. Researches the company from public information, creates the folder structure, populates strategy documents with company-specific content, maps people and their roles, and generates a CLAUDE.md and a one-line AGENTS.md pointer. Triggers: "run the BoS OS", "BoS OS", "bootstrap my BoS OS", "create an operating system for [company]", "help me organise my AI strategy", "build an agent framework", "I want to do what that talk described", "operating model", "folder structure for agents", "bootstrap my company". MANDATORY TRIGGERS: BoS OS, bootstrap, company setup, agent framework, AI strategy, operating model, folder structure.
 metadata:
   author: Tim Barker, Mark Littlewood and Business of Software
-  version: 2.5.3
+  version: 2.6.0
 ---
 
 # BoS OS: Company Bootstrap
@@ -13,11 +13,13 @@ You are building the BoS OS for a company. Your goal is to help the CEO or found
 
 Your job is to research the company from public information and create a complete, populated folder structure that the founder and their team can immediately start working with. Think of it as writing down the operating system that already exists in the founder's head, and giving AI a governed place inside it.
 
+**Words we use.** A role is a job with an owner, the decisions it makes and the documents it follows. The owner can be a person, an AI, or both. An agent is an AI that carries one narrow, specified job inside a role. An agent has a named human owner, and an Approver signs it off before it goes active. A role held by a person needs no sign-off. This skill talks about roles. The word agent appears when a job is handed to an AI, which in this toolkit happens in Run.
+
 ## Before You Begin
 
-**Check reference files before reading them.** Some installs, including Cowork uploads, keep only this SKILL.md. Before the first reference-file read, check each file listed below is present and non-empty. Also check any other reference file before using it. Keep the files already installed. Download only missing or empty files with `curl --fail --location --silent --show-error` from the base address below, followed by the exact relative path. The address is pinned to this skill's release. Use these paths directly; no GitHub API request or directory listing is needed.
+**Check reference files before reading them.** Some installs, such as skill uploads, keep only this SKILL.md. Before the first reference-file read, check each file listed below is present and non-empty. Also check any other reference file before using it. Keep the files already installed. Download only missing or empty files with `curl --fail --location --silent --show-error` from the base address below, followed by the exact relative path. The address is pinned to this skill's release. Use these paths directly; no GitHub API request or directory listing is needed.
 
-Base address: `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.5.3/agent-os-bootstrap/references/`
+Base address: `https://raw.githubusercontent.com/BoSMark/BoS_OS_Start/v2.6.0/agent-os-bootstrap/references/`
 
 - `agent_spec_template.md`
 - `bootstrap_summary_template.md`
@@ -52,9 +54,11 @@ If the user hasn't provided a company name, ask for one. Then ask: "What's the c
 
 ## Existing company folders
 
-Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Ask the founder to back up the folder, then compare it with the current CLAUDE.md template. Skip the Opening Questions, the research steps and Steps 3 to 7 unless the founder asks for them. Present the missing operating sections and proposed files, explain the affected paths, and wait for approval. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules and report the limitation. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record. When approved additions are applied, set "Last synced" to this skill's version and today's date and add a Version History row naming them. Never change "Bootstrapped from".
+Do not rerun Bootstrap or replace existing strategy, memory, decisions or instructions to add these features. Ask the founder to back up the folder, then compare it with the current CLAUDE.md template. Skip the Opening Questions, the research steps and Steps 3 to 7 unless the founder asks for them. Present the missing operating sections and proposed files, including `AGENTS.md` and the parking list, explain the affected paths, and wait for approval. Role stubs written before v2.6.0 keep working without the new fields; offer the new fields only as an addition. Keep existing memory formats and approval thresholds. If the founder declines, continue within their current rules and report the limitation. A bootstrap summary is optional for an existing folder; improve its current session summary rather than inventing a historical setup record. When approved additions are applied, set "Last synced" to this skill's version and today's date and add a Version History row naming them. Never change "Bootstrapped from".
 
 ## The Opening Questions
+
+Begin your first reply with one line, "BoS OS Bootstrap v" followed by this skill's `version:` field, read from the frontmatter at the top of this file and not typed from memory. Then ask Question 1.
 
 **Before any research, ask these questions in order. Get an answer to each before moving on.**
 
@@ -97,6 +101,14 @@ Once you have answers to all three questions (or have acknowledged gaps), procee
 
 ---
 
+## Topics that come up mid-step
+
+When the founder raises a topic that is not part of the current step, do three things. Say it back in one line. Ask once, "Is this the biggest thing you could work on against [North Star], or the thing in front of you today?" Then add it to `01_STATE/parking_list.md` with the date and their answer, and return to the step. If they say it is the biggest, say so plainly and finish the current step first. Workshop's last phase ranks the parked topics against the first mission. Do not drop a topic they care about, and do not follow it mid-step.
+
+Create `parking_list.md` the first time something is parked. Give it a header and one row per topic with the date, the topic, the answer and a status.
+
+---
+
 ## The Bootstrap Process
 
 Work through these steps in order. Summarise what you found after each step. Confirm with the user before moving on after Steps 1 and 2. Steps 3 to 7 run under the single yes asked before the first file (see "Ask before you write anything"): summarise after each one and carry on unless the founder objects.
@@ -135,6 +147,10 @@ Search for and gather:
 
 After researching, present a brief summary: "Here's what I found about [Company]. Does this look right? Anything important I'm missing?" This is the user's chance to correct or add context before you build.
 
+**Name one early insight.** Before you write any strategy document, tell the founder one thing the research showed that they have probably not said aloud. A gap between what the company claims and what it publishes as proof is a good example. Label it Observed (you found it in a named source) or Inferred (you concluded it), and ask the founder to correct it. This gives them something useful before the long documents arrive.
+
+**Check the target.** If the research shows a bigger or more urgent challenge than the one the opening answers point to, say so plainly and let the founder choose which one the first drafts should serve. Do not choose for them.
+
 ---
 
 ### Step 2: Detect Industry and Adapt
@@ -151,17 +167,18 @@ Tell the user: "Based on my research, I'm treating [Company] as a [industry] com
 
 ### Step 3: Create the Folder Structure
 
-**Ask before you write anything.** Tell the founder where you will create the project folder and what you will write there: the six folders, the strategy documents, the agent map, CLAUDE.md and the state files, plus `BOOTSTRAP_SUMMARY.md` once they confirm the summary. Say that every file is a draft until they confirm the summary in Step 8. If the place already holds files, name them and ask whether to continue there or choose another place. Never overwrite a file. Wait for a yes. One yes covers Steps 3 to 7, so do not ask again file by file.
+**Ask before you write anything.** Tell the founder where you will create the project folder and what you will write there: the six folders, the strategy documents, the role map, CLAUDE.md, a one-line `AGENTS.md` and the state files, plus `BOOTSTRAP_SUMMARY.md` once they confirm the summary and `01_STATE/parking_list.md` if a topic is parked. Say that every file is a draft until they confirm the summary in Step 8. Say that everything is saved to a folder on their own computer, which they own and control, and that this folder is where the BoS OS keeps its information. If the place already holds files, name them and ask whether to continue there or choose another place. Never overwrite a file. Wait for a yes. One yes covers Steps 3 to 7, so do not ask again file by file.
 
 Create the canonical folder structure in the user's workspace:
 
 ```
-[company-name]-agent-os/
+[company-name] BoS OS/
 ├── 00_LOCAL_CONTEXT/
 ├── 01_STATE/
 │   ├── session_summary.md
 │   ├── session_review_log.md
 │   ├── decisions.md
+│   ├── parking_list.md        # Created the first time a topic is parked
 │   └── memory/
 │       └── README.md
 ├── 02_STRATEGY/
@@ -169,14 +186,15 @@ Create the canonical folder structure in the user's workspace:
 ├── 04_MISSIONS/
 ├── 05_ARTIFACTS/
 ├── CLAUDE.md
+├── AGENTS.md                  # One-line pointer to CLAUDE.md
 └── BOOTSTRAP_SUMMARY.md       # Dated setup record, written after summary confirmation
 ```
 
-**What this folder structure is:** This is where your BoS OS lives. It sits on your machine, synced to Dropbox, Google Drive, or wherever you chose when setting up your Cowork project. Everything the BoS OS produces, remembers, and decides goes here. The files are the memory.
+**What this folder structure is:** This is where your BoS OS lives. It sits on your machine, synced to Dropbox, Google Drive, or wherever you chose when you set up your folder. Everything the BoS OS produces, remembers, and decides goes here. The files are the memory.
 
 **Sharing and privacy - keep it simple for now:** Everything in your BoS OS sits within one folder, and you can isolate that from anything else on your network. As you are getting started, the most important thing is to get the BoS OS up and running, so for now, set it up as-is for yourself.
 
-When you are ready to involve your team, you will want to give more thought to who gets access to what. Different people and different teams will need access to different parts of the BoS OS, and some information you will want to keep private. The BoS OS has a structure for that, but it is not something you need to configure during bootstrap. Get it working first, then bring your team in.
+Get it working first, then bring your team in.
 
 **Initialise the state files:**
 
@@ -235,7 +253,7 @@ Inside each document, include a reference number in the header block (e.g., `Str
 
 ### Step 5: Map the People and Their Roles
 
-> **Bootstrap produces role stubs, not agent specs.** A role stub captures a person's name, title, functions, and which strategy documents they own. That is all you need at this stage. Full agent specs, with decision boundaries, escalation triggers, and evaluation criteria, are written later by the Run skill's Agent Planner. Do not attempt them here.
+> **Bootstrap produces role stubs, not agent specs.** A role stub captures a role's owner, title, what it owns and decides, what the founder wants from it, and which strategy documents it follows. That is all you need at this stage. Full agent specs, with decision boundaries, escalation triggers, and evaluation criteria, are written later by the Run skill's Agent Planner. Do not attempt them here.
 
 Before thinking about agents, map the people. This step is about identifying who is actually running this company, their names, their roles, and what each of them is responsible for. Agents come later. Right now, you are mapping the human operating system.
 
@@ -249,15 +267,30 @@ For each identified leader (C-suite, senior leadership, or key function owner):
 
 4. **Note any obvious gaps.** If the company has a function with no clear leader (common in early-stage companies), flag it: `[GAP: No identified owner for [function] - founder may be covering this directly]`.
 
-Read `references/agent_spec_template.md` to understand what comes next, but do not build full agent specs at this stage. Create lightweight role stubs in `03_AGENTS/` that capture: name, title, functions owned, strategy documents owned. These become the foundation for proper agent specs, which the Run skill's Agent Planner writes when a mission needs agents.
+5. **Ask four short questions about each role, starting with the founder's own.** What does this role do today, and what would break if it stopped? What would you like it to do, or do more of? What does the person in it enjoy doing? What do they dislike doing? For a role that does not exist yet, ask the same questions about the role the founder wants. For example, "what would you want a CEO to do that you do now?" shows which jobs the founder should hand off. Keep the answers short, because Workshop goes deeper.
+
+   The founder can answer for their own role. For anyone else, record the answer as "founder's view, to confirm with the person", and keep it out of the stub file unless that person has answered for themselves. The folder may be shared with the team, and a founder's guess about someone else's feelings should not sit in it.
+
+Read `references/agent_spec_template.md` to understand what comes next, but do not build full agent specs at this stage. Create lightweight role stubs in `03_AGENTS/`, one file per person, with these fields.
+
+| Field | Content |
+|-------|---------|
+| Name and title | As publicly known |
+| Owns today | Functions and strategy documents |
+| Decides | What they decide alone and what they escalate, where known |
+| Wanted | What the founder wants this role to do or do more of |
+| Time should go to | The work the person enjoys that matters most. If not yet answered, write `[INTERNAL: needs the person's own answer]` |
+| Candidate jobs for an AI | Specific, repeatable, checkable jobs, each named narrowly. "Weekly competitor watch" qualifies. "General marketing" does not. If not yet answered, write `[INTERNAL: needs the person's own answer]` |
+
+These become the foundation for proper agent specs, which the Run skill's Agent Planner writes when a mission needs agents. The candidate jobs are the starting list for that work.
 
 **Keep it proportionate.** A 10-person company might have 3 people covering 7 functions. A 200-person company might have 8 leaders. Map what's actually there. Don't invent a leadership structure that doesn't exist.
 
 ---
 
-### Step 6: Create the Agent Map
+### Step 6: Create the Role Map
 
-Create `03_AGENTS/agent_map.md`, a table mapping every exec to their strategy documents and agents:
+Create `03_AGENTS/agent_map.md` (the file name stays), a table mapping every exec to their strategy documents and any agents that carry a job for them. Most rows will say none yet:
 
 ```markdown
 | Executive | Title | Strategy Docs | Agents | Agent Type | Maturity |
@@ -279,6 +312,25 @@ Read `references/claude_md_template.md` and populate it for this specific compan
 - Context and continuity, decision effects, and the learning check, as written in the template
 - Current date
 
+**Fill every placeholder from a named source.** The template holds `{{...}}` placeholders. Fill each one from the source in this table. If the source gives nothing, follow the last column. Never invent a name, email address, phone number, regulator or figure. No `{{...}}` placeholder and no template instruction text may remain in the saved file.
+
+| Placeholder | Fill from | If nothing is found |
+|---|---|---|
+| `{{FOUNDER_NAME}}`, `{{NAME}}` | The name from Question 1 | Not applicable. Question 1 is always answered |
+| `{{COMPANY_NAME}}` | The company name the founder gave at the start | Not applicable |
+| `{{INDUSTRY}}` | The research | Write the closest sector, labelled proposed, and ask the founder to confirm it in the summary |
+| `{{BOS_OS_VERSION}}` | This skill's `version:` field | Not applicable |
+| `{{BOOTSTRAP_DATE}}`, `{{CURRENT_DATE}}`, `{{YYYY-MM-DD}}` | Today's date | Not applicable |
+| `{{TEAM_DESCRIPTION}}`, `{{WHAT_WE_AUDIT}}`, `{{WHAT_WE_ACCELERATE}}` | The research and the answers to Questions 2 and 3 | Cut the clause. The sentence reads without it |
+| `{{PRIMARY_VALUE}}`, `{{SECONDARY_VALUE}}` | The values the company states publicly | Cut the "while maintaining the highest standards for" clause |
+| `{{LIST_CONFIDENTIAL_CATEGORIES}}` | The categories in `industry_patterns.md` for this industry, plus anything the research shows | Not applicable. Write the industry's categories, labelled proposed, and list them among the items the founder confirms |
+| `{{LOG_REVIEW_CADENCE}}` | Monthly, the template's default, labelled proposed | Not applicable |
+| `{{LOG_REVIEW_ROLE}}`, `{{ESCALATION_OWNER}}`, `{{PROJECT_OWNER_NAME}}` | The founder, labelled proposed, until the founder names someone else | Not applicable |
+| `{{COMPLIANCE_OWNER_NAME}}`, `{{AUDIT_OWNER_NAME}}` | A person the founder names | `[GAP: founder to provide]` |
+| `{{EMAIL}}`, `{{PHONE}}` | An address or number the founder gives you | `[GAP: founder to provide]`. Do not search for or infer either |
+
+Two blocks hold no placeholders. Under "Industry-Specific Constraints", add the constraints the research or the founder named, and delete the empty block if there are none. Under the industry-specific regulators, list each regulator or standard the research found, with the requirement it sets, and delete the block if the research found none.
+
 Use the CLAUDE.md header format: `# CLAUDE.md — BoS OS, built with {{FOUNDER_NAME}}`.
 
 **Set the Toolkit version stamps.** Directly under the header, the template has two lines: `*Bootstrapped from BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*` and `*Last synced with BoS OS Toolkit v{{BOS_OS_VERSION}} on {{BOOTSTRAP_DATE}}.*`. Fill `{{BOS_OS_VERSION}}` from this skill's own `version:` field in the frontmatter at the top of this file, read it, don't hardcode it, so the stamp stays correct as this skill is updated. Fill `{{BOOTSTRAP_DATE}}` with today's date. At bootstrap both lines get the same values, that's expected, nothing has synced yet. They mean different things and stay different going forward: "Bootstrapped from" is a permanent record and nothing should ever change it again. "Last synced" records the date a newer Toolkit version last brought the BoS OS up to date. Bootstrap sets it when the founder approves upgrade additions to an existing folder and they are applied: new Toolkit version, today's date, plus a Version History row naming the additions. Set both. Don't skip either, and don't ask the user for either.
@@ -288,6 +340,8 @@ In the CLAUDE.md, refer to `02_STRATEGY/` documents by their plain English names
 **Before saving, check every escalation clause.** By default, an agent's only channel is the conversation it's in — it cannot email, message, call, or notify anyone who isn't the person it's currently talking to, unless this company has actually connected a real notification or paging tool and explicitly authorised the agent to use it. You have no public information suggesting that's the case for a bootstrap, so default every escalation clause to what a stock agent can do: stop, and tell the current user by name who needs to sign off or be looped in. A common failure mode is generating language like "pause and surface to the CEO" or "notify {{ROLE}}" as if the agent has a channel it doesn't have — rewrite any clause that reads that way. This applies to hard constraints, industry-specific rules, and the Key Contacts framing alike. `references/claude_md_template.md` models the correct default pattern; match it. If a later Workshop session confirms the company has real paging/notification tooling wired up, that's the point to describe it accurately — not at bootstrap, when it's a guess.
 
 Save to the workspace root.
+
+Also save `AGENTS.md` at the workspace root. It holds one line, "Read CLAUDE.md in this folder in full before doing anything else." Some AI tools look for `AGENTS.md` and not `CLAUDE.md`, and this sends them to the real instructions. It holds no content of its own, so it cannot drift from `CLAUDE.md`.
 
 ---
 
@@ -337,8 +391,10 @@ shape it into something that reflects what you know your company to be.
 Use the BoS OS Workshop skill to guide you through each of these.
 
 You can do this in chunks. It doesn't have to be one sitting.
-That said, most people find that once they start, they cancel the next meeting.
+Come back when you have done the first three. Workshop picks up from there.
 ```
+
+If the parking list has items, tell the founder where it is (`01_STATE/parking_list.md`) and that Workshop ranks it at the end.
 
 ---
 
@@ -367,8 +423,8 @@ Bootstrap is the first of three skills in the BoS OS toolkit (Bootstrap, Worksho
 
 What it needs before it starts. A company name, a website URL (or a LinkedIn profile), and web search turned on.
 
-What it produces. The folder structure, a first draft of the strategy documents from public information, role stubs in `03_AGENTS/`, a CLAUDE.md, and the state files.
+What it produces. The folder structure, a first draft of the strategy documents from public information, role stubs in `03_AGENTS/`, a CLAUDE.md, a one-line `AGENTS.md` that points to it, and the state files.
 
 What comes next. Workshop. It reads the draft Bootstrap leaves and sharpens it with the founder or executive, one role at a time. Workshop sends anyone without Bootstrap's output back to Bootstrap.
 
-Later. Run, which is optional. Install it once Workshop has produced a strategy layer and agent roles worth operating.
+Later. Run, which is optional. Install it once Workshop has produced a strategy layer and role stubs worth operating.

@@ -4,7 +4,7 @@
 
 > **When to use this:** This template is for the Run skill's Agent Planner, not for Bootstrap or Workshop. If you are running Bootstrap, you are not filling this in yet.
 >
-> **What Bootstrap produces:** Lightweight role stubs — one file per person, capturing name, title, functions owned, and strategy documents owned. That is all Bootstrap needs. Role stubs live in `03_AGENTS/` and look like this:
+> **What Bootstrap produces:** Lightweight role stubs, one file per person, capturing name and title, what the role owns and decides, what the founder wants from it, the work the person should spend time on, and candidate jobs for an AI. That is all Bootstrap needs. Role stubs live in `03_AGENTS/` and look like this:
 >
 > ```
 > Name: Sarah Chen
@@ -13,7 +13,7 @@
 > Strategy documents owned: Our_Values.md, How_We_Grow.md, How_We_Make_Decisions.md
 > ```
 >
-> **Who writes full specs:** the Run skill's Agent Planner, using this template, when a mission needs agents. Once you have worked with the BoS OS for a few sessions and understand how decisions actually flow, come back here and turn the role stubs into proper agent specs with decision boundaries, escalation triggers, and evaluation criteria.
+> **Who writes full specs:** the Run skill's Agent Planner, using this template, when a mission needs agents. A spec starts from a stub's "Candidate jobs for an AI". Once you have worked with the BoS OS for a few sessions and understand how decisions actually flow, come back here and turn the role stubs into proper agent specs with decision boundaries, escalation triggers, and evaluation criteria.
 >
 > The distinction matters: a role stub describes a person. An agent spec defines what an AI agent is authorised to do on that person's behalf.
 

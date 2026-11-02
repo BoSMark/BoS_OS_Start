@@ -65,7 +65,7 @@ Success metric: Revenue forecast accuracy >85%
 
 ## Healthcare (Strict Governance)
 
-Healthcare is high-stakes and heavily regulated. Patient safety is paramount. The agent OS must be designed to escalate clinical decisions, not make them.
+Healthcare is high-stakes and heavily regulated. Patient safety is paramount. The BoS OS must be designed to escalate clinical decisions, not make them.
 
 ### Primary Strategy Documents
 - Decision Cascade Governance

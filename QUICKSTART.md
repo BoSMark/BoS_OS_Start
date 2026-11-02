@@ -7,59 +7,44 @@ Get from zero to your first Bootstrap session.
 ## Before you start
 
 You need:
-- A Claude Pro subscription
-- Cowork mode enabled (desktop app, not browser)
+- An AI that can read a folder of files, such as Claude or ChatGPT
 - A folder on your computer inside Dropbox, Google Drive, or similar cloud sync
 
-If you're missing any of these, sort them first. Everything else depends on them.
+If you're missing either, sort it first. Everything else depends on them. The [README](README.md#getting-started) has a table of routes for different AI tools.
 
 ---
 
-## Step 1 — Download the skill file
+## Step 1. Download the skill file
 
 Go to the [latest release](https://github.com/BoSMark/BoS_OS_Start/releases/latest) and download `agent-os-bootstrap.skill`.
 
-This is a single file. **Do not unzip it.** Upload it as-is in the next step.
+This is a single file. **Do not unzip it.** Upload it as-is in Step 3.
 
 ---
 
-## Step 2 — Create a Cowork project
+## Step 2. Give your AI access to your folder
 
-Before installing anything, set up your project:
+Make an empty folder inside Dropbox, Google Drive or similar. Then give your AI access to it. The screens differ between tools and change often. If you cannot find the option, ask your AI "How do I connect you to a folder on my computer?" and follow what it tells you.
 
-1. In Cowork, click **Projects** in the left sidebar
-2. Click **New project** (top right)
-3. Choose **Start from scratch**
-4. Give your project a name (e.g. "My Company OS")
-5. Leave Instructions blank — Bootstrap will fill this in automatically
-6. Under **Choose project location**, click the folder path and change it to a folder inside Dropbox, Google Drive, or similar cloud sync — **don't leave it as the default** (`Documents/Claude/Projects`)
-7. Click **Create**
-
-> **Why change the location?** The default folder isn't cloud-synced. If you leave it there, your files won't be backed up and won't be accessible from another machine.
-
-> **Already have a folder set up?** On the previous screen, choose **Use an existing folder** instead of Start from scratch.
+> **Why a synced folder?** A folder that isn't cloud-synced isn't backed up, and won't be reachable from another machine.
 
 ---
 
-## Step 3 — Install the skill
+## Step 3. Add the skill
 
-In Cowork, click **Customize** in the left sidebar.
-
-Then: **Skills** → click the **+** icon (top right of the skills panel) → **Create skill** → **Upload a skill** → select `agent-os-bootstrap.skill`.
-
-> **Don't click "Browse skills" or "Browse plugins"** — those only show pre-built options and won't let you upload your own file.
+Where your AI takes skill files, upload `agent-os-bootstrap.skill` as downloaded. Where it does not, open `agent-os-bootstrap/SKILL.md` in the repo and paste its contents as your first message.
 
 ---
 
-## Step 4 — Run Bootstrap
+## Step 4. Run Bootstrap
 
-In the left sidebar, click your project name (it will be under **Pinned**). Then type this exactly:
+Start a chat in the place where your AI can see your folder. Then type this exactly:
 
-> **Bootstrap my company OS**
+> **Bootstrap my BoS OS**
 
-Claude will ask for your company name, then build your BoS OS draft from there.
+It will ask for your company name, then build your BoS OS draft from there.
 
-> **Nothing happened?** If Claude gives a generic reply instead of asking for your company name, the skill didn't install correctly. Go back to Step 3 and check you used **Upload a skill** (not Browse skills or Browse plugins).
+> **Nothing happened?** If the reply is generic and doesn't ask for your company name, the skill didn't install, or your AI can't see your folder. Go back to Step 2 and Step 3.
 
 ---
 
@@ -76,8 +61,8 @@ Run Workshop next to deepen what Bootstrap produced. Once your strategy layer an
 When you're ready to run missions:
 
 1. Go to the [latest release](https://github.com/BoSMark/BoS_OS_Start/releases/latest) and download `agent-os-run.skill`
-2. Install it the same way: **Customize → Skills → + → Create skill → Upload a skill**
-3. In your project, type: **Run a mission** — the skill will orient itself to where you are and guide you from there
+2. Install it the same way you installed Bootstrap
+3. In the same place, type: **Run a mission**. The skill will orient itself to where you are and guide you from there
 
 The Run skill is self-contained. It includes everything it needs — you don't load separate files. It works in three stages: **Mission Shaper** (coaches your rough idea into a measurable Mission Brief) → **Agent Planner** (staffs the mission with a team of agents) → **Delivery Manager** (runs the backlog and drives delivery). The skill knows which stage you're in and picks up from there each session.
 

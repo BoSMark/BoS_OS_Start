@@ -1,4 +1,4 @@
-# Agent OS — Run
+# BoS OS Run
 
 The coordination layer for operating your BoS OS day to day.
 
@@ -79,7 +79,7 @@ Each agent is bounded: the Shaper shapes (it doesn't cast), the Planner casts an
 2. **Staff** — load `agent-specs/agent-planner.md`, point it at the brief → agent specs + `todo.md`
 3. **Deliver** — copy the templates into your mission folder, load `agent-specs/delivery-manager.md` each session
 
-Each spec is plain markdown — load it in any Claude session, or install as a Cowork skill.
+Each spec is plain markdown. Load it in any AI session that can read the file, or install it as a skill where your AI supports that.
 
 ---
 
